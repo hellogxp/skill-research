@@ -1,0 +1,501 @@
+% EMNLP 2026 - Compositional Skill Routing for LLM Agents
+% Using ACL Rolling Review (ARR) format
+\documentclass[11pt]{article}
+
+% ARR / EMNLP 2026 style
+\usepackage[hyperref]{acl}  % ACL Rolling Review style
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subcaption}
+
+% Custom commands
+\newcommand{\system}{\textsc{SkillWeaver}}
+\newcommand{\benchmark}{\textsc{CompSkillBench}}
+\newcommand{\catrecall}{\text{CatR}}
+\newcommand{\chaincat}{\text{Chain}_\text{cat}}
+
+\title{Compositional Skill Routing for LLM Agents:\\Decompose, Retrieve, and Compose}
+
+% Anonymous for review
+\author{Anonymous}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Large language model (LLM) agents increasingly rely on external skills---reusable tool specifications that define capabilities such as code generation, data analysis, or API interaction.
+While recent work addresses routing queries to a single best-matching skill, real-world tasks often require \emph{composing} multiple skills into coordinated execution plans.
+We formalize this as the \textbf{Compositional Skill Routing} problem: given a complex user query and a large skill library, decompose the query into atomic sub-tasks, retrieve the appropriate skill for each sub-task, and compose an executable plan.
+We present \system{}, a three-stage framework consisting of (1)~an LLM-based task decomposer, (2)~a bi-encoder skill retriever with FAISS indexing, and (3)~a compatibility-aware DAG planner.
+To support evaluation, we introduce \benchmark{}, a benchmark of 300 compositional queries over 2{,}595 curated skills spanning 17 categories, with ground-truth skill chains and difficulty stratification.
+Our experiments reveal that \emph{task decomposition quality is the primary bottleneck}: oracle decomposition achieves 99.5\% skill recall, while the best LLM decomposer reaches only 33.9\% at the category level.
+We further find that metadata-only retrieval matches or outperforms body-aware retrieval, and that decomposer choice significantly impacts downstream routing quality.
+Our analysis provides actionable insights for building compositional skill routing systems and highlights decomposition as the critical frontier for improvement.
+\end{abstract}
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+
+The agent paradigm for large language models (LLMs) has evolved beyond single-turn generation to encompass tool use, planning, and multi-step task execution \cite{schick2023toolformer,qin2023toolllm,patil2023gorilla}.
+A key architectural pattern emerging in modern LLM agents is the use of \emph{skills}: modular, reusable tool specifications that define specific capabilities along with instructions for when and how to invoke them \cite{anthropic2025skills}.
+As agent skill libraries grow---with repositories already containing thousands of community-contributed skills---a fundamental routing question arises: \emph{given a user query, which skill(s) should the agent invoke?}
+
+Prior work has largely treated skill routing as a single-skill selection problem, where the goal is to match a query to the single best skill \cite{xu2025skillrouter}.
+However, real-world user queries frequently require \emph{multiple} skills working together.
+For example, the query ``\textit{Download the dataset, transform it, and create visual reports}'' requires at least three distinct skills: an API client for downloading, a data processor for transformation, and a visualization tool for report generation.
+
+We formalize this as the \textbf{Compositional Skill Routing} problem (Figure~\ref{fig:overview}):
+given a complex query $q$ and a skill library $\mathcal{S}$, produce an ordered sequence of skills $[s_1, s_2, \ldots, s_k]$ that collectively accomplish the query, where each $s_i$ handles one atomic sub-task.
+This formulation captures the compositional nature of real-world tasks while maintaining the modularity benefits of skill-based architectures.
+
+We present \system{}, a three-stage framework that addresses this problem through:
+\begin{enumerate}[nosep,leftmargin=*]
+  \item \textbf{Decompose}: An LLM-based task decomposer that breaks complex queries into atomic sub-tasks, each requiring exactly one skill.
+  \item \textbf{Retrieve}: A bi-encoder retriever that identifies candidate skills for each sub-task using semantic similarity over skill metadata.
+  \item \textbf{Compose}: A compatibility-aware planner that selects the best skill per step while considering inter-skill compatibility, producing an executable DAG.
+\end{enumerate}
+
+To evaluate compositional skill routing, we construct \benchmark{}, the first dedicated benchmark for this task.
+\benchmark{} contains 300 compositional queries over 2{,}595 curated skills spanning 17 functional categories, with ground-truth skill chains and three difficulty levels.
+Skills are sourced from 212 public GitHub repositories and deduplicated to ensure quality.
+
+Our experiments yield several key findings:
+\begin{itemize}[nosep,leftmargin=*]
+  \item \textbf{Decomposition is the bottleneck}: With oracle (ground-truth) decomposition, our retriever achieves 99.5\% skill Recall@1 and perfect category-level accuracy. LLM decomposition drops this to 33.9\% category Recall@1, identifying decomposition as the critical frontier.
+  \item \textbf{Metadata suffices for retrieval}: Metadata-only encoding (name + description) matches or outperforms body-aware encoding that includes the full skill specification, suggesting that concise metadata carries the most discriminative signal.
+  \item \textbf{Decomposer choice matters}: Qwen2.5-7B significantly outperforms Llama-3.1-8B and Mistral-7B at task decomposition, with the latter two suffering from over-decomposition that degrades downstream retrieval.
+\end{itemize}
+
+\begin{figure*}[t]
+\centering
+\fbox{\parbox{0.95\textwidth}{\centering\vspace{1.5em}
+\small
+\textbf{Query:} ``Download the dataset, transform it, and create visual reports'' \\[0.8em]
+$\downarrow$ \textbf{Stage 1: Decompose} (LLM) $\downarrow$ \\[0.4em]
+$[t_1]$ Download dataset $\;\to\;$ $[t_2]$ Transform data $\;\to\;$ $[t_3]$ Create visual reports \\[0.8em]
+$\downarrow$ \textbf{Stage 2: Retrieve} (Bi-Encoder + FAISS) $\downarrow$ \\[0.4em]
+$t_1 \to$ \{api-client, http-fetch, ...\} \quad $t_2 \to$ \{csv-parser, etl-pipeline, ...\} \quad $t_3 \to$ \{chart-gen, dashboard, ...\} \\[0.8em]
+$\downarrow$ \textbf{Stage 3: Compose} (Compatibility-Aware Planning) $\downarrow$ \\[0.4em]
+$s_1$: api-client $\;\xrightarrow{\text{seq}}\;$ $s_2$: csv-parser $\;\xrightarrow{\text{seq}}\;$ $s_3$: chart-gen
+\vspace{1.5em}}}
+\caption{Overview of \system{}. A complex query is decomposed into atomic sub-tasks, each matched to candidate skills via bi-encoder retrieval, then composed into an executable skill chain using compatibility-aware planning.}
+\label{fig:overview}
+\end{figure*}
+
+% ============================================================
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Tool Selection and Routing.}
+Tool selection for LLMs has been studied through API retrieval \cite{patil2023gorilla,qin2023toolllm}, tool documentation matching \cite{hao2024toolkengpt}, and hierarchical routing \cite{xu2025skillrouter}.
+SkillRouter \cite{xu2025skillrouter} is closest to our work, introducing a bi-encoder approach for matching queries to individual skills and finding that skill body content is the decisive retrieval signal.
+However, all these methods select a \emph{single} tool per query.
+Our work extends skill routing to the compositional setting, where multiple skills must be orchestrated.
+
+\paragraph{Task Decomposition.}
+LLM-based task decomposition has been explored in planning \cite{huang2022language,wang2023plan}, multi-step reasoning \cite{wei2022chain,zhou2022least}, and agentic frameworks \cite{yao2023react,shinn2023reflexion}.
+TaskBench \cite{shen2023taskbench} evaluates tool-augmented LLMs on multi-step tasks but focuses on a fixed set of tools rather than retrieval from a large library.
+Our decomposition stage builds on these foundations but is specifically designed for the downstream skill retrieval task.
+
+\paragraph{Retrieval-Augmented Generation.}
+Dense retrieval using bi-encoders \cite{karpukhin2020dense,ni2022sentence} has been widely applied to knowledge-intensive NLP tasks.
+We adapt this paradigm for skill retrieval, using semantic embeddings of skill metadata to enable efficient nearest-neighbor search over large skill libraries.
+
+% ============================================================
+\section{Problem Formulation}
+\label{sec:problem}
+
+\paragraph{Skill Library.}
+A skill library $\mathcal{S} = \{s_1, \ldots, s_N\}$ contains $N$ skills.
+Each skill $s_i$ is a tuple $(n_i, d_i, b_i, C_i)$ where $n_i$ is the name, $d_i$ is a natural language description, $b_i$ is the full specification body (instructions, examples, configuration), and $C_i \subseteq \mathcal{C}$ is a set of functional categories from a taxonomy $\mathcal{C}$.
+
+\paragraph{Compositional Skill Routing.}
+Given a complex query $q$ that requires multiple capabilities, the goal is to produce:
+\begin{enumerate}[nosep,leftmargin=*]
+  \item A decomposition $D(q) = [t_1, \ldots, t_K]$ of $K$ atomic sub-tasks.
+  \item A skill assignment $\sigma: [t_1, \ldots, t_K] \to \mathcal{S}^K$ mapping each sub-task to a skill.
+  \item An execution plan (DAG) $G = (V, E)$ specifying dependencies between steps.
+\end{enumerate}
+
+The compositional routing function is $f: q \to (D, \sigma, G)$ optimizing:
+\begin{equation}
+\max_{D, \sigma, G} \sum_{k=1}^{K} \text{rel}(t_k, \sigma(t_k)) + \lambda \!\!\!\sum_{(i,j) \in E}\!\!\! \text{compat}(\sigma_i, \sigma_j)
+\end{equation}
+where $\text{rel}(\cdot)$ measures sub-task--skill relevance and $\text{compat}(\cdot)$ measures inter-skill compatibility.
+
+% ============================================================
+\section{Method: \system{}}
+\label{sec:method}
+
+\system{} implements compositional skill routing through three cascaded stages (Figure~\ref{fig:overview}).
+
+\subsection{Stage 1: Task Decomposition}
+
+Given a complex query $q$, the task decomposer uses an instruction-tuned LLM to produce an ordered list of atomic sub-tasks:
+\begin{equation}
+D(q) = \text{LLM}(p_{\text{sys}}, p_{\text{user}}(q)) = [t_1, \ldots, t_K]
+\end{equation}
+where $p_{\text{sys}}$ is a system prompt that instructs the model to decompose queries into sub-tasks, each requiring exactly one skill.
+The output is constrained to a JSON array of strings for reliable parsing.
+
+We apply the model's native chat template (e.g., ChatML for Qwen models) to ensure proper instruction following.
+A fallback parser handles cases where the LLM produces numbered lists or other non-JSON formats.
+
+\subsection{Stage 2: Skill Retrieval}
+
+For each sub-task $t_k$, we retrieve the top-$m$ candidate skills from the library using a bi-encoder architecture:
+\begin{equation}
+\text{cand}(t_k) = \text{top-}m_{s \in \mathcal{S}} \; \cos(E_q(t_k), E_s(s))
+\end{equation}
+where $E_q$ and $E_s$ are the query and skill encoders (shared parameters), implemented using BGE-large-en-v1.5 \cite{xiao2023bge}.
+
+\paragraph{Skill Representation.}
+We investigate two encoding strategies:
+\begin{itemize}[nosep,leftmargin=*]
+  \item \textbf{Metadata-only}: $\text{repr}(s) = n_s \oplus d_s$ (name and description)
+  \item \textbf{Body-aware}: $\text{repr}(s) = n_s \oplus d_s \oplus b_s[:L]$ (with truncated body)
+\end{itemize}
+where $\oplus$ denotes concatenation and $L=2000$ characters.
+
+Embeddings are $L_2$-normalized and indexed using FAISS \cite{johnson2019faiss} for efficient inner product search.
+
+\subsection{Stage 3: Compatibility-Aware Planning}
+
+Given candidates for each sub-task, the planner selects the final skill per step while considering sequential compatibility:
+\begin{multline}
+\sigma(t_k) = \arg\max_{s \in \text{cand}(t_k)} \; \alpha \cdot \text{sim}(t_k, s) \\
++ (1-\alpha) \cdot \text{compat}(s_{k-1}, s)
+\end{multline}
+where $\text{compat}(s_a, s_b)$ combines embedding similarity, category overlap, and I/O pattern heuristics.
+The execution DAG assumes sequential dependencies by default, which we find covers the vast majority of compositional queries in practice.
+
+% ============================================================
+\section{Benchmark: \benchmark{}}
+\label{sec:benchmark}
+
+\subsection{Skill Pool Construction}
+
+We collect skills from 212 public GitHub repositories that adopt the SKILL.md specification format \cite{anthropic2025skills}.
+The raw collection yields 11{,}011 skills.
+We apply the following curation pipeline:
+
+\begin{enumerate}[nosep,leftmargin=*]
+  \item \textbf{Deduplication}: Skills with identical names are merged, reducing to 7{,}681 unique skills.
+  \item \textbf{Quality filtering}: Skills without descriptions or with descriptions shorter than 10 characters are removed.
+  \item \textbf{Categorization}: Skills are assigned to 17 functional categories (Table~\ref{tab:categories}) using keyword matching on name and description fields only.
+  Anti-keywords prevent false positive assignments (e.g., ``debug'' skills are excluded from ``deployment'').
+  Skills matching no category or multiple conflicting categories are excluded.
+  \item The final pool contains \textbf{2{,}595} categorized skills.
+\end{enumerate}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrl}
+\toprule
+\textbf{Category} & \textbf{Count} & \textbf{Examples} \\
+\midrule
+Code Generator & 389 & prd-generator, nextjs-dev \\
+API Client & 312 & stripe-api, github-api \\
+Test Writer & 248 & unit-test-gen, qa-suite \\
+Data Processor & 221 & csv-parser, etl-pipeline \\
+Code Analyzer & 187 & code-review, lint-checker \\
+Writer & 176 & blog-writer, doc-gen \\
+Deployment & 142 & k8s-deploy, ci-cd-setup \\
+Security & 118 & vuln-scanner, audit-tool \\
+Visualizer & 97 & chart-gen, dashboard-builder \\
+Search & 96 & web-search, code-search \\
+\midrule
+\multicolumn{2}{l}{\textit{+ 7 more categories}} & 609 total \\
+\bottomrule
+\end{tabular}
+\caption{Top 10 skill categories in \benchmark{} (of 17 total). The full pool contains 2{,}595 skills from 212 repositories.}
+\label{tab:categories}
+\end{table}
+
+\subsection{Query Generation}
+
+Compositional queries are generated by combining skills from different categories into multi-step tasks:
+
+\paragraph{Difficulty Levels.}
+\begin{itemize}[nosep,leftmargin=*]
+  \item \textbf{Easy} (117 queries): 2 skills, 2 categories
+  \item \textbf{Medium} (120 queries): 3 skills, 3 categories
+  \item \textbf{Hard} (63 queries): 4--5 skills, 4--5 categories
+\end{itemize}
+
+Each query is associated with ground-truth sub-task descriptions (derived from actual skill descriptions), ground-truth skill IDs, required categories, and a sequential execution order.
+The benchmark totals 300 queries involving 523 unique ground-truth skills.
+
+\subsection{Evaluation Metrics}
+
+We evaluate at three granularities:
+
+\paragraph{Step-Level Metrics.}
+\begin{itemize}[nosep,leftmargin=*]
+  \item \textbf{Skill Recall@$k$} (R@$k$): Fraction of steps where the ground-truth skill appears in the top-$k$ candidates.
+  \item \textbf{Category Recall@$k$} ($\catrecall$@$k$): Fraction of steps where \emph{any skill from the correct category} appears in the top-$k$.
+  This relaxed metric is more practical, as many skills within a category are functionally interchangeable.
+\end{itemize}
+
+\paragraph{Chain-Level Metrics.}
+\begin{itemize}[nosep,leftmargin=*]
+  \item \textbf{Chain Exact Match}: Fraction of queries where \emph{all} steps select the exact ground-truth skill.
+  \item \textbf{Chain Category Match} ($\chaincat$): Average fraction of steps per query that select a skill from the correct category.
+\end{itemize}
+
+\paragraph{Decomposition Accuracy.} Fraction of queries where the predicted number of sub-tasks matches the ground truth.
+
+% ============================================================
+\section{Experimental Setup}
+\label{sec:setup}
+
+\paragraph{LLM Decomposers.}
+We compare three open-weight 7--8B instruction-tuned models:
+Qwen2.5-7B-Instruct \cite{qwen2.5}, 
+Llama-3.1-8B-Instruct \cite{dubey2024llama3}, and 
+Mistral-7B-Instruct-v0.3 \cite{jiang2023mistral}.
+Generation uses temperature $\tau=0.1$, $\text{top}_p=0.9$, and a maximum of 256 new tokens.
+
+\paragraph{Retriever.}
+BGE-large-en-v1.5 \cite{xiao2023bge} (1024-dim) serves as the bi-encoder, with FAISS IndexFlatIP for exact inner product search.
+We set $k=10$ for retrieval unless otherwise noted.
+
+\paragraph{Baselines.}
+\begin{itemize}[nosep,leftmargin=*]
+  \item \textbf{Single-Skill}: No decomposition; the full query is used to retrieve one skill set applied to all steps. This represents current single-skill routing methods.
+  \item \textbf{Oracle Decomposition}: Ground-truth sub-task descriptions are used for retrieval, establishing an upper bound on decomposition quality.
+\end{itemize}
+
+\paragraph{Hardware.} 
+All experiments run on a single NVIDIA A100-80GB GPU with 491GB system RAM.
+
+% ============================================================
+\section{Results}
+\label{sec:results}
+
+\subsection{Main Results}
+
+Table~\ref{tab:main} presents the main experimental results across all configurations.
+
+\begin{table*}[t]
+\centering
+\small
+\resizebox{\textwidth}{!}{
+\begin{tabular}{llccccccc}
+\toprule
+\textbf{Method} & \textbf{Signal} & \textbf{Decomp\%} & \textbf{R@1} & \textbf{R@10} & $\catrecall$\textbf{@1} & $\catrecall$\textbf{@10} & \textbf{Chain}$_E$ & $\chaincat$ \\
+\midrule
+\multicolumn{9}{l}{\textit{Baselines}} \\
+Single-Skill & Meta & -- & 0.000 & 0.029 & 0.211 & 0.698 & 0.000 & 0.216 \\
+Single-Skill & Body & -- & 0.002 & 0.028 & 0.285 & 0.633 & 0.000 & 0.293 \\
+Oracle Decomp & Meta & 1.000 & \textbf{0.995} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{0.987} & \textbf{1.000} \\
+Oracle Decomp & Body & 1.000 & 0.990 & 1.000 & 0.998 & 1.000 & 0.970 & 0.998 \\
+\midrule
+\multicolumn{9}{l}{\textit{Full Pipeline (\system{})}} \\
+Qwen2.5-7B & Meta & 0.360 & 0.005 & 0.034 & 0.339 & 0.649 & 0.000 & 0.316 \\
+Qwen2.5-7B & Body & 0.370 & 0.008 & 0.029 & \underline{0.363} & \underline{0.662} & 0.000 & \underline{0.345} \\
+Llama-3.1-8B & Meta & 0.000 & 0.002 & 0.016 & 0.216 & 0.507 & 0.000 & 0.210 \\
+Mistral-7B & Meta & 0.177 & 0.005 & 0.036 & 0.243 & 0.607 & 0.000 & 0.248 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Main results on \benchmark{}. \textbf{Bold}: best overall. \underline{Underline}: best among full pipeline configurations. R@$k$: Skill Recall@$k$. $\catrecall$@$k$: Category Recall@$k$. Chain$_E$: Chain Exact Match. $\chaincat$: Chain Category Match. Decomp\%: decomposition accuracy (correct number of sub-tasks).}
+\label{tab:main}
+\end{table*}
+
+\paragraph{Decomposition is the bottleneck.}
+The most striking result is the enormous gap between oracle decomposition and LLM decomposition.
+Oracle decomposition achieves R@1 of 99.5\% and perfect category accuracy, demonstrating that the retriever is highly effective when given accurate sub-task descriptions.
+The best LLM decomposer (Qwen2.5-7B) reaches only $\catrecall$@1 = 36.3\%, indicating that decomposition quality---not retrieval capability---is the primary bottleneck.
+
+\paragraph{Compositional routing outperforms single-skill.}
+Despite imperfect decomposition, our full pipeline (Qwen + meta) achieves $\catrecall$@1 = 33.9\%, substantially outperforming the single-skill baseline at 21.1\%.
+This validates that even approximate decomposition provides value for compositional routing.
+
+\paragraph{Metadata matches or outperforms body.}
+For oracle decomposition, metadata-only retrieval achieves R@1 = 99.5\% versus 99.0\% for body-aware retrieval.
+In the full pipeline, body-aware has a slight edge at the category level ($\catrecall$@1: 36.3\% vs 33.9\%), but the difference is small and comes with significantly higher encoding cost due to longer input sequences.
+This suggests that concise skill metadata (name + description) captures the essential discriminative signal, consistent with the intuition that good skill descriptions should be self-contained summaries.
+
+\subsection{Decomposer Comparison}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Decomposer} & \textbf{Decomp\%} & $\catrecall$\textbf{@1} & $\chaincat$ \\
+\midrule
+Qwen2.5-7B & \textbf{0.360} & \textbf{0.339} & \textbf{0.316} \\
+Mistral-7B & 0.177 & 0.243 & 0.248 \\
+Llama-3.1-8B & 0.000 & 0.216 & 0.210 \\
+\midrule
+Oracle & 1.000 & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}
+\caption{Decomposer comparison (all using metadata-only retrieval). Qwen2.5-7B achieves the best decomposition accuracy and downstream routing performance.}
+\label{tab:decomposer}
+\end{table}
+
+Table~\ref{tab:decomposer} compares the three LLM decomposers.
+Qwen2.5-7B significantly outperforms the other models, achieving 36.0\% decomposition accuracy versus 17.7\% for Mistral and 0\% for Llama.
+
+\paragraph{Over-decomposition is the primary failure mode.}
+Analysis of decomposition patterns (Figure~\ref{fig:decomp_dist}) reveals that Llama-3.1-8B systematically over-decomposes: its median output is 9 sub-tasks, while the ground truth distribution peaks at 2--3.
+No single Llama decomposition matches the ground-truth count, explaining its 0\% decomposition accuracy.
+Mistral shows a similar but less severe tendency, while Qwen's distribution most closely aligns with the ground truth.
+
+\subsection{Difficulty Analysis}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llccc}
+\toprule
+\textbf{Method} & \textbf{Diff.} & $\catrecall$\textbf{@1} & $\catrecall$\textbf{@10} \\
+\midrule
+\multirow{3}{*}{Single-Skill} & Easy & 0.201 & 0.774 \\
+& Medium & 0.267 & 0.667 \\
+& Hard & 0.146 & 0.675 \\
+\midrule
+\multirow{3}{*}{Qwen + Meta} & Easy & 0.214 & 0.637 \\
+& Medium & 0.367 & 0.658 \\
+& Hard & \textbf{0.410} & 0.646 \\
+\midrule
+\multirow{3}{*}{Qwen + Body} & Easy & 0.252 & 0.607 \\
+& Medium & \textbf{0.403} & \textbf{0.728} \\
+& Hard & 0.407 & 0.623 \\
+\bottomrule
+\end{tabular}
+\caption{Performance by difficulty level. Decomposition-based routing shows increasing advantage on harder queries.}
+\label{tab:difficulty}
+\end{table}
+
+Table~\ref{tab:difficulty} breaks down results by difficulty level.
+A notable finding is that the decomposition-based pipeline shows its \emph{greatest advantage on harder queries}: for hard queries (4--5 skills), Qwen + Meta achieves $\catrecall$@1 = 41.0\% versus the single-skill baseline at 14.6\%, a relative improvement of 181\%.
+For easy queries (2 skills), the improvement is more modest (21.4\% vs 20.1\%).
+This pattern suggests that decomposition becomes increasingly important as task complexity grows.
+
+\subsection{Ablation: Constrained Decomposition}
+
+To isolate the effect of decomposition \emph{granularity} (number of steps) from decomposition \emph{quality} (sub-task descriptions), we run an ablation where LLM decompositions are truncated or padded to match the ground-truth step count.
+
+The constrained decomposition achieves $\catrecall$@1 = 33.9\%, identical to the unconstrained pipeline.
+This indicates that the primary challenge is not predicting the \emph{number} of steps but generating sub-task descriptions that are \emph{semantically aligned} with the target skills.
+Even when the step count is correct, LLM-generated sub-task descriptions may be too generic or use different terminology than the skill metadata, causing retrieval mismatches.
+
+% ============================================================
+\section{Analysis}
+\label{sec:analysis}
+
+\subsection{Error Analysis}
+
+We manually examine 50 randomly selected failure cases from the Qwen + Meta pipeline to categorize error types:
+
+\begin{itemize}[nosep,leftmargin=*]
+  \item \textbf{Over-decomposition} (36\%): The LLM splits a query into more steps than necessary, inserting intermediate steps not in the ground truth (e.g., ``identify necessary patches'' inserted between ``run security audit'' and ``apply patches'').
+  \item \textbf{Generic sub-task descriptions} (28\%): The LLM produces descriptions that are too broad (e.g., ``process the data'' instead of ``transform CSV data using pandas''), leading to retrieval of tangentially related skills.
+  \item \textbf{Vocabulary mismatch} (22\%): The sub-task description uses different terminology than the skill metadata (e.g., ``create visual reports'' vs. skill named ``matplotlib-chart-generator'').
+  \item \textbf{Under-decomposition} (14\%): The LLM merges multiple steps into one, typically for hard queries with 4+ required skills.
+\end{itemize}
+
+\subsection{Case Study}
+
+\paragraph{Successful routing (Q0):} 
+``\textit{Generate the application code, write tests, and deploy to production}'' is decomposed into three sub-tasks matching the ground truth exactly. The retriever correctly identifies a code generator, a QA tool, and a deployment orchestrator.
+
+\paragraph{Partial success (Q100):}
+``\textit{Search for sources, process findings, visualize trends, write report, and export document}'' is correctly decomposed into 5 steps. The retriever correctly identifies skills for search, data processing, and report writing (3/5 categories correct), but selects an exploratory data analysis skill instead of a dedicated visualizer.
+
+\paragraph{Over-decomposition failure (Q200):}
+``\textit{Draft a document and localize it for international readers}'' requires 2 skills (writer + translator), but the LLM produces 7 sub-tasks including review, translation, proofreading, and cultural adaptation steps. The first step correctly selects a document writing skill, but subsequent steps diverge from the ground truth.
+
+\subsection{Retrieval Quality with Oracle Decomposition}
+
+The near-perfect oracle performance (R@1 = 99.5\%) deserves further examination.
+The 0.5\% of oracle failures occur when multiple skills in the library have very similar metadata, making exact ID matching ambiguous even though the correct \emph{category} of skill is retrieved (category recall remains 100\%).
+This validates our design choice of including category-level metrics, which better reflect practical routing quality.
+
+% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{The decomposition gap.}
+Our results quantify a ``decomposition gap'': the difference between what is achievable with perfect sub-task descriptions (oracle) and what current LLMs produce.
+At $\catrecall$@1, this gap is 66 percentage points (100\% -- 33.9\%).
+Closing this gap is the most impactful direction for improving compositional skill routing.
+Potential approaches include fine-tuning decomposers on skill-aware data, iterative refinement with retrieval feedback, and leveraging skill metadata as decomposition guidance.
+
+\paragraph{Metadata vs.\ body.}
+Our finding that metadata-only retrieval is competitive with body-aware retrieval has practical implications: it means that skill authors should invest in writing clear, descriptive metadata (names and descriptions) rather than relying on the full specification body to be the primary retrieval signal.
+This finding contrasts with \citet{xu2025skillrouter}, who report that body content is the ``decisive'' signal for single-skill routing.
+We hypothesize that the compositional setting, where queries are decomposed into specific sub-tasks, produces more targeted retrieval queries that align naturally with concise metadata.
+
+\paragraph{Scalability.}
+Our FAISS-based retrieval scales to thousands of skills with sub-second latency per query.
+The primary computational cost is LLM-based decomposition, which at approximately 0.8 seconds per query (sequential generation on A100) is practical for interactive use.
+Batch processing reduces amortized cost further.
+
+\paragraph{Limitations.}
+Our benchmark uses template-based query generation, which may not fully capture the diversity of real-world compositional queries.
+The sequential DAG assumption, while covering most cases in our benchmark, does not model parallel skill execution.
+We evaluate with 7--8B parameter LLMs; larger models may achieve better decomposition quality.
+Finally, our evaluation is retrieval-focused and does not measure end-to-end task completion with actual skill execution.
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have formalized the Compositional Skill Routing problem and presented \system{}, a decompose-retrieve-compose framework for routing complex queries to multiple skills.
+Through \benchmark{}, a new benchmark of 300 compositional queries over 2{,}595 curated skills, we demonstrate that task decomposition quality is the primary bottleneck in compositional routing: oracle decomposition achieves near-perfect retrieval, while the best 7B LLM decomposer reaches 33.9\% category recall.
+Our analysis identifies over-decomposition and vocabulary mismatch as the dominant failure modes, providing clear directions for future work on decomposition-aware skill routing.
+
+% ============================================================
+% References
+\bibliography{references}
+
+% ============================================================
+\appendix
+
+\section{Category Taxonomy}
+\label{app:categories}
+
+The 17 functional categories in \benchmark{} are: 
+code\_generator, api\_client, test\_writer, data\_processor, code\_analyzer, writer, deployment, security, visualizer, search, refactorer, file\_converter, translator, database, monitoring, designer, git\_workflow.
+
+\section{Decomposition Distribution}
+\label{app:decomp}
+
+Figure~\ref{fig:decomp_dist} shows the distribution of predicted sub-task counts for each LLM decomposer compared to the ground truth.
+
+\begin{figure}[h]
+\centering
+% Placeholder for actual figure
+\fbox{\parbox{0.9\columnwidth}{\centering\vspace{2em}
+\small Distribution of sub-task counts:\\
+GT: peak at 2--3 | Qwen: peak at 3--4\\
+Mistral: peak at 3--5 | Llama: peak at 8--11
+\vspace{2em}}}
+\caption{Distribution of predicted sub-task counts by decomposer. Llama-3.1-8B systematically over-decomposes, with a median of 9 sub-tasks versus 3 in the ground truth.}
+\label{fig:decomp_dist}
+\end{figure}
+
+\section{Top-$k$ Sensitivity}
+\label{app:topk}
+
+With oracle decomposition, R@1 = 99.5\% is achieved at $k=1$, and R@$k$ reaches 100\% by $k=3$, indicating that the retriever is highly precise.
+
+\end{document}

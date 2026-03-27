@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "skillweaver"
+version = "0.1.0"
+description = "AI Agent skill discovery and compositional workflow orchestration"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+keywords = ["ai", "agent", "skills", "mcp", "routing", "orchestration", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "click>=8.0",
+    "rich>=13.0",
+    "sentence-transformers>=2.2",
+    "faiss-cpu>=1.7",
+    "numpy>=1.24",
+    "pyyaml>=6.0",
+    "httpx>=0.24",
+]
+
+[project.optional-dependencies]
+local = [
+    "transformers>=4.36",
+    "torch>=2.0",
+]
+openai = [
+    "openai>=1.0",
+]
+all = [
+    "skillweaver[local,openai]",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+skillweaver = "skillweaver.cli.main:cli"
+
+[project.urls]
+Homepage = "https://github.com/skillweaver-ai/skillweaver"
+Documentation = "https://github.com/skillweaver-ai/skillweaver#readme"
+Repository = "https://github.com/skillweaver-ai/skillweaver"
+Issues = "https://github.com/skillweaver-ai/skillweaver/issues"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/skillweaver"]
