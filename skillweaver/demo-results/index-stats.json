@@ -1,0 +1,8 @@
+{
+    "total_skills": 60,
+    "has_faiss_index": true,
+    "store_dir": "/root/.skillweaver",
+    "format_counts": {
+        "skill_md": 60
+    }
+}

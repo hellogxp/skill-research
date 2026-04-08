@@ -1,0 +1,102 @@
+{
+  "web": {
+    "count": 8,
+    "skills": [
+      "http-monitor",
+      "web-scraper",
+      "whois-query",
+      "sitemap-parser",
+      "rss-reader",
+      "dns-lookup",
+      "url-shortener",
+      "api-caller"
+    ]
+  },
+  "data": {
+    "count": 8,
+    "skills": [
+      "schema-inspector",
+      "csv-parser",
+      "sql-query",
+      "data-sampler",
+      "data-merger",
+      "xml-parser",
+      "data-validator",
+      "json-transformer"
+    ]
+  },
+  "devops": {
+    "count": 8,
+    "skills": [
+      "log-analyzer",
+      "port-scanner",
+      "docker-manager",
+      "cron-scheduler",
+      "ssl-checker",
+      "ci-trigger",
+      "env-manager",
+      "k8s-deployer"
+    ]
+  },
+  "ai": {
+    "count": 8,
+    "skills": [
+      "ner-extractor",
+      "text-summarizer",
+      "speech-to-text",
+      "sentiment-analyzer",
+      "ocr-reader",
+      "text-classifier",
+      "translation",
+      "embedding-generator"
+    ]
+  },
+  "file": {
+    "count": 8,
+    "skills": [
+      "temp-file-cleaner",
+      "image-resizer",
+      "zip-compressor",
+      "file-watcher",
+      "file-hasher",
+      "pdf-converter",
+      "csv-to-excel",
+      "markdown-renderer"
+    ]
+  },
+  "comm": {
+    "count": 8,
+    "skills": [
+      "calendar-event",
+      "telegram-sender",
+      "slack-notifier",
+      "discord-bot",
+      "email-sender",
+      "webhook-trigger",
+      "sms-sender",
+      "push-notification"
+    ]
+  },
+  "code": {
+    "count": 6,
+    "skills": [
+      "lint-runner",
+      "dep-checker",
+      "git-diff",
+      "test-runner",
+      "changelog-generator",
+      "code-formatter"
+    ]
+  },
+  "misc": {
+    "count": 6,
+    "skills": [
+      "password-generator",
+      "qr-code-maker",
+      "timezone-converter",
+      "uuid-generator",
+      "unit-converter",
+      "regex-tester"
+    ]
+  }
+}

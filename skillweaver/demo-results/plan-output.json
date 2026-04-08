@@ -1,0 +1,195 @@
+[
+  {
+    "query": "scrape a website then summarize the content and send via email",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "scrape a website",
+        "selected_skill": "web-scraper",
+        "confidence": 0.6939,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "summarize the content and send via email",
+        "selected_skill": "text-summarizer",
+        "confidence": 0.4555,
+        "parallel_group": 1,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "avg_confidence": 0.5747,
+    "num_steps": 2
+  },
+  {
+    "query": "parse CSV data, validate schema, then convert to Excel",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "parse CSV data",
+        "selected_skill": "csv-parser",
+        "confidence": 0.7546,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "validate schema",
+        "selected_skill": "data-validator",
+        "confidence": 0.6484,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "then convert to Excel",
+        "selected_skill": "csv-to-excel",
+        "confidence": 0.4462,
+        "parallel_group": 1,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "avg_confidence": 0.6164,
+    "num_steps": 3
+  },
+  {
+    "query": "run tests, check dependencies, then generate changelog",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "run tests",
+        "selected_skill": "test-runner",
+        "confidence": 0.5343,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "check dependencies",
+        "selected_skill": "dep-checker",
+        "confidence": 0.5947,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "then generate changelog",
+        "selected_skill": "changelog-generator",
+        "confidence": 0.5354,
+        "parallel_group": 1,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "avg_confidence": 0.5548,
+    "num_steps": 3
+  },
+  {
+    "query": "scan ports, check SSL certificates, and monitor uptime",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "scan ports",
+        "selected_skill": "port-scanner",
+        "confidence": 0.6424,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "check SSL certificates",
+        "selected_skill": "ssl-checker",
+        "confidence": 0.6069,
+        "parallel_group": 1,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "monitor uptime",
+        "selected_skill": "http-monitor",
+        "confidence": 0.4581,
+        "parallel_group": 2,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "avg_confidence": 0.5691,
+    "num_steps": 3
+  },
+  {
+    "query": "extract text from image, translate it, then send via Slack",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "extract text from image",
+        "selected_skill": "ocr-reader",
+        "confidence": 0.6008,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "translate it",
+        "selected_skill": "translation",
+        "confidence": 0.382,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "then send via Slack",
+        "selected_skill": "slack-notifier",
+        "confidence": 0.4917,
+        "parallel_group": 1,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "avg_confidence": 0.4915,
+    "num_steps": 3
+  }
+]

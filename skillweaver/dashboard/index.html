@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillWeaver Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2d3a;
+    --accent: #6c5ce7;
+    --accent-light: #a29bfe;
+    --green: #00b894;
+    --red: #e17055;
+    --yellow: #fdcb6e;
+    --text: #dfe6e9;
+    --text-dim: #636e72;
+    --blue: #74b9ff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent-light);
+  }
+  .header h1 span { color: var(--text-dim); font-weight: 400; font-size: 14px; margin-left: 12px; }
+  .status-badge {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--green);
+  }
+  .status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green); animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+  .main { padding: 24px 32px; max-width: 1400px; margin: 0 auto; }
+
+  /* Query input */
+  .query-section {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin-bottom: 24px;
+  }
+  .query-section label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+  .query-row { display: flex; gap: 12px; margin-top: 10px; }
+  .query-row input {
+    flex: 1; padding: 12px 16px; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text); font-size: 15px; font-family: inherit;
+    outline: none; transition: border-color .2s;
+  }
+  .query-row input:focus { border-color: var(--accent); }
+  .query-row button {
+    padding: 12px 28px; background: var(--accent); color: #fff; border: none;
+    border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
+    font-family: inherit; transition: background .2s;
+  }
+  .query-row button:hover { background: var(--accent-light); }
+  .query-row button:disabled { opacity: .5; cursor: not-allowed; }
+  .presets { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .presets button {
+    padding: 6px 14px; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; color: var(--text-dim); font-size: 12px; cursor: pointer;
+    font-family: inherit; transition: all .2s;
+  }
+  .presets button:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Metrics row */
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .metric-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px; text-align: center;
+  }
+  .metric-card .label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+  .metric-card .value { font-size: 32px; font-weight: 700; margin-top: 8px; }
+  .metric-card .sub { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+  .metric-card.savings .value { color: var(--green); }
+  .metric-card.before .value { color: var(--red); }
+  .metric-card.after .value { color: var(--green); }
+  .metric-card.skills .value { color: var(--blue); }
+
+  /* Comparison */
+  .comparison {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;
+  }
+  .panel {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px; overflow: hidden;
+  }
+  .panel h3 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .panel h3 .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .panel.without h3 .dot { background: var(--red); }
+  .panel.with h3 .dot { background: var(--green); }
+
+  /* Token bar */
+  .token-bar-container { margin-bottom: 16px; }
+  .token-bar {
+    height: 24px; border-radius: 6px; background: var(--bg); overflow: hidden;
+    position: relative;
+  }
+  .token-bar .fill {
+    height: 100%; border-radius: 6px; transition: width .6s ease;
+  }
+  .token-bar .fill.red { background: linear-gradient(90deg, var(--red), #e17055aa); }
+  .token-bar .fill.green { background: linear-gradient(90deg, var(--green), #00b894aa); }
+  .token-bar-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+  /* Skill list */
+  .skill-list { list-style: none; max-height: 300px; overflow-y: auto; }
+  .skill-list li {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 12px; border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .skill-list li:last-child { border-bottom: none; }
+  .skill-name { color: var(--blue); font-weight: 500; }
+  .skill-score {
+    padding: 2px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;
+  }
+  .score-high { background: rgba(0,184,148,.15); color: var(--green); }
+  .score-mid { background: rgba(253,203,110,.15); color: var(--yellow); }
+  .score-low { background: rgba(99,110,114,.15); color: var(--text-dim); }
+  .skill-cat { color: var(--text-dim); font-size: 11px; }
+  .skill-list.all li { opacity: .5; font-size: 12px; }
+
+  /* DAG section */
+  .dag-section {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; margin-bottom: 24px;
+  }
+  .dag-section h3 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 16px; color: var(--accent-light);
+  }
+  .dag-visual {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 16px; background: var(--bg); border-radius: 8px; min-height: 60px;
+    font-size: 14px;
+  }
+  .dag-node {
+    padding: 8px 16px; background: var(--accent); color: #fff; border-radius: 8px;
+    font-weight: 500; white-space: nowrap;
+  }
+  .dag-arrow { color: var(--text-dim); font-size: 18px; }
+  .dag-parallel {
+    display: flex; flex-direction: column; gap: 6px;
+    border: 1px dashed var(--border); border-radius: 8px; padding: 8px;
+  }
+  .dag-parallel-label { font-size: 10px; color: var(--text-dim); text-align: center; }
+
+  /* History */
+  .history-section {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px;
+  }
+  .history-section h3 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 16px; color: var(--text-dim);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--text-dim); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 1px; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  .savings-cell { color: var(--green); font-weight: 600; }
+
+  .empty-state { text-align: center; padding: 40px; color: var(--text-dim); }
+  .loading { display: none; color: var(--accent-light); font-size: 13px; margin-top: 8px; }
+  .loading.active { display: block; }
+  .error-msg { color: var(--red); font-size: 13px; margin-top: 8px; }
+
+  @media (max-width: 768px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .comparison { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>SkillWeaver <span>Dashboard</span></h1>
+  <div class="status-badge" id="status">
+    <div class="status-dot"></div>
+    <span>Connecting...</span>
+  </div>
+</div>
+
+<div class="main">
+  <!-- Query Input -->
+  <div class="query-section">
+    <label>Task Query</label>
+    <div class="query-row">
+      <input type="text" id="queryInput" placeholder="Describe a complex task..."
+             value="scrape a website, analyze the data, generate charts, and send results to Slack">
+      <button id="runBtn" onclick="runQuery()">Analyze</button>
+    </div>
+    <div class="presets">
+      <button onclick="setQuery('scrape a website, analyze the data, generate charts, and send results to Slack')">Web + Data + Viz + Notify</button>
+      <button onclick="setQuery('extract text from PDF, summarize it, translate to Chinese, save as markdown')">PDF + NLP Pipeline</button>
+      <button onclick="setQuery('monitor website uptime, analyze logs for errors, send alerts via Telegram')">DevOps Monitoring</button>
+      <button onclick="setQuery('download CSV, filter rows, generate chart, email the report')">Data Report</button>
+      <button onclick="setQuery('scan git diff, run linter, execute tests, generate changelog')">CI/CD Pipeline</button>
+    </div>
+    <div class="loading" id="loading">Analyzing...</div>
+    <div class="error-msg" id="errorMsg"></div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="metrics">
+    <div class="metric-card before">
+      <div class="label">Without SkillWeaver</div>
+      <div class="value" id="toolsBefore">--</div>
+      <div class="sub">tools exposed</div>
+    </div>
+    <div class="metric-card after">
+      <div class="label">With SkillWeaver</div>
+      <div class="value" id="toolsAfter">--</div>
+      <div class="sub">tools selected</div>
+    </div>
+    <div class="metric-card savings">
+      <div class="label">Token Savings</div>
+      <div class="value" id="tokenSavings">--%</div>
+      <div class="sub" id="tokenDetail">-- tokens saved</div>
+    </div>
+    <div class="metric-card skills">
+      <div class="label">Avg Match Score</div>
+      <div class="value" id="avgScore">--</div>
+      <div class="sub">retrieval confidence</div>
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="comparison">
+    <div class="panel without">
+      <h3><span class="dot"></span> Without SkillWeaver</h3>
+      <div class="token-bar-container">
+        <div class="token-bar"><div class="fill red" id="barBefore" style="width:0%"></div></div>
+        <div class="token-bar-label"><span id="tokensBefore">0 tokens</span><span>context window</span></div>
+      </div>
+      <ul class="skill-list all" id="allSkillsList">
+        <li class="empty-state">Run a query to see results</li>
+      </ul>
+    </div>
+    <div class="panel with">
+      <h3><span class="dot"></span> With SkillWeaver</h3>
+      <div class="token-bar-container">
+        <div class="token-bar"><div class="fill green" id="barAfter" style="width:0%"></div></div>
+        <div class="token-bar-label"><span id="tokensAfter">0 tokens</span><span>context window</span></div>
+      </div>
+      <ul class="skill-list" id="selectedSkillsList">
+        <li class="empty-state">Run a query to see results</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAG Plan -->
+  <div class="dag-section">
+    <h3>Execution Plan (DAG)</h3>
+    <div class="dag-visual" id="dagVisual">
+      <span class="empty-state">Run a query with plan to see the execution DAG</span>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="history-section">
+    <h3>Request History</h3>
+    <table>
+      <thead><tr><th>Time</th><th>Query</th><th>Before</th><th>After</th><th>Savings</th></tr></thead>
+      <tbody id="historyBody">
+        <tr><td colspan="5" class="empty-state">No queries yet</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const API_BASE = window.location.origin + '/skillweaver/api';
+let history = [];
+let totalSkills = 0;
+
+async function checkHealth() {
+  try {
+    const r = await fetch(API_BASE + '/health');
+    const d = await r.json();
+    totalSkills = d.total_skills;
+    document.getElementById('status').innerHTML =
+      '<div class="status-dot"></div><span>Connected &middot; ' + d.total_skills + ' skills indexed</span>';
+  } catch(e) {
+    document.getElementById('status').innerHTML =
+      '<div class="status-dot" style="background:var(--red)"></div><span>Disconnected</span>';
+  }
+}
+
+function setQuery(q) {
+  document.getElementById('queryInput').value = q;
+}
+
+async function runQuery() {
+  const query = document.getElementById('queryInput').value.trim();
+  if (!query) return;
+
+  const btn = document.getElementById('runBtn');
+  const loading = document.getElementById('loading');
+  const errorMsg = document.getElementById('errorMsg');
+  btn.disabled = true;
+  loading.classList.add('active');
+  errorMsg.textContent = '';
+
+  try {
+    // Parallel: search (all results) + inject (filtered) + plan
+    const [searchRes, injectRes, planRes] = await Promise.all([
+      fetch(API_BASE + '/search', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({query, top_k: 100})
+      }).then(r => r.json()),
+      fetch(API_BASE + '/inject', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({query, max_tools: 20, token_budget: 8000})
+      }).then(r => r.json()),
+      fetch(API_BASE + '/plan', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({query, backend: 'rule', use_dag: true, sad: false})
+      }).then(r => r.json()).catch(() => null)
+    ]);
+
+    renderResults(query, searchRes, injectRes, planRes);
+  } catch(e) {
+    errorMsg.textContent = 'Error: ' + e.message;
+  } finally {
+    btn.disabled = false;
+    loading.classList.remove('active');
+  }
+}
+
+function renderResults(query, search, inject, plan) {
+  const allCount = inject.total_available || totalSkills;
+  const selectedCount = inject.selected_tools.length;
+  const tokensBefore = allCount * 400;
+  const tokensAfter = inject.token_estimate;
+  const savings = tokensBefore > 0 ? ((1 - tokensAfter / tokensBefore) * 100) : 0;
+
+  // Metrics
+  document.getElementById('toolsBefore').textContent = allCount;
+  document.getElementById('toolsAfter').textContent = selectedCount;
+  document.getElementById('tokenSavings').textContent = savings.toFixed(1) + '%';
+  document.getElementById('tokenDetail').textContent =
+    (tokensBefore - tokensAfter).toLocaleString() + ' tokens saved';
+
+  // Avg score
+  const scores = search.results.slice(0, selectedCount);
+  const avg = scores.length > 0 ? scores.reduce((a,b) => a + b.score, 0) / scores.length : 0;
+  document.getElementById('avgScore').textContent = avg.toFixed(3);
+
+  // Token bars
+  const maxTokens = 40000;
+  document.getElementById('barBefore').style.width = Math.min(tokensBefore/maxTokens*100, 100) + '%';
+  document.getElementById('barAfter').style.width = Math.min(tokensAfter/maxTokens*100, 100) + '%';
+  document.getElementById('tokensBefore').textContent = tokensBefore.toLocaleString() + ' tokens';
+  document.getElementById('tokensAfter').textContent = tokensAfter.toLocaleString() + ' tokens';
+
+  // All skills list (without SkillWeaver)
+  const allList = document.getElementById('allSkillsList');
+  const allSkills = search.results;
+  if (allSkills.length > 0) {
+    allList.innerHTML = allSkills.slice(0, 30).map(s =>
+      '<li><span class="skill-name">' + esc(s.name) + '</span><span class="skill-cat">' +
+      (s.categories||[]).join(', ') + '</span></li>'
+    ).join('') + (allCount > 30 ? '<li style="text-align:center;opacity:.5">... and ' +
+    (allCount-30) + ' more tools</li>' : '');
+  }
+
+  // Selected skills (with SkillWeaver)
+  const selList = document.getElementById('selectedSkillsList');
+  const selSkills = search.results.slice(0, selectedCount);
+  selList.innerHTML = selSkills.map(s => {
+    const sc = s.score;
+    const cls = sc > 0.7 ? 'score-high' : sc > 0.5 ? 'score-mid' : 'score-low';
+    return '<li><span class="skill-name">' + esc(s.name) + '</span>' +
+           '<span class="skill-score ' + cls + '">' + sc.toFixed(3) + '</span></li>';
+  }).join('');
+
+  // DAG
+  const dagEl = document.getElementById('dagVisual');
+  if (plan && plan.steps && plan.steps.length > 0) {
+    // Group by parallel_group
+    const groups = {};
+    plan.steps.forEach(s => {
+      const g = s.parallel_group != null ? s.parallel_group : s.step_index;
+      if (!groups[g]) groups[g] = [];
+      groups[g].push(s);
+    });
+    let html = '';
+    const groupKeys = Object.keys(groups).sort((a,b) => a-b);
+    groupKeys.forEach((gk, i) => {
+      const steps = groups[gk];
+      if (steps.length > 1) {
+        html += '<div class="dag-parallel"><div class="dag-parallel-label">parallel</div>';
+        steps.forEach(s => {
+          html += '<div class="dag-node">' + esc(s.selected_skill || s.subtask) + '</div>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div class="dag-node">' + esc(steps[0].selected_skill || steps[0].subtask) + '</div>';
+      }
+      if (i < groupKeys.length - 1) html += '<span class="dag-arrow">&#8594;</span>';
+    });
+    dagEl.innerHTML = html;
+  } else {
+    dagEl.innerHTML = '<span style="color:var(--text-dim)">No plan available</span>';
+  }
+
+  // History
+  history.unshift({
+    time: new Date().toLocaleTimeString('en-US', {hour12:false, hour:'2-digit', minute:'2-digit'}),
+    query: query.length > 50 ? query.slice(0,50) + '...' : query,
+    before: allCount,
+    after: selectedCount,
+    savings: savings.toFixed(1) + '%'
+  });
+  if (history.length > 20) history.pop();
+  const tbody = document.getElementById('historyBody');
+  tbody.innerHTML = history.map(h =>
+    '<tr><td>' + h.time + '</td><td>' + esc(h.query) + '</td><td>' + h.before +
+    '</td><td>' + h.after + '</td><td class="savings-cell">' + h.savings + '</td></tr>'
+  ).join('');
+}
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+// Init
+checkHealth();
+setInterval(checkHealth, 30000);
+
+// Enter key
+document.getElementById('queryInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') runQuery();
+});
+</script>
+</body>
+</html>

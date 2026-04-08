@@ -1,6 +1,7 @@
 """Adapter for Anthropic SKILL.md format.
 
 Parses SKILL.md files (YAML frontmatter + markdown body) into unified Skill objects.
+Extracts tags, version, author, and auth metadata when available.
 """
 
 from __future__ import annotations
@@ -52,8 +53,13 @@ def parse_skill_md(path: Path) -> Skill | None:
         description=description,
         body=body,
         categories=frontmatter.get("categories", []),
+        tags=frontmatter.get("tags", []),
         source_format=SkillFormat.SKILL_MD,
         source_path=str(path),
+        version=str(frontmatter.get("version", "")),
+        author=frontmatter.get("author", ""),
+        auth_required=bool(frontmatter.get("auth_required", False)),
+        auth_type=frontmatter.get("auth_type", ""),
         metadata=frontmatter,
     )
 

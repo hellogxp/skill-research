@@ -1,0 +1,74 @@
+%% ============================================================
+%% PAPER UPDATE DRAFT - To be applied to main.tex on server
+%% Based on completed ablation experiments
+%% ============================================================
+
+%% ============================================================
+%% 1. REPLACE existing Table 6 (SAD Results) with expanded version
+%%    Location: Section 7.6 (Skill-Aware Decomposition Results)
+%% ============================================================
+
+%% NEW TABLE 6: Hints Count Ablation
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Configuration} & \textbf{DA} & \textbf{CatR@1} & \textbf{ChainCat} \\
+\midrule
+Vanilla (no hints) & 0.360 & 0.339 & 0.316 \\
+\midrule
+SAD ($H{=}5$) & 0.607 & 0.389 & 0.326 \\
+SAD ($H{=}10$) & 0.657 & 0.481 & 0.466 \\
+SAD ($H{=}15$) & \textbf{0.687} & \textbf{0.542} & \textbf{0.516} \\
+SAD ($H{=}25$) & 0.790 & 0.474 & 0.471 \\
+\bottomrule
+\end{tabular}
+\caption{Ablation study on the number of skill hints $H$ for Skill-Aware Decomposition with Qwen2.5-7B-Instruct. DA increases monotonically with $H$, but CatR@1 peaks at $H{=}15$, suggesting that excessive hints introduce noise that degrades downstream retrieval alignment.}
+\label{tab:sad-ablation}
+\end{table}
+
+%% NEW TABLE 7: Cross-Model SAD Comparison
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llccc}
+\toprule
+\textbf{Model} & \textbf{Method} & \textbf{DA} & \textbf{CatR@1} & \textbf{ChainCat} \\
+\midrule
+\multirow{2}{*}{Qwen2.5-7B} & Vanilla & 0.360 & 0.339 & 0.316 \\
+ & SAD & 0.687 & 0.542 & 0.516 \\
+ & $\Delta$ & \textcolor{green!50!black}{+90.8\%} & \textcolor{green!50!black}{+59.9\%} & \textcolor{green!50!black}{+63.3\%} \\
+\midrule
+\multirow{2}{*}{Llama-3.1-8B} & Vanilla & 0.000 & 0.216 & 0.210 \\
+ & SAD & 0.107 & 0.339 & 0.359 \\
+ & $\Delta$ & -- & \textcolor{green!50!black}{+57.0\%} & \textcolor{green!50!black}{+71.0\%} \\
+\midrule
+\multirow{2}{*}{Mistral-7B} & Vanilla & 0.177 & 0.242 & 0.248 \\
+ & SAD & 0.273 & 0.307 & 0.301 \\
+ & $\Delta$ & \textcolor{green!50!black}{+54.2\%} & \textcolor{green!50!black}{+26.9\%} & \textcolor{green!50!black}{+21.4\%} \\
+\bottomrule
+\end{tabular}
+\caption{Cross-model comparison of Skill-Aware Decomposition ($H{=}15$). SAD consistently improves all metrics across three model families, with the largest gains on Qwen2.5-7B. Even Llama-3.1-8B, which produces no valid decompositions in the vanilla setting (DA=0.0), achieves meaningful retrieval improvements through skill-aware hints.}
+\label{tab:sad-crossmodel}
+\end{table}
+
+
+%% ============================================================
+%% 2. UPDATED ANALYSIS TEXT for Section 7.6
+%%    Replace existing analysis paragraph
+%% ============================================================
+
+%% After Table 6 (hints ablation):
+Table~\ref{tab:sad-ablation} presents the ablation study over the number of skill hints $H$. Decomposition accuracy increases monotonically with $H$, reaching 79.0\% at $H{=}25$ (a 119\% improvement over vanilla). However, category-level retrieval (CatR@1) exhibits an inverted-U pattern, peaking at $H{=}15$ (54.2\%) before declining at $H{=}25$ (47.4\%). This suggests a trade-off: while more hints help the decomposer produce structurally valid sub-tasks (improving DA), excessive hints introduce noise that dilutes the semantic alignment between sub-task descriptions and actual skill capabilities, ultimately degrading retrieval precision. We select $H{=}15$ as the optimal configuration.
+
+%% After Table 7 (cross-model):
+Table~\ref{tab:sad-crossmodel} demonstrates that SAD generalizes across model families. All three models show consistent improvements, with relative CatR@1 gains ranging from +26.9\% (Mistral) to +59.9\% (Qwen). Notably, Llama-3.1-8B achieves zero valid decompositions in the vanilla setting (DA=0.0), yet with SAD, it produces structured outputs (DA=10.7\%) and achieves +57.0\% CatR@1 improvement. This confirms that skill-aware hints provide a strong inductive bias that compensates for weaker instruction-following capabilities.
+
+
+%% ============================================================
+%% 3. UPDATED DISCUSSION PARAGRAPH
+%%    Replace the decomposition gap paragraph in Discussion
+%% ============================================================
+
+Our Skill-Aware Decomposition (SAD) method demonstrates that the decomposition bottleneck identified in our pipeline analysis can be substantially mitigated through retrieval-augmented feedback. The key insight is that providing skill library hints creates a virtuous cycle: preliminary retrieval informs decomposition, which in turn produces sub-tasks that are better aligned with the skill vocabulary, leading to more accurate final retrieval. The ablation over hint count $H$ reveals a nuanced trade-off---while decomposition accuracy increases monotonically (36.0\% to 79.0\%), downstream retrieval peaks at $H{=}15$ before declining, suggesting that the decomposer's structural compliance and semantic precision have different optima. Cross-model experiments confirm that SAD provides a model-agnostic improvement, with even poorly-performing decomposers (Llama-3.1-8B, DA=0.0 vanilla) benefiting substantially from skill-aware hints.

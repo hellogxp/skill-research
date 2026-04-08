@@ -1,0 +1,56 @@
+{
+  "single_skill_queries": [
+    {"query": "scrape a website and extract data", "expected_category": "web"},
+    {"query": "send a message to Slack channel", "expected_category": "comm"},
+    {"query": "convert PDF document to text", "expected_category": "file"},
+    {"query": "summarize a long article", "expected_category": "ai"},
+    {"query": "check if my SSL certificate is valid", "expected_category": "devops"},
+    {"query": "parse a CSV file and filter rows", "expected_category": "data"},
+    {"query": "format Python source code", "expected_category": "code"},
+    {"query": "generate a QR code from a URL", "expected_category": "misc"},
+    {"query": "resize an image to 800x600", "expected_category": "file"},
+    {"query": "translate text from English to Chinese", "expected_category": "ai"}
+  ],
+  "multi_skill_queries": [
+    {
+      "query": "scrape a website, parse the HTML data, and send the results to Slack",
+      "expected_skills": ["web-scraper", "json-transformer", "slack-notifier"]
+    },
+    {
+      "query": "download CSV from URL, filter rows where revenue is high, generate a chart, and email the report",
+      "expected_skills": ["api-caller", "csv-parser", "image-resizer", "email-sender"]
+    },
+    {
+      "query": "monitor website uptime, analyze the logs for errors, and send alerts via Telegram",
+      "expected_skills": ["http-monitor", "log-analyzer", "telegram-sender"]
+    },
+    {
+      "query": "scan git diff for changes, run the linter, execute tests, and generate a changelog",
+      "expected_skills": ["git-diff", "lint-runner", "test-runner", "changelog-generator"]
+    },
+    {
+      "query": "extract text from PDF, summarize it, translate to Chinese, and save as markdown",
+      "expected_skills": ["pdf-converter", "text-summarizer", "translation", "markdown-renderer"]
+    },
+    {
+      "query": "read RSS feeds, classify the articles by topic, and post summaries to Discord",
+      "expected_skills": ["rss-reader", "text-classifier", "discord-bot"]
+    },
+    {
+      "query": "check SSL certificates for all domains, scan open ports, and send a security report email",
+      "expected_skills": ["ssl-checker", "port-scanner", "email-sender"]
+    },
+    {
+      "query": "parse XML sitemap, scrape each page, extract named entities, and store in database",
+      "expected_skills": ["sitemap-parser", "web-scraper", "ner-extractor", "sql-query"]
+    },
+    {
+      "query": "generate embeddings for documents, validate the data schema, and compress the output files",
+      "expected_skills": ["embedding-generator", "data-validator", "zip-compressor"]
+    },
+    {
+      "query": "watch a directory for new CSV files, merge them together, convert to Excel, and upload via webhook",
+      "expected_skills": ["file-watcher", "data-merger", "csv-to-excel", "webhook-trigger"]
+    }
+  ]
+}

@@ -1,0 +1,912 @@
+[
+  {
+    "query": "web scraping",
+    "results": [
+      {
+        "skill_id": "skill_md_88ea335bc07f",
+        "name": "web-scraper",
+        "description": "Scrape web pages and extract structured data from HTML",
+        "score": 0.7858,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "web",
+          "scraping",
+          "html"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      },
+      {
+        "skill_id": "skill_md_7be2fb674ae1",
+        "name": "http-monitor",
+        "description": "Monitor website uptime and response time",
+        "score": 0.3711,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "monitoring",
+          "uptime",
+          "health"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 18
+      },
+      {
+        "skill_id": "skill_md_6436142bb7ad",
+        "name": "sitemap-parser",
+        "description": "Parse XML sitemaps to discover all pages on a website",
+        "score": 0.3361,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "sitemap",
+          "xml",
+          "crawler"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      },
+      {
+        "skill_id": "skill_md_b3aa3f6d364e",
+        "name": "ner-extractor",
+        "description": "Extract named entities from text (persons, organizations, locations)",
+        "score": 0.3268,
+        "categories": [
+          "ai"
+        ],
+        "tags": [
+          "nlp",
+          "ner",
+          "extraction"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 25
+      },
+      {
+        "skill_id": "skill_md_b429500b9861",
+        "name": "whois-query",
+        "description": "Query WHOIS databases for domain registration information",
+        "score": 0.3064,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "whois",
+          "domain",
+          "registration"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 22
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "send email notification",
+    "results": [
+      {
+        "skill_id": "skill_md_bfbf5bad079d",
+        "name": "email-sender",
+        "description": "Send emails with attachments via SMTP",
+        "score": 0.4269,
+        "categories": [
+          "comm"
+        ],
+        "tags": [
+          "email",
+          "smtp",
+          "notification"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 17
+      },
+      {
+        "skill_id": "skill_md_8c7c706492db",
+        "name": "webhook-trigger",
+        "description": "Send webhook notifications to external services",
+        "score": 0.3767,
+        "categories": [
+          "comm"
+        ],
+        "tags": [
+          "webhook",
+          "http",
+          "notification"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_f1873b394f96",
+        "name": "sms-sender",
+        "description": "Send SMS text messages via Twilio or similar providers",
+        "score": 0.3672,
+        "categories": [
+          "comm"
+        ],
+        "tags": [
+          "sms",
+          "text",
+          "notification"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      },
+      {
+        "skill_id": "skill_md_6ac053ca6d98",
+        "name": "push-notification",
+        "description": "Send push notifications to mobile devices",
+        "score": 0.3342,
+        "categories": [
+          "comm"
+        ],
+        "tags": [
+          "push",
+          "notification",
+          "mobile"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 19
+      },
+      {
+        "skill_id": "skill_md_54f904d72874",
+        "name": "slack-notifier",
+        "description": "Send messages and notifications to Slack channels",
+        "score": 0.3321,
+        "categories": [
+          "comm"
+        ],
+        "tags": [
+          "slack",
+          "notification",
+          "messaging"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "parse CSV data",
+    "results": [
+      {
+        "skill_id": "skill_md_3fe686e467d3",
+        "name": "csv-parser",
+        "description": "Parse and transform CSV files with filtering and aggregation",
+        "score": 0.7546,
+        "categories": [
+          "data"
+        ],
+        "tags": [
+          "csv",
+          "data",
+          "tabular"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 22
+      },
+      {
+        "skill_id": "skill_md_ae09566b116f",
+        "name": "csv-to-excel",
+        "description": "Convert CSV files to formatted Excel spreadsheets",
+        "score": 0.5131,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "csv",
+          "excel",
+          "spreadsheet"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_30ae5eed95f4",
+        "name": "xml-parser",
+        "description": "Parse XML documents and convert to JSON or extract elements",
+        "score": 0.4754,
+        "categories": [
+          "data"
+        ],
+        "tags": [
+          "xml",
+          "parser",
+          "conversion"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 22
+      },
+      {
+        "skill_id": "skill_md_88ea335bc07f",
+        "name": "web-scraper",
+        "description": "Scrape web pages and extract structured data from HTML",
+        "score": 0.3278,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "web",
+          "scraping",
+          "html"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      },
+      {
+        "skill_id": "skill_md_6436142bb7ad",
+        "name": "sitemap-parser",
+        "description": "Parse XML sitemaps to discover all pages on a website",
+        "score": 0.2859,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "sitemap",
+          "xml",
+          "crawler"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "deploy container to kubernetes",
+    "results": [
+      {
+        "skill_id": "skill_md_dad5bf1a4b58",
+        "name": "k8s-deployer",
+        "description": "Deploy and manage Kubernetes workloads",
+        "score": 0.6149,
+        "categories": [
+          "devops"
+        ],
+        "tags": [
+          "kubernetes",
+          "k8s",
+          "deployment"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 17
+      },
+      {
+        "skill_id": "skill_md_9cc6d3068881",
+        "name": "docker-manager",
+        "description": "Manage Docker containers, images, and networks",
+        "score": 0.4863,
+        "categories": [
+          "devops"
+        ],
+        "tags": [
+          "docker",
+          "container",
+          "devops"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_07c08aea2af3",
+        "name": "env-manager",
+        "description": "Manage environment variables and .env files",
+        "score": 0.3166,
+        "categories": [
+          "devops"
+        ],
+        "tags": [
+          "env",
+          "config",
+          "secrets"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 18
+      },
+      {
+        "skill_id": "skill_md_dd0b982bfb2d",
+        "name": "port-scanner",
+        "description": "Scan network ports to check service availability",
+        "score": 0.2836,
+        "categories": [
+          "devops"
+        ],
+        "tags": [
+          "network",
+          "ports",
+          "security"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_4b71e5891430",
+        "name": "ssl-checker",
+        "description": "Check SSL/TLS certificate validity and configuration",
+        "score": 0.19,
+        "categories": [
+          "devops"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "certificate"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "generate PDF report",
+    "results": [
+      {
+        "skill_id": "skill_md_8f6617e4e76a",
+        "name": "pdf-converter",
+        "description": "Convert PDF files to markdown or plain text format",
+        "score": 0.4337,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "pdf",
+          "converter",
+          "document"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_78205d9bfc43",
+        "name": "test-runner",
+        "description": "Execute test suites and report results",
+        "score": 0.2426,
+        "categories": [
+          "code"
+        ],
+        "tags": [
+          "testing",
+          "runner",
+          "ci"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 17
+      },
+      {
+        "skill_id": "skill_md_bd786b3999d9",
+        "name": "text-summarizer",
+        "description": "Summarize long text documents into concise summaries",
+        "score": 0.2383,
+        "categories": [
+          "ai"
+        ],
+        "tags": [
+          "nlp",
+          "summary",
+          "text"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      },
+      {
+        "skill_id": "skill_md_fdbe658663e1",
+        "name": "changelog-generator",
+        "description": "Generate changelogs from git commit history",
+        "score": 0.2246,
+        "categories": [
+          "code"
+        ],
+        "tags": [
+          "changelog",
+          "release",
+          "documentation"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_2e9e82d1d55a",
+        "name": "schema-inspector",
+        "description": "Inspect and document data schemas from samples",
+        "score": 0.1898,
+        "categories": [
+          "data"
+        ],
+        "tags": [
+          "schema",
+          "inspect",
+          "metadata"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "analyze sentiment of text",
+    "results": [
+      {
+        "skill_id": "skill_md_d56a7453220e",
+        "name": "sentiment-analyzer",
+        "description": "Analyze text sentiment and emotional tone",
+        "score": 0.5934,
+        "categories": [
+          "ai"
+        ],
+        "tags": [
+          "nlp",
+          "sentiment",
+          "analysis"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 19
+      },
+      {
+        "skill_id": "skill_md_c8c86b0a2e72",
+        "name": "text-classifier",
+        "description": "Classify text into predefined categories",
+        "score": 0.4526,
+        "categories": [
+          "ai"
+        ],
+        "tags": [
+          "nlp",
+          "classification",
+          "categorization"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 18
+      },
+      {
+        "skill_id": "skill_md_bd786b3999d9",
+        "name": "text-summarizer",
+        "description": "Summarize long text documents into concise summaries",
+        "score": 0.4238,
+        "categories": [
+          "ai"
+        ],
+        "tags": [
+          "nlp",
+          "summary",
+          "text"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      },
+      {
+        "skill_id": "skill_md_b3aa3f6d364e",
+        "name": "ner-extractor",
+        "description": "Extract named entities from text (persons, organizations, locations)",
+        "score": 0.3531,
+        "categories": [
+          "ai"
+        ],
+        "tags": [
+          "nlp",
+          "ner",
+          "extraction"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 25
+      },
+      {
+        "skill_id": "skill_md_f4567bedd40f",
+        "name": "translation",
+        "description": "Translate text between languages",
+        "score": 0.3216,
+        "categories": [
+          "ai"
+        ],
+        "tags": [
+          "nlp",
+          "translation",
+          "language"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 15
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "run unit tests",
+    "results": [
+      {
+        "skill_id": "skill_md_78205d9bfc43",
+        "name": "test-runner",
+        "description": "Execute test suites and report results",
+        "score": 0.4697,
+        "categories": [
+          "code"
+        ],
+        "tags": [
+          "testing",
+          "runner",
+          "ci"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 17
+      },
+      {
+        "skill_id": "skill_md_af3604f2aeeb",
+        "name": "regex-tester",
+        "description": "Test and debug regular expressions with explanations",
+        "score": 0.2578,
+        "categories": [
+          "misc"
+        ],
+        "tags": [
+          "regex",
+          "pattern",
+          "testing"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      },
+      {
+        "skill_id": "skill_md_eccddf0502ab",
+        "name": "lint-runner",
+        "description": "Run linters and static analysis tools on source code",
+        "score": 0.2162,
+        "categories": [
+          "code"
+        ],
+        "tags": [
+          "lint",
+          "static-analysis",
+          "quality"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_c21167c197e5",
+        "name": "unit-converter",
+        "description": "Convert between measurement units",
+        "score": 0.2061,
+        "categories": [
+          "misc"
+        ],
+        "tags": [
+          "units",
+          "converter",
+          "math"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 16
+      },
+      {
+        "skill_id": "skill_md_dd0b982bfb2d",
+        "name": "port-scanner",
+        "description": "Scan network ports to check service availability",
+        "score": 0.1556,
+        "categories": [
+          "devops"
+        ],
+        "tags": [
+          "network",
+          "ports",
+          "security"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "convert timezone",
+    "results": [
+      {
+        "skill_id": "skill_md_d6e01b91e9c4",
+        "name": "timezone-converter",
+        "description": "Convert times between timezones",
+        "score": 0.7199,
+        "categories": [
+          "misc"
+        ],
+        "tags": [
+          "timezone",
+          "time",
+          "converter"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 17
+      },
+      {
+        "skill_id": "skill_md_c21167c197e5",
+        "name": "unit-converter",
+        "description": "Convert between measurement units",
+        "score": 0.2408,
+        "categories": [
+          "misc"
+        ],
+        "tags": [
+          "units",
+          "converter",
+          "math"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 16
+      },
+      {
+        "skill_id": "skill_md_8f6617e4e76a",
+        "name": "pdf-converter",
+        "description": "Convert PDF files to markdown or plain text format",
+        "score": 0.1421,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "pdf",
+          "converter",
+          "document"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_b0f6966575ce",
+        "name": "calendar-event",
+        "description": "Create and manage calendar events",
+        "score": 0.1264,
+        "categories": [
+          "comm"
+        ],
+        "tags": [
+          "calendar",
+          "event",
+          "scheduling"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 16
+      },
+      {
+        "skill_id": "skill_md_30ae5eed95f4",
+        "name": "xml-parser",
+        "description": "Parse XML documents and convert to JSON or extract elements",
+        "score": 0.1091,
+        "categories": [
+          "data"
+        ],
+        "tags": [
+          "xml",
+          "parser",
+          "conversion"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 22
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "compress files into zip",
+    "results": [
+      {
+        "skill_id": "skill_md_5d3a65b32d39",
+        "name": "zip-compressor",
+        "description": "Compress and extract ZIP, TAR, and GZIP archives",
+        "score": 0.7435,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "archive",
+          "compress",
+          "zip"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_8f6617e4e76a",
+        "name": "pdf-converter",
+        "description": "Convert PDF files to markdown or plain text format",
+        "score": 0.2225,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "pdf",
+          "converter",
+          "document"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_a707171419a2",
+        "name": "image-resizer",
+        "description": "Resize, crop, and transform images",
+        "score": 0.2063,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "image",
+          "resize",
+          "transform"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 16
+      },
+      {
+        "skill_id": "skill_md_ae09566b116f",
+        "name": "csv-to-excel",
+        "description": "Convert CSV files to formatted Excel spreadsheets",
+        "score": 0.1934,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "csv",
+          "excel",
+          "spreadsheet"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      },
+      {
+        "skill_id": "skill_md_063851900a4e",
+        "name": "temp-file-cleaner",
+        "description": "Clean up temporary files and directories safely",
+        "score": 0.1715,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "cleanup",
+          "temp",
+          "maintenance"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      }
+    ],
+    "total_indexed": 60
+  },
+  {
+    "query": "monitor website uptime",
+    "results": [
+      {
+        "skill_id": "skill_md_7be2fb674ae1",
+        "name": "http-monitor",
+        "description": "Monitor website uptime and response time",
+        "score": 0.6725,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "monitoring",
+          "uptime",
+          "health"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 18
+      },
+      {
+        "skill_id": "skill_md_23760db7b244",
+        "name": "rss-reader",
+        "description": "Parse and monitor RSS/Atom feeds for new content",
+        "score": 0.2407,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "rss",
+          "feed",
+          "news"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 19
+      },
+      {
+        "skill_id": "skill_md_b892bc195271",
+        "name": "file-watcher",
+        "description": "Watch directories for file changes and trigger actions",
+        "score": 0.2183,
+        "categories": [
+          "file"
+        ],
+        "tags": [
+          "watch",
+          "filesystem",
+          "events"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 21
+      },
+      {
+        "skill_id": "skill_md_b429500b9861",
+        "name": "whois-query",
+        "description": "Query WHOIS databases for domain registration information",
+        "score": 0.2032,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "whois",
+          "domain",
+          "registration"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 22
+      },
+      {
+        "skill_id": "skill_md_871af92a714b",
+        "name": "dns-lookup",
+        "description": "Perform DNS lookups and domain information queries",
+        "score": 0.1929,
+        "categories": [
+          "web"
+        ],
+        "tags": [
+          "dns",
+          "domain",
+          "network"
+        ],
+        "source_format": "skill_md",
+        "server_name": "",
+        "estimated_tokens": 20
+      }
+    ],
+    "total_indexed": 60
+  }
+]

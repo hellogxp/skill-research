@@ -1,0 +1,67 @@
+{
+  "h5": {
+    "decomposition_accuracy": 0.6066666666666667,
+    "skill_recall_at_1": 0.010385756676557863,
+    "skill_recall_at_5": 0.017804154302670624,
+    "skill_recall_at_10": 0.032640949554896145,
+    "cat_recall_at_1": 0.3887240356083086,
+    "cat_recall_at_5": 0.5519287833827893,
+    "cat_recall_at_10": 0.6201780415430267,
+    "chain_exact_match": 0.0,
+    "chain_partial_match": 0.008444444444444444,
+    "chain_cat_match": 0.326,
+    "avg_latency_ms": 571.183393796285
+  },
+  "h10": {
+    "decomposition_accuracy": 0.6566666666666666,
+    "skill_recall_at_1": 0.009562841530054645,
+    "skill_recall_at_5": 0.02185792349726776,
+    "skill_recall_at_10": 0.03961748633879782,
+    "cat_recall_at_1": 0.4808743169398907,
+    "cat_recall_at_5": 0.5792349726775956,
+    "cat_recall_at_10": 0.6215846994535519,
+    "chain_exact_match": 0.006666666666666667,
+    "chain_partial_match": 0.012777777777777777,
+    "chain_cat_match": 0.4655555555555555,
+    "avg_latency_ms": 547.9585115114847
+  },
+  "h25": {
+    "decomposition_accuracy": 0.79,
+    "skill_recall_at_1": 0.00620347394540943,
+    "skill_recall_at_5": 0.02481389578163772,
+    "skill_recall_at_10": 0.04714640198511166,
+    "cat_recall_at_1": 0.4739454094292804,
+    "cat_recall_at_5": 0.6017369727047146,
+    "cat_recall_at_10": 0.6575682382133995,
+    "chain_exact_match": 0.0033333333333333335,
+    "chain_partial_match": 0.007777777777777777,
+    "chain_cat_match": 0.47133333333333327,
+    "avg_latency_ms": 602.0348040262858
+  },
+  "sa_llama_31_8b_instruct": {
+    "decomposition_accuracy": 0.10666666666666667,
+    "skill_recall_at_1": 0.0069605568445475635,
+    "skill_recall_at_5": 0.013921113689095127,
+    "skill_recall_at_10": 0.025522041763341066,
+    "cat_recall_at_1": 0.33874709976798145,
+    "cat_recall_at_5": 0.5092807424593968,
+    "cat_recall_at_10": 0.58584686774942,
+    "chain_exact_match": 0.0,
+    "chain_partial_match": 0.008333333333333333,
+    "chain_cat_match": 0.359,
+    "avg_latency_ms": 2515.535035133362
+  },
+  "sa_mistral_7b_instruct_v03": {
+    "decomposition_accuracy": 0.2733333333333333,
+    "skill_recall_at_1": 0.0024271844660194173,
+    "skill_recall_at_5": 0.01820388349514563,
+    "skill_recall_at_10": 0.027912621359223302,
+    "cat_recall_at_1": 0.3070388349514563,
+    "cat_recall_at_5": 0.49029126213592233,
+    "cat_recall_at_10": 0.5339805825242718,
+    "chain_exact_match": 0.0,
+    "chain_partial_match": 0.0033333333333333335,
+    "chain_cat_match": 0.3006666666666667,
+    "avg_latency_ms": 1252.4455054601033
+  }
+}

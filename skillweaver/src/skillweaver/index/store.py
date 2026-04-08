@@ -1,6 +1,7 @@
 """Local index store for SkillWeaver.
 
 Manages the persistent skill index at ~/.skillweaver/
+Uses JSONL for skill metadata and FAISS for vector search.
 """
 
 from __future__ import annotations
@@ -9,7 +10,7 @@ import json
 import logging
 from pathlib import Path
 
-from skillweaver.core.models import Skill, SkillFormat
+from skillweaver.core.models import Skill
 
 logger = logging.getLogger(__name__)
 
@@ -28,45 +29,44 @@ class IndexStore:
         self.store_dir.mkdir(parents=True, exist_ok=True)
 
     def save_skills(self, skills: list[Skill]) -> None:
-        """Save skills to JSONL file."""
+        """Save skills to JSONL file using Skill.to_dict()."""
         self.ensure_dir()
         with open(self.skills_file, "w") as f:
             for s in skills:
-                record = {
-                    "skill_id": s.skill_id,
-                    "name": s.name,
-                    "description": s.description,
-                    "body": s.body,
-                    "categories": s.categories,
-                    "source_format": s.source_format.value,
-                    "source_path": s.source_path,
-                }
-                f.write(json.dumps(record, ensure_ascii=False) + "\n")
+                f.write(json.dumps(s.to_dict(), ensure_ascii=False) + "\n")
         logger.info(f"Saved {len(skills)} skills to {self.skills_file}")
 
     def load_skills(self) -> list[Skill]:
-        """Load skills from JSONL file."""
+        """Load skills from JSONL file using Skill.from_dict()."""
         if not self.skills_file.exists():
             return []
         skills = []
         with open(self.skills_file) as f:
-            for line in f:
-                d = json.loads(line)
-                skills.append(Skill(
-                    skill_id=d["skill_id"],
-                    name=d["name"],
-                    description=d.get("description", ""),
-                    body=d.get("body", ""),
-                    categories=d.get("categories", []),
-                    source_format=SkillFormat(d.get("source_format", "generic")),
-                    source_path=d.get("source_path", ""),
-                ))
+            for line_num, line in enumerate(f, 1):
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    d = json.loads(line)
+                    skills.append(Skill.from_dict(d))
+                except (json.JSONDecodeError, KeyError) as e:
+                    logger.warning("Skipping malformed line %d: %s", line_num, e)
         logger.info(f"Loaded {len(skills)} skills from index")
         return skills
 
     def has_index(self) -> bool:
         """Check if a FAISS index exists."""
         return (self.index_dir / "index.faiss").exists()
+
+    def remove_skill(self, skill_id: str) -> bool:
+        """Remove a skill by ID. Returns True if found and removed."""
+        skills = self.load_skills()
+        before = len(skills)
+        skills = [s for s in skills if s.skill_id != skill_id]
+        if len(skills) < before:
+            self.save_skills(skills)
+            return True
+        return False
 
     def status(self) -> dict:
         """Return index status info."""

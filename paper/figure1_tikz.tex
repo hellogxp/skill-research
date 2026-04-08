@@ -1,0 +1,86 @@
+% TikZ replacement for Figure 1 - System Overview
+% Requires: \usepackage{tikz}
+%           \usetikzlibrary{arrows.meta, positioning, shapes.geometric, fit, backgrounds}
+
+\begin{figure*}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+    >=Stealth,
+    node distance=0.6cm and 0.8cm,
+    stage/.style={draw, rounded corners=3pt, fill=blue!8, minimum height=0.9cm, minimum width=2.8cm, font=\small\bfseries, align=center},
+    query/.style={draw, rounded corners=3pt, fill=orange!12, minimum height=0.7cm, font=\small, align=center},
+    subtask/.style={draw, rounded corners=2pt, fill=green!8, minimum height=0.6cm, font=\footnotesize, align=center},
+    skill/.style={draw, rounded corners=2pt, fill=purple!8, minimum height=0.6cm, font=\footnotesize, align=center},
+    dag/.style={draw, rounded corners=2pt, fill=red!8, minimum height=0.6cm, font=\footnotesize, align=center},
+    arrow/.style={->, thick, color=gray!70},
+    bigarrow/.style={->, very thick, color=blue!50},
+    label/.style={font=\scriptsize\itshape, color=gray!80},
+]
+
+% Query
+\node[query, minimum width=7cm] (query) {\textit{``Download the dataset, transform it, and create visual reports''}};
+
+% Stage 1: Decompose
+\node[stage, below=0.8cm of query] (stage1) {Stage 1: Decompose\\[-2pt]{\footnotesize (LLM Decomposer)}};
+\draw[bigarrow] (query) -- (stage1);
+
+% Subtasks
+\node[subtask, below=0.8cm of stage1, xshift=-3.5cm] (t1) {$t_1$: Download dataset};
+\node[subtask, below=0.8cm of stage1] (t2) {$t_2$: Transform data};
+\node[subtask, below=0.8cm of stage1, xshift=3.5cm] (t3) {$t_3$: Create visual reports};
+\draw[arrow] (stage1) -- (t1);
+\draw[arrow] (stage1) -- (t2);
+\draw[arrow] (stage1) -- (t3);
+
+% Stage 2: Retrieve
+\node[stage, below=0.8cm of t2] (stage2) {Stage 2: Retrieve\\[-2pt]{\footnotesize (Bi-Encoder + FAISS)}};
+\draw[arrow] (t1) -- (stage2);
+\draw[arrow] (t2) -- (stage2);
+\draw[arrow] (t3) -- (stage2);
+
+% Candidate skills
+\node[skill, below=0.8cm of stage2, xshift=-3.5cm] (c1) {api-client, http-fetch, \ldots};
+\node[skill, below=0.8cm of stage2] (c2) {csv-parser, etl-pipeline, \ldots};
+\node[skill, below=0.8cm of stage2, xshift=3.5cm] (c3) {chart-gen, dashboard, \ldots};
+\draw[arrow] (stage2) -- (c1);
+\draw[arrow] (stage2) -- (c2);
+\draw[arrow] (stage2) -- (c3);
+
+% Labels for candidates
+\node[label, above=0.05cm of c1] {top-$k$ for $t_1$};
+\node[label, above=0.05cm of c2] {top-$k$ for $t_2$};
+\node[label, above=0.05cm of c3] {top-$k$ for $t_3$};
+
+% Stage 3: Compose
+\node[stage, below=0.8cm of c2] (stage3) {Stage 3: Compose\\[-2pt]{\footnotesize (DAG Planner + Compatibility)}};
+\draw[arrow] (c1) -- (stage3);
+\draw[arrow] (c2) -- (stage3);
+\draw[arrow] (c3) -- (stage3);
+
+% Final DAG output
+\node[dag, below=0.8cm of stage3, xshift=-2.5cm] (s1) {$s_1$: api-client};
+\node[dag, below=0.8cm of stage3] (s2) {$s_2$: csv-parser};
+\node[dag, below=0.8cm of stage3, xshift=2.5cm] (s3) {$s_3$: chart-gen};
+\draw[arrow] (stage3) -- (s1);
+\draw[arrow] (stage3) -- (s2);
+\draw[arrow] (stage3) -- (s3);
+
+% DAG edges
+\draw[->, very thick, color=red!60] (s1) -- node[above, font=\scriptsize] {$g_0$} (s2);
+\draw[->, very thick, color=red!60] (s2) -- node[above, font=\scriptsize] {$g_1$} (s3);
+
+% SAD feedback loop (dashed)
+\node[draw, dashed, rounded corners=3pt, fill=yellow!10, minimum height=0.6cm, font=\footnotesize, align=center, right=1.5cm of stage1] (sad) {Skill-Aware\\Decomposition\\{\scriptsize (SAD, \S\ref{sec:sad})}};
+\draw[->, dashed, thick, color=orange!70] (stage2.east) -- ++(1.5,0) |- node[right, pos=0.25, font=\scriptsize, color=orange!70] {skill hints} (sad.south);
+\draw[->, dashed, thick, color=orange!70] (sad.west) -- (stage1.east);
+
+% Skill Library annotation
+\node[draw, rounded corners=2pt, fill=gray!8, font=\footnotesize, minimum height=0.5cm, left=1.5cm of stage2] (lib) {Skill Library\\{\scriptsize (2,595 skills)}};
+\draw[arrow, color=gray!50] (lib) -- (stage2);
+
+\end{tikzpicture}%
+}
+\caption{Overview of \system{}. A complex query is decomposed into atomic sub-tasks (Stage~1), each matched to candidate skills via bi-encoder retrieval over a FAISS-indexed skill library (Stage~2), then composed into an executable DAG using dependency-aware planning with multi-dimensional compatibility scoring (Stage~3). The dashed arrows indicate the optional Skill-Aware Decomposition (SAD) feedback loop, where retrieved skill hints inform the decomposer (\S\ref{sec:sad}).}
+\label{fig:overview}
+\end{figure*}

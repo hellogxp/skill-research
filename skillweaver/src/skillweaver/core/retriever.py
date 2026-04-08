@@ -15,8 +15,9 @@ from skillweaver.core.models import Skill, SkillMatch
 
 logger = logging.getLogger(__name__)
 
-# Default embedding model — BGE-large is best quality; MiniLM is the fallback
-DEFAULT_ENCODER = "BAAI/bge-large-en-v1.5"
+# Default embedding model — MiniLM for zero-config (80MB); BGE-large for best quality
+DEFAULT_ENCODER = "sentence-transformers/all-MiniLM-L6-v2"
+QUALITY_ENCODER = "BAAI/bge-large-en-v1.5"
 FALLBACK_ENCODER = "sentence-transformers/all-MiniLM-L6-v2"
 
 # BGE models need a query instruction prefix for asymmetric retrieval

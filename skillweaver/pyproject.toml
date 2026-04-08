@@ -38,8 +38,13 @@ local = [
 openai = [
     "openai>=1.0",
 ]
+server = [
+    "fastapi>=0.100",
+    "uvicorn[standard]>=0.20",
+    "pydantic>=2.0",
+]
 all = [
-    "skillweaver[local,openai]",
+    "skillweaver[local,openai,server]",
 ]
 dev = [
     "pytest>=7.0",
@@ -51,14 +56,14 @@ dev = [
 skillweaver = "skillweaver.cli.main:cli"
 
 [project.urls]
-Homepage = "https://github.com/skillweaver-ai/skillweaver"
-Documentation = "https://github.com/skillweaver-ai/skillweaver#readme"
-Repository = "https://github.com/skillweaver-ai/skillweaver"
-Issues = "https://github.com/skillweaver-ai/skillweaver/issues"
+Homepage = "https://github.com/hellogxp/skillweaver"
+Documentation = "https://github.com/hellogxp/skillweaver#readme"
+Repository = "https://github.com/hellogxp/skillweaver"
+Issues = "https://github.com/hellogxp/skillweaver/issues"
 
 [tool.ruff]
 target-version = "py310"
-line-length = 100
+line-length = 120
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W"]

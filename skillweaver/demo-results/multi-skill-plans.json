@@ -1,0 +1,243 @@
+[
+  {
+    "query": "scrape website, parse RSS feeds, and check DNS records",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "scrape website",
+        "selected_skill": "web-scraper",
+        "confidence": 0.6957,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "parse RSS feeds",
+        "selected_skill": "rss-reader",
+        "confidence": 0.7121,
+        "parallel_group": 1,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "check DNS records",
+        "selected_skill": "dns-lookup",
+        "confidence": 0.5632,
+        "parallel_group": 0,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "avg_confidence": 0.657,
+    "num_steps": 3
+  },
+  {
+    "query": "parse JSON, validate data schema, merge datasets, and export to CSV",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "parse JSON",
+        "selected_skill": "xml-parser",
+        "confidence": 0.5273,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "validate data schema",
+        "selected_skill": "data-validator",
+        "confidence": 0.6903,
+        "parallel_group": 1,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "merge datasets",
+        "selected_skill": "data-merger",
+        "confidence": 0.6591,
+        "parallel_group": 2,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 3,
+        "subtask": "export to CSV",
+        "selected_skill": "csv-parser",
+        "confidence": 0.5201,
+        "parallel_group": 3,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "avg_confidence": 0.5992,
+    "num_steps": 4
+  },
+  {
+    "query": "build Docker image, deploy to k8s, then trigger CI pipeline and analyze logs",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "build Docker image",
+        "selected_skill": "docker-manager",
+        "confidence": 0.4428,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "deploy to k8s",
+        "selected_skill": "k8s-deployer",
+        "confidence": 0.7128,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "then trigger CI pipeline and analyze logs",
+        "selected_skill": "log-analyzer",
+        "confidence": 0.4812,
+        "parallel_group": 1,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "avg_confidence": 0.5456,
+    "num_steps": 3
+  },
+  {
+    "query": "summarize text, extract entities, analyze sentiment, then translate to Spanish",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "summarize text",
+        "selected_skill": "text-summarizer",
+        "confidence": 0.7216,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "extract entities",
+        "selected_skill": "ner-extractor",
+        "confidence": 0.6121,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "analyze sentiment",
+        "selected_skill": "sentiment-analyzer",
+        "confidence": 0.61,
+        "parallel_group": 1,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 3,
+        "subtask": "then translate to Spanish",
+        "selected_skill": "translation",
+        "confidence": 0.4588,
+        "parallel_group": 2,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "avg_confidence": 0.6006,
+    "num_steps": 4
+  },
+  {
+    "query": "resize images, convert to PDF, compress files, and send via email",
+    "steps": [
+      {
+        "step_index": 0,
+        "subtask": "resize images",
+        "selected_skill": "image-resizer",
+        "confidence": 0.6778,
+        "parallel_group": 0,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 1,
+        "subtask": "convert to PDF",
+        "selected_skill": "pdf-converter",
+        "confidence": 0.6111,
+        "parallel_group": 1,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 2,
+        "subtask": "compress files",
+        "selected_skill": "zip-compressor",
+        "confidence": 0.6202,
+        "parallel_group": 2,
+        "num_candidates": 10
+      },
+      {
+        "step_index": 3,
+        "subtask": "send via email",
+        "selected_skill": "email-sender",
+        "confidence": 0.4148,
+        "parallel_group": 3,
+        "num_candidates": 10
+      }
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "avg_confidence": 0.581,
+    "num_steps": 4
+  }
+]

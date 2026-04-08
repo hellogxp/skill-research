@@ -1,0 +1,95 @@
+[
+  {
+    "selected_tools": [
+      {
+        "name": "web-scraper",
+        "description": "Scrape web pages and extract structured data from HTML",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      },
+      {
+        "name": "sitemap-parser",
+        "description": "Parse XML sitemaps to discover all pages on a website",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      },
+      {
+        "name": "xml-parser",
+        "description": "Parse XML documents and convert to JSON or extract elements",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      }
+    ],
+    "total_available": 60,
+    "token_estimate": 64,
+    "query_used": "I need to scrape a website and parse its data"
+  },
+  {
+    "selected_tools": [
+      {
+        "name": "http-monitor",
+        "description": "Monitor website uptime and response time",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      },
+      {
+        "name": "log-analyzer",
+        "description": "Analyze application logs for errors and patterns",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      },
+      {
+        "name": "ssl-checker",
+        "description": "Check SSL/TLS certificate validity and configuration",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      }
+    ],
+    "total_available": 60,
+    "token_estimate": 58,
+    "query_used": "deploy my app and monitor it"
+  },
+  {
+    "selected_tools": [
+      {
+        "name": "translation",
+        "description": "Translate text between languages",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      },
+      {
+        "name": "text-classifier",
+        "description": "Classify text into predefined categories",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      },
+      {
+        "name": "ner-extractor",
+        "description": "Extract named entities from text (persons, organizations, locations)",
+        "inputSchema": {
+          "inputs": [],
+          "outputs": []
+        }
+      }
+    ],
+    "total_available": 60,
+    "token_estimate": 58,
+    "query_used": "process text with NLP and send results"
+  }
+]

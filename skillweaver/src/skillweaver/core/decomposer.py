@@ -15,19 +15,29 @@ from skillweaver.core.models import SubTask
 
 logger = logging.getLogger(__name__)
 
-SYSTEM_PROMPT = """You are a task decomposition expert. Given a user query that requires multiple tools/skills to complete, break it down into a sequence of atomic sub-tasks.
-
-Rules:
-1. Each sub-task should require exactly ONE skill/tool to complete.
-2. List sub-tasks in execution order.
-3. Be specific about what each sub-task does.
-4. Output ONLY a JSON array of strings, nothing else."""
+SYSTEM_PROMPT = (
+    "You are a task decomposition expert. Given a user query that requires multiple "
+    "tools/skills to complete, break it down into a sequence of atomic sub-tasks.\n\n"
+    "Rules:\n"
+    "1. Each sub-task should require exactly ONE skill/tool to complete.\n"
+    "2. List sub-tasks in execution order.\n"
+    "3. Be specific about what each sub-task does.\n"
+    "4. Output ONLY a JSON array of strings, nothing else."
+)
 
 USER_TEMPLATE = """Decompose this query into atomic sub-tasks. Output a JSON array of strings ONLY.
 
 Query: {query}
 
 JSON array:"""
+
+SAD_USER_TEMPLATE = (
+    "Decompose the following query into atomic sub-tasks. "
+    "Output a JSON array of strings ONLY.\n"
+    "Available skills that may be relevant: {hint_list}\n\n"
+    "Query: {query}\n\n"
+    "JSON array:"
+)
 
 
 def parse_subtasks(text: str, fallback_query: str) -> list[SubTask]:
@@ -71,6 +81,15 @@ class BaseDecomposer(ABC):
     def decompose(self, query: str) -> list[SubTask]:
         """Decompose a query into sub-tasks."""
         ...
+
+    def decompose_with_hints(self, query: str, hints: list[str]) -> list[SubTask]:
+        """SAD Pass 2: re-decompose with skill hints.
+
+        Subclasses backed by an LLM override this to inject hints into
+        the prompt.  The default implementation falls back to vanilla
+        decompose (useful for rule-based backends that cannot use hints).
+        """
+        return self.decompose(query)
 
     def decompose_batch(self, queries: list[str]) -> list[list[SubTask]]:
         """Decompose multiple queries. Default: sequential."""
@@ -124,6 +143,23 @@ class OpenAIDecomposer(BaseDecomposer):
         text = response.choices[0].message.content or ""
         return parse_subtasks(text, query)
 
+    def decompose_with_hints(self, query: str, hints: list[str]) -> list[SubTask]:
+        self._init_client()
+        hint_list = ", ".join(hints)
+        response = self._client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": SAD_USER_TEMPLATE.format(
+                    query=query, hint_list=hint_list,
+                )},
+            ],
+            temperature=self.temperature,
+            max_tokens=512,
+        )
+        text = response.choices[0].message.content or ""
+        return parse_subtasks(text, query)
+
 
 class LocalDecomposer(BaseDecomposer):
     """Decomposer using a local transformers model."""
@@ -159,15 +195,11 @@ class LocalDecomposer(BaseDecomposer):
         self._model.eval()
         logger.info("Model loaded.")
 
-    def decompose(self, query: str) -> list[SubTask]:
+    def _generate(self, messages: list[dict]) -> str:
         import torch
 
         self._init_model()
 
-        messages = [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": USER_TEMPLATE.format(query=query)},
-        ]
         prompt = self._tokenizer.apply_chat_template(
             messages, tokenize=False, add_generation_prompt=True
         )
@@ -180,10 +212,27 @@ class LocalDecomposer(BaseDecomposer):
                 temperature=self.temperature,
                 do_sample=True,
             )
-        text = self._tokenizer.decode(
+        return self._tokenizer.decode(
             output[0][inputs.input_ids.shape[1] :], skip_special_tokens=True
         ).strip()
 
+    def decompose(self, query: str) -> list[SubTask]:
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_TEMPLATE.format(query=query)},
+        ]
+        text = self._generate(messages)
+        return parse_subtasks(text, query)
+
+    def decompose_with_hints(self, query: str, hints: list[str]) -> list[SubTask]:
+        hint_list = ", ".join(hints)
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": SAD_USER_TEMPLATE.format(
+                query=query, hint_list=hint_list,
+            )},
+        ]
+        text = self._generate(messages)
         return parse_subtasks(text, query)
 
 
@@ -200,24 +249,39 @@ class OllamaDecomposer(BaseDecomposer):
         self.host = host
         self.temperature = temperature
 
-    def decompose(self, query: str) -> list[SubTask]:
+    def _call_ollama(self, messages: list[dict]) -> str:
         import httpx
 
         response = httpx.post(
             f"{self.host}/api/chat",
             json={
                 "model": self.model,
-                "messages": [
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": USER_TEMPLATE.format(query=query)},
-                ],
+                "messages": messages,
                 "options": {"temperature": self.temperature},
                 "stream": False,
             },
             timeout=120,
         )
         response.raise_for_status()
-        text = response.json()["message"]["content"]
+        return response.json()["message"]["content"]
+
+    def decompose(self, query: str) -> list[SubTask]:
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_TEMPLATE.format(query=query)},
+        ]
+        text = self._call_ollama(messages)
+        return parse_subtasks(text, query)
+
+    def decompose_with_hints(self, query: str, hints: list[str]) -> list[SubTask]:
+        hint_list = ", ".join(hints)
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": SAD_USER_TEMPLATE.format(
+                query=query, hint_list=hint_list,
+            )},
+        ]
+        text = self._call_ollama(messages)
         return parse_subtasks(text, query)
 
 

@@ -1,0 +1,80 @@
+{
+  "1": {
+    "decomposition_accuracy": 1.0,
+    "skill_recall_at_1": 0.9953596287703016,
+    "skill_recall_at_5": 0.9953596287703016,
+    "skill_recall_at_10": 0.9953596287703016,
+    "cat_recall_at_1": 1.0,
+    "cat_recall_at_5": 1.0,
+    "cat_recall_at_10": 1.0,
+    "chain_exact_match": 0.9866666666666667,
+    "chain_partial_match": 0.9952777777777777,
+    "chain_cat_match": 1.0,
+    "avg_latency_ms": 0.0
+  },
+  "3": {
+    "decomposition_accuracy": 1.0,
+    "skill_recall_at_1": 0.9953596287703016,
+    "skill_recall_at_5": 1.0,
+    "skill_recall_at_10": 1.0,
+    "cat_recall_at_1": 1.0,
+    "cat_recall_at_5": 1.0,
+    "cat_recall_at_10": 1.0,
+    "chain_exact_match": 0.9866666666666667,
+    "chain_partial_match": 0.9952777777777777,
+    "chain_cat_match": 1.0,
+    "avg_latency_ms": 0.0
+  },
+  "5": {
+    "decomposition_accuracy": 1.0,
+    "skill_recall_at_1": 0.9953596287703016,
+    "skill_recall_at_5": 1.0,
+    "skill_recall_at_10": 1.0,
+    "cat_recall_at_1": 1.0,
+    "cat_recall_at_5": 1.0,
+    "cat_recall_at_10": 1.0,
+    "chain_exact_match": 0.9866666666666667,
+    "chain_partial_match": 0.9952777777777777,
+    "chain_cat_match": 1.0,
+    "avg_latency_ms": 0.0
+  },
+  "10": {
+    "decomposition_accuracy": 1.0,
+    "skill_recall_at_1": 0.9953596287703016,
+    "skill_recall_at_5": 1.0,
+    "skill_recall_at_10": 1.0,
+    "cat_recall_at_1": 1.0,
+    "cat_recall_at_5": 1.0,
+    "cat_recall_at_10": 1.0,
+    "chain_exact_match": 0.9866666666666667,
+    "chain_partial_match": 0.9952777777777777,
+    "chain_cat_match": 1.0,
+    "avg_latency_ms": 0.0
+  },
+  "20": {
+    "decomposition_accuracy": 1.0,
+    "skill_recall_at_1": 0.9953596287703016,
+    "skill_recall_at_5": 1.0,
+    "skill_recall_at_10": 1.0,
+    "cat_recall_at_1": 1.0,
+    "cat_recall_at_5": 1.0,
+    "cat_recall_at_10": 1.0,
+    "chain_exact_match": 0.9866666666666667,
+    "chain_partial_match": 0.9952777777777777,
+    "chain_cat_match": 1.0,
+    "avg_latency_ms": 0.0
+  },
+  "50": {
+    "decomposition_accuracy": 1.0,
+    "skill_recall_at_1": 0.9953596287703016,
+    "skill_recall_at_5": 1.0,
+    "skill_recall_at_10": 1.0,
+    "cat_recall_at_1": 1.0,
+    "cat_recall_at_5": 1.0,
+    "cat_recall_at_10": 1.0,
+    "chain_exact_match": 0.9866666666666667,
+    "chain_partial_match": 0.9952777777777777,
+    "chain_cat_match": 1.0,
+    "avg_latency_ms": 0.0
+  }
+}
