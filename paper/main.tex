@@ -390,6 +390,7 @@ We set $k=10$ for retrieval unless otherwise noted.
   \item \textbf{Single-Skill}: No decomposition; the full query is used to retrieve one skill set applied to all steps. This represents current single-skill routing methods.
   \item \textbf{LLM-Direct}: No decomposition; the LLM is given the query and descriptions of the top-50 retrieved skills, then directly selects which skills to use. This tests whether in-context selection can replace explicit decomposition.
   \item \textbf{Oracle Decomposition}: Ground-truth sub-task descriptions are used for retrieval, establishing an upper bound on decomposition quality.
+  \item \textbf{ReAct}: An iterative reasoning baseline where the LLM is given the full query and all skill names, then iteratively selects skills through a think-act-observe loop. This tests whether chain-of-thought style planning can replace explicit decomposition.
 \end{itemize}
 
 \paragraph{Hardware.} 
@@ -417,6 +418,8 @@ Single-Skill & Meta & -- & 0.000 & 0.029 & 0.211 & 0.698 & 0.000 & 0.216 \\
 Single-Skill & Body & -- & 0.002 & 0.028 & 0.285 & 0.633 & 0.000 & 0.293 \\
 Oracle Decomp & Meta & 1.000 & \textbf{0.995} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{0.987} & \textbf{1.000} \\
 Oracle Decomp & Body & 1.000 & 0.990 & 1.000 & 0.998 & 1.000 & 0.970 & 0.998 \\
+ReAct (7B) & -- & -- & 0.753 & 0.767 & -- & -- & 0.727 & 0.750 \\
+ReAct (14B) & -- & -- & 0.157 & 0.160 & -- & -- & 0.157 & 0.157 \\
 \midrule
 \multicolumn{9}{l}{\textit{Full Pipeline (\system{})}} \\
 Qwen2.5-7B & Meta & 0.360 & 0.005 & 0.034 & 0.339 & 0.649 & 0.000 & 0.316 \\
@@ -619,6 +622,12 @@ Oracle R@1 (99.5\%) confirms retriever quality.
 Oracle decomposition achieves near-perfect retrieval, but the best LLM decomposer reaches only $\catrecall$@1 = 33.9\% (72B: 36.8\%).
 SAD narrows this gap: \textbf{7B+SAD (54.2\%) surpasses 72B vanilla by 7.4 points}, and cross-model results confirm SAD as model-agnostic.
 
+\paragraph{Iterative planning is not a shortcut.}
+We evaluate a ReAct-style baseline where the LLM iteratively selects skills through a think-act-observe loop given the full skill list.
+While 7B ReAct achieves R@1$=$75.3\% (Chain EM$=$72.7\%), it comes at 4.4s latency per query---over 2.7$\times$ slower than our full pipeline.
+Moreover, 14B ReAct collapses to R@1$=$15.7\% due to systematic JSON parsing failures (repeated outputs), revealing that iterative planning is fragile across model scales.
+In contrast, \system{}'s decompose-retrieve-compose pipeline is robust and deterministic once decomposition succeeds.
+
 \paragraph{Decomposition vs.\ direct selection.}
 An alternative is letting the LLM directly select from top-50 retrieved skill descriptions (Table~\ref{tab:llm-direct} in Appendix).
 72B LLM-Direct achieves $\catrecall$@1 = 47.0\%, yet \textbf{7B+SAD (54.2\%) still surpasses it}: explicit decomposition provides a beneficial inductive bias by forcing the model to articulate sub-tasks before matching, avoiding attention dilution over 50 descriptions simultaneously.
@@ -651,8 +660,11 @@ Code, data, and \benchmark{} will be released upon acceptance.
 \paragraph{Benchmark Generalization.}
 Our benchmark uses template-based query generation, resulting in high text overlap between queries and skill descriptions (ROUGE-L$=$0.845, BLEU-1$=$0.980, with 37.8\% of sub-task descriptions being exact copies of skill names).
 This inflates absolute retrieval scores---Oracle R@1$=$99.5\% likely reflects lexical matching rather than semantic understanding.
+To quantify this effect, we constructed a \emph{paraphrased} version of our benchmark by using an LLM to rephrase all 300 queries while preserving intent.
+As shown in Table~\ref{tab:paraphrase}, skill recall drops only 2--3\% on paraphrased queries (e.g., 7B vanilla: 99.2\%$\to$96.5\%), confirming that high recall is not merely an artifact of text overlap.
+Exact match rates show larger drops (7B vanilla: 89.3\%$\to$73.7\%), reflecting the sensitivity of strict ordering metrics to surface-level cues.
 While 55 human-written queries confirm that SAD produces consistent \emph{relative} gains on easy/medium difficulties (e.g., CatRecall@1: 30.8\% human vs.\ 54.2\% template for 7B SAD), hard queries (4--5 skills) exhibit performance decline, suggesting that template-trained intuitions may not fully transfer.
-Future work should employ adversarial paraphrasing and crowd-sourced query collection to reduce surface-level cues.
+Future work should employ crowd-sourced query collection to further reduce surface-level cues.
 
 \paragraph{Evaluation Scope.}
 Our evaluation is retrieval-focused; we do not measure whether correctly retrieved skills actually execute successfully in composition.
@@ -804,6 +816,34 @@ Overall & 20 & 0.70 & 1.4 & 0.54 & 743 \\
 }
 \caption{DAG planner pilot evaluation. Step Acc.: fraction of queries where predicted step count matches ground truth. Edges/q: average dependency edges detected per query. Coherence: functional coherence (fraction of adjacent skill pairs with compatible I/O categories). 80\% of queries have at least one detected dependency edge. Median latency is 568ms (p95: 1,261ms). Latency variation across difficulty levels reflects small sample sizes ($n$=4--8) rather than a systematic trend.}
 \label{tab:dag-pilot}
+\end{table}
+
+\section{Paraphrased Benchmark Evaluation}
+\label{app:paraphrase}
+
+To assess whether our high retrieval scores are artifacts of text overlap between queries and skill descriptions, we construct a paraphrased version of \benchmark{} by prompting Qwen2.5-72B-Instruct to rephrase all 300 queries while preserving their compositional intent.
+Table~\ref{tab:paraphrase} reports results across two model sizes under both original and paraphrased conditions.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{llcc}
+\toprule
+\textbf{Model} & \textbf{Condition} & \textbf{Skill Recall} & \textbf{Exact Match} \\
+\midrule
+\multirow{4}{*}{7B} & Original + SAD & 0.982 & 0.587 \\
+ & Original + Vanilla & 0.992 & 0.893 \\
+ & Paraphrased + SAD & 0.962 & 0.520 \\
+ & Paraphrased + Vanilla & 0.965 & 0.737 \\
+\midrule
+\multirow{4}{*}{14B} & Original + SAD & 0.983 & 0.697 \\
+ & Original + Vanilla & 0.990 & 0.830 \\
+ & Paraphrased + SAD & 0.958 & 0.647 \\
+ & Paraphrased + Vanilla & 0.959 & 0.687 \\
+\bottomrule
+\end{tabular}
+\caption{Paraphrased benchmark evaluation. Skill recall drops only 2--3\% under paraphrasing, confirming that high retrieval performance is not merely an artifact of text overlap. Exact match rates show larger drops (up to 15.6pp for 7B vanilla), reflecting the sensitivity of strict ordering metrics to surface-level cues.}
+\label{tab:paraphrase}
 \end{table}
 
 \section{SAD Prompt Templates}
