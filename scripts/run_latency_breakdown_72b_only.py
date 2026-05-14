@@ -94,7 +94,7 @@ class ExperimentConfig:
     skill_pool_path: str = "/mnt/workspace/skill-research/data/processed_v3/skill_pool.jsonl"
     
     # Output path
-    output_path: str = "/mnt/workspace/skill-research/results_v3/latency_breakdown.json"
+    output_path: str = "/mnt/workspace/skill-research/results_v3/latency_breakdown_72b.json"
     
     # Experiment settings
     test_sample_size: int = 50  # Number of queries to test per condition
@@ -181,21 +181,112 @@ class LatencyBreakdownRunner:
         print("Retriever initialized")
     
     def load_model(self, model_path: str, model_name: str):
-        """Load a HuggingFace model."""
+        """Load a HuggingFace model with GPU-only allocation (no CPU offload)."""
         if torch is None:
             print(f"Mock mode: Skipping model loading for {model_name}")
             return None
         
         print(f"Loading model: {model_name} from {model_path}")
         tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-        model = AutoModelForCausalLM.from_pretrained(
-            model_path,
-            torch_dtype=torch.float16,
-            device_map="auto",
-            trust_remote_code=True
-        )
+
+        # Determine model size and loading strategy
+        import json as _json
+        from pathlib import Path as _Path
+        config_path = _Path(model_path) / "config.json"
+        model_size_gb = 0.0
+        if config_path.exists():
+            with open(config_path) as f:
+                cfg = _json.load(f)
+            num_params = cfg.get("num_params")
+            if num_params is None:
+                vocab = cfg.get("vocab_size", 32000)
+                hidden = cfg.get("hidden_size", 4096)
+                layers = cfg.get("num_hidden_layers", 32)
+                intermediate = cfg.get("intermediate_size", hidden * 4)
+                num_params = vocab * hidden + layers * (
+                    4 * hidden * hidden + 2 * hidden * intermediate + 2 * hidden
+                )
+            model_size_gb = num_params * 2 / (1024 ** 3)
+
+        num_gpus = torch.cuda.device_count()
+        single_gpu_gb = torch.cuda.get_device_properties(0).total_memory / (1024**3) if num_gpus > 0 else 0
+        total_gpu_gb = sum(
+            torch.cuda.get_device_properties(i).total_memory
+            for i in range(num_gpus)
+        ) / (1024 ** 3)
+        print(f"  Model ~{model_size_gb:.1f}GB, {num_gpus} GPUs = {total_gpu_gb:.1f}GB total")
+
+        if model_size_gb > total_gpu_gb * 0.95:
+            # Model too large for GPU fp16 -> 4-bit quantization with manual device_map
+            print(f"  Strategy: 4-bit quantization (model {model_size_gb:.1f}GB > {total_gpu_gb*0.95:.1f}GB GPU limit)")
+            from transformers import BitsAndBytesConfig
+            quantization_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_compute_dtype=torch.float16,
+            )
+            # Build manual device_map (device_map="auto" fails with quantization)
+            import json as _json2
+            config_path = _Path(model_path) / "config.json"
+            num_layers = 80  # default
+            if config_path.exists():
+                with open(config_path) as f:
+                    _cfg = _json2.load(f)
+                num_layers = _cfg.get("num_hidden_layers", 80)
+            manual_device_map = {
+                "model.embed_tokens": 0,
+                "model.norm": num_gpus - 1,
+                "lm_head": num_gpus - 1,
+            }
+            layers_per_gpu = num_layers // num_gpus
+            extra = num_layers % num_gpus
+            _li = 0
+            for _g in range(num_gpus):
+                _cnt = layers_per_gpu + (1 if _g < extra else 0)
+                for _ in range(_cnt):
+                    manual_device_map[f"model.layers.{_li}"] = _g
+                    _li += 1
+            print(f"  Manual device_map: {num_layers} layers across {num_gpus} GPUs")
+            model = AutoModelForCausalLM.from_pretrained(
+                model_path,
+                quantization_config=quantization_config,
+                device_map=manual_device_map,
+                trust_remote_code=True
+            )
+        elif model_size_gb <= single_gpu_gb:
+            # Single GPU direct placement
+            print(f"  Strategy: single-GPU direct placement (model {model_size_gb:.1f}GB <= {single_gpu_gb:.1f}GB)")
+            model = AutoModelForCausalLM.from_pretrained(
+                model_path,
+                torch_dtype=torch.float16,
+                device_map={"": 0},
+                trust_remote_code=True
+            )
+        else:
+            # Multi-GPU with max_memory to prevent CPU offload
+            max_memory = {}
+            for i in range(num_gpus):
+                mem_gb = torch.cuda.get_device_properties(i).total_memory / (1024 ** 3)
+                max_memory[i] = f"{int(mem_gb - 1)}GiB"
+            max_memory["cpu"] = "0GiB"
+            print(f"  Strategy: multi-GPU max_memory = {max_memory}")
+            model = AutoModelForCausalLM.from_pretrained(
+                model_path,
+                torch_dtype=torch.float16,
+                device_map="auto",
+                max_memory=max_memory,
+                trust_remote_code=True
+            )
+
+        # Verify no CPU offload
+        device_map = getattr(model, "hf_device_map", {})
+        cpu_layers = [k for k, v in device_map.items() if str(v) == "cpu"]
+        if cpu_layers:
+            print(f"  CRITICAL: {len(cpu_layers)} layers offloaded to CPU! Results unreliable!")
+        else:
+            devices_used = set(str(v) for v in device_map.values())
+            print(f"  Model loaded on GPU(s): {devices_used}")
+
         self.models[model_name] = {'tokenizer': tokenizer, 'model': model}
-        print(f"Model {model_name} loaded successfully")
     
     def decompose_query(self, query: str, model_name: str, use_sad_hints: bool = False, 
                        hints: List[str] = None) -> tuple[List[str], float]:
@@ -234,8 +325,11 @@ class LatencyBreakdownRunner:
                 **inputs,
                 max_new_tokens=256,
                 temperature=self.config.temperature,
-                do_sample=False,  # Greedy decoding for consistent latency
-                pad_token_id=tokenizer.eos_token_id
+                do_sample=False,
+                top_p=0.9,
+                repetition_penalty=1.1,
+                pad_token_id=tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id,
+                eos_token_id=tokenizer.eos_token_id,
             )
         
         # Decode
@@ -368,8 +462,7 @@ class LatencyBreakdownRunner:
         
         # Test configurations
         model_configs = [
-            (self.config.model_path_7b, "qwen25_7b"),
-            (self.config.model_path_14b, "qwen25_14b"),
+            # SKIPPED 7B/14B - running on other GPUs
             (self.config.model_path_72b, "qwen25_72b"),
         ]
         

@@ -169,12 +169,159 @@ class LocalDecomposer(BaseDecomposer):
         model_path: str = "Qwen/Qwen2.5-7B-Instruct",
         device: str = "auto",
         temperature: float = 0.1,
+        load_in_4bit: bool = False,
     ):
         self.model_path = model_path
         self.device = device
         self.temperature = temperature
+        self.load_in_4bit = load_in_4bit
         self._model = None
         self._tokenizer = None
+
+    @staticmethod
+    def _estimate_model_size_gb(model_path: str) -> float:
+        """Estimate model size in GB from config.json."""
+        import json
+        from pathlib import Path
+
+        config_path = Path(model_path) / "config.json"
+        if config_path.exists():
+            with open(config_path) as f:
+                cfg = json.load(f)
+            # Try num_params first (some models provide this)
+            num_params = cfg.get("num_params")
+            if num_params is None:
+                # Estimate from architecture params
+                vocab = cfg.get("vocab_size", 32000)
+                hidden = cfg.get("hidden_size", 4096)
+                layers = cfg.get("num_hidden_layers", 32)
+                intermediate = cfg.get("intermediate_size", hidden * 4)
+                # Attention params per layer: 4 * hidden^2 (Q,K,V,O)
+                # FFN params per layer: 2 * hidden * intermediate
+                num_params = vocab * hidden + layers * (
+                    4 * hidden * hidden + 2 * hidden * intermediate + 2 * hidden
+                )
+            return num_params * 2 / (1024 ** 3)  # fp16 = 2 bytes
+        return 0.0
+
+    def _build_load_kwargs(self) -> dict:
+        """Build kwargs for AutoModelForCausalLM.from_pretrained.
+
+        Ensures model runs on GPU with NO CPU offload.
+        Strategy:
+          - Model fits on 1 GPU → device_map={"": 0} (direct, no accelerate)
+          - Model needs multi-GPU → device_map="auto" + max_memory (no CPU)
+          - Model too large for all GPUs → 4-bit quantization
+        """
+        import torch
+
+        kwargs = {"trust_remote_code": True}
+
+        # If device is explicitly specified (not "auto"), use it directly
+        if self.device != "auto":
+            if self.load_in_4bit:
+                from transformers import BitsAndBytesConfig
+                kwargs["quantization_config"] = BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_compute_dtype=torch.float16,
+                )
+                kwargs["device_map"] = self.device
+            else:
+                kwargs["torch_dtype"] = torch.float16
+                kwargs["device_map"] = self.device
+            return kwargs
+
+        # device="auto" with GPU allocation guard
+        num_gpus = torch.cuda.device_count()
+        model_size_gb = self._estimate_model_size_gb(self.model_path)
+        single_gpu_gb = (
+            torch.cuda.get_device_properties(0).total_memory / (1024 ** 3)
+            if num_gpus > 0 else 0
+        )
+        total_gpu_gb = sum(
+            torch.cuda.get_device_properties(i).total_memory
+            for i in range(num_gpus)
+        ) / (1024 ** 3)
+
+        logger.info(
+            f"Model ~{model_size_gb:.1f}GB, "
+            f"{num_gpus} GPUs = {total_gpu_gb:.1f}GB total"
+        )
+
+        # Strategy 1: Single GPU — direct placement (most reliable)
+        if num_gpus >= 1 and model_size_gb <= single_gpu_gb:
+            kwargs["torch_dtype"] = torch.float16
+            kwargs["device_map"] = {"": 0}
+            logger.info("Strategy: single-GPU direct placement (cuda:0)")
+
+        # Strategy 2: Multi-GPU with max_memory (no CPU offload)
+        elif model_size_gb <= total_gpu_gb * 0.95:
+            kwargs["torch_dtype"] = torch.float16
+            kwargs["device_map"] = "auto"
+            max_memory = {}
+            for i in range(num_gpus):
+                mem_gb = torch.cuda.get_device_properties(i).total_memory / (1024 ** 3)
+                max_memory[i] = f"{int(mem_gb - 1)}GiB"  # Reserve 1GB for activations
+            max_memory["cpu"] = "0GiB"  # NO CPU offload
+            kwargs["max_memory"] = max_memory
+            logger.info(f"Strategy: multi-GPU max_memory = {max_memory}")
+
+        # Strategy 3: Model too large → 4-bit quantization with manual device_map
+        elif self.load_in_4bit or model_size_gb > total_gpu_gb * 0.95:
+            logger.warning(
+                f"Model ({model_size_gb:.1f}GB) too large for GPU memory "
+                f"({total_gpu_gb:.1f}GB). Using 4-bit quantization."
+            )
+            from transformers import BitsAndBytesConfig
+            kwargs["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_compute_dtype=torch.float16,
+            )
+            # Manual device_map: distribute layers evenly across GPUs
+            # (device_map="auto" fails with quantization due to size estimation bug)
+            kwargs["device_map"] = self._build_balanced_device_map()
+            logger.info("Strategy: 4-bit quantization with manual device_map")
+
+        return kwargs
+
+    def _build_balanced_device_map(self) -> dict:
+        """Build a manual device_map that distributes model layers evenly across GPUs.
+
+        This avoids the `device_map="auto"` bug where accelerate uses fp16 size
+        estimation even for quantized models, causing incorrect offload decisions.
+        """
+        import json
+        import torch
+        from pathlib import Path
+
+        config_path = Path(self.model_path) / "config.json"
+        num_gpus = torch.cuda.device_count()
+
+        if config_path.exists():
+            with open(config_path) as f:
+                cfg = json.load(f)
+            num_layers = cfg.get("num_hidden_layers", 32)
+        else:
+            num_layers = 32
+
+        device_map = {}
+        device_map["model.embed_tokens"] = 0
+        device_map["model.norm"] = num_gpus - 1
+        device_map["lm_head"] = num_gpus - 1
+
+        layers_per_gpu = num_layers // num_gpus
+        extra = num_layers % num_gpus
+        layer_idx = 0
+        for gpu in range(num_gpus):
+            count = layers_per_gpu + (1 if gpu < extra else 0)
+            for _ in range(count):
+                device_map[f"model.layers.{layer_idx}"] = gpu
+                layer_idx += 1
+
+        logger.info(
+            f"Manual device_map: {num_layers} layers across {num_gpus} GPUs"
+        )
+        return device_map
 
     def _init_model(self):
         if self._model is not None:
@@ -186,14 +333,28 @@ class LocalDecomposer(BaseDecomposer):
         self._tokenizer = AutoTokenizer.from_pretrained(
             self.model_path, trust_remote_code=True
         )
+
+        load_kwargs = self._build_load_kwargs()
         self._model = AutoModelForCausalLM.from_pretrained(
-            self.model_path,
-            torch_dtype=torch.float16,
-            device_map=self.device,
-            trust_remote_code=True,
+            self.model_path, **load_kwargs
         )
         self._model.eval()
-        logger.info("Model loaded.")
+
+        # Verify no CPU offload occurred
+        device_map = getattr(self._model, "hf_device_map", None)
+        if device_map is not None:
+            cpu_layers = [k for k, v in device_map.items() if str(v) == "cpu"]
+            if cpu_layers:
+                logger.error(
+                    f"CRITICAL: {len(cpu_layers)} layers offloaded to CPU! "
+                    f"Results will be unreliable. Consider using load_in_4bit=True."
+                )
+            else:
+                devices_used = set(str(v) for v in device_map.values())
+                logger.info(f"Model loaded on GPU(s): {devices_used}")
+        else:
+            # device_map={"": N} direct placement — always on GPU
+            logger.info("Model loaded on GPU (direct placement)")
 
     def _generate(self, messages: list[dict]) -> str:
         import torch
