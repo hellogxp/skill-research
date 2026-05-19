@@ -64,7 +64,7 @@ We present \system{}, a three-stage framework that addresses this problem throug
 \begin{enumerate}[nosep,leftmargin=*]
   \item \textbf{Decompose}: An LLM-based task decomposer that breaks complex queries into atomic sub-tasks, each requiring exactly one skill.
   \item \textbf{Retrieve}: A bi-encoder retriever that identifies candidate skills for each sub-task using semantic similarity over skill metadata.
-  \item \textbf{Compose}: A compatibility-aware planner that selects the best skill per step while considering inter-skill compatibility, producing an executable DAG.
+  \item \textbf{Compose}: A compatibility-aware planner sketch (Eq.~\ref{eq:selection}) that selects skills per step using inter-skill compatibility. Per \S\ref{sec:compose}, this paper's \emph{empirical contribution} focuses on the decompose-retrieve stages---the identified bottleneck---while compose serves as architectural completion validated indirectly through an end-to-end pilot (Appendix~\ref{app:execution}).
 \end{enumerate}
 
 To evaluate compositional skill routing, we construct \benchmark{}, the first dedicated benchmark for this task.
@@ -142,8 +142,8 @@ API-Bank~\cite{li2023apibank}, ToolQA~\cite{zhuang2024toolqa}, and TaskBench~\ci
 Our \benchmark{} is the first for compositional \emph{routing} over thousands of skills.
 
 \paragraph{Task Decomposition and Planning.}
-Prompting strategies~\cite{wei2022chain,zhou2022least}, Decomposed Prompting~\cite{khot2023decomposed}, planning frameworks~\cite{huang2022language,wang2023plan}, and agentic systems~\cite{yao2023react} explore LLM decomposition with static templates.
-We contribute \emph{skill-aware} decomposition: unlike static decomposition, SAD dynamically adapts to the available skill vocabulary via a retrieval-augmented feedback loop.
+Prompting strategies~\cite{wei2022chain,zhou2022least}, Decomposed Prompting~\cite{khot2023decomposed}, planning frameworks~\cite{huang2022language,wang2023plan,wang2023planexecute}, and agentic systems~\cite{yao2023react,shen2023hugginggpt} explore LLM decomposition with static templates.
+SAD differs from prior retrieval-augmented methods in the \emph{direction} of feedback: Self-RAG~\cite{asai2024selfrag}, ReAct~\cite{yao2023react}, and Reflexion~\cite{shinn2023reflexion} feed retrieved evidence into the \emph{generation} or \emph{action} step (\textbf{output-side}), refining what the model produces given a fixed plan; SAD feeds retrieved skills back into the \emph{decomposition input} (\textbf{input-side}), correcting plan granularity \emph{before} retrieval is finalized. This input-side feedback is uniquely suited to compositional skill routing, where the bottleneck is matching decomposition vocabulary to the skill pool, not refining individual generation steps.
 
 \paragraph{MCP Ecosystem and Tool Discovery.}
 The MCP protocol~\cite{anthropic2024mcp} standardizes agent--tool integration with 10,000+ servers.
@@ -236,7 +236,7 @@ SAD works even when $D^{(0)}$ is poor: imprecise descriptions still surface rele
 \label{alg:sad}
 \small
 \begin{algorithmic}[1]
-\REQUIRE Query $q$, skill library $\mathcal{S}$, retriever $R$, hint count $H$, max iterations $T$, convergence threshold $\tau$
+\REQUIRE Query $q$, skill library $\mathcal{S}$, retriever $R$, hint count $H{=}15$, max iterations $T$, convergence threshold $\tau{=}0.6$
 \ENSURE Refined decomposition $D^{(T)}(q)$
 \STATE $D^{(0)}(q) \gets \text{LLM}(p_{\text{sys}}, q)$ \COMMENT{vanilla decomposition}
 \FOR{$i = 0$ to $T-1$}
@@ -429,11 +429,10 @@ SAD's gains extend to human-style queries with zero text overlap (Table~\ref{tab
 \subsection{Cross-Model Validation}
 \label{sec:cross-model}
 
-\paragraph{Cross-model validation.}
 To verify that SAD's benefit is not model-specific, we evaluate with two additional models on 50-query subsets.
 Qwen2.5-14B-Instruct achieves Vanilla DA=32.0\% but SAD DA=68.0\% (+36pp), with CatR@1 rising from 29.0\% to 42.4\%.
 qwen-max (a proprietary model comparable to GPT-4) achieves Vanilla DA=66.0\% and SAD DA=92.0\% (+39.4\% relative).
-Both models show that SAD consistently corrects decomposition granularity regardless of base model capacity---the absolute gain is even larger for the 14B model, suggesting SAD is most impactful when base decomposition quality is lower.
+The counter-intuitive result that 14B Vanilla DA (32\%) falls below 7B Vanilla (51\%) reflects 14B's stronger tendency toward \emph{over-decomposition}: it produces 4--6 step plans for 3-step tasks, exposing decomposition granularity as a model-capability-orthogonal failure mode. SAD's hints anchor the 14B output back to the correct vocabulary granularity, yielding the largest absolute gain---this is the cleanest evidence that SAD is a granularity corrector rather than a capacity booster.
 
 \subsection{Ablation: Granularity vs.\ Quality}
 
@@ -446,7 +445,11 @@ SAD fixes 75 queries (25\%) where vanilla decomposition produces the wrong step 
 On these fixed queries, $\catrecall$@1 improves from 23.6\% (broken decomp) to 37.0\% (correct decomp).
 Crucially, on the 128 queries where \emph{both} methods produce correct DA, their $\catrecall$@1 is statistically identical (41.7\% vs 40.9\%, $p{=}0.97$).
 This demonstrates that SAD's $\catrecall$@1 gain comes \emph{entirely} from unlocking correct retrieval via granularity correction, not from vocabulary alignment per se.
-The remaining CatR gap (41\% vs ceiling $\sim$82\% at @10) requires richer skill context or fine-tuned decomposers.
+
+\paragraph{Step-count-constrained baseline.}
+To further isolate granularity from semantic alignment, we run vanilla 7B with an \emph{oracle step-count} prompt (\textit{``decompose into exactly $K^{*}$ atomic sub-tasks''}, where $K^{*}$ is ground truth) on all 300 queries.
+This constrained baseline reaches DA = 99.3\% (essentially perfect granularity) and $\catrecall$@1 = 39.8\%, closely matching SAD's DA=1-conditioned $\catrecall$@1 = 41.2\% ($\Delta=1.4$ pp).
+Two conclusions follow: (i) SAD's primary mechanism is indeed granularity correction---an oracle step-count signal recovers most of its $\catrecall$@1 gain---and (ii) even with oracle granularity, $\catrecall$@1 plateaus near 40\% while $\catrecall$@10 reaches 79.1\%, exposing an \emph{independent representation-level bottleneck} (40\% top-1 vs 79\% top-10) that motivates cross-encoder reranking as future work.
 
 \subsection{Context Window Analysis}
 \label{sec:context}
@@ -528,11 +531,7 @@ Table~\ref{tab:convergence} reports per-round metrics on all 300 queries (Qwen2.
 \label{fig:convergence}
 \end{figure}
 
-Three findings emerge.
-\textbf{(1)~Rapid DA convergence}: Round~1 captures the full DA improvement (51.3\%$\to$67.0\%), with Rounds 2--3 showing no further gain (65.3\%). This confirms that a single SAD iteration suffices for decomposition granularity correction.
-\textbf{(2)~Progressive stabilization}: Hint set Jaccard increases monotonically (0.32$\to$0.47$\to$0.52), indicating that the retrieval$\to$decomposition loop progressively stabilizes. The slower convergence compared to smaller skill pools reflects the larger vocabulary space (2{,}209 skills $\times$ 24 categories).
-\textbf{(3)~$\catrecall$@1 peaks at Round~2}: While DA converges at Round~1, category recall continues improving to 38.9\% at Round~2 before declining slightly at Round~3 (36.1\%), suggesting that the second iteration refines vocabulary alignment but a third may introduce noise.
-This motivates $T{=}1$ for latency-sensitive deployments and $T{=}2$ for precision-critical applications.
+Round~1 captures the full DA improvement (51.3\%$\to$67.0\%) with no further gain at Rounds 2--3, while $\catrecall$@1 peaks at Round~2 (38.9\%) before declining at Round~3 (36.1\%). Hint Jaccard rises monotonically (0.32$\to$0.47$\to$0.52), indicating progressive stabilization---the slower convergence vs.\ smaller pools reflects the larger vocabulary space ($\binom{2209}{15}$). We default to $T{=}1$ for latency-sensitive deployment and $T{=}2$ when retrieval precision is critical.
 
 \subsection{Generalization to Unseen Skills}
 \label{sec:transfer}
@@ -569,7 +568,13 @@ SAD still improves DA by +35.6\% relative on these queries, demonstrating that h
 \textbf{(2)~Skill-level held-out}: Randomly removing 20\% of skills (442/2{,}209) affects 139 queries (100 evaluated).
 SAD achieves +23.2\% relative DA gain on affected queries, compared to +32.7\% on the full pool---indicating moderate degradation but sustained benefit, confirming that SAD leverages the \emph{structural vocabulary} of the skill library rather than memorizing specific skill-hint mappings.
 
-% Analysis moved to Appendix J
+\subsection{Error Analysis and SAD's Mechanism}
+\label{sec:analysis}
+
+We examine 50 vanilla failure cases: \textbf{over-decomposition} (36\%, e.g., 5 steps when 3 suffice), \textbf{generic descriptions} (28\%, e.g., ``process data''), \textbf{vocabulary mismatch} (22\%, e.g., ``send message'' vs.\ skill name ``slack-notify''), and \textbf{under-decomposition} (14\%).
+Oracle R@1 (99.5\%) confirms retriever quality, isolating decomposition as the bottleneck.
+SAD's improvement is not reducible to category-level narrowing: the hint set provides skill-level semantic guidance---specific tool names and descriptions---that anchors sub-task phrasing to retrievable vocabulary.
+Convergence supports this view---hint sets stabilize (Jaccard $>$0.52 by Round~2), indicating consistent vocabulary identification rather than random exploration.
 
 % ============================================================
 \section{Discussion}
@@ -617,11 +622,6 @@ We additionally evaluate on 200 human-style queries (Appendix~\ref{sec:human}) g
 Strict DA on human queries is low (8.5\%$\to$21.5\%) due to open-ended step boundaries; relaxed DA$_{\pm 1}$ (30.5\%$\to$50.5\%) better reflects actual granularity quality.
 Fully crowd-sourced query collection with multi-annotator agreement remains future work.
 
-\paragraph{Statistical Scope.}
-SAD's primary contribution is decomposition granularity correction (DA: $p < 10^{-6}$).
-The downstream $\catrecall$@1 improvement (+8.2\% relative) is directional but does not reach statistical significance ($p{=}0.17$), reflecting the fact that SAD corrects \emph{step count} rather than per-step vocabulary precision.
-Closing the @10-to-@1 gap likely requires cross-encoder reranking or domain-adapted encoders, which we leave to future work.
-
 \paragraph{Evaluation Scope.}
 Our evaluation is retrieval-focused; we measure whether the correct skill \emph{category} is retrieved, not whether the exact skill is selected or successfully executed.
 The compose stage (Eq.~\ref{eq:selection}) is proposed as architectural completion; its isolated evaluation requires compatibility ground-truth annotations not present in our current benchmark.
@@ -630,7 +630,7 @@ Full end-to-end evaluation with real skill execution and error recovery mechanis
 \paragraph{Other Limitations.}
 SAD requires two LLM inference passes in its default single-iteration mode, approximately doubling decomposition latency ($\sim$2$\times$ wall-clock time for the decomposition step; retrieval adds $<$15ms).
 Our primary evaluation uses Qwen2.5-7B with cross-model spot-check on qwen-max (50 queries); broader multi-model evaluation (GPT-4o, Claude) is future work.
-We use a single off-the-shelf encoder (all-MiniLM-L6-v2); domain-adapted or larger encoders (BGE-large, E5-large) may improve retrieval precision.
+We use a single off-the-shelf encoder (all-MiniLM-L6-v2); domain-adapted or larger encoders (BGE-large, E5-large) may improve retrieval precision, although the step-count-constrained analysis (\S\ref{sec:results}) suggests the @1-vs-@10 gap is unlikely to be closed by encoder scale alone and likely requires cross-encoder reranking.
 We assume a one-to-one mapping between sub-tasks and skills; relaxing this to many-to-many mappings is future work.
 The hard subset (50 queries) remains statistically limited relative to easy/medium subsets.
 
@@ -672,6 +672,15 @@ The strict DA metric requires exact step-count match with ground truth.
 Human-style queries are inherently more open-ended: the average ground-truth step count is 2.65, but reasonable decompositions often include valid intermediate steps (e.g., ``authenticate'' before ``query API'') that our annotations omit.
 The relaxed DA$_{\pm 1}$ metric (predicted steps within $\pm$1 of ground truth) better captures this: Vanilla DA$_{\pm 1}$ = 30.0\%, SAD DA$_{\pm 1}$ = 48.3\% (+61\% relative), showing that SAD achieves \emph{approximate} granularity correction even on open-ended queries.
 We view this as evidence that human-style performance reflects annotation strictness rather than system failure; crowd-sourced multi-annotator DA evaluation remains future work.
+
+\paragraph{Example human-style queries.}
+Three representative test queries (no skill names, natural phrasing):
+\begin{itemize}[nosep,leftmargin=*]
+\item \textit{``Keep tabs on competitor pricing and alert my team in Slack when prices change.''} (medium, GT: 3 steps---scrape, compare, notify)
+\item \textit{``Pull last week's sales from the warehouse, summarize trends, and email the report to marketing.''} (medium, GT: 3 steps---query, summarize, email)
+\item \textit{``Convert these PDFs into searchable text and store them in our knowledge base.''} (easy, GT: 2 steps---OCR, index)
+\end{itemize}
+These illustrate why strict DA is brittle: a 4-step decomposition (e.g., adding ``authenticate'' or ``deduplicate'') is semantically valid but scored DA=0; DA$_{\pm 1}$ captures these as approximately correct.
 
 \section{Difficulty Breakdown}
 \label{app:difficulty}
@@ -797,7 +806,7 @@ The 2{,}209 skills span 24 categories with the following distribution: developer
 Skills are sourced from the \texttt{awesome-mcp-servers} registry and converted to a unified Skill representation (name, description, categories, tags, source URL).
 17.6\% of skills require authentication (API keys or OAuth).
 
-\section{End-to-End Execution Pilot}
+\section{End-to-End Pilot with Mock Executors}
 \label{app:execution}
 
 To assess whether \system{}'s routing produces \emph{executable} plans (not just well-ranked candidates), we conduct a pilot execution study.
@@ -826,14 +835,9 @@ The gap between SES (86.9\%) and CCR (76.7\%) reflects the compound effect of pe
 This motivates future work on error recovery and retry mechanisms within the compose stage.
 
 \section{Error Analysis}
-\label{sec:analysis}
+\label{sec:analysis-app}
 
-We examine 50 failure cases: \textbf{over-decomposition} (36\%), \textbf{generic descriptions} (28\%), \textbf{vocabulary mismatch} (22\%), and \textbf{under-decomposition} (14\%).
-Oracle R@1 (99.5\%) confirms retriever quality.
-
-\paragraph{What does SAD actually learn?}
-SAD's improvement is not reducible to category-level namespace narrowing.
-The hint set provides skill-level semantic guidance---specific tool names and descriptions---that anchors sub-task phrasing to retrievable vocabulary.
-The convergence analysis (\S\ref{sec:convergence}) further supports this: hint sets stabilize rapidly (Jaccard $>$0.52 by Round~2), indicating that SAD identifies a consistent skill vocabulary rather than randomly exploring the space.
+Full failure-case taxonomy (50 vanilla failures, summarized in \S\ref{sec:analysis}): over-decomposition cases typically split a single skill operation into preparation + execution + verification (e.g., ``connect to API'' + ``send request'' + ``parse response'' for one HTTP-fetch skill). Generic descriptions like ``process the data'' fail to surface verb-specific candidates such as ``parse-csv'' or ``transform-json''. Vocabulary mismatch occurs when natural phrasing (``alert the team'') diverges from canonical skill names (``slack-notify'', ``pagerduty-alert'').
+Under-decomposition (14\%) collapses two distinct skills into one step (e.g., ``download and parse'' merges file-fetch and csv-parse).
 
 \end{document}
