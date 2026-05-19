@@ -166,8 +166,10 @@ This tool implements the methods from:
 
 Key findings:
 - Task decomposition quality is the primary bottleneck in compositional routing
-- SAD improves category recall from 33.9% to 54.2% (+60%) across 5 models (7B–72B)
+- Iterative SAD improves category recall from 33.9% to 54.2% (+60%) in a single iteration across 6 models (7B to API-level)
+- SAD converges to a near-fixed-point (hint Jaccard > 0.89) within 2-3 iterations
 - A 7B model with SAD outperforms a 72B model without it
+- SAD generalizes to unseen skills (retains 88% of gain under category transfer)
 - Metadata-only retrieval matches body-aware retrieval
 
 ## Contributing

@@ -1,0 +1,29 @@
+{
+  "easy": {
+    "n": 80,
+    "vanilla_da": 0.025,
+    "vanilla_cat_r1": 0.306,
+    "vanilla_cat_r10": 0.506,
+    "sad_da": 0.112,
+    "sad_cat_r1": 0.319,
+    "sad_cat_r10": 0.625
+  },
+  "medium": {
+    "n": 80,
+    "vanilla_da": 0.112,
+    "vanilla_cat_r1": 0.242,
+    "vanilla_cat_r10": 0.496,
+    "sad_da": 0.35,
+    "sad_cat_r1": 0.338,
+    "sad_cat_r10": 0.646
+  },
+  "hard": {
+    "n": 40,
+    "vanilla_da": 0.15,
+    "vanilla_cat_r1": 0.186,
+    "vanilla_cat_r10": 0.38,
+    "sad_da": 0.15,
+    "sad_cat_r1": 0.173,
+    "sad_cat_r10": 0.435
+  }
+}

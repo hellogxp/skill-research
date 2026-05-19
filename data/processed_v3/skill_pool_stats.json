@@ -1,0 +1,38 @@
+{
+  "total_skills": 2209,
+  "total_categories": 24,
+  "categories": {
+    "developer-tools": 357,
+    "finance": 270,
+    "integrations": 229,
+    "knowledge-management": 180,
+    "search-extraction": 140,
+    "security": 122,
+    "communication": 109,
+    "databases": 104,
+    "cloud-infrastructure": 87,
+    "code-execution": 69,
+    "productivity": 66,
+    "gaming-entertainment": 57,
+    "data-processing": 55,
+    "location-services": 55,
+    "browser-automation": 54,
+    "marketing-analytics": 49,
+    "monitoring-observability": 48,
+    "ai-ml": 45,
+    "multimedia": 35,
+    "science-research": 26,
+    "file-management": 25,
+    "e-commerce": 16,
+    "legal-compliance": 7,
+    "data-visualization": 4
+  },
+  "source": "awesome-mcp-servers (punkpeye/awesome-mcp-servers)",
+  "auth_required_count": 389,
+  "pipeline": {
+    "raw_entries": 2228,
+    "after_conversion": 2228,
+    "after_quality_filter": 2213,
+    "after_dedup": 2209
+  }
+}
