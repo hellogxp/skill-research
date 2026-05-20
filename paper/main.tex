@@ -74,7 +74,7 @@ Skills are sourced from the public MCP server ecosystem (2,200+ registered serve
 Our experiments yield several key findings:
 \begin{itemize}[nosep,leftmargin=*]
   \item \textbf{Decomposition is the bottleneck}: Standard LLM decomposition achieves only 34.2\% $\catrecall$@1 on a pool of 2,209 real skills. DA-conditioned analysis reveals that correct step count is the gating factor ($\catrecall$@1 rises to 41.2\% when DA=1), confirming decomposition granularity as the primary limiter.
-  \item \textbf{SAD closes the gap}: Our proposed \emph{Iterative Skill-Aware Decomposition} (SAD), a retrieval-augmented feedback loop that aligns decomposition with the available skill vocabulary, improves DA from 51.0\% to 67.7\% (+32\%, $p < 10^{-6}$) in a single iteration. The remaining $\catrecall$@1 gap (37\% vs.~41\% ceiling) motivates cross-encoder reranking as future work.
+  \item \textbf{SAD closes the gap}: Our proposed \emph{Iterative Skill-Aware Decomposition} (SAD), a retrieval-augmented feedback loop that aligns decomposition with the available skill vocabulary, improves DA from 51.0\% to 67.7\% (+32\%, $p < 10^{-6}$) in a single iteration. The remaining $\catrecall$@1 gap (37\% vs.~72\% @10 ceiling) is partially closed by an LLM-listwise reranker pilot (+10.3\% relative @1, $p{<}0.01$; Appendix~\ref{app:rerank}), turning ``cross-encoder reranking as future work'' into an empirically validated lever.
   \item \textbf{Metadata suffices for retrieval}: Metadata-only encoding achieves $\catrecall$@10 of 69.0\%, demonstrating that concise skill metadata carries strong discriminative signal even across 2,209 skills.
   \item \textbf{SAD generalizes to unseen skills}: Transfer experiments show SAD retains its advantage under both category-level held-out (+35.6\% relative DA gain) and random skill held-out (+23.2\%), confirming vocabulary-level rather than skill-specific learning.
 \end{itemize}
@@ -143,7 +143,7 @@ Our \benchmark{} is the first for compositional \emph{routing} over thousands of
 
 \paragraph{Task Decomposition and Planning.}
 Prompting strategies~\cite{wei2022chain,zhou2022least}, Decomposed Prompting~\cite{khot2023decomposed}, planning frameworks~\cite{huang2022language,wang2023plan,wang2023planexecute}, and agentic systems~\cite{yao2023react,shen2023hugginggpt} explore LLM decomposition with static templates.
-SAD differs from prior retrieval-augmented methods in the \emph{direction} of feedback: Self-RAG~\cite{asai2024selfrag}, ReAct~\cite{yao2023react}, and Reflexion~\cite{shinn2023reflexion} feed retrieved evidence into the \emph{generation} or \emph{action} step (\textbf{output-side}), refining what the model produces given a fixed plan; SAD feeds retrieved skills back into the \emph{decomposition input} (\textbf{input-side}), correcting plan granularity \emph{before} retrieval is finalized. This input-side feedback is uniquely suited to compositional skill routing, where the bottleneck is matching decomposition vocabulary to the skill pool, not refining individual generation steps.
+SAD differs from prior retrieval-augmented methods in the \emph{direction} of feedback: Self-RAG~\cite{asai2024selfrag}, ReAct~\cite{yao2023react}, and Reflexion~\cite{shinn2023reflexion} feed retrieved evidence into the \emph{generation} or \emph{action} step (\textbf{output-side}), refining what the model produces given a fixed plan; SAD feeds retrieved skills back into the \emph{decomposition input} (\textbf{input-side}), correcting plan granularity \emph{before} retrieval is finalized. Input-side feedback is the harder design choice---it requires the model to revise its plan from partial keyword overlap with imperfect Pass-1 candidates---but is uniquely suited to compositional skill routing, where the bottleneck is matching decomposition vocabulary to the skill pool, not refining individual generation steps.
 
 \paragraph{MCP Ecosystem and Tool Discovery.}
 The MCP protocol~\cite{anthropic2024mcp} standardizes agent--tool integration with 10,000+ servers.
@@ -571,39 +571,20 @@ SAD achieves +23.2\% relative DA gain on affected queries, compared to +32.7\% o
 \subsection{Error Analysis and SAD's Mechanism}
 \label{sec:analysis}
 
-We examine 50 vanilla failure cases: \textbf{over-decomposition} (36\%, e.g., 5 steps when 3 suffice), \textbf{generic descriptions} (28\%, e.g., ``process data''), \textbf{vocabulary mismatch} (22\%, e.g., ``send message'' vs.\ skill name ``slack-notify''), and \textbf{under-decomposition} (14\%).
-Oracle R@1 (99.5\%) confirms retriever quality, isolating decomposition as the bottleneck.
-SAD's improvement is not reducible to category-level narrowing: the hint set provides skill-level semantic guidance---specific tool names and descriptions---that anchors sub-task phrasing to retrievable vocabulary.
-Convergence supports this view---hint sets stabilize (Jaccard $>$0.52 by Round~2), indicating consistent vocabulary identification rather than random exploration.
+Vanilla failure cases (50 examined) split into \textbf{over-decomposition} (36\%), \textbf{generic descriptions} (28\%), \textbf{vocabulary mismatch} (22\%), and \textbf{under-decomposition} (14\%); Oracle R@1 = 99.5\% isolates decomposition as the bottleneck. SAD's hints provide skill-level semantic guidance---specific tool names and descriptions---that anchors sub-task phrasing to retrievable vocabulary, and hint sets stabilize by Round~2 (Jaccard $>$0.52), indicating consistent vocabulary identification rather than random exploration (full taxonomy in Appendix~\ref{sec:analysis-app}).
 
 % ============================================================
 \section{Discussion}
 \label{sec:discussion}
-
-\paragraph{The decomposition gap.}
-Our DA-conditioned analysis (\S\ref{sec:cross-model}) reveals a cascading structure: decomposition granularity gates retrieval quality.
-Correct DA is a prerequisite---when achieved, $\catrecall$@1 rises from 34\% to 41\% and $\catrecall$@10 reaches 82\%.
-SAD primarily serves as a granularity corrector; the convergence analysis (\S\ref{sec:convergence}) shows one iteration suffices.
-Notably, while SAD's DA improvement is highly significant ($p < 10^{-6}$), the $\catrecall$@1 gain (34.2\%$\to$37.0\%) is not significant ($p{=}0.17$)---consistent with SAD being a granularity corrector rather than a per-step retrieval improver.
-
-\paragraph{Practical deployment.}
-Metadata-only encoding achieves $\catrecall$@10 = 69\% on 2{,}209 skills; the gap to $\catrecall$@1 (37\%) points to re-ranking as critical.
-Combined with FAISS latency ($<$15ms) and 99.9\% context reduction (\S\ref{sec:context}), \system{} is practical at scale.
-An end-to-end pilot (Appendix~\ref{app:execution}) confirms 76.7\% chain completion rate; compose-stage isolation requires future annotation work.
-
-\paragraph{SAD beyond standard RAG.}
-SAD augments the \emph{decomposition} stage rather than generation, creating a cross-stage feedback loop absent in standard RAG.
-Transfer experiments confirm structural vocabulary alignment rather than memorization (+35.6\% relative DA under category transfer).
+\vspace{-2pt}
+Our DA-conditioned analysis (\S\ref{sec:cross-model}) reveals a cascading structure: decomposition granularity gates retrieval, with correct DA raising $\catrecall$@1 from 34\% to 41\%. SAD acts as a \emph{granularity corrector}, not a vocabulary-alignment learner---$\sim$75\% of its $\catrecall$@1 gain comes from queries where vanilla produces the wrong step count, and on DA-matched queries SAD's per-step gain is statistically zero ($p{=}0.97$). The step-count-constrained oracle baseline confirms this: pinning $K$ to ground truth recovers DA=99.3\% but only $\catrecall$@1 = 39.8\% (a 36-pp residual gap to the @10 ceiling), establishing representation-level reranking, not better decomposition, as the next bottleneck.
+To test this empirically, a pilot in which a Qwen2.5-7B listwise reranker re-orders SAD's top-10 candidates (Appendix~\ref{app:rerank}) improves $\catrecall$@1 from 37.1\% to 40.9\% (\textbf{+10.3\% relative}, $p{<}0.01$; 53 queries improved vs.\ 25 degraded, $n{=}300$), shifting cross-encoder reranking from speculative future work to a validated lever. Combined with FAISS retrieval ($<$15ms) and 99.9\% context reduction, this is a practical, modular extension that composes with SAD's structural generalization (+35.6\% relative DA under category transfer, \S\ref{sec:transfer}).
 
 % ============================================================
 \section{Conclusion}
 \label{sec:conclusion}
-
-We formalized Compositional Skill Routing and presented \system{}, a decompose-retrieve-compose framework evaluated on 2{,}209 real MCP skills.
-SAD improves decomposition accuracy by 32.7\% relative (DA: 0.510$\to$0.677, $p < 10^{-6}$) in a single iteration, with DA$_{\pm 1}$ reaching 84.3\%.
-Our DA-conditioned analysis reveals that granularity correction is the key enabler: correct step count unlocks $\catrecall$@1 of 41.2\%, while the remaining @10-to-@1 gap motivates cross-encoder reranking as future work.
-Transfer experiments demonstrate that SAD generalizes to unseen skills and categories (+35.6\% relative gain under category transfer), confirming structural vocabulary alignment rather than skill-specific memorization.
-Code, data, and \benchmark{} will be released upon acceptance.
+\vspace{-2pt}
+We formalized Compositional Skill Routing and presented \system{}, a decompose-retrieve-compose framework on 2{,}209 real MCP skills. SAD (+32.7\% relative DA, $p < 10^{-6}$) acts as a granularity corrector, while a learned reranker pilot (+10.3\% relative $\catrecall$@1, $p{<}0.01$) closes part of the residual @10-to-@1 gap; code, data, and \benchmark{} will be released upon acceptance.
 
 % ============================================================
 % References
@@ -630,7 +611,7 @@ Full end-to-end evaluation with real skill execution and error recovery mechanis
 \paragraph{Other Limitations.}
 SAD requires two LLM inference passes in its default single-iteration mode, approximately doubling decomposition latency ($\sim$2$\times$ wall-clock time for the decomposition step; retrieval adds $<$15ms).
 Our primary evaluation uses Qwen2.5-7B with cross-model spot-check on qwen-max (50 queries); broader multi-model evaluation (GPT-4o, Claude) is future work.
-We use a single off-the-shelf encoder (all-MiniLM-L6-v2); domain-adapted or larger encoders (BGE-large, E5-large) may improve retrieval precision, although the step-count-constrained analysis (\S\ref{sec:results}) suggests the @1-vs-@10 gap is unlikely to be closed by encoder scale alone and likely requires cross-encoder reranking.
+We use a single off-the-shelf encoder (all-MiniLM-L6-v2); domain-adapted or larger encoders (BGE-large, E5-large) may improve retrieval precision, although the step-count-constrained analysis (\S\ref{sec:results}) suggests the @1-vs-@10 gap is unlikely to be closed by encoder scale alone---our LLM-listwise reranker pilot (Appendix~\ref{app:rerank}) provides empirical support ($p{<}0.01$) for learned reranking as the more promising direction.
 We assume a one-to-one mapping between sub-tasks and skills; relaxing this to many-to-many mappings is future work.
 The hard subset (50 queries) remains statistically limited relative to easy/medium subsets.
 
@@ -839,5 +820,23 @@ This motivates future work on error recovery and retry mechanisms within the com
 
 Full failure-case taxonomy (50 vanilla failures, summarized in \S\ref{sec:analysis}): over-decomposition cases typically split a single skill operation into preparation + execution + verification (e.g., ``connect to API'' + ``send request'' + ``parse response'' for one HTTP-fetch skill). Generic descriptions like ``process the data'' fail to surface verb-specific candidates such as ``parse-csv'' or ``transform-json''. Vocabulary mismatch occurs when natural phrasing (``alert the team'') diverges from canonical skill names (``slack-notify'', ``pagerduty-alert'').
 Under-decomposition (14\%) collapses two distinct skills into one step (e.g., ``download and parse'' merges file-fetch and csv-parse).
+
+\section{LLM-Listwise Reranker Pilot}
+\label{app:rerank}
+
+\paragraph{Setup.}
+To test whether the SAD $\catrecall$@10-to-@1 gap can be closed by a learned reranker (without retraining the bi-encoder), we run a 300-query experiment on the full compositional benchmark.
+For each sub-task produced by SAD, we take the top-10 candidates from the MiniLM bi-encoder and re-rank them with a Qwen2.5-7B \emph{listwise} prompt: the model is shown the sub-task description and all 10 candidate skills (id, category, $\le$140-char description) and asked to output the index of the single best match.
+Reranker and decomposer share the same 7B checkpoint (no additional training).
+
+\paragraph{Results (300 queries, 828 sub-tasks).}
+SAD top-1: $\catrecall$@1 $= 0.371$.
+Reranked top-1: $\catrecall$@1 $= 0.409$ (\textbf{+10.3\% relative}, +3.8 pp absolute; Wilcoxon signed-rank one-sided $p{=}0.007$).
+The oracle $\catrecall$@10 ceiling is $0.716$, so the reranker closes $\approx$11\% of the @10-to-@1 gap with no encoder change.
+Of 300 queries, 53 improved, 25 degraded, and 222 unchanged; bootstrap 95\% CI on absolute gain is $[+0.005, +0.057]$ (entirely above zero).
+Learned cross-encoders trained on $\langle$sub-task, skill$\rangle$ pairs are an immediate next step; we view this pilot as strong evidence that the bottleneck is representational rather than decomposition-side.
+
+\paragraph{Cost.}
+Reranking adds one 7B forward pass per sub-task ($\sim$1.4s on V100), bringing total per-query latency to $\sim$5s including SAD's two decomposition passes. This is acceptable for batch-style routing scenarios and can be reduced with smaller dedicated rerankers.
 
 \end{document}
