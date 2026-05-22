@@ -1,0 +1,1030 @@
+{
+  "config": {
+    "n_queries": 30,
+    "n_target_categories": 10,
+    "target_categories": [
+      "databases",
+      "search-extraction",
+      "communication",
+      "file-management",
+      "data-processing",
+      "ai-ml",
+      "cloud-infrastructure",
+      "browser-automation",
+      "finance",
+      "developer-tools"
+    ],
+    "model": "Qwen2.5-7B-Instruct",
+    "method": "SAD (H=15)"
+  },
+  "summary": {
+    "step_success_rate": 0.8694444444444444,
+    "chain_completion_rate": 0.7666666666666667,
+    "da": 0.8666666666666667,
+    "avg_predicted_steps": 2.8
+  },
+  "results": [
+    {
+      "query_id": "easy_143",
+      "query": "run a complex SQL query and send the output to track expenses.",
+      "gt_num_skills": 2,
+      "predicted_steps": 4,
+      "da_correct": 0,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "use andywang1688/sql-query-mcp to run a complex SQL query",
+          "skill_selected": "andywang1688/sql-query-mcp",
+          "category": "databases",
+          "success": true,
+          "output": "Query executed successfully. Returned 4 rows."
+        },
+        {
+          "step": 1,
+          "subtask": "extract the output data from the result of the sql query",
+          "skill_selected": "gigamori/mcp-run-sql-connectorx",
+          "category": "databases",
+          "success": true,
+          "output": "Query executed successfully. Returned 95 rows."
+        },
+        {
+          "step": 2,
+          "subtask": "format the extracted data into a suitable structure for expense tracking",
+          "skill_selected": "vdmeu/registrum-mcp",
+          "category": "finance",
+          "success": true,
+          "output": "Transaction processed. Amount: $55.00."
+        },
+        {
+          "step": 3,
+          "subtask": "use sbroenne/mcp-server-excel or shopsavvy/shopsavvy-mcp-server or mckinsey/vizro-mcp to send the formatted data to track expenses",
+          "skill_selected": "sbroenne/mcp-server-excel",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 30 tests passed."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_014",
+      "query": "I need to create a group chat and then extract structured data.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Create a group chat using gotoolkits/wecombot",
+          "skill_selected": "gotoolkits/wecombot",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 26 recipients."
+        },
+        {
+          "step": 1,
+          "subtask": "Use pragmar/mcp-server-webcrawl to extract structured data",
+          "skill_selected": "pragmar/mcp-server-webcrawl",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 76 results from source."
+        }
+      ]
+    },
+    {
+      "query_id": "med_049",
+      "query": "I want to compress the archive, then merge multiple datasets, and finally scrape the website.",
+      "gt_num_skills": 3,
+      "predicted_steps": 3,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "compress the archive using shipitandpray/mcp-compress",
+          "skill_selected": "shipitandpray/mcp-compress",
+          "category": "data-processing",
+          "success": true,
+          "output": "Pipeline completed. Processed 21 records in 3512ms."
+        },
+        {
+          "step": 1,
+          "subtask": "merge multiple datasets using exoticknight/mcp-file-merger",
+          "skill_selected": "exoticknight/mcp-file-merger",
+          "category": "file-management",
+          "success": true,
+          "output": "Processed 28 files (1684KB total)."
+        },
+        {
+          "step": 2,
+          "subtask": "scrape the website using ofershap/mcp-server-scraper",
+          "skill_selected": "scraperapi/scraperapi-mcp",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 13 results from source."
+        }
+      ]
+    },
+    {
+      "query_id": "med_016",
+      "query": "Start by create group chat, process it with extract entities, and extract the zip file the results.",
+      "gt_num_skills": 3,
+      "predicted_steps": 3,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "create group chat using joinly-ai/joinly",
+          "skill_selected": "joinly-ai/joinly",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 6 recipients."
+        },
+        {
+          "step": 1,
+          "subtask": "process group chat with extract entities using chatmcp/mcp-server-chatsum",
+          "skill_selected": "chatmcp/mcp-server-chatsum",
+          "category": "knowledge-management",
+          "success": true,
+          "output": "Completed step 49."
+        },
+        {
+          "step": 2,
+          "subtask": "extract the zip file containing the results using pyroprompts/any-chat-completions-mcp",
+          "skill_selected": "pyroprompts/any-chat-completions-mcp",
+          "category": "integrations",
+          "success": true,
+          "output": "Completed step 81."
+        }
+      ]
+    },
+    {
+      "query_id": "med_068",
+      "query": "I want to post to Slack, then run static analysis, and finally extract page content.",
+      "gt_num_skills": 3,
+      "predicted_steps": 3,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "post message to slack using jtalk22/slack-mcp-server",
+          "skill_selected": "jtalk22/slack-mcp-server",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 9 recipients."
+        },
+        {
+          "step": 1,
+          "subtask": "run static analysis on the website using kimdonghwi94/web-analyzer-mcp",
+          "skill_selected": "kimdonghwi94/web-analyzer-mcp",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 11 results from source."
+        },
+        {
+          "step": 2,
+          "subtask": "extract page content using just-every/mcp-read-website-fast",
+          "skill_selected": "scraperapi/scraperapi-mcp",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 59 results from source."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_111",
+      "query": "Can you help me organize the files and afterwards index the documents?",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Organize files using srclight/srclight",
+          "skill_selected": "srclight/srclight",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 27 tests passed."
+        },
+        {
+          "step": 1,
+          "subtask": "Index documents using cscsoftware/aidex",
+          "skill_selected": "cscsoftware/aidex",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 22 tests passed."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_023",
+      "query": "Can you help me run a complex SQL query and afterwards manage file permissions?",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Use andywang1688/sql-query-mcp to run a complex SQL query",
+          "skill_selected": "andywang1688/sql-query-mcp",
+          "category": "databases",
+          "success": true,
+          "output": "Query executed successfully. Returned 49 rows."
+        },
+        {
+          "step": 1,
+          "subtask": "Use lincolnburrows2017/filesystem-mcp to manage file permissions",
+          "skill_selected": "lincolnburrows2017/filesystem-mcp",
+          "category": "file-management",
+          "success": true,
+          "output": "Processed 42 files (3762KB total)."
+        }
+      ]
+    },
+    {
+      "query_id": "med_029",
+      "query": "First extract entities, next navigate the website, and then create a group chat everything.",
+      "gt_num_skills": 3,
+      "predicted_steps": 3,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "extract entities using wecombot",
+          "skill_selected": "devflowinc/trieve",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 41 results from source."
+        },
+        {
+          "step": 1,
+          "subtask": "navigate the website using kc23go/anybrowse",
+          "skill_selected": "kc23go/anybrowse",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 73 results from source."
+        },
+        {
+          "step": 2,
+          "subtask": "create a group chat using chigwell/telegram-mcp",
+          "skill_selected": "chigwell/telegram-mcp",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 51 recipients."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_135",
+      "query": "I need to process the payment and then set up replication.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Use payclaw/mcp-server to process the payment",
+          "skill_selected": "quentincody/braintree-mcp-server",
+          "category": "finance",
+          "success": true,
+          "output": "Transaction processed. Amount: $32.00."
+        },
+        {
+          "step": 1,
+          "subtask": "Use awkoy/replicate-flux-mcp to set up replication",
+          "skill_selected": "awkoy/replicate-flux-mcp",
+          "category": "integrations",
+          "success": true,
+          "output": "Completed step 75."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_010",
+      "query": "Can you help me export data to CSV and afterwards translate the text?",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Use jordandalton/restcsv-mcp-server to export data to CSV",
+          "skill_selected": "jordandalton/restcsv-mcp-server",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 29 tests passed."
+        },
+        {
+          "step": 1,
+          "subtask": "Use translated/lara-mcp to translate the text",
+          "skill_selected": "translated/lara-mcp",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 97 recipients."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_017",
+      "query": "Take the data from click through the checkout flow and use it to send an email report.",
+      "gt_num_skills": 2,
+      "predicted_steps": 4,
+      "da_correct": 0,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Extract click data from checkout flow",
+          "skill_selected": "clicks-protocol/mcp-server",
+          "category": "finance",
+          "success": true,
+          "output": "Transaction processed. Amount: $21.00."
+        },
+        {
+          "step": 1,
+          "subtask": "Process extracted click data",
+          "skill_selected": "getrupt/ashra-mcp",
+          "category": "browser-automation",
+          "success": true,
+          "output": "Page loaded (4931ms). Extracted 49 elements."
+        },
+        {
+          "step": 2,
+          "subtask": "Generate email report based on processed data",
+          "skill_selected": "davison-francis/min8t-sdks",
+          "category": "marketing-analytics",
+          "success": true,
+          "output": "Completed step 71."
+        },
+        {
+          "step": 3,
+          "subtask": "Use mcp-clickhouse to send email report",
+          "skill_selected": "agentmail-toolkit/mcp",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 69 recipients."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_042",
+      "query": "notify the team and send the output to scale the infrastructure.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "notify the team using cactusinhand/mcp_server_notify",
+          "skill_selected": "cactusinhand/mcp_server_notify",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 56 recipients."
+        },
+        {
+          "step": 1,
+          "subtask": "send the output to scale the infrastructure using inditextech/mcp-teams-server",
+          "skill_selected": "inditextech/mcp-teams-server",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 93 recipients."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_092",
+      "query": "First classify the content, then extract page content with the results.",
+      "gt_num_skills": 2,
+      "predicted_steps": 3,
+      "da_correct": 0,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "use lfnovo/content-core to classify the content",
+          "skill_selected": "lfnovo/content-core",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 65 results from source."
+        },
+        {
+          "step": 1,
+          "subtask": "use just-every/mcp-read-website-fast to extract page content",
+          "skill_selected": "scraperapi/scraperapi-mcp",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 65 results from source."
+        },
+        {
+          "step": 2,
+          "subtask": "use echology-io/decompose to decompose the extracted content",
+          "skill_selected": "echology-io/decompose",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 21 results from source."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_063",
+      "query": "Can you help me compress the archive and afterwards automate browser testing?",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 0.5,
+      "chain_complete": false,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "compress the archive using shipitandpray/mcp-compress",
+          "skill_selected": "shipitandpray/mcp-compress",
+          "category": "data-processing",
+          "success": false,
+          "output": "Schema mismatch: expected 5 columns, got 3"
+        },
+        {
+          "step": 1,
+          "subtask": "automate browser testing using modelcontextprotocol/server-puppeteer",
+          "skill_selected": "modelcontextprotocol/server-puppeteer",
+          "category": "browser-automation",
+          "success": true,
+          "output": "Page loaded (209ms). Extracted 63 elements."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_004",
+      "query": "I need to rename files in bulk and then create a group chat.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 0.5,
+      "chain_complete": false,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "use exoticknight/mcp-file-merger to rename files in bulk",
+          "skill_selected": "exoticknight/mcp-file-merger",
+          "category": "file-management",
+          "success": false,
+          "output": "Permission denied: insufficient access rights"
+        },
+        {
+          "step": 1,
+          "subtask": "use chigwell/telegram-mcp to create a group chat",
+          "skill_selected": "chigwell/telegram-mcp",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 40 recipients."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_039",
+      "query": "First generate API documentation, then notify the team with the results.",
+      "gt_num_skills": 2,
+      "predicted_steps": 12,
+      "da_correct": 0,
+      "step_success_rate": 0.9166666666666666,
+      "chain_complete": false,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "generate API documentation using peter-j-thompson/semanticapi-mcp",
+          "skill_selected": "peter-j-thompson/semanticapi-mcp",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 73 results from source."
+        },
+        {
+          "step": 1,
+          "subtask": "generate API documentation using kadykov/mcp-openapi-schema-explorer",
+          "skill_selected": "kadykov/mcp-openapi-schema-explorer",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 9 tests passed."
+        },
+        {
+          "step": 2,
+          "subtask": "generate API documentation using api7/apisix-mcp",
+          "skill_selected": "api7/apisix-mcp",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 61 tests passed."
+        },
+        {
+          "step": 3,
+          "subtask": "generate API documentation using mrjoshuak/godoc-mcp",
+          "skill_selected": "mrjoshuak/godoc-mcp",
+          "category": "integrations",
+          "success": true,
+          "output": "Completed step 78."
+        },
+        {
+          "step": 4,
+          "subtask": "generate API documentation using flowzap-xyz/flowzap-mcp",
+          "skill_selected": "flowzap-xyz/flowzap-mcp",
+          "category": "developer-tools",
+          "success": false,
+          "output": "Compilation error: syntax error at line 42"
+        },
+        {
+          "step": 5,
+          "subtask": "generate API documentation using softvoyagers/linkmeta-api",
+          "skill_selected": "softvoyagers/linkmeta-api",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 89 results from source."
+        },
+        {
+          "step": 6,
+          "subtask": "generate API documentation using nk3750/jitapi",
+          "skill_selected": "nk3750/jitapi",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 86 tests passed."
+        },
+        {
+          "step": 7,
+          "subtask": "generate API documentation using bbonnin/openapi-to-mcp",
+          "skill_selected": "bbonnin/openapi-to-mcp",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 58 tests passed."
+        },
+        {
+          "step": 8,
+          "subtask": "generate API documentation using yoryocoruxo-ai/rendoc-mcp-server",
+          "skill_selected": "yoryocoruxo-ai/rendoc-mcp-server",
+          "category": "productivity",
+          "success": true,
+          "output": "Completed step 44."
+        },
+        {
+          "step": 9,
+          "subtask": "generate API documentation using kapeli/dash-mcp-server",
+          "skill_selected": "kapeli/dash-mcp-server",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 76 tests passed."
+        },
+        {
+          "step": 10,
+          "subtask": "notify team using inditextech/mcp-teams-server",
+          "skill_selected": "inditextech/mcp-teams-server",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 81 recipients."
+        },
+        {
+          "step": 11,
+          "subtask": "notify team using cloudbet/sports-mcp-server",
+          "skill_selected": "cloudbet/sports-mcp-server",
+          "category": "gaming-entertainment",
+          "success": true,
+          "output": "Completed step 5."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_048",
+      "query": "First translate the text, then parse the HTML content with the results.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "translated/lara-mcp",
+          "skill_selected": "translated/lara-mcp",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 36 recipients."
+        },
+        {
+          "step": 1,
+          "subtask": "kimdonghwi94/web-analyzer-mcp",
+          "skill_selected": "kimdonghwi94/web-analyzer-mcp",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 93 results from source."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_121",
+      "query": "Can you help me translate the text and afterwards migrate the schema?",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Translate the text using transcribe-app/mcp-transcribe",
+          "skill_selected": "transcribe-app/mcp-transcribe",
+          "category": "multimedia",
+          "success": true,
+          "output": "Completed step 61."
+        },
+        {
+          "step": 1,
+          "subtask": "Migrate the schema using schemacrawler/schemacrawler-mcp-server-usage",
+          "skill_selected": "schemacrawler/schemacrawler-mcp-server-usage",
+          "category": "databases",
+          "success": true,
+          "output": "Query executed successfully. Returned 85 rows."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_139",
+      "query": "send an email report and send the output to export data to CSV.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "send an email report using clawaimail/mcp",
+          "skill_selected": "clawaimail/mcp",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 60 recipients."
+        },
+        {
+          "step": 1,
+          "subtask": "export data to CSV using restcsv-mcp-server",
+          "skill_selected": "jordandalton/restcsv-mcp-server",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 94 tests passed."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_054",
+      "query": "Take the data from summarize the document and use it to notify the team.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "summarize the document using 0xshellming/mcp-summarizer",
+          "skill_selected": "0xshellming/mcp-summarizer",
+          "category": "knowledge-management",
+          "success": true,
+          "output": "Completed step 25."
+        },
+        {
+          "step": 1,
+          "subtask": "take the summarized data and use cactusinhand/mcp_server_notify to notify the team",
+          "skill_selected": "cactusinhand/mcp_server_notify",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 24 recipients."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_052",
+      "query": "I need to run a data pipeline and then detect sentiment.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "invoke pipedream to run a data pipeline",
+          "skill_selected": "pipedreamhq/pipedream",
+          "category": "integrations",
+          "success": true,
+          "output": "Completed step 10."
+        },
+        {
+          "step": 1,
+          "subtask": "use blackmount-ai/blackmount-nlp-mcp to detect sentiment",
+          "skill_selected": "blackmount-ai/blackmount-nlp-mcp",
+          "category": "data-processing",
+          "success": true,
+          "output": "Pipeline completed. Processed 84 records in 4478ms."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_089",
+      "query": "Can you help me generate an invoice and afterwards scale the infrastructure?",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 0.0,
+      "chain_complete": false,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Use softvoyagers/fakturka-api to generate an invoice",
+          "skill_selected": "softvoyagers/fakturka-api",
+          "category": "finance",
+          "success": false,
+          "output": "Insufficient funds"
+        },
+        {
+          "step": 1,
+          "subtask": "Scale the infrastructure using one of the available MCP servers such as jasonwilbur/oci-pricing-mcp, yoryocoruxo-ai/rendoc-mcp-server, openstack-kr/python-openstackmcp-server, kukapay/modbus-mcp, mrostamii/rancher-mcp-server, mctlhq/mctl-mcp, antonio-mello-ai/mcp-proxmox, spre-sre/lumino-mcp-server",
+          "skill_selected": "openstack-kr/python-openstackmcp-server",
+          "category": "cloud-infrastructure",
+          "success": false,
+          "output": "Quota exceeded: max instances reached"
+        }
+      ]
+    },
+    {
+      "query_id": "hard_003",
+      "query": "Set up a system to debug the application, automatically extract entities, clean the dataset, then search the web, and query the database.",
+      "gt_num_skills": 5,
+      "predicted_steps": 5,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "jasonjmcghee/claude-debugs-for-you: Debug the application",
+          "skill_selected": "jasonjmcghee/claude-debugs-for-you",
+          "category": "developer-tools",
+          "success": true,
+          "output": "Build completed. 22 tests passed."
+        },
+        {
+          "step": 1,
+          "subtask": "kimdonghwi94/web-analyzer-mcp: Extract entities from the application",
+          "skill_selected": "kimdonghwi94/web-analyzer-mcp",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 52 results from source."
+        },
+        {
+          "step": 2,
+          "subtask": "0xmassi/webclaw: Clean the dataset",
+          "skill_selected": "0xmassi/webclaw",
+          "category": "integrations",
+          "success": true,
+          "output": "Completed step 50."
+        },
+        {
+          "step": 3,
+          "subtask": "free-web-search-ultimate: Search the web",
+          "skill_selected": "wd041216-bit/free-web-search-ultimate",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 90 results from source."
+        },
+        {
+          "step": 4,
+          "subtask": "schemacrawler/schemacrawler-mcp-server-usage: Query the database",
+          "skill_selected": "schemacrawler/schemacrawler-mcp-server-usage",
+          "category": "databases",
+          "success": true,
+          "output": "Query executed successfully. Returned 38 rows."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_040",
+      "query": "extract the zip file and send the output to deploy to the cloud.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "extract the zip file using dumpling-ai/mcp-server-dumplingai",
+          "skill_selected": "dumpling-ai/mcp-server-dumplingai",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 70 results from source."
+        },
+        {
+          "step": 1,
+          "subtask": "upload the extracted files to the cloud using awslabs/mcp",
+          "skill_selected": "awslabs/mcp",
+          "category": "cloud-infrastructure",
+          "success": true,
+          "output": "Resource provisioned: 75 instances running."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_080",
+      "query": "First calculate tax, then find relevant articles with the results.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 0.5,
+      "chain_complete": false,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Use cal-mcp to calculate tax",
+          "skill_selected": "declan142/calcnook-mcp-server",
+          "category": "finance",
+          "success": true,
+          "output": "Transaction processed. Amount: $68.00."
+        },
+        {
+          "step": 1,
+          "subtask": "Use giskard09/giskard-search or leehanchung/bing-search-mcp to find relevant articles with the calculated tax",
+          "skill_selected": "declan142/calcnook-mcp-server",
+          "category": "finance",
+          "success": false,
+          "output": "Insufficient funds"
+        }
+      ]
+    },
+    {
+      "query_id": "med_018",
+      "query": "Start by extract zip file, process it with extract page content, and post to Slack the results.",
+      "gt_num_skills": 3,
+      "predicted_steps": 3,
+      "da_correct": 1,
+      "step_success_rate": 0.6666666666666666,
+      "chain_complete": false,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "extract zip file",
+          "skill_selected": "shipitandpray/mcp-compress",
+          "category": "data-processing",
+          "success": true,
+          "output": "Pipeline completed. Processed 24 records in 611ms."
+        },
+        {
+          "step": 1,
+          "subtask": "process extracted zip file to extract page content",
+          "skill_selected": "kimdonghwi94/web-analyzer-mcp",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 31 results from source."
+        },
+        {
+          "step": 2,
+          "subtask": "post extracted page content to Slack",
+          "skill_selected": "kimdonghwi94/web-analyzer-mcp",
+          "category": "search-extraction",
+          "success": false,
+          "output": "HTTP 429: Rate limit exceeded"
+        }
+      ]
+    },
+    {
+      "query_id": "easy_027",
+      "query": "I need to migrate the schema and then send a notification.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "migrate the schema using schemacrawler/schemacrawler-mcp-server-usage",
+          "skill_selected": "schemacrawler/schemacrawler-mcp-server-usage",
+          "category": "databases",
+          "success": true,
+          "output": "Query executed successfully. Returned 75 rows."
+        },
+        {
+          "step": 1,
+          "subtask": "send a notification using cactusinhand/mcp_server_notify",
+          "skill_selected": "cactusinhand/mcp_server_notify",
+          "category": "communication",
+          "success": true,
+          "output": "Message sent successfully to 54 recipients."
+        }
+      ]
+    },
+    {
+      "query_id": "med_050",
+      "query": "First classify the content, next organize the files, and then profile performance everything.",
+      "gt_num_skills": 3,
+      "predicted_steps": 3,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "classify content using contentful-mcp",
+          "skill_selected": "ivo-toby/contentful-mcp",
+          "category": "integrations",
+          "success": true,
+          "output": "Completed step 34."
+        },
+        {
+          "step": 1,
+          "subtask": "organize files using tactual",
+          "skill_selected": "efforthye/fast-filesystem-mcp",
+          "category": "file-management",
+          "success": true,
+          "output": "Processed 51 files (4925KB total)."
+        },
+        {
+          "step": 2,
+          "subtask": "profile performance using seekrays/mcp-monitor",
+          "skill_selected": "seekrays/mcp-monitor",
+          "category": "monitoring-observability",
+          "success": true,
+          "output": "Completed step 97."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_082",
+      "query": "Can you help me filter outliers and afterwards extract entities?",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 1.0,
+      "chain_complete": true,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Use echology-io/decompose to filter outliers",
+          "skill_selected": "echology-io/decompose",
+          "category": "search-extraction",
+          "success": true,
+          "output": "Extracted 73 results from source."
+        },
+        {
+          "step": 1,
+          "subtask": "Use gpartin/waveguardclient to extract entities",
+          "skill_selected": "gpartin/waveguardclient",
+          "category": "data-processing",
+          "success": true,
+          "output": "Pipeline completed. Processed 65 records in 2222ms."
+        }
+      ]
+    },
+    {
+      "query_id": "easy_094",
+      "query": "Take the data from analyze financial data and use it to extract the zip file.",
+      "gt_num_skills": 2,
+      "predicted_steps": 2,
+      "da_correct": 1,
+      "step_success_rate": 0.0,
+      "chain_complete": false,
+      "steps": [
+        {
+          "step": 0,
+          "subtask": "Use glaksmono/finbud-data-mcp to analyze financial data",
+          "skill_selected": "glaksmono/finbud-data-mcp",
+          "category": "finance",
+          "success": false,
+          "output": "Insufficient funds"
+        },
+        {
+          "step": 1,
+          "subtask": "Use shipitandpray/mcp-compress to extract the zip file",
+          "skill_selected": "shipitandpray/mcp-compress",
+          "category": "data-processing",
+          "success": false,
+          "output": "Schema mismatch: expected 5 columns, got 3"
+        }
+      ]
+    }
+  ]
+}

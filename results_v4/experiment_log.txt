@@ -1,0 +1,110 @@
+======================================================================
+FULL EXPERIMENT SUITE v4 (Real 2209-skill pool)
+======================================================================
+
+Loading skills...
+  Loaded 2209 skills
+  Loaded 300 queries
+
+Building retriever index (2209 skills)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6936.63it/s]
+[1mBertModel LOAD REPORT[0m from: /mnt/workspace/models/sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Batches:   0%|          | 0/35 [00:00<?, ?it/s]Batches:   3%|▎         | 1/35 [00:00<00:13,  2.59it/s]Batches:  11%|█▏        | 4/35 [00:00<00:03,  9.77it/s]Batches:  23%|██▎       | 8/35 [00:00<00:01, 17.51it/s]Batches:  34%|███▍      | 12/35 [00:00<00:00, 23.67it/s]Batches:  49%|████▊     | 17/35 [00:00<00:00, 29.81it/s]Batches:  63%|██████▎   | 22/35 [00:00<00:00, 34.49it/s]Batches:  80%|████████  | 28/35 [00:01<00:00, 40.09it/s]Batches: 100%|██████████| 35/35 [00:01<00:00, 47.98it/s]Batches: 100%|██████████| 35/35 [00:01<00:00, 30.48it/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+  Index built in 15.1s
+
+Loading Qwen2.5-7B-Instruct...
+  Model loaded in 0.0s
+
+======================================================================
+EXPERIMENT 1: Main Results (Vanilla vs SAD)
+======================================================================
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<02:38,  2.14it/s]Loading weights:   1%|          | 2/339 [00:00<01:43,  3.25it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 36.69it/s]Loading weights:   8%|▊         | 28/339 [00:00<00:06, 47.10it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:05, 59.25it/s]Loading weights:  19%|█▉        | 64/339 [00:01<00:03, 91.59it/s]Loading weights:  22%|██▏       | 76/339 [00:01<00:02, 93.84it/s]Loading weights:  26%|██▌       | 88/339 [00:01<00:02, 96.64it/s]Loading weights:  29%|██▉       | 100/339 [00:01<00:02, 99.23it/s]Loading weights:  33%|███▎      | 112/339 [00:01<00:02, 101.43it/s]Loading weights:  37%|███▋      | 124/339 [00:01<00:02, 92.21it/s] Loading weights:  43%|████▎     | 146/339 [00:01<00:01, 109.05it/s]Loading weights:  47%|████▋     | 160/339 [00:02<00:01, 102.71it/s]Loading weights:  51%|█████     | 172/339 [00:02<00:01, 105.23it/s]Loading weights:  54%|█████▍    | 184/339 [00:02<00:01, 90.16it/s] Loading weights:  61%|██████▏   | 208/339 [00:02<00:01, 110.62it/s]Loading weights:  65%|██████▍   | 220/339 [00:02<00:01, 109.45it/s]Loading weights:  68%|██████▊   | 232/339 [00:02<00:00, 108.21it/s]Loading weights:  72%|███████▏  | 244/339 [00:02<00:00, 106.32it/s]Loading weights:  76%|███████▌  | 256/339 [00:03<00:00, 107.70it/s]Loading weights:  79%|███████▉  | 268/339 [00:03<00:00, 105.84it/s]Loading weights:  83%|████████▎ | 280/339 [00:03<00:00, 105.61it/s]Loading weights:  86%|████████▌ | 292/339 [00:03<00:00, 105.29it/s]Loading weights:  90%|████████▉ | 304/339 [00:03<00:00, 99.16it/s] Loading weights:  93%|█████████▎| 316/339 [00:03<00:00, 100.71it/s]Loading weights:  97%|█████████▋| 328/339 [00:03<00:00, 95.79it/s] Loading weights: 100%|██████████| 339/339 [00:03<00:00, 90.17it/s]
+  Progress: 50/300
+  Progress: 100/300
+  Progress: 150/300
+  Progress: 200/300
+  Progress: 250/300
+  Progress: 300/300
+
+  MAIN RESULTS SUMMARY:
+  VANILLA : DA=0.510, CatR@1=0.342, CatR@10=0.686, Chain_cat=0.040, avg_subtasks=4.09
+  SAD     : DA=0.677, CatR@1=0.370, CatR@10=0.703, Chain_cat=0.073, avg_subtasks=3.34
+
+  BY DIFFICULTY:
+  easy     vanilla : DA=0.447, CatR@1=0.357 (n=150)
+  easy     sad     : DA=0.633, CatR@1=0.413 (n=150)
+  medium   vanilla : DA=0.660, CatR@1=0.337 (n=100)
+  medium   sad     : DA=0.780, CatR@1=0.320 (n=100)
+  hard     vanilla : DA=0.400, CatR@1=0.307 (n=50)
+  hard     sad     : DA=0.600, CatR@1=0.340 (n=50)
+
+  Saved to /mnt/workspace/skill-research/results_v4/main_results_v4.json
+
+======================================================================
+EXPERIMENT 2: Iterative SAD Convergence
+======================================================================
+  Progress: 50/300
+  Progress: 100/300
+  Progress: 150/300
+  Progress: 200/300
+  Progress: 250/300
+  Progress: 300/300
+
+  CONVERGENCE RESULTS:
+  Round 0 (Vanilla ): DA=0.513, CatR@1=0.351, CatR@10=0.690, Chain=0.040, Jaccard=0.000
+  Round 1 (SAD-1   ): DA=0.670, CatR@1=0.370, CatR@10=0.704, Chain=0.060, Jaccard=0.324
+  Round 2 (SAD-2   ): DA=0.653, CatR@1=0.389, CatR@10=0.690, Chain=0.073, Jaccard=0.473
+  Round 3 (SAD-3   ): DA=0.653, CatR@1=0.361, CatR@10=0.695, Chain=0.077, Jaccard=0.524
+
+  Saved to /mnt/workspace/skill-research/results_v4/convergence_v4.json
+
+======================================================================
+EXPERIMENT 3: Generalization / Transfer
+======================================================================
+  Total categories: 24
+
+  --- Leave-2-Categories-Out ---
+  Held-out categories: ['security', 'code-execution']
+  Train skills: 2018, Test queries: 62
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5861.62it/s]
+[1mBertModel LOAD REPORT[0m from: /mnt/workspace/models/sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Batches:   0%|          | 0/32 [00:00<?, ?it/s]Batches:   9%|▉         | 3/32 [00:00<00:01, 23.07it/s]Batches:  22%|██▏       | 7/32 [00:00<00:00, 30.43it/s]Batches:  38%|███▊      | 12/32 [00:00<00:00, 35.22it/s]Batches:  53%|█████▎    | 17/32 [00:00<00:00, 38.79it/s]Batches:  69%|██████▉   | 22/32 [00:00<00:00, 41.31it/s]Batches:  88%|████████▊ | 28/32 [00:00<00:00, 46.96it/s]Batches: 100%|██████████| 32/32 [00:00<00:00, 43.25it/s]
+  Transfer (L2CO) - Vanilla: DA=0.452, CatR@1=0.195
+  Transfer (L2CO) - SAD:     DA=0.613, CatR@1=0.213
+
+  --- 80/20 Skill Split ---
+  Train skills: 1767, Test skills: 442
+  Test queries (involve held-out skills): 139
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5606.85it/s]
+[1mBertModel LOAD REPORT[0m from: /mnt/workspace/models/sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Batches:   0%|          | 0/28 [00:00<?, ?it/s]Batches:  11%|█         | 3/28 [00:00<00:00, 25.03it/s]Batches:  25%|██▌       | 7/28 [00:00<00:00, 31.97it/s]Batches:  43%|████▎     | 12/28 [00:00<00:00, 36.75it/s]Batches:  61%|██████    | 17/28 [00:00<00:00, 39.86it/s]Batches:  82%|████████▏ | 23/28 [00:00<00:00, 44.65it/s]Batches: 100%|██████████| 28/28 [00:00<00:00, 43.63it/s]
+  Split (80/20) - Vanilla: DA=0.560, CatR@1=0.348
+  Split (80/20) - SAD:     DA=0.690, CatR@1=0.366
+
+  Saved to /mnt/workspace/skill-research/results_v4/transfer_v4.json
+
+======================================================================
+ALL EXPERIMENTS COMPLETE
+======================================================================
+Results saved to: /mnt/workspace/skill-research/results_v4/
+
+Summary saved to /mnt/workspace/skill-research/results_v4/summary_v4.json

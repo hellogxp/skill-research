@@ -1,0 +1,870 @@
+{
+  "n_queries": 50,
+  "original_vanilla": [
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.4
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.2
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    }
+  ],
+  "original_sad": [
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.2
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.25
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.2
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.4
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.75
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    }
+  ],
+  "paraphrase_vanilla": [
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.4
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.2
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.2
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.25
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    }
+  ],
+  "paraphrase_sad": [
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.2
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 1.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 1,
+      "cr1": 0.25
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.2
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.3333333333333333
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 0,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    },
+    {
+      "da": 1,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 0,
+      "cr1": 0.0
+    },
+    {
+      "da": 1,
+      "cr1": 0.6666666666666666
+    },
+    {
+      "da": 1,
+      "cr1": 0.5
+    }
+  ],
+  "paraphrased_queries": [
+    "Produce marketing reports initially, and subsequently use the findings to compress media files.",
+    "Establish a workflow: first, set up new servers; next, verify that they meet compliance standards; simultaneously, compile a list of tasks; and lastly, produce thumbnails.",
+    "First, I have to inform the team, and afterwards, gather the game statistics.",
+    "I must secure the information and subsequently revise the documentation.",
+    "Initiate by extracting data from the website, then run the test suite, and finally produce a report of the outcomes.",
+    "Extract data from the website, input the findings into the shipment tracking system, and finally compute the tax.",
+    "Assist me in automating the process, transforming the document format for analysis, and subsequently querying PubMed.",
+    "Extract the key points from the document and share them with the team.",
+    "Connect the two systems, evaluate the output for error rates, and then search for pertinent articles.",
+    "Retrieve the stock prices and subsequently examine the contract.",
+    "Organize a meeting, subsequently illustrate the molecular compositions, and in the end, transfer the schema.",
+    "Develop an automated system: initially categorize the material, subsequently inspect security headers, afterwards handle the transaction, and finally search scientific databases.",
+    "Initially ensure the data's integrity, subsequently use the findings to mechanize the process.",
+    "Develop an automated process: start by examining the campaign's performance data, proceed to illustrate the molecular configurations, afterwards arrange a meeting, and finally assess the piece of code.",
+    "Initially, track the system's availability, subsequently parse through the documentation, and finally produce all the game content.",
+    "Verify the security headers and transmit the results to execute a sophisticated SQL query.",
+    "Establish a mechanism for verifying the integrity of the data, implement automatic cloud deployment, examine the match information, proceed with data encryption, and monitor the shipment progress.",
+    "Could you assist with consolidating the metrics and then setting up the workflow automation?",
+    "Utilize the extracted audio data from the video to evaluate the function's performance.",
+    "Utilize the summarized document data for the analysis of experimental outcomes.",
+    "Could you assist me in first integrating with the platform, then unzipping the file?",
+    "check compliance, integrate the findings to refine advertising expenses, and finalize with cloud deployment.",
+    "Start by transferring the schema, proceed to remove anomalies, and finally pack all files.",
+    "Monitor the shipment progress, configure duplication subsequently, and finally convert all text.",
+    "Could you assess the provided code and then compile a list of tasks?",
+    "First, I need to consolidate the metrics, after that, decompress the zip archive, and in the end, update the API keys by rotating them.",
+    "I have to integrate the two systems and subsequently categorize the content.",
+    "Set up the load balancer and direct its output to search PubMed.",
+    "Utilize the information to set up new servers and inform the team.",
+    "Begin by removing anomalies, then modify the spreadsheet accordingly, and finally set up new servers for the outcomes.",
+    "Initially integrate the two systems, subsequently use the outcome to catalog research papers.",
+    "Initially, handle the game inventory, subsequently look up information on PubMed, and finally set up automated testing for the browser.",
+    "Could you assist in archiving the files into a compressed format, then set up an automated process for testing the browser?",
+    "Monitor the shipment progress, categorize the items, and subsequently dispatch an email summarizing all details.",
+    "convert the data into CSV format, then forward the result for code evaluation",
+    "Oversee the game's inventory and then forward the results for content classification.",
+    "First, I need to share a message on Slack, after that, execute a static analysis, and in the end, pull out the content from the page.",
+    "After modifying the spreadsheet, proceed to create the API documentation based on those updates.",
+    "Begin by isolating the audio from the video, then examine it alongside legal documents, and finally, arrange the resulting files.",
+    "Could you assist me in scraping the documentation and then launching it on the cloud?",
+    "Assist me with monitoring the time used, managing the generated files, computing the delivery expenses, and revising the documentation with the outcomes.",
+    "Initiate with computing the tax, then transition the schema, and finally extract the pertinent context from the outcomes.",
+    "Utilize the information retrieved from PubMed to execute a data processing pipeline.",
+    "Gather the metrics first, then locate pertinent articles, and finally establish the CI/CD pipeline.",
+    "First, I have to create an invoice, and subsequently, proceed through the checkout process.",
+    "Could you assist me with identifying the sentiment and then figuring out the path?",
+    "Begin by securing the information, then create a summary of the text, and finally evaluate the efficiency of the queries.",
+    "Begin by querying PubMed, subsequently cycle through the API keys using the obtained data.",
+    "Begin with reviewing access permissions, then divide the audience into segments, and finally retrieve the stock prices.",
+    "track system availability and forward the findings for experimental analysis."
+  ],
+  "summary": {
+    "orig_vanilla_DA": 0.48,
+    "orig_sad_DA": 0.74,
+    "para_vanilla_DA": 0.4,
+    "para_sad_DA": 0.62,
+    "da_agreement": 0.72
+  }
+}
