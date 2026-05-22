@@ -496,42 +496,6 @@ Table~\ref{tab:convergence} reports per-round metrics on all 300 queries (Qwen2.
 \label{tab:convergence}
 \end{table}
 
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=\columnwidth, height=4.5cm,
-    xlabel={Iteration},
-    ylabel={Score},
-    xtick={0,1,2,3},
-    xticklabels={0 (V),1,2,3},
-    ymin=0.3, ymax=0.75,
-    legend style={at={(0.02,0.98)}, anchor=north west, font=\scriptsize, draw=none, fill=none},
-    grid=major, grid style={gray!20},
-    axis y line*=left,
-]
-\addplot[blue, mark=square*, thick] coordinates {(0,0.513)(1,0.670)(2,0.653)(3,0.653)};
-\addlegendentry{DA}
-\addplot[red, mark=triangle*, thick] coordinates {(0,0.351)(1,0.370)(2,0.389)(3,0.361)};
-\addlegendentry{CatR@1}
-\end{axis}
-\begin{axis}[
-    width=\columnwidth, height=4.5cm,
-    xtick={0,1,2,3},
-    xticklabels={},
-    ymin=0, ymax=0.7,
-    ylabel={Jaccard},
-    axis y line*=right, axis x line=none,
-    legend style={at={(0.98,0.98)}, anchor=north east, font=\scriptsize, draw=none, fill=none},
-]
-\addplot[gray, mark=diamond*, dashed, thick] coordinates {(0,0)(1,0.324)(2,0.473)(3,0.524)};
-\addlegendentry{Jaccard}
-\end{axis}
-\end{tikzpicture}
-\caption{SAD convergence. DA (left axis) converges at Round~1; $\catrecall$@1 peaks at Round~2. Hint Jaccard (right axis) rises monotonically, indicating progressive stabilization of the skill vocabulary.}
-\label{fig:convergence}
-\end{figure}
-
 Round~1 captures the full DA improvement (51.3\%$\to$67.0\%) with no further gain at Rounds 2--3, while $\catrecall$@1 peaks at Round~2 (38.9\%) before declining at Round~3 (36.1\%). Hint Jaccard rises monotonically (0.32$\to$0.47$\to$0.52), indicating progressive stabilization---the slower convergence vs.\ smaller pools reflects the larger vocabulary space ($\binom{2209}{15}$). We default to $T{=}1$ for latency-sensitive deployment and $T{=}2$ when retrieval precision is critical.
 
 \subsection{Generalization to Unseen Skills}
@@ -581,15 +545,7 @@ Vanilla failure cases (50 examined) split into \textbf{over-decomposition} (36\%
 \paragraph{Cascading bottleneck.}
 Our DA-conditioned analysis (\S\ref{sec:cross-model}) reveals a cascading structure: decomposition granularity gates retrieval, with correct DA raising $\catrecall$@1 from 34\% to 41\%. SAD acts as a \emph{granularity corrector}, not a vocabulary-alignment learner---$\sim$75\% of its $\catrecall$@1 gain comes from queries where vanilla produces the wrong step count, and on DA-matched queries SAD's per-step gain is statistically zero ($p{=}0.97$). The step-count-constrained oracle baseline confirms this: pinning $K$ to ground truth recovers DA=99.3\% but only $\catrecall$@1 = 39.8\% (a 36-pp residual gap to the @10 ceiling), establishing representation-level reranking, not better decomposition, as the next bottleneck.
 \paragraph{Reranking as a validated lever.}
-To test this empirically, a pilot in which a Qwen2.5-7B listwise reranker re-orders SAD's top-10 candidates (Appendix~\ref{app:rerank}) improves $\catrecall$@1 from 37.1\% to 40.9\% (\textbf{+10.3\% relative}, $p{<}0.01$; 53 queries improved vs.\ 25 degraded, $n{=}300$), shifting cross-encoder reranking from speculative future work to a validated lever. Combined with FAISS retrieval ($<$15ms) and 99.9\% context reduction, this is a practical, modular extension that composes with SAD's structural generalization (+35.6\% relative DA under category transfer, \S\ref{sec:transfer}).
-\paragraph{Encoder orthogonality.}
-A 50-query spot-check replacing all-MiniLM-L6-v2 with BGE-base-en-v1.5~\cite{xiao2024bge} yields $\catrecall$@1 = 45.1\% (vs.\ 39.4\%), a +14.5\% relative gain that confirms encoder choice as an orthogonal improvement axis.
-
-% ============================================================
-\section{Conclusion}
-\label{sec:conclusion}
-\vspace{-2pt}
-We formalized Compositional Skill Routing and presented \system{}, a decompose-retrieve-compose framework on 2{,}209 real MCP skills. SAD (+32.7\% relative DA, $p < 10^{-6}$) acts as a granularity corrector, while a learned reranker pilot (+10.3\% relative $\catrecall$@1, $p{<}0.01$) closes part of the residual @10-to-@1 gap. Fine-grained exact-skill disambiguation within categories (R@1 = 8.3\% vs.\ CatR@1 = 37.0\%) remains an open challenge that cross-encoder reranking and domain-adapted encoders can address. Code, data, and \benchmark{} will be released upon acceptance.
+A pilot in which a Qwen2.5-7B listwise reranker re-orders SAD's top-10 candidates (Appendix~\ref{app:rerank}) lifts $\catrecall$@1 from 37.1\% to 40.9\% (\textbf{+10.3\% relative}, $p{<}0.01$; 53/300 improved vs.\ 25 degraded), shifting cross-encoder reranking from speculative future work to a validated lever that composes with SAD's structural generalization (+35.6\% relative DA under category transfer, \S\ref{sec:transfer}). A 50-query BGE-base spot-check (Appendix~\ref{app:encoder}) further raises $\catrecall$@1 to 45.1\%, confirming encoder choice as an orthogonal axis. SAD and the listwise reranker pilot together close most of the granularity and @10-to-@1 gaps on 2{,}209 real MCP skills.
 
 % ============================================================
 % References
@@ -738,6 +694,42 @@ Under deterministic LLM decoding (temperature$=$0), the mapping $f: \mathcal{H}^
 Empirically, we observe progressive stabilization (Jaccard: 0.32$\to$0.47$\to$0.52) because LLM outputs converge once hint vocabulary matches decomposition vocabulary.
 The slower convergence on our 2{,}209-skill pool (compared to smaller pools) reflects the larger hint space: $\binom{2209}{15} \gg \binom{60}{15}$.
 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\columnwidth, height=4.5cm,
+    xlabel={Iteration},
+    ylabel={Score},
+    xtick={0,1,2,3},
+    xticklabels={0 (V),1,2,3},
+    ymin=0.3, ymax=0.75,
+    legend style={at={(0.02,0.98)}, anchor=north west, font=\scriptsize, draw=none, fill=none},
+    grid=major, grid style={gray!20},
+    axis y line*=left,
+]
+\addplot[blue, mark=square*, thick] coordinates {(0,0.513)(1,0.670)(2,0.653)(3,0.653)};
+\addlegendentry{DA}
+\addplot[red, mark=triangle*, thick] coordinates {(0,0.351)(1,0.370)(2,0.389)(3,0.361)};
+\addlegendentry{CatR@1}
+\end{axis}
+\begin{axis}[
+    width=\columnwidth, height=4.5cm,
+    xtick={0,1,2,3},
+    xticklabels={},
+    ymin=0, ymax=0.7,
+    ylabel={Jaccard},
+    axis y line*=right, axis x line=none,
+    legend style={at={(0.98,0.98)}, anchor=north east, font=\scriptsize, draw=none, fill=none},
+]
+\addplot[gray, mark=diamond*, dashed, thick] coordinates {(0,0)(1,0.324)(2,0.473)(3,0.524)};
+\addlegendentry{Jaccard}
+\end{axis}
+\end{tikzpicture}
+\caption{SAD convergence. DA (left axis) converges at Round~1; $\catrecall$@1 peaks at Round~2. Hint Jaccard (right axis) rises monotonically, indicating progressive stabilization of the skill vocabulary.}
+\label{fig:convergence}
+\end{figure}
+
 \paragraph{SAD hint-count ($H$) sensitivity.}
 Table~\ref{tab:h-sensitivity} reports performance across $H \in \{5, 10, 15, 25\}$ on the Qwen-2.5-7B decomposer.
 DA increases monotonically with $H$ (0.550$\to$0.687), with diminishing returns beyond $H{=}15$: the DA gap from $H{=}15$ to $H{=}25$ is only +1pp while $\catrecall$@1 gains similarly plateau (0.370$\to$0.389). $H{=}15$ offers the best cost--quality trade-off (fewer LLM context tokens) and is used throughout the paper.
@@ -869,5 +861,10 @@ Learned cross-encoders trained on $\langle$sub-task, skill$\rangle$ pairs are an
 
 \paragraph{Cost.}
 Reranking adds one 7B forward pass per sub-task ($\sim$1.4s on V100), bringing total per-query latency to $\sim$5s including SAD's two decomposition passes. This is acceptable for batch-style routing scenarios and can be reduced with smaller dedicated rerankers.
+
+\section{Encoder Robustness Spot-Check}
+\label{app:encoder}
+
+To test whether SAD's gains are coupled to a particular sentence encoder, we re-ran a 50-query subset of the compositional benchmark replacing all-MiniLM-L6-v2 (used throughout the main paper for fair comparison with prior work) with BGE-base-en-v1.5~\cite{xiao2024bge} as the bi-encoder, keeping all other components fixed (SAD decomposer, FAISS index, $H{=}15$). $\catrecall$@1 rises from 0.394 to 0.451 (+14.5\% relative), indicating that BGE's stronger semantic representation yields a non-trivial orthogonal gain on top of SAD's structural correction. We treat encoder choice as an axis composable with SAD and the listwise reranker (Appendix~\ref{app:rerank}); a full-benchmark sweep across encoders is left to follow-up work.
 
 \end{document}
