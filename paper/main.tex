@@ -482,6 +482,8 @@ Table~\ref{tab:convergence} reports per-round metrics on all 300 queries (Qwen2.
 \begin{table}[t]
 \centering
 \small
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lccccc@{}}
 \toprule
 \textbf{Round} & \textbf{DA} & $\catrecall$\textbf{@1} & $\catrecall$\textbf{@10} & $\chaincat$ & \textbf{Jaccard} \\
@@ -491,7 +493,8 @@ Table~\ref{tab:convergence} reports per-round metrics on all 300 queries (Qwen2.
 2 (SAD-2)    & 0.653 & 0.389 & 0.690 & 0.073 & 0.473 \\
 3 (SAD-3)    & 0.653 & 0.361 & 0.695 & 0.077 & 0.524 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \caption{Iterative SAD convergence (7B, $H{=}15$, $n{=}300$, 2{,}209 skills). Minor discrepancies with Table~\ref{tab:main} (e.g., Round~0 DA=0.513 vs.\ 0.510) arise from step-alignment differences in the iterative pipeline; Table~\ref{tab:main} is authoritative. Round~1 captures the majority of DA gain. Hint Jaccard rises monotonically, indicating progressive stabilization. DA plateaus after Round~1 while $\catrecall$@1 peaks at Round~2, suggesting one iteration suffices for DA with optional second for retrieval precision.}
 \label{tab:convergence}
 \end{table}
@@ -506,6 +509,8 @@ To test whether SAD overfits to the specific skill pool, we evaluate under two h
 \begin{table}[t]
 \centering
 \small
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}llccc@{}}
 \toprule
 \textbf{Condition} & \textbf{Mode} & \textbf{DA} & $\catrecall$\textbf{@1} & \textbf{$\Delta$ DA rel.} \\
@@ -522,7 +527,8 @@ Reduced pool ($n{=}62$) & +SAD & 0.613 & 0.213 & +35.6\% \\
 Full pool ($n{=}300$) & Vanilla & 0.510 & 0.342 & --- \\
 Full pool ($n{=}300$) & +SAD & 0.677 & 0.370 & +32.7\% \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \caption{Transfer experiment (7B, $H{=}15$, 2{,}209 skills). SAD improves routing even when target skills or categories are absent from the retrieval pool. Under category-level held-out (2/24 categories removed, 2{,}018 train skills), SAD achieves +35.6\% relative DA gain. Under random skill held-out (442/2{,}209 removed), the gain is +23.2\%, confirming that SAD's vocabulary guidance generalizes beyond the specific skill pool.}
 \label{tab:transfer}
 \end{table}
@@ -592,6 +598,8 @@ To validate that SAD generalizes beyond template-generated queries, we evaluate 
 \begin{table}[t]
 \centering
 \small
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{llccccc}
 \toprule
 \textbf{Mode} & \textbf{Difficulty} & \textbf{Pred} & \textbf{DA} & \textbf{DA$_{\pm 1}$} & $\catrecall$\textbf{@1} & $\catrecall$\textbf{@10} \\
@@ -604,7 +612,8 @@ To validate that SAD generalizes beyond template-generated queries, we evaluate 
 & Medium (GT=3.0) & 3.21 & 0.350 & 0.625 & 0.338 & 0.646 \\
 & Hard (GT=4.4) & 4.18 & 0.150 & 0.475 & 0.173 & 0.435 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \caption{SAD on human-style queries (200 queries, zero text overlap with skill pool). \textbf{Pred}: average predicted step count (GT: ground-truth mean). DA$_{\pm 1}$: relaxed decomposition accuracy allowing $\pm$1 step tolerance. Strict DA is low (8.5\%$\to$21.5\%) because the model over-decomposes (e.g., Easy: pred=4.21 vs GT=2.0); under relaxed DA$_{\pm 1}$, performance rises substantially (30.5\%$\to$50.5\%, +66\% relative), indicating that SAD correctly identifies approximate granularity even when exact step count is debatable.}
 \label{tab:human}
 \end{table}
@@ -656,6 +665,8 @@ developer-tools, finance, integrations, knowledge-management, search-extraction,
 \begin{table}[h]
 \centering
 \small
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lrccc@{}}
 \toprule
 \textbf{Category} & $n$ & \textbf{$\Delta$DA} & \textbf{V CatR@1} & \textbf{S CatR@1} \\
@@ -672,7 +683,8 @@ communication & 42 & +0.190 & 0.413 & 0.438 \\
 multimedia & 33 & +0.091 & 0.256 & 0.418 \\
 ai-ml & 54 & +0.019 & 0.239 & 0.254 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \caption{Per-category SAD improvement (top 11 categories by query count, sorted by $\Delta$DA). SAD improves DA across all categories; the largest gains occur in categories with complex multi-step workflows (marketing, data-processing, cloud).}
 \end{table}
 
