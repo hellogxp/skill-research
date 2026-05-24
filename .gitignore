@@ -88,6 +88,7 @@ providers.json
 # Logs
 logs/
 *.log
+!results_v3/*.log
 
 # vibe coding
 AGENTS.md

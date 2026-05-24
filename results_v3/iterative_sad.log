@@ -1,0 +1,92 @@
+2026-05-16 13:07:18,263 [INFO] === Iterative SAD Convergence Experiment ===
+2026-05-16 13:07:18,264 [INFO] Loaded 60 skills
+2026-05-16 13:07:18,270 [INFO] Loaded 300 queries
+2026-05-16 13:07:18,270 [INFO] Building retriever index...
+2026-05-16 13:07:18,278 [INFO] Loading faiss with AVX512 support.
+2026-05-16 13:07:18,304 [INFO] Successfully loaded faiss with AVX512 support.
+2026-05-16 13:07:23,382 [INFO] Cannot reach huggingface.co, switching to mirror: https://hf-mirror.com
+2026-05-16 13:07:30,826 [INFO] Loading encoder: /mnt/workspace/models/sentence-transformers/all-MiniLM-L6-v2
+2026-05-16 13:07:31,271 [INFO] No device provided, using cuda:0
+2026-05-16 13:07:31,271 [INFO] Loading SentenceTransformer model from /mnt/workspace/models/sentence-transformers/all-MiniLM-L6-v2.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6942.09it/s]
+[1mBertModel LOAD REPORT[0m from: /mnt/workspace/models/sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-05-16 13:07:31,883 [INFO] Encoding 60 skills (use_body=False)...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.97it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.96it/s]
+2026-05-16 13:07:32,224 [INFO] Index built: 60 skills, dim=384
+2026-05-16 13:07:32,224 [INFO] Retriever ready.
+2026-05-16 13:07:32,224 [INFO] Loading decomposer (7B)...
+2026-05-16 13:07:32,224 [INFO] Decomposer ready.
+2026-05-16 13:07:32,224 [INFO] Loading local model: /mnt/workspace/models/Qwen/Qwen2.5-7B-Instruct
+2026-05-16 13:07:32,716 [INFO] Model ~10.8GB, 8 GPUs = 126.1GB total
+2026-05-16 13:07:32,716 [INFO] Strategy: single-GPU direct placement (cuda:0)
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<03:26,  1.63it/s]Loading weights:   5%|▌         | 17/339 [00:00<00:10, 30.65it/s]Loading weights:   8%|▊         | 28/339 [00:00<00:07, 42.87it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 60.16it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 73.36it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 81.77it/s]Loading weights:  23%|██▎       | 77/339 [00:01<00:03, 74.77it/s]Loading weights:  29%|██▉       | 99/339 [00:01<00:02, 107.43it/s]Loading weights:  33%|███▎      | 112/339 [00:01<00:03, 72.59it/s]Loading weights:  37%|███▋      | 125/339 [00:01<00:02, 77.24it/s]Loading weights:  40%|████      | 136/339 [00:02<00:02, 83.57it/s]Loading weights:  44%|████▎     | 148/339 [00:02<00:02, 83.35it/s]Loading weights:  47%|████▋     | 161/339 [00:02<00:01, 93.31it/s]Loading weights:  51%|█████     | 172/339 [00:02<00:01, 92.67it/s]Loading weights:  54%|█████▍    | 184/339 [00:02<00:01, 94.96it/s]Loading weights:  58%|█████▊    | 196/339 [00:02<00:01, 97.55it/s]Loading weights:  61%|██████▏   | 208/339 [00:02<00:01, 93.07it/s]Loading weights:  65%|██████▍   | 220/339 [00:02<00:01, 92.45it/s]Loading weights:  68%|██████▊   | 232/339 [00:03<00:01, 85.42it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:01, 89.57it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 95.21it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 97.92it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 99.26it/s]Loading weights:  86%|████████▋ | 293/339 [00:03<00:00, 98.86it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 101.45it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 103.92it/s]Loading weights:  97%|█████████▋| 329/339 [00:04<00:00, 101.78it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 83.86it/s] 
+2026-05-16 13:07:37,299 [INFO] Model loaded on GPU (direct placement)
+2026-05-16 13:09:25,196 [INFO]   Q30 | R0: DA=0.033 CatR@1=0.567 J=0.000
+2026-05-16 13:09:25,196 [INFO]   Q30 | R1: DA=0.500 CatR@1=0.783 J=0.532
+2026-05-16 13:09:25,197 [INFO]   Q30 | R2: DA=0.500 CatR@1=0.783 J=0.827
+2026-05-16 13:09:25,197 [INFO]   Q30 | R3: DA=0.533 CatR@1=0.783 J=0.915
+2026-05-16 13:11:32,693 [INFO]   Q60 | R0: DA=0.033 CatR@1=0.575 J=0.000
+2026-05-16 13:11:32,694 [INFO]   Q60 | R1: DA=0.433 CatR@1=0.800 J=0.513
+2026-05-16 13:11:32,694 [INFO]   Q60 | R2: DA=0.433 CatR@1=0.775 J=0.859
+2026-05-16 13:11:32,694 [INFO]   Q60 | R3: DA=0.450 CatR@1=0.783 J=0.904
+2026-05-16 13:13:30,782 [INFO]   Q90 | R0: DA=0.044 CatR@1=0.567 J=0.000
+2026-05-16 13:13:30,782 [INFO]   Q90 | R1: DA=0.456 CatR@1=0.794 J=0.515
+2026-05-16 13:13:30,782 [INFO]   Q90 | R2: DA=0.467 CatR@1=0.794 J=0.868
+2026-05-16 13:13:30,782 [INFO]   Q90 | R3: DA=0.489 CatR@1=0.806 J=0.910
+2026-05-16 13:15:42,751 [INFO]   Q120 | R0: DA=0.033 CatR@1=0.558 J=0.000
+2026-05-16 13:15:42,751 [INFO]   Q120 | R1: DA=0.433 CatR@1=0.779 J=0.527
+2026-05-16 13:15:42,751 [INFO]   Q120 | R2: DA=0.433 CatR@1=0.767 J=0.860
+2026-05-16 13:15:42,751 [INFO]   Q120 | R3: DA=0.450 CatR@1=0.787 J=0.915
+2026-05-16 13:17:47,107 [INFO]   Q150 | R0: DA=0.033 CatR@1=0.570 J=0.000
+2026-05-16 13:17:47,108 [INFO]   Q150 | R1: DA=0.447 CatR@1=0.793 J=0.518
+2026-05-16 13:17:47,108 [INFO]   Q150 | R2: DA=0.467 CatR@1=0.780 J=0.850
+2026-05-16 13:17:47,108 [INFO]   Q150 | R3: DA=0.487 CatR@1=0.800 J=0.911
+2026-05-16 13:20:29,231 [INFO]   Q180 | R0: DA=0.033 CatR@1=0.553 J=0.000
+2026-05-16 13:20:29,232 [INFO]   Q180 | R1: DA=0.450 CatR@1=0.789 J=0.525
+2026-05-16 13:20:29,232 [INFO]   Q180 | R2: DA=0.489 CatR@1=0.780 J=0.848
+2026-05-16 13:20:29,232 [INFO]   Q180 | R3: DA=0.494 CatR@1=0.794 J=0.905
+2026-05-16 13:23:21,950 [INFO]   Q210 | R0: DA=0.029 CatR@1=0.540 J=0.000
+2026-05-16 13:23:21,951 [INFO]   Q210 | R1: DA=0.457 CatR@1=0.781 J=0.529
+2026-05-16 13:23:21,951 [INFO]   Q210 | R2: DA=0.495 CatR@1=0.773 J=0.848
+2026-05-16 13:23:21,951 [INFO]   Q210 | R3: DA=0.500 CatR@1=0.789 J=0.900
+2026-05-16 13:26:24,930 [INFO]   Q240 | R0: DA=0.037 CatR@1=0.533 J=0.000
+2026-05-16 13:26:24,930 [INFO]   Q240 | R1: DA=0.450 CatR@1=0.765 J=0.539
+2026-05-16 13:26:24,931 [INFO]   Q240 | R2: DA=0.487 CatR@1=0.758 J=0.838
+2026-05-16 13:26:24,931 [INFO]   Q240 | R3: DA=0.492 CatR@1=0.775 J=0.894
+2026-05-16 13:30:23,854 [INFO]   Q270 | R0: DA=0.044 CatR@1=0.529 J=0.000
+2026-05-16 13:30:23,855 [INFO]   Q270 | R1: DA=0.452 CatR@1=0.762 J=0.549
+2026-05-16 13:30:23,855 [INFO]   Q270 | R2: DA=0.485 CatR@1=0.757 J=0.834
+2026-05-16 13:30:23,855 [INFO]   Q270 | R3: DA=0.489 CatR@1=0.771 J=0.892
+2026-05-16 13:34:04,108 [INFO]   Q300 | R0: DA=0.047 CatR@1=0.515 J=0.000
+2026-05-16 13:34:04,109 [INFO]   Q300 | R1: DA=0.473 CatR@1=0.765 J=0.552
+2026-05-16 13:34:04,109 [INFO]   Q300 | R2: DA=0.500 CatR@1=0.755 J=0.837
+2026-05-16 13:34:04,109 [INFO]   Q300 | R3: DA=0.507 CatR@1=0.772 J=0.893
+2026-05-16 13:34:04,110 [INFO] 
+=== CONVERGENCE SUMMARY ===
+2026-05-16 13:34:04,110 [INFO] Round 0 (Vanilla): DA=0.047, CatR@1=0.515, CatR@10=0.737, Jaccard=0.000
+2026-05-16 13:34:04,111 [INFO] Round 1 (SAD-1): DA=0.473, CatR@1=0.765, CatR@10=0.878, Jaccard=0.552
+2026-05-16 13:34:04,111 [INFO] Round 2 (SAD-2): DA=0.500, CatR@1=0.755, CatR@10=0.878, Jaccard=0.837
+2026-05-16 13:34:04,112 [INFO] Round 3 (SAD-3): DA=0.507, CatR@1=0.772, CatR@10=0.883, Jaccard=0.893
+2026-05-16 13:34:04,112 [INFO] 
+--- By Difficulty ---
+2026-05-16 13:34:04,112 [INFO]   easy R0: DA=0.033, CatR@1=0.570
+2026-05-16 13:34:04,112 [INFO]   easy R1: DA=0.447, CatR@1=0.793
+2026-05-16 13:34:04,112 [INFO]   easy R2: DA=0.467, CatR@1=0.780
+2026-05-16 13:34:04,112 [INFO]   easy R3: DA=0.487, CatR@1=0.800
+2026-05-16 13:34:04,113 [INFO]   medium R0: DA=0.040, CatR@1=0.477
+2026-05-16 13:34:04,113 [INFO]   medium R1: DA=0.440, CatR@1=0.717
+2026-05-16 13:34:04,113 [INFO]   medium R2: DA=0.490, CatR@1=0.723
+2026-05-16 13:34:04,113 [INFO]   medium R3: DA=0.480, CatR@1=0.733
+2026-05-16 13:34:04,113 [INFO]   hard R0: DA=0.100, CatR@1=0.426
+2026-05-16 13:34:04,113 [INFO]   hard R1: DA=0.620, CatR@1=0.774
+2026-05-16 13:34:04,113 [INFO]   hard R2: DA=0.620, CatR@1=0.742
+2026-05-16 13:34:04,113 [INFO]   hard R3: DA=0.620, CatR@1=0.763
+2026-05-16 13:34:04,116 [INFO] 
+Saved to /mnt/workspace/skill-research/results_v3/iterative_sad_convergence.json

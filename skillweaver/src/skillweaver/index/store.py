@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from pathlib import Path
 
 from skillweaver.core.models import Skill
@@ -17,11 +18,17 @@ logger = logging.getLogger(__name__)
 DEFAULT_STORE_DIR = Path.home() / ".skillweaver"
 
 
+def _resolve_default_store_dir() -> Path:
+    """Resolve store dir: SKILLWEAVER_STORE_DIR env var > DEFAULT_STORE_DIR."""
+    env_dir = os.environ.get("SKILLWEAVER_STORE_DIR")
+    return Path(env_dir) if env_dir else DEFAULT_STORE_DIR
+
+
 class IndexStore:
     """Manages persistent skill storage and FAISS index."""
 
     def __init__(self, store_dir: Path | None = None):
-        self.store_dir = store_dir or DEFAULT_STORE_DIR
+        self.store_dir = store_dir if store_dir is not None else _resolve_default_store_dir()
         self.skills_file = self.store_dir / "skills.jsonl"
         self.index_dir = self.store_dir / "faiss_index"
 

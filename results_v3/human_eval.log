@@ -1,0 +1,55 @@
+=== Human Query Evaluation ===
+Loading resources...
+Loaded 60 skills
+Loaded 200 human queries
+Initializing retriever...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6730.12it/s]
+[1mBertModel LOAD REPORT[0m from: /mnt/workspace/models/sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]
+Retriever ready.
+Initializing decomposer (7B)...
+Decomposer ready.
+
+--- VANILLA DECOMPOSITION ---
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<02:35,  2.18it/s]Loading weights:   1%|          | 2/339 [00:00<01:41,  3.33it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 36.36it/s]Loading weights:   9%|▊         | 29/339 [00:00<00:06, 51.39it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:04, 67.56it/s]Loading weights:  15%|█▌        | 52/339 [00:01<00:04, 70.83it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 86.87it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:02, 92.26it/s]Loading weights:  26%|██▋       | 89/339 [00:01<00:03, 79.27it/s]Loading weights:  32%|███▏      | 110/339 [00:01<00:02, 105.16it/s]Loading weights:  36%|███▌      | 122/339 [00:01<00:02, 106.81it/s]Loading weights:  40%|███▉      | 134/339 [00:01<00:01, 107.44it/s]Loading weights:  43%|████▎     | 146/339 [00:01<00:01, 106.90it/s]Loading weights:  47%|████▋     | 158/339 [00:02<00:01, 105.71it/s]Loading weights:  50%|████▉     | 169/339 [00:02<00:01, 103.40it/s]Loading weights:  53%|█████▎    | 180/339 [00:02<00:01, 101.11it/s]Loading weights:  56%|█████▋    | 191/339 [00:02<00:01, 101.33it/s]Loading weights:  60%|█████▉    | 202/339 [00:02<00:01, 95.74it/s] Loading weights:  64%|██████▎   | 216/339 [00:02<00:01, 103.86it/s]Loading weights:  68%|██████▊   | 232/339 [00:02<00:01, 102.83it/s]Loading weights:  72%|███████▏  | 244/339 [00:02<00:00, 104.65it/s]Loading weights:  76%|███████▌  | 256/339 [00:03<00:00, 92.69it/s] Loading weights:  79%|███████▉  | 269/339 [00:03<00:00, 101.55it/s]Loading weights:  83%|████████▎ | 280/339 [00:03<00:00, 93.62it/s] Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 99.28it/s]Loading weights:  93%|█████████▎| 316/339 [00:03<00:00, 107.32it/s]Loading weights:  97%|█████████▋| 328/339 [00:03<00:00, 106.90it/s]Loading weights: 100%|██████████| 339/339 [00:03<00:00, 89.27it/s] 
+  20/200 | DA=0.150 | R@10=0.500 | CatR@10=0.725
+  40/200 | DA=0.100 | R@10=0.588 | CatR@10=0.787
+  60/200 | DA=0.100 | R@10=0.583 | CatR@10=0.792
+  80/200 | DA=0.125 | R@10=0.600 | CatR@10=0.781
+  100/200 | DA=0.180 | R@10=0.567 | CatR@10=0.758
+  120/200 | DA=0.200 | R@10=0.547 | CatR@10=0.743
+  140/200 | DA=0.221 | R@10=0.540 | CatR@10=0.749
+  160/200 | DA=0.256 | R@10=0.517 | CatR@10=0.735
+  180/200 | DA=0.306 | R@10=0.501 | CatR@10=0.726
+  200/200 | DA=0.335 | R@10=0.487 | CatR@10=0.721
+
+--- SAD DECOMPOSITION (H=15) ---
+  20/200 | DA=0.550 | R@10=0.500 | CatR@10=0.775
+  40/200 | DA=0.625 | R@10=0.500 | CatR@10=0.750
+  60/200 | DA=0.600 | R@10=0.517 | CatR@10=0.758
+  80/200 | DA=0.637 | R@10=0.519 | CatR@10=0.762
+  100/200 | DA=0.610 | R@10=0.498 | CatR@10=0.745
+  120/200 | DA=0.625 | R@10=0.482 | CatR@10=0.736
+  140/200 | DA=0.593 | R@10=0.475 | CatR@10=0.739
+  160/200 | DA=0.600 | R@10=0.464 | CatR@10=0.730
+  180/200 | DA=0.633 | R@10=0.458 | CatR@10=0.719
+  200/200 | DA=0.640 | R@10=0.451 | CatR@10=0.708
+
+=== SUMMARY ===
+Vanilla: DA=0.335, SkillR@10=0.487, CatR@10=0.721
+  easy (n=80): DA=0.125, R@10=0.600, CatR@10=0.781
+  medium (n=80): DA=0.388, R@10=0.433, CatR@10=0.690
+  hard (n=40): DA=0.650, R@10=0.369, CatR@10=0.665
+SAD: DA=0.640, SkillR@10=0.451, CatR@10=0.708
+  easy (n=80): DA=0.637, R@10=0.519, CatR@10=0.762
+  medium (n=80): DA=0.562, R@10=0.408, CatR@10=0.698
+  hard (n=40): DA=0.800, R@10=0.400, CatR@10=0.617
+
+Saved to /mnt/workspace/skill-research/results_v3/human_query_evaluation.json
