@@ -53,7 +53,7 @@ MiniLM outperforms both sparse retrieval (TF-IDF, +26% CatR@1) and a much larger
 
 ### C3. Metadata vs. Body-Aware Retrieval (Addresses R2)
 
-R2 asked whether retrieval is metadata-only or body-aware. We clarify: **all 2,209 MCP skills in CompSkillBench contain only metadata** (name, description, categories, tags) — there is no body text (`body=""` for 100% of skills). This is an inherent characteristic of the MCP ecosystem: MCP tool specifications provide concise metadata, not full documentation bodies. Our retrieval is therefore metadata-only by design, not by choice. The claim that "metadata suffices" should be understood as "metadata suffices for category-level routing in the MCP ecosystem," which is empirically supported by MiniLM achieving 0.374 CatR@1.
+R2 asked whether retrieval is metadata-only or body-aware. We clarify: **all 2,209 MCP skills in CompSkillBench contain only metadata** (name, description, categories, tags) — there is no body text (`body=""` for 100% of skills). This is an inherent characteristic of the MCP ecosystem: MCP tool specifications provide concise metadata, not full documentation bodies. The `use_body` parameter in our retriever is designed for generality, but in practice all skills have empty body fields, so body-aware retrieval is not applicable. The claim that "metadata suffices" should be understood as "metadata suffices for category-level routing in the MCP ecosystem," which is empirically supported by MiniLM achieving 0.374 CatR@1.
 
 ### C4. Compose Evaluation on Human-Style Queries (Addresses R1, R3)
 
@@ -87,13 +87,13 @@ We confirm that CompSkillBench (skill snapshot, 300 queries), the SkillWeaver co
 ## Response to Reviewer usWc (Overall: 2.5, Excitement: 2.5)
 
 **W1. "Expand human natural query test set"**
-We ran the full compose evaluation on the 50 human-style queries (Table C3). Results show that plan validity remains 100%, SAD improves DA by +200%, and edge F1 improves by +200%. The compose stage generalizes to human-style queries.
+We ran the full compose evaluation on the existing 50 human-style queries (Table C3). While we did not expand the set beyond 50, results show that the compose stage generalizes to non-template queries: plan validity remains 100%, SAD improves DA by +200% (0.160→0.480), and edge F1 improves by +200% (0.129→0.388). We acknowledge that expanding to a larger human-collected query set would further strengthen the benchmark and plan to release CompSkillBench for community contribution upon acceptance.
 
 **W2. "Complete composition module quantitative evaluation"**
 Done — see Table C1. We report edge precision/recall/F1, plan validity, chain compatibility (DAG vs greedy vs random), and edge exact match rate for both vanilla and SAD on all 300 queries.
 
 **W3. "Add mainstream embedding and full baseline comparisons"**
-We conducted a three-way encoder comparison (Table C2): TF-IDF (sparse, n-gram), MiniLM-L6-v2 (dense, 384-dim), and Qwen2.5-7B-Instruct (dense, 3584-dim, last hidden state mean pooling). MiniLM outperforms both alternatives — TF-IDF by +26% and Qwen-7B by +107% in CatR@1 — confirming that a lightweight dedicated sentence encoder is the most effective and efficient choice for this task. We also note that BGE-base and E5-small were considered but could not be evaluated due to network constraints on our compute environment; MiniLM already outperforms both a sparse and a much larger dense encoder, providing strong evidence for its suitability.
+We conducted a three-way encoder comparison (Table C2): TF-IDF (sparse, n-gram), MiniLM-L6-v2 (dense, 384-dim), and Qwen2.5-7B-Instruct (dense, 3584-dim, last hidden state mean pooling). MiniLM outperforms both alternatives — TF-IDF by +26% and Qwen-7B by +107% in CatR@1 — confirming that a lightweight dedicated sentence encoder is the most effective and efficient choice for this task. We also plan to include BGE-base and E5-small comparisons in the camera-ready version; the current results already show that MiniLM outperforms both a sparse and a much larger dense encoder, providing strong evidence for its suitability.
 
 **W4. "Design low-latency SAD variants for deployment"**
 We acknowledge this as important future work. SAD's two-pass design does double inference latency. Potential solutions include: (1) caching the hint set across similar queries, (2) early termination when Pass-1 decomposition already matches expected skill count, and (3) lightweight hint injection via prompt prefix rather than full re-generation.
@@ -112,7 +112,7 @@ We acknowledge this limitation. The paper includes an LLM-direct baseline (where
 We have addressed this comprehensively — see Table C1. The compose stage is now evaluated with: (1) edge-level metrics (precision 0.648, recall 0.631, F1 0.635 for SAD), (2) plan validity (100% across all 600 plans), (3) chain compatibility comparison (DAG > greedy > random), and (4) edge exact match rate (0.593 for SAD). These metrics cover both structural correctness (DAG edges) and qualitative plan quality (compatibility scores).
 
 **E2. "Unclear if the skill retrieval is metadata-only, or body-aware"**
-We clarify this in C3: all 2,209 MCP skills in CompSkillBench contain only metadata (name, description, categories, tags) — there is no body text. This is an inherent characteristic of the MCP ecosystem. Our retrieval is metadata-only by design, not by omission. We will make this explicit in the methods section and update the paper's terminology accordingly.
+We clarify this in C3: all 2,209 MCP skills in CompSkillBench contain only metadata (name, description, categories, tags) — there is no body text. The `use_body` parameter in our retriever is designed for generality (to support future skill formats that may include documentation bodies), but in the current MCP ecosystem, tool specifications provide only concise metadata. Our retrieval is therefore metadata-only in practice. We will make this explicit in the methods section: the paper describes the `use_body` parameter as a design option, but all skills in CompSkillBench have empty body fields, so body-aware retrieval is not applicable. We will also update the paper's terminology to avoid implying that body-aware retrieval was evaluated.
 
 **E3. "The claim that metadata is sufficient is not substantiated with a comparison"**
 The comparison is provided in two parts: (1) C3 explains that body-aware retrieval is not applicable because MCP skills lack body text, and (2) Table C2 shows that MiniLM (metadata-only) is the best-performing encoder among three strategies tested, outperforming both sparse (TF-IDF) and large dense (Qwen-7B) alternatives. Together, these results substantiate that metadata is sufficient for category-level routing in the MCP setting. We will qualify the claim as "metadata suffices for category-level routing in the MCP ecosystem" in the revision.
@@ -121,7 +121,7 @@ The comparison is provided in two parts: (1) C3 explains that body-aware retriev
 We will add a discussion paragraph contrasting our setting with SkillRouter: (1) SkillRouter operates in a single-skill selection setting where body-awareness matters; (2) our compositional routing setting involves multiple skills where decomposition granularity is the primary bottleneck; (3) MCP skills naturally lack body text, making metadata-only retrieval the only viable approach.
 
 **E5. "Gains in retrieval are limited"**
-We agree — this is by design. The paper's central finding is that decomposition granularity (DA) is the primary bottleneck, not retrieval quality. SAD improves DA by +35.5% (0.507→0.687), which in turn improves edge F1 by +38.6%. The modest CatR@1 gain (0.342→0.374) confirms that once decomposition is correct, retrieval performance is bounded by encoder quality, not decomposition.
+We agree that retrieval gains are modest. This is consistent with the paper's central finding that decomposition granularity (DA) is the primary bottleneck, not retrieval quality. SAD improves DA by +35.5% (0.507→0.687), which in turn improves edge F1 by +38.6%. The modest CatR@1 gain (0.342→0.374) confirms that once decomposition is correct, retrieval performance is bounded by encoder quality, not decomposition. We will make this point clearer in the revision.
 
 **E6. "The benchmark may not reflect real use cases"**
 We addressed this by running compose eval on 50 human-style queries (Table C3). While absolute performance is lower (as expected for harder queries), the relative improvements hold: SAD improves DA by +200%, plan validity is 100%, and DAG planner outperforms greedy.
@@ -134,7 +134,7 @@ Will fix. We will verify and correct all citations. (MCP-Zero arXiv link points 
 ## Response to Reviewer wkod (Overall: 2.0, Excitement: 2.0)
 
 **K1. "The main weakness is limited novelty"**
-We respectfully argue that the novelty lies in: (1) formalizing the compositional skill routing problem (distinct from single-tool routing), (2) the SAD feedback loop that uses retrieval results to improve decomposition granularity — a direction not explored in prior tool-use literature, and (3) the decomposition/retrieval separation analysis (DA, CatR@k, ChainCat) that reveals decomposition as the primary bottleneck. The new compose evaluation (Table C1) further demonstrates that SAD improves DAG structure prediction (Edge F1: 0.458→0.635), not just decomposition count.
+We appreciate this feedback. We note that the new compose evaluation (Table C1) provides additional soundness evidence: SAD improves not only decomposition count (DA: +35.5%) but also DAG structure prediction (Edge F1: 0.458→0.635, +38.6%) and edge exact match (0.410→0.593, +44.6%). This demonstrates that the SAD feedback loop has a measurable impact on downstream plan quality, beyond a simple engineering workflow. We will clarify the methodological contribution of the retrieval-augmented decomposition feedback loop in the revision.
 
 **K2. "The end-to-end compositional routing claim is under-supported"**
 We have directly addressed this — see Table C1. The compose stage is now evaluated with: (1) edge-level structural metrics (precision, recall, F1, exact match), confirming that 59.3% of SAD plans have the exact correct DAG structure, and (2) plan validity (100%), confirming all plans are structurally sound with every step assigned a skill and no cycles. We believe this, combined with the chain compatibility comparison (DAG > greedy > random), provides sufficient evidence for the end-to-end claim. We will also add a note that the 30-query mock-executor pilot is extended with these 300-query structural evaluations.
@@ -155,7 +155,7 @@ We validate Eq. 4 indirectly through the compose evaluation (Table C1): the DAG 
 We will refine the paper's framing to emphasize that the primary contribution is: (1) a practical workflow (decompose-retrieve-compose with SAD feedback), (2) a diagnostic evaluation framework (DA/CatR@k/ChainCat with conditioned analysis), and (3) a real-world benchmark (CompSkillBench). We will ensure the title and claims accurately reflect this scope.
 
 **K8. "Exact Skill Recall@k and Chain Exact Match are not reported in the main results" (Weakness 4)**
-We collected exact-skill-level metrics (PlanR@1: whether the planner selects the exact ground-truth skill ID) during the compose evaluation. These are naturally low (0.005–0.007) because CompSkillBench contains 2,209 skills and the ground truth assigns a specific skill ID per step — exact ID match is an extremely strict metric. The category-level metric (CatR@1) is the appropriate evaluation for a benchmark of this scale. We will include exact-skill metrics in the appendix for completeness and clarify this distinction in the main text.
+We collected exact-skill-level metrics (PlanR@1: whether the planner selects the exact ground-truth skill ID) during the compose evaluation. These are naturally low (0.005–0.007) because CompSkillBench contains 2,209 skills across 24 categories — often multiple skills within the same category can satisfy a subtask's requirements, so selecting the one specific ground-truth skill ID is overly strict. The category-level metric (CatR@1: 0.374 for SAD) is the appropriate evaluation for a benchmark of this scale, as it measures whether the selected skill belongs to the correct functional category. We will include exact-skill metrics in the appendix for completeness and clarify this distinction in the main text.
 
 **K9. "Claims such as 'metadata suffices for retrieval' or 'SKILLWEAVER produces executable plans' feel too strong" (Weakness 4)**
 We agree and will qualify these claims: (1) "metadata suffices" → "metadata suffices for category-level routing in the MCP ecosystem, where tool specifications contain only metadata"; (2) "SKILLWEAVER produces executable plans" → "SKILLWEAVER produces structurally valid plans (100% plan validity), with edge F1 = 0.635 for SAD." We will review and qualify all such claims throughout the paper.
@@ -236,7 +236,7 @@ Human 查询更难（DA 从 0.687 降到 0.480），但关键结论成立：plan
 
 - **W1 "扩展 human query 测试集"**：已在 50 条 human 查询上运行 compose 评估（表 C3），plan 有效性 100%，SAD DA +200%。
 - **W2 "完成 compose 模块定量评估"**：已完成 — 见表 C1。
-- **W3 "添加主流 embedding 对比"**：已完成三路对比（表 C2）：TF-IDF / MiniLM / Qwen-7B，MiniLM 最优。BGE-base 和 E5 因网络限制未能评测，但 MiniLM 已优于 sparse 和 large dense encoder。
+- **W3 "添加主流 embedding 对比"**：已完成三路对比（表 C2）：TF-IDF / MiniLM / Qwen-7B，MiniLM 最优。BGE-base 和 E5 计划在 camera-ready 中补充，当前结果已证明 MiniLM 优于 sparse 和 large dense encoder。
 - **W4 "设计低延迟 SAD 变体"**：承认是重要 future work，将讨论缓存、早停、prompt 前缀注入等方案。
 - **W5 "统一统计格式"**：将修正，统一所有表格格式。
 - **W6 "多步 agent baseline 不足"**：论文已有 LLM-direct 和 ReAct baseline（50 query）。承认需在完整 300 query 上扩展对比，将在 camera-ready 中补充。
@@ -253,7 +253,7 @@ Human 查询更难（DA 从 0.687 降到 0.480），但关键结论成立：plan
 
 ## 回复 Reviewer wkod
 
-- **K1 "新颖性有限"**：新颖性在于：(1) 形式化组合 skill routing 问题，(2) SAD 反馈循环，(3) 分解/检索分离分析。新结果（Edge F1 0.458→0.635）进一步证明 SAD 提升 DAG 结构预测。
+- **K1 "新颖性有限"**：新 compose 评估（表 C1）提供了额外的 soundness 证据：SAD 不仅提升分解数量（DA +35.5%），还提升 DAG 结构预测（Edge F1 0.458→0.635, +38.6%）。将在 revision 中澄清 SAD 反馈循环的方法论贡献。
 - **K2 "端到端声明支撑不足"**：已解决 — 见表 C1，报告了 edge 级指标和 plan 有效性。
 - **K3 "benchmark 有效性有限"**：已在 human 查询上验证（表 C3），结论一致。
 - **K4 "检索结果有限"**：认同，但论文核心贡献是 SAD 对分解质量的提升（DA +35.5%, Edge F1 +38.6%）。
