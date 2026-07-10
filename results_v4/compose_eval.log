@@ -1,0 +1,64 @@
+2026-07-10 10:10:59,964 [INFO] Loaded 2209 skills, 300 queries
+2026-07-10 10:10:59,964 [INFO] Building retriever index...
+2026-07-10 10:11:04,998 [INFO] Cannot reach huggingface.co, switching to mirror: https://hf-mirror.com
+2026-07-10 10:11:14,064 [INFO] Loading encoder: sentence-transformers/all-MiniLM-L6-v2
+2026-07-10 10:11:14,066 [INFO] No device provided, using cuda:0
+2026-07-10 10:11:14,102 [INFO] Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10197.65it/s]
+2026-07-10 10:11:14,352 [INFO] Encoding 2209 skills (use_body=False)...
+Batches:   0%|          | 0/35 [00:00<?, ?it/s]Batches:   3%|▎         | 1/35 [00:00<00:08,  4.24it/s]Batches:  14%|█▍        | 5/35 [00:00<00:01, 16.66it/s]Batches:  29%|██▊       | 10/35 [00:00<00:00, 26.07it/s]Batches:  43%|████▎     | 15/35 [00:00<00:00, 33.34it/s]Batches:  60%|██████    | 21/35 [00:00<00:00, 39.87it/s]Batches:  80%|████████  | 28/35 [00:00<00:00, 47.07it/s]Batches: 100%|██████████| 35/35 [00:00<00:00, 39.54it/s]
+2026-07-10 10:11:15,250 [INFO] Index built: 2209 skills, dim=384
+2026-07-10 10:11:15,251 [INFO] Loading model: /mnt/workspace/models/Qwen/Qwen2.5-7B-Instruct
+2026-07-10 10:11:15,251 [INFO] Loading local model: /mnt/workspace/models/Qwen/Qwen2.5-7B-Instruct
+2026-07-10 10:11:15,669 [INFO] Model ~10.8GB, 1 GPUs = 79.3GB total
+2026-07-10 10:11:15,669 [INFO] Strategy: single-GPU direct placement (cuda:0)
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:51,  3.02it/s]Loading weights:   1%|          | 2/339 [00:00<01:07,  5.02it/s]Loading weights:   8%|▊         | 26/339 [00:00<00:04, 73.06it/s]Loading weights:  12%|█▏        | 40/339 [00:00<00:03, 88.23it/s]Loading weights:  16%|█▌        | 53/339 [00:00<00:02, 96.72it/s]Loading weights:  22%|██▏       | 76/339 [00:00<00:02, 122.82it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 122.51it/s]Loading weights:  33%|███▎      | 112/339 [00:01<00:01, 137.82it/s]Loading weights:  37%|███▋      | 127/339 [00:01<00:01, 132.63it/s]Loading weights:  44%|████▎     | 148/339 [00:01<00:01, 141.61it/s]Loading weights:  48%|████▊     | 163/339 [00:01<00:01, 139.61it/s]Loading weights:  54%|█████▍    | 184/339 [00:01<00:01, 144.13it/s]Loading weights:  59%|█████▊    | 199/339 [00:01<00:00, 140.96it/s]Loading weights:  65%|██████▍   | 220/339 [00:01<00:00, 145.58it/s]Loading weights:  69%|██████▉   | 235/339 [00:02<00:00, 141.60it/s]Loading weights:  75%|███████▍  | 254/339 [00:02<00:00, 150.88it/s]Loading weights:  80%|███████▉  | 270/339 [00:02<00:00, 138.63it/s]Loading weights:  86%|████████▌ | 292/339 [00:02<00:00, 145.90it/s]Loading weights:  91%|█████████ | 307/339 [00:02<00:00, 138.11it/s]Loading weights:  97%|█████████▋| 328/339 [00:02<00:00, 142.38it/s]Loading weights: 100%|██████████| 339/339 [00:02<00:00, 126.53it/s]
+2026-07-10 10:11:18,815 [INFO] Model loaded on GPU (direct placement)
+2026-07-10 10:13:00,254 [INFO]   Progress: 50/300 (105s elapsed)
+2026-07-10 10:14:42,021 [INFO]   Progress: 100/300 (207s elapsed)
+2026-07-10 10:16:18,543 [INFO]   Progress: 150/300 (303s elapsed)
+2026-07-10 10:17:56,612 [INFO]   Progress: 200/300 (401s elapsed)
+2026-07-10 10:19:36,367 [INFO]   Progress: 250/300 (501s elapsed)
+2026-07-10 10:21:25,469 [INFO]   Progress: 300/300 (610s elapsed)
+2026-07-10 10:21:25,469 [INFO] Experiment complete in 610s
+2026-07-10 10:21:25,503 [INFO] Detailed results saved to /mnt/workspace/skill-research/results_v4/compose_eval_detailed.json
+2026-07-10 10:21:25,511 [INFO] SAD subtask texts saved to /mnt/workspace/skill-research/results_v4/sad_subtask_texts.json
+
+======================================================================
+COMPOSE STAGE EVALUATION SUMMARY
+======================================================================
+
+  [VANILLA] n=300
+  DA:                0.507
+  CatR@1 (retrieval): 0.342
+  PlanR@1 (DAG):     0.007
+  PlanR@1 (greedy):  0.007
+  Plan validity (DAG):    1.000
+  Plan validity (greedy):  1.000
+  Chain compat (DAG):    0.471
+  Chain compat (greedy):  0.414
+  Chain compat (random):  0.396
+  Edge precision: 0.463
+  Edge recall:    0.458
+  Edge F1:        0.458
+  Edge exact match: 0.410
+  Avg parallel groups: 2.94
+
+  [SAD] n=300
+  DA:                0.687
+  CatR@1 (retrieval): 0.374
+  PlanR@1 (DAG):     0.005
+  PlanR@1 (greedy):  0.005
+  Plan validity (DAG):    1.000
+  Plan validity (greedy):  1.000
+  Chain compat (DAG):    0.432
+  Chain compat (greedy):  0.400
+  Chain compat (random):  0.387
+  Edge precision: 0.648
+  Edge recall:    0.631
+  Edge F1:        0.635
+  Edge exact match: 0.593
+  Avg parallel groups: 2.80
+
+======================================================================
