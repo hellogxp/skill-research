@@ -1,0 +1,37 @@
+2026-07-10 10:38:22,860 [INFO] Loaded 2209 skills, 300 queries
+2026-07-10 10:38:22,861 [INFO] Sampled 200 positive pairs from 530 unique ground-truth pairs
+2026-07-10 10:38:22,861 [INFO] Sampled 200 negative (random) pairs
+2026-07-10 10:38:22,862 [INFO] Scoring pairs with CompatibilityScorer...
+2026-07-10 10:38:22,869 [INFO] Loading Qwen2.5-7B-Instruct for LLM judgment...
+2026-07-10 10:38:22,869 [INFO] LLM judging 400 pairs...
+2026-07-10 10:38:28,549 [INFO] Loading local model: /mnt/workspace/models/Qwen/Qwen2.5-7B-Instruct
+2026-07-10 10:38:28,983 [INFO] Model ~10.8GB, 1 GPUs = 79.3GB total
+2026-07-10 10:38:28,983 [INFO] Strategy: single-GPU direct placement (cuda:0)
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:47,  3.15it/s]Loading weights:   1%|          | 2/339 [00:00<01:15,  4.47it/s]Loading weights:   9%|▊         | 29/339 [00:00<00:04, 75.30it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:03, 90.07it/s]Loading weights:  19%|█▉        | 64/339 [00:00<00:02, 116.95it/s]Loading weights:  23%|██▎       | 78/339 [00:00<00:02, 119.70it/s]Loading weights:  29%|██▉       | 100/339 [00:01<00:01, 133.52it/s]Loading weights:  34%|███▍      | 115/339 [00:01<00:01, 133.87it/s]Loading weights:  40%|████      | 136/339 [00:01<00:01, 127.98it/s]Loading weights:  47%|████▋     | 160/339 [00:01<00:01, 144.98it/s]Loading weights:  52%|█████▏    | 176/339 [00:01<00:01, 139.29it/s]Loading weights:  58%|█████▊    | 196/339 [00:01<00:00, 149.54it/s]Loading weights:  63%|██████▎   | 212/339 [00:01<00:00, 142.96it/s]Loading weights:  68%|██████▊   | 232/339 [00:01<00:00, 143.66it/s]Loading weights:  73%|███████▎  | 247/339 [00:02<00:00, 142.55it/s]Loading weights:  79%|███████▉  | 268/339 [00:02<00:00, 150.51it/s]Loading weights:  84%|████████▍ | 284/339 [00:02<00:00, 148.72it/s]Loading weights:  88%|████████▊ | 299/339 [00:02<00:00, 148.01it/s]Loading weights:  93%|█████████▎| 316/339 [00:02<00:00, 134.78it/s]Loading weights: 100%|██████████| 339/339 [00:02<00:00, 127.84it/s]
+2026-07-10 10:38:32,592 [INFO] Model loaded on GPU (direct placement)
+2026-07-10 10:39:02,102 [INFO]   LLM judged 50/400 pairs
+2026-07-10 10:39:34,088 [INFO]   LLM judged 100/400 pairs
+2026-07-10 10:40:06,659 [INFO]   LLM judged 150/400 pairs
+2026-07-10 10:40:36,644 [INFO]   LLM judged 200/400 pairs
+2026-07-10 10:41:10,144 [INFO]   LLM judged 250/400 pairs
+2026-07-10 10:41:37,853 [INFO]   LLM judged 300/400 pairs
+2026-07-10 10:42:08,922 [INFO]   LLM judged 350/400 pairs
+2026-07-10 10:42:38,952 [INFO]   LLM judged 400/400 pairs
+2026-07-10 10:42:38,952 [INFO] LLM judging complete in 256s
+2026-07-10 10:42:38,970 [INFO] Saved to /mnt/workspace/skill-research/results_v4/compat_validation.json
+
+============================================================
+COMPATIBILITY SCORER VALIDATION (Eq. 4)
+============================================================
+  Pairs: 400 (200 pos + 200 neg)
+  AUC (scorer):        0.518
+  AUC (LLM judge):     0.507
+  Spearman (scorer-LLM): -0.075 (p=0.132596)
+  Pearson (scorer-LLM):  -0.019
+  Agreement (scorer-LLM): 0.927
+  Avg score (positive):  0.361
+  Avg score (negative):  0.362
+  P/R/F1 @0.5:  0.188 / 0.015 / 0.028
+  AP (scorer):  0.495 | AP (LLM): 0.504
+============================================================
