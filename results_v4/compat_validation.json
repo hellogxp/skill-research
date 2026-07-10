@@ -1,0 +1,3622 @@
+{
+  "metrics": {
+    "n_pairs": 400,
+    "n_positive": 200,
+    "n_negative": 200,
+    "auc_scorer": 0.518,
+    "auc_llm": 0.5075,
+    "spearman_scorer_llm": -0.0753,
+    "spearman_p": 0.132596,
+    "pearson_scorer_llm": -0.0194,
+    "agreement_scorer_llm": 0.9275,
+    "precision_at_0.5": 0.1875,
+    "recall_at_0.5": 0.015,
+    "f1_at_0.5": 0.0278,
+    "avg_score_positive": 0.3607,
+    "avg_score_negative": 0.3623,
+    "ap_scorer": 0.4947,
+    "ap_llm": 0.5044
+  },
+  "pairs": [
+    {
+      "skill_a": "expertvagabond/solmail-mcp",
+      "skill_a_desc": "Send physical mail with Solana payments — AI agents can compose, price, and send letters and postcar",
+      "skill_b": "gwbischof/outsource-mcp",
+      "skill_b_desc": "Give your AI assistant its own AI assistants. For example: \"Could you ask openai to generate an imag",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "vessel-api/vesselapi-mcp",
+      "skill_a_desc": "Maritime vessel tracking via VesselAPI. Search vessels, get real-time positions, ETAs, port events, ",
+      "skill_b": "tatsuju/opdstar-nhi-mcp",
+      "skill_b_desc": "Taiwan's first public MCP server for National Health Insurance (NHI) data — 234 rejection codes, 1,4",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "genomoncology/biomcp",
+      "skill_a_desc": "Biomedical research MCP server providing access to PubMed, ClinicalTrials.gov, and MyVariant.info.",
+      "skill_b": "xjtlumedia/context-first-mcp",
+      "skill_b_desc": "Session memory, context health monitoring, reasoning quality, and truthfulness verification MCP serv",
+      "label": 1,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "topazlabs/topaz-mcp",
+      "skill_a_desc": "AI image enhancement (upscaling, denoising, sharpening) via Topaz Labs API. Supports 8 models includ",
+      "skill_b": "kukapay/crypto-news-mcp",
+      "skill_b_desc": "An MCP server that provides real-time cryptocurrency news sourced from NewsData for AI agents.",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "aimlpm/markcrawl",
+      "skill_a_desc": "Crawl websites into clean Markdown, search pages, and extract structured data with LLMs. Built-in MC",
+      "skill_b": "micl2e2/code-to-tree",
+      "skill_b_desc": "A single-binary MCP server that converts source code into AST, regardless of language.",
+      "label": 1,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "bch1212/agentfetch-mcp",
+      "skill_a_desc": "Token-budgeted web fetch for AI agents. Auto-routes between Trafilatura, Jina Reader, FireCrawl, and",
+      "skill_b": "marketplaceadpros/amazon-ads-mcp-server",
+      "skill_b_desc": "Enables tools to interact with Amazon Advertising, analyzing campaign metrics and configurations.",
+      "label": 1,
+      "compat_score": 0.3644,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "marceausolutions/md-to-pdf-mcp",
+      "skill_a_desc": "Convert Markdown files to professional PDFs with customizable themes, headers, footers, and styling",
+      "skill_b": "jaspertvdm/mcp-server-rabel",
+      "skill_b_desc": "AI-to-AI messaging via I-Poll protocol and AInternet. Enables agents to communicate using .aint doma",
+      "label": 1,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "helixgenomics/genomic-agent-discovery",
+      "skill_a_desc": "Multi-agent MCP server for genomic analysis — specialized AI agents analyze raw DNA files across 16 ",
+      "skill_b": "blazickjp/arxiv-mcp-server",
+      "skill_b_desc": "Search ArXiv research papers",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kuvopllc/purroxy2",
+      "skill_a_desc": "Record what you do on any website and securely automate it forever. Replays browser actions in headl",
+      "skill_b": "ajitpratap0/gosqlx",
+      "skill_b_desc": "7 SQL tools (validate, format, parse, lint, security scan, metadata extraction, full analysis) over ",
+      "label": 1,
+      "compat_score": 0.4057,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "brand-system/brandsystem-mcp",
+      "skill_a_desc": "Make your brand machine-readable. Extract brand identity (colors, fonts, logo, voice, visual rules) ",
+      "skill_b": "ymw0407/auth-fetch-mcp",
+      "skill_b_desc": "Fetch content from login-protected web pages (Notion, Google Docs, Jira, Confluence, etc.) by openin",
+      "label": 1,
+      "compat_score": 0.52,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mbailey/voice-mcp",
+      "skill_a_desc": "Complete voice interaction server supporting speech-to-text, text-to-speech, and real-time voice con",
+      "skill_b": "jaipandya/producthunt-mcp-server",
+      "skill_b_desc": "MCP server for Product Hunt. Interact with trending posts, comments, collections, users, and more.",
+      "label": 1,
+      "compat_score": 0.41,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gavelin-ai/mcp",
+      "skill_a_desc": "State legislative intelligence for AI agents. Speaker-attributed hearing transcripts, bills, votes, ",
+      "skill_b": "competlab/competlab-mcp-server",
+      "skill_b_desc": "Competitive intelligence platform with 24 tools. Monitor competitor pricing, content, positioning, t",
+      "label": 1,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "fantomaskarus1/telegram-bot-mcp",
+      "skill_a_desc": "Full-featured Telegram Bot API MCP server with 174 tools covering the entire Bot API.",
+      "skill_b": "the-momentum/fhir-mcp-server",
+      "skill_b_desc": "MCP Server that connects AI agents to FHIR servers. One example use case is querying patient history",
+      "label": 1,
+      "compat_score": 0.3457,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "boikot-xyz/boikot",
+      "skill_a_desc": "Model Context Protocol Server for looking up company ethics information. Learn about the ethical and",
+      "skill_b": "qgis-mcp",
+      "skill_b_desc": "Connects QGIS Desktop to Claude AI through the MCP. This integration enables prompt-assisted project",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mickaelkerjean/filestash",
+      "skill_a_desc": "Remote Storage Access: SFTP, S3, FTP, SMB, NFS, WebDAV, GIT, FTPS, gcloud, azure blob, sharepoint, e",
+      "skill_b": "vezlo/src-to-kb",
+      "skill_b_desc": "Convert source code repositories into searchable knowledge bases with AI-powered search using GPT-5,",
+      "label": 1,
+      "compat_score": 0.28,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "srinath1510/alltrails-mcp-server",
+      "skill_a_desc": "A MCP server that provides access to AllTrails data, allowing you to search for hiking trails and ge",
+      "skill_b": "dnaerys/onekgpd-mcp",
+      "skill_b_desc": "Real-time access to 1000 Genomes Project dataset",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "dan1d/mercadolibre-mcp",
+      "skill_a_desc": "MercadoLibre marketplace integration for AI agents. Search products, get item details, browse catego",
+      "skill_b": "mickaelkerjean/filestash",
+      "skill_b_desc": "Remote Storage Access: SFTP, S3, FTP, SMB, NFS, WebDAV, GIT, FTPS, gcloud, azure blob, sharepoint, e",
+      "label": 1,
+      "compat_score": 0.3644,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tomekkorbak/oura-mcp-server",
+      "skill_a_desc": "An MCP server for Oura, an app for tracking sleep",
+      "skill_b": "cyberchitta/llm-context-py",
+      "skill_b_desc": "Share code context with LLMs via MCP or clipboard",
+      "label": 1,
+      "compat_score": 0.31,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "pcdck/ozon-mcp",
+      "skill_a_desc": "Knowledge-rich MCP server for the full Ozon Seller + Performance API (466 methods, 15 MCP tools). Au",
+      "skill_b": "leehanchung/bing-search-mcp",
+      "skill_b_desc": "Web search capabilities using Microsoft Bing Search API",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "princegabriel-lgtm/freshcontext-mcp",
+      "skill_a_desc": "Real-time web intelligence with freshness timestamps. GitHub, HN, Scholar, arXiv, YC, jobs, finance,",
+      "skill_b": "thelongevityvault/decoder-3am-mcp",
+      "skill_b_desc": "Sleep disruption cause classifier using The Longevity Vault's 5-cause framework. Identifies the biol",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "efremidze/swift-patterns-mcp",
+      "skill_a_desc": "An MCP server providing curated Swift and SwiftUI best practices from leading iOS developers, includ",
+      "skill_b": "trycourier/courier-mcp",
+      "skill_b_desc": "Build multi-channel notifications into your product, send messages, update lists, invoke automations",
+      "label": 1,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "micl2e2/code-to-tree",
+      "skill_a_desc": "A single-binary MCP server that converts source code into AST, regardless of language.",
+      "skill_b": "bivex/kanboard-mcp",
+      "skill_b_desc": "A Model Context Protocol (MCP) server written in Go that empowers AI agents and Large Language Model",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "inkog-io/inkog-mcp",
+      "skill_a_desc": "AI agent security scanner. Audits MCP servers for vulnerabilities, detects prompt injection, infinit",
+      "skill_b": "fantomaskarus1/telegram-bot-mcp",
+      "skill_b_desc": "Full-featured Telegram Bot API MCP server with 174 tools covering the entire Bot API.",
+      "label": 1,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "cyberchitta/llm-context-py",
+      "skill_a_desc": "Share code context with LLMs via MCP or clipboard",
+      "skill_b": "reading-plus-ai/mcp-server-data-exploration",
+      "skill_b_desc": "Enables autonomous data exploration on .csv-based datasets, providing intelligent insights with mini",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ddsky/gamebrain-api-clients",
+      "skill_a_desc": "Search and discover hundreds of thousands of video games on any platform through the [GameBrain API]",
+      "skill_b": "nexusfeed/nexusfeed-mcp",
+      "skill_b_desc": "US state ABC liquor license compliance lookup (CA, TX, NY, FL) — search by trade name, owner, or lic",
+      "label": 1,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kuvopllc/better-bear",
+      "skill_a_desc": "MCP server for Bear notes via CloudKit — CRUD, tags, TODOs, attachments, search, front matter, stats",
+      "skill_b": "phungxuananh/selenium-mcp-server",
+      "skill_b_desc": "A Model Context Protocol server providing web automation capabilities through Selenium WebDriver",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ohnlp/omop_mcp",
+      "skill_a_desc": "Map clinical terminology to OMOP concepts using LLMs for healthcare data standardization and interop",
+      "skill_b": "antoniotf5/soul-mcp-server",
+      "skill_b_desc": "Validate and generate SOUL.md agent identity files from Claude Desktop. SOUL.md is the open format f",
+      "label": 1,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "supertrained/rhumb",
+      "skill_a_desc": "Agent-native tool intelligence across 1,000+ scored services. 21 MCP tools: discover services, check",
+      "skill_b": "zacccck/claude-mcp-read-email-attachments",
+      "skill_b_desc": "Remote HTTP MCP server that reads Outlook email attachments via Microsoft Graph. Parses PDF, Word (w",
+      "label": 1,
+      "compat_score": 0.4343,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "getsentry/sentry-mcp",
+      "skill_a_desc": "Sentry.io integration for error tracking and performance monitoring",
+      "skill_b": "overquotaai/chatterboxio-mcp-server",
+      "skill_b_desc": "MCP server implementation for ChatterBox.io, enabling AI agents to send bots to online meetings (Zoo",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "geiserx/spinnaker-mcp",
+      "skill_a_desc": "A bridge that exposes any Spinnaker instance as an MCP server via the Gate API, enabling management ",
+      "skill_b": "icoretech/warden-mcp",
+      "skill_b_desc": "MCP server for Bitwarden and Vaultwarden vault management. Search, create, edit, and organize logins",
+      "label": 1,
+      "compat_score": 0.4057,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "contextstream/mcp-server",
+      "skill_a_desc": "Universal persistent memory for AI coding tools. Semantic code search, knowledge graphs, impact anal",
+      "skill_b": "the402ai/mcp-server",
+      "skill_b_desc": "AI agent service marketplace with x402 micropayments (USDC on Base). 30 tools for browsing services,",
+      "label": 1,
+      "compat_score": 0.47,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "trackerfitness729-jpg/sitelauncher-mcp-server",
+      "skill_a_desc": "Deploy live HTTPS websites in seconds. Instant subdomains ($1 USDC) or custom .xyz domains ($10 USDC",
+      "skill_b": "neptun2000/heor-agent-mcp",
+      "skill_b_desc": "HEOR (Health Economics and Outcomes Research) MCP server with 7 tools for literature search across 4",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "yuvalsuede/agent-media",
+      "skill_a_desc": "CLI and MCP server for AI video and image generation with unified access to 7 models (Kling, Veo, So",
+      "skill_b": "realwigu/mcp-doctor",
+      "skill_b_desc": "Zero-config diagnostics for MCP servers. Auto-discovers configs across Claude Code, Cursor, VS Code,",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "staccdotsol/staccbot-tg",
+      "skill_a_desc": "Fomox402 broker + MCP server for last-bidder-wins games on Solana. One URL into Claude/Cursor/Goose/",
+      "skill_b": "mymedi-ai/mymedi-ai-mcp-server",
+      "skill_b_desc": "Healthcare billing AI for agents: ICD-10/CPT/HCPCS code lookup (81,769 codes with RVU + OPPS pricing",
+      "label": 1,
+      "compat_score": 0.46,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "aparajithn/agent-scraper-mcp",
+      "skill_a_desc": "Web scraping MCP server for AI agents. 6 tools: clean content extraction, structured scraping with C",
+      "skill_b": "jamesanz/us-legal-mcp",
+      "skill_b_desc": "An MCP server that provides comprehensive US legislation.",
+      "label": 1,
+      "compat_score": 0.3533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "omniologynow-rgb/scout-intel-mcp",
+      "skill_a_desc": "Web intelligence MCP server for AI agents. 7 tools for SERP analysis, competitor research, market tr",
+      "skill_b": "mamertofabian/mcp-everything-search",
+      "skill_b_desc": "Fast Windows file search using Everything SDK",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "louis030195/apollo-io-mcp",
+      "skill_a_desc": "B2B sales intelligence and prospecting with Apollo.io. Search for prospects, enrich contacts with em",
+      "skill_b": "kukapay/blockbeats-mcp",
+      "skill_b_desc": "An MCP server that delivers blockchain news and in-depth articles from BlockBeats for AI agents.",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "khglynn/spotify-bulk-actions-mcp",
+      "skill_a_desc": "Bulk Spotify operations with confidence-scored song matching, batch playlist creation from CSV/podca",
+      "skill_b": "tantiope/datadog-mcp-server",
+      "skill_b_desc": "MCP server providing comprehensive Datadog observability access for AI assistants. Features grep-lik",
+      "label": 1,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gavelin-ai/mcp",
+      "skill_a_desc": "State legislative intelligence for AI agents. Speaker-attributed hearing transcripts, bills, votes, ",
+      "skill_b": "softvoyagers/fakturka-api",
+      "skill_b_desc": "Free Polish VAT invoice generator API (Faktura VAT) with PDF output and preview. No API key required",
+      "label": 1,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "realwigu/mcp-doctor",
+      "skill_a_desc": "Zero-config diagnostics for MCP servers. Auto-discovers configs across Claude Code, Cursor, VS Code,",
+      "skill_b": "tactual-dev/tactual",
+      "skill_b_desc": "Screen-reader navigation cost analyzer. Models real AT user effort with per-profile scoring, graph-b",
+      "label": 1,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "yang1bai/claw-tsaver",
+      "skill_a_desc": "__ 🐍 🏠 🍎 🪟 🐧 - Token-saving MCP proxy that intercepts oversized tool returns and replaces them with ",
+      "skill_b": "canopyhq/phloem",
+      "skill_b_desc": "Local-first AI memory with causal graphs and citation verification. Semantic search, confidence deca",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "transcribe-app/mcp-transcribe",
+      "skill_a_desc": "This service provides fast and reliable transcriptions for audio/video files and voice memos. It all",
+      "skill_b": "rubenayla/partle-mcp",
+      "skill_b_desc": "Search products and stores in nearby physical stores. Find what you need locally instead of waiting ",
+      "label": 1,
+      "compat_score": 0.285,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "3akhp/prts-mcp",
+      "skill_a_desc": "MCP Server for [Arknights](https://www.arknights.global/), querying the [PRTS Wiki](https://prts.wik",
+      "skill_b": "topazlabs/topaz-mcp",
+      "skill_b_desc": "AI image enhancement (upscaling, denoising, sharpening) via Topaz Labs API. Supports 8 models includ",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ark-forge/mcp-eu-ai-act",
+      "skill_a_desc": "EU AI Act compliance scanner that detects regulatory violations in AI codebases with risk classifica",
+      "skill_b": "hashicorp/terraform-mcp-server",
+      "skill_b_desc": "The official Terraform MCP Server seamlessly integrates with the Terraform ecosystem, enabling provi",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "timkulbaev/mcp-linkedin",
+      "skill_a_desc": "LinkedIn publishing, commenting, and reacting via Unipile API. Dry-run by default, SKILL.md included",
+      "skill_b": "geolabel/geolabel-mcp",
+      "skill_b_desc": "GPS coordinates to AI-ready location context — returns place name, stable category (gym, supermarket",
+      "label": 1,
+      "compat_score": 0.4533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "n24q02m/better-email-mcp",
+      "skill_a_desc": "IMAP/SMTP email MCP server with App Passwords (no OAuth2). Auto-discovers Gmail, Outlook, Yahoo, iCl",
+      "skill_b": "strowk/mcp-k8s-go",
+      "skill_b_desc": "/🏠 - Kubernetes cluster operations through MCP",
+      "label": 1,
+      "compat_score": 0.285,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nexusfeed/nexusfeed-mcp",
+      "skill_a_desc": "US state ABC liquor license compliance lookup (CA, TX, NY, FL) — search by trade name, owner, or lic",
+      "skill_b": "cryptorugmunch/rug-munch-mcp",
+      "skill_b_desc": "19 crypto token risk intelligence tools for AI agents. Rug pull detection, honeypot scoring, deploye",
+      "label": 1,
+      "compat_score": 0.56,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "elhamid/llm-council",
+      "skill_a_desc": "Multi-LLM deliberation with anonymized peer review. Runs a 3-stage council: parallel responses → ano",
+      "skill_b": "wenerme/wener-mssql-mcp",
+      "skill_b_desc": "MSSQL database integration with schema inspection and query capabilities",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "berlinbra/alpha-vantage-mcp",
+      "skill_a_desc": "Alpha Vantage API integration to fetch both stock and crypto information",
+      "skill_b": "secretiveshell/mcp-timeserver",
+      "skill_b_desc": "Access the time in any timezone and get the current local time",
+      "label": 1,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tumf/mcp-shell-server",
+      "skill_a_desc": "A secure shell command execution server implementing the Model Context Protocol (MCP)",
+      "skill_b": "urbanmorph/mdshare",
+      "skill_b_desc": "Markdown collaboration for AI workflows. Share markdown instantly via public links with four permiss",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "wolfe-jam/faf-mcp",
+      "skill_a_desc": "Universal persistent project context for Cursor, Windsurf, Cline, VS Code, and all MCP-compatible pl",
+      "skill_b": "pskill9/hn-server",
+      "skill_b_desc": "Parses the HTML content from news.ycombinator.com (Hacker News) and provides structured data for dif",
+      "label": 1,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "daredev256/fcpxml-mcp-server",
+      "skill_a_desc": "The first MCP server for Final Cut Pro. 53 tools that parse, edit, and generate FCPXML timelines — h",
+      "skill_b": "facundolucci/plsreadme",
+      "skill_b_desc": "Share markdown files and text as clean, readable web links via `plsreadme_share_file` and `plsreadme",
+      "label": 1,
+      "compat_score": 0.4857,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "brand-system/brandsystem-mcp",
+      "skill_a_desc": "Make your brand machine-readable. Extract brand identity (colors, fonts, logo, voice, visual rules) ",
+      "skill_b": "kuvopllc/purroxy2",
+      "skill_b_desc": "Record what you do on any website and securely automate it forever. Replays browser actions in headl",
+      "label": 1,
+      "compat_score": 0.52,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mavdol/capsule/mcp-server",
+      "skill_a_desc": "Run untrusted Python/JavaScript code in WebAssembly sandboxes.",
+      "skill_b": "ebbfijsf/agent-reader",
+      "skill_b_desc": "Document beautifier for AI agents. Converts Markdown to styled webpages (with sidebar TOC), Word, PD",
+      "label": 1,
+      "compat_score": 0.44,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "msaad00/agent-bom",
+      "skill_a_desc": "AI supply chain security scanner with 18 MCP tools. Auto-discovers 20 MCP clients, scans dependencie",
+      "skill_b": "hampsterx/claude-mcp-bridge",
+      "skill_b_desc": "Wraps Claude Code CLI as MCP tools (query, search, structured, sessions) with subscription-first aut",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "sidneybissoli/bcb-br-mcp",
+      "skill_a_desc": "Brazilian Central Bank (BCB) economic data — 18,000+ time series including Selic, IPCA, exchange rat",
+      "skill_b": "aparajithn/agent-scraper-mcp",
+      "skill_b_desc": "Web scraping MCP server for AI agents. 6 tools: clean content extraction, structured scraping with C",
+      "label": 1,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pghdma/callrail-mcp",
+      "skill_a_desc": "CallRail REST API v3 integration with 49 tools for call tracking, form submissions, transcripts, ful",
+      "skill_b": "blackwhite084/playwright-plus-python-mcp",
+      "skill_b_desc": "An MCP python server using Playwright for browser automation,more suitable for llm",
+      "label": 1,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "cqfn/aibolit-mcp-server",
+      "skill_a_desc": "Helping Your AI Agent Identify Hotspots for Refactoring; Help AI Understand How to 'Make Code Better",
+      "skill_b": "gavelin-ai/mcp",
+      "skill_b_desc": "State legislative intelligence for AI agents. Speaker-attributed hearing transcripts, bills, votes, ",
+      "label": 1,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "lincolnburrows2017/filesystem-mcp",
+      "skill_a_desc": "Model Context Protocol server for file system operations. Supports read, write, search, copy, move w",
+      "skill_b": "metadrama/obscura-mcp",
+      "skill_b_desc": "MCP server adapter for the lightweight Rust headless browser Obscura — high-performance web scraping",
+      "label": 1,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "atomno-labs/mcp-fns-check",
+      "skill_a_desc": "Russian counterparty due diligence — INN/OGRN lookup against EGRUL/EGRIP, bankruptcy registry (EFRSB",
+      "skill_b": "jamesanz/medical-mcp",
+      "skill_b_desc": "An MCP server that provides access to medical information, drug databases, and healthcare resources.",
+      "label": 1,
+      "compat_score": 0.285,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "labeveryday/nba_mcp_server",
+      "skill_a_desc": "Access live and historical NBA statistics including player stats, game scores, team data, and advanc",
+      "skill_b": "aliafsahnoudeh/shahnameh-mcp-server",
+      "skill_b_desc": "MCP server for accessing the Shahnameh (Book of Kings) Persian epic poem by Ferdowsi, including sect",
+      "label": 1,
+      "compat_score": 0.46,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nolas-shadow/agent1st-ads-mcp",
+      "skill_a_desc": "Meta (Facebook/Instagram) and TikTok ad campaign management for AI agents. One tool call creates a c",
+      "skill_b": "8b-is/smart-tree",
+      "skill_b_desc": "AI-native directory visualization with semantic analysis, ultra-compressed formats for AI consumptio",
+      "label": 1,
+      "compat_score": 0.3486,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "snyk/studio-mcp",
+      "skill_a_desc": "Embeds Snyk's security engines into agentic workflows. Secures AI-generated code in real-time and ac",
+      "skill_b": "saurabhsharma2u/search-console-mcp",
+      "skill_b_desc": "An MCP server to interact with Google Search Console and Bing Webmasters.",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ananddtyagi/gif-creator-mcp",
+      "skill_a_desc": "A MCP server for creating GIFs from your videos.",
+      "skill_b": "zinja-coder/jadx-ai-mcp",
+      "skill_b_desc": "JADX-AI-MCP is a plugin and MCP Server for the JADX decompiler that integrates directly with Model C",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "realwigu/mcp-doctor",
+      "skill_a_desc": "Zero-config diagnostics for MCP servers. Auto-discovers configs across Claude Code, Cursor, VS Code,",
+      "skill_b": "translated/lara-mcp",
+      "skill_b_desc": "MCP Server for Lara Translate API, enabling powerful translation capabilities with support for langu",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "isaacwasserman/mcp-snowflake-server",
+      "skill_a_desc": "Snowflake integration implementing read and (optional) write operations as well as insight tracking",
+      "skill_b": "the-momentum/apple-health-mcp-server",
+      "skill_b_desc": "An MCP server that provides access to exported data from Apple Health. Data analytics included.",
+      "label": 1,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "incu6us/loki-mcp-server",
+      "skill_a_desc": "An MCP server for querying Grafana Loki directly with a discovery-first workflow — labels, values, s",
+      "skill_b": "wenb1n-dev/mysql_mcp_server_pro",
+      "skill_b_desc": "Supports SSE, STDIO; not only limited to MySQL's CRUD functionality; also includes database exceptio",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mikechao/metmuseum-mcp",
+      "skill_a_desc": "Metropolitan Museum of Art Collection API integration to search and display artworks in the collecti",
+      "skill_b": "vakharwalad23/google-mcp",
+      "skill_b_desc": "Collection of Google-native tools (Gmail, Calendar, Drive, Tasks) for MCP with OAuth management, aut",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "prompeteer/prompeteer-mcp",
+      "skill_a_desc": "Generate A+ prompts for ChatGPT, Claude, Midjourney, and 130+ AI platforms. Score quality across 16 ",
+      "skill_b": "nalediym/touch-grass",
+      "skill_b_desc": "Claude Code plugin and MCP server that nudges you to take outdoor breaks based on local weather, sun",
+      "label": 1,
+      "compat_score": 0.4057,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "copperline-labs/rendex-mcp",
+      "skill_a_desc": "Screenshot, PDF, and HTML rendering API for AI agents. Capture any URL or raw HTML as PNG/JPEG/WebP/",
+      "skill_b": "geiserx/spinnaker-mcp",
+      "skill_b_desc": "A bridge that exposes any Spinnaker instance as an MCP server via the Gate API, enabling management ",
+      "label": 1,
+      "compat_score": 0.4533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "montumodi/mongodb-atlas-mcp-server",
+      "skill_a_desc": "A Model Context Protocol (MCP) that provides access to the MongoDB Atlas API. This server wraps the ",
+      "skill_b": "guillochon/mlb-api-mcp",
+      "skill_b_desc": "MCP server that acts as a proxy to the freely available MLB API, which provides player info, stats, ",
+      "label": 1,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gupta-kush/spotify-mcp",
+      "skill_a_desc": "93-tool Spotify server with smart shuffle, natural language song search, vibe analysis, artist netwo",
+      "skill_b": "fantomaskarus1/telegram-bot-mcp",
+      "skill_b_desc": "Full-featured Telegram Bot API MCP server with 174 tools covering the entire Bot API.",
+      "label": 1,
+      "compat_score": 0.3171,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "longportapp/openapi",
+      "skill_a_desc": "LongPort OpenAPI provides real-time stock market data, provides AI access analysis and trading capab",
+      "skill_b": "abhiemj/manim-mcp-server",
+      "skill_b_desc": "A local MCP server that generates animations using Manim.",
+      "label": 1,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "codefuturist/email-mcp",
+      "skill_a_desc": "IMAP/SMTP email MCP server with 42 tools for reading, searching, sending, scheduling, and managing e",
+      "skill_b": "tasopen/mcp-alphabanana",
+      "skill_b_desc": "Local MCP server for generating image assets with Google Gemini (Nano Banana 2 / Pro). Supports tran",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "bright-l01/networkx-mcp-server",
+      "skill_a_desc": "The first NetworkX integration for Model Context Protocol, enabling graph analysis and visualization",
+      "skill_b": "usejunior/safe-docx",
+      "skill_b_desc": "Surgical editing of existing Word .docx files with formatting preservation, tracked changes, comment",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "labeveryday/nba_mcp_server",
+      "skill_a_desc": "Access live and historical NBA statistics including player stats, game scores, team data, and advanc",
+      "skill_b": "albertnahas/icogenie-mcp",
+      "skill_b_desc": "AI-powered SVG icon generation MCP server. Generate production-ready SVG icons from text description",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "shensi8312/blogburst-mcp-server",
+      "skill_a_desc": "AI content generation, repurposing, and multi-platform publishing with [BlogBurst](https://blogburst",
+      "skill_b": "peterbeck111/knowledgelib-io",
+      "skill_b_desc": "Search 1,500+ pre-verified, cited knowledge units across 16 domains. 6 tools: query, batch query, ge",
+      "label": 1,
+      "compat_score": 0.4533,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "meal-inc/bonnard-cli",
+      "skill_a_desc": "Ultra-fast to deploy agentic-first MCP-ready semantic layer. Let your data be like water.",
+      "skill_b": "erebusenigma/context-memory",
+      "skill_b_desc": "Persistent, searchable context storage across Claude Code sessions using SQLite FTS5. Save sessions ",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ckanthony/chisel",
+      "skill_a_desc": "Reduce context usage on file use. Send only unified diffs instead of full files (up to 20-100× fewer",
+      "skill_b": "pulumi/mcp-server",
+      "skill_b_desc": "MCP server for interacting with Pulumi using the Pulumi Automation API and Pulumi Cloud API. Enables",
+      "label": 1,
+      "compat_score": 0.425,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "markuspfundstein/mcp-gsuite",
+      "skill_a_desc": "Integration with gmail and Google Calendar.",
+      "skill_b": "r-huijts/oorlogsbronnen-mcp",
+      "skill_b_desc": "Oorlogsbronnen (War Sources) API integration for accessing historical WWII records, photographs, and",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "raveenb/fal-mcp-server",
+      "skill_a_desc": "Generate AI images, videos, and music using Fal.ai models (FLUX, Stable Diffusion, MusicGen) directl",
+      "skill_b": "vbhjckfd/timetable-api-node",
+      "skill_b_desc": "Real-time Lviv (Ukraine) public transport: stop arrivals, live vehicle positions, route geometry, an",
+      "label": 1,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "brndmk/brandomica-mcp-server",
+      "skill_a_desc": "Brand name verification across domains (with pricing), social handles, trademarks (USPTO), web prese",
+      "skill_b": "spyrae/claude-concilium",
+      "skill_b_desc": "Multi-agent AI consultation framework for Claude Code. Three MCP servers wrapping CLI tools (Codex, ",
+      "label": 1,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "filesystem-quarkiverse/quarkus-mcp-servers",
+      "skill_a_desc": "A filesystem allowing for browsing and editing files implemented in Java using Quarkus. Available as",
+      "skill_b": "liveblocks/liveblocks-mcp-server",
+      "skill_b_desc": "Create, modify, and delete different aspects of [Liveblocks](https://liveblocks.io) such as rooms, t",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "anjor/coinmarket-mcp-server",
+      "skill_a_desc": "Coinmarket API integration to fetch cryptocurrency listings and quotes",
+      "skill_b": "operative_sh/web-eval-agent",
+      "skill_b_desc": "An MCP Server that autonomously debugs web applications with browser-use browser agents",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mikechao/metmuseum-mcp",
+      "skill_a_desc": "Metropolitan Museum of Art Collection API integration to search and display artworks in the collecti",
+      "skill_b": "berckan/bugherd-mcp",
+      "skill_b_desc": "MCP server for BugHerd bug tracking. List projects, view tasks with filtering by status/priority/tag",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "1000ri-jp/atsurae",
+      "skill_a_desc": "AI-powered video editing MCP server with 10 tools for timeline editing, 5-layer compositing, semanti",
+      "skill_b": "keepgoing-dev/mcp-server",
+      "skill_b_desc": "Project memory for AI coding sessions. Auto-captures checkpoints on git commits, branch switches, an",
+      "label": 1,
+      "compat_score": 0.3486,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "xeroapi/xero-mcp-server",
+      "skill_a_desc": "– An MCP server that integrates with Xero's API, allowing for standardized access to Xero's accounti",
+      "skill_b": "lucashild/mcp-server-bigquery",
+      "skill_b_desc": "BigQuery database integration with schema inspection and query capabilities",
+      "label": 1,
+      "compat_score": 0.3,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "qgis-mcp",
+      "skill_a_desc": "Connects QGIS Desktop to Claude AI through the MCP. This integration enables prompt-assisted project",
+      "skill_b": "the-momentum/apple-health-mcp-server",
+      "skill_b_desc": "An MCP server that provides access to exported data from Apple Health. Data analytics included.",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "emanuele94/simbrief-mcpserver",
+      "skill_a_desc": "Access your SimBrief flight plans. 14 tools covering flight summary, weather (METAR/TAF/ATIS), fuel ",
+      "skill_b": "gregario/hearthstone-oracle",
+      "skill_b_desc": "Hearthstone card search, deck analysis, and strategy coaching. 9 tools covering card lookup, deck de",
+      "label": 1,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "yashshingvi/databricks-genie-mcp",
+      "skill_a_desc": "A server that connects to the Databricks Genie API, allowing LLMs to ask natural language questions,",
+      "skill_b": "milofax/xert-mcp",
+      "skill_b_desc": "MCP server for XERT cycling analytics — access fitness signature (FTP, HIE, PP), training status, wo",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pkotecha-eng/aria-mcp-server",
+      "skill_a_desc": "Clinical research MCP server for trial coordinators and life sciences teams. Real-time access to Pub",
+      "skill_b": "lpigeon/ros-mcp-server",
+      "skill_b_desc": "The ROS MCP Server supports robot control by converting user-issued natural language commands into R",
+      "label": 1,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "weibaohui/kom",
+      "skill_a_desc": "/🏠 - Provides MCP multi-cluster Kubernetes management and operations. It can be integrated as an SDK",
+      "skill_b": "custodia-admin/pagebolt-mcp",
+      "skill_b_desc": "MCP server for screenshots, PDFs, OG images, and narrated video recording from Claude Desktop, Curso",
+      "label": 1,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "xuanwo/mcp-server-opendal",
+      "skill_a_desc": "Access any storage with Apache OpenDAL™",
+      "skill_b": "mordor-forge/gemini-media-mcp",
+      "skill_b_desc": "Unified Gemini media generation: Nano Banana (images, editing, multi-reference composition), Veo 3.1",
+      "label": 1,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "octoeverywhere/mcp",
+      "skill_a_desc": "A 3D printer MCP server that allows for getting live printer state, webcam snapshots, and printer co",
+      "skill_b": "jamesanz/medical-mcp",
+      "skill_b_desc": "An MCP server that provides access to medical information, drug databases, and healthcare resources.",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "cactusinhand/mcp_server_notify",
+      "skill_a_desc": "A MCP server that send desktop notifications with sound effect when agent tasks are completed.",
+      "skill_b": "ktanaka101/mcp-server-duckdb",
+      "skill_b_desc": "DuckDB database integration with schema inspection and query capabilities",
+      "label": 1,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "inditextech/mcp-teams-server",
+      "skill_a_desc": "MCP server that integrates Microsoft Teams messaging (read, post, mention, list members and threads)",
+      "skill_b": "keiver/image-tiler-mcp-server",
+      "skill_b_desc": "Full-resolution vision for LLMs. Tiles large images and captures web pages via Chrome CDP so vision ",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tom28881/mcp-jira-server",
+      "skill_a_desc": "Comprehensive TypeScript MCP server for Jira with 20+ tools covering complete project management wor",
+      "skill_b": "elhamid/llm-council",
+      "skill_b_desc": "Multi-LLM deliberation with anonymized peer review. Runs a 3-stage council: parallel responses → ano",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "rossshannon/weekly-weather-mcp",
+      "skill_a_desc": "Weekly Weather MCP server which returns 7 full days of detailed weather forecasts anywhere in the wo",
+      "skill_b": "softvoyagers/pageshot-api",
+      "skill_b_desc": "Free webpage screenshot capture API with format, viewport, and dark mode options. No API key require",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "blazickjp/arxiv-mcp-server",
+      "skill_a_desc": "Search ArXiv research papers",
+      "skill_b": "modelcontextprotocol/server-filesystem",
+      "skill_b_desc": "Direct local file system access.",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "facundolucci/plsreadme",
+      "skill_a_desc": "Share markdown files and text as clean, readable web links via `plsreadme_share_file` and `plsreadme",
+      "skill_b": "gitkraken/gk-cli",
+      "skill_b_desc": "A CLI for interacting with GitKraken APIs. Includes an MCP server via `gk mcp` that not only wraps G",
+      "label": 1,
+      "compat_score": 0.3044,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "teamwork/mcp",
+      "skill_a_desc": "Project and resource management platform that keeps your client projects on track, makes managing re",
+      "skill_b": "orellazi/coda-mcp",
+      "skill_b_desc": "MCP server for [Coda](https://coda.io/)",
+      "label": 1,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pibblokto/cert-manager-mcp-server",
+      "skill_a_desc": "/🐧 ☁️ - mcp server for [cert-manager](https://github.com/cert-manager/cert-manager) management and t",
+      "skill_b": "shinpr/mcp-local-rag",
+      "skill_b_desc": "Privacy-first document search server running entirely locally. Supports semantic search over PDFs, D",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ofershap/mcp-server-cloudflare",
+      "skill_a_desc": "Manage Cloudflare Workers, KV, R2, Pages, DNS, and cache from your IDE.",
+      "skill_b": "arthurpanhku/dragonmcp",
+      "skill_b_desc": "MCP server for Greater China local life services: Meituan/Ele.me food delivery, Didi/Meituan ride-ha",
+      "label": 1,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "doctorm333/promptpilot-mcp-server",
+      "skill_a_desc": "Generate images, video, and audio via 20+ AI models (Flux, GPT-Image-1, Imagen 4, Grok, Seedance, El",
+      "skill_b": "peterbeck111/knowledgelib-io",
+      "skill_b_desc": "Search 1,500+ pre-verified, cited knowledge units across 16 domains. 6 tools: query, batch query, ge",
+      "label": 1,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "1000ri-jp/atsurae",
+      "skill_a_desc": "AI-powered video editing MCP server with 10 tools for timeline editing, 5-layer compositing, semanti",
+      "skill_b": "kc23go/anybrowse",
+      "skill_b_desc": "Convert any URL to LLM-ready Markdown via real Chrome browsers. 3 tools: scrape, crawl, search. Free",
+      "label": 1,
+      "compat_score": 0.4667,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "cqtrinv/trinvmcp",
+      "skill_a_desc": "Explore French communes and cadastral parcels based on name and surface",
+      "skill_b": "human-pages-ai/humanpages",
+      "skill_b_desc": "Access real-world people who listed themselves to be hired by agents. Search by skill, location, and",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tamishaks-2/git-context-mcp",
+      "skill_a_desc": "Local MCP server that provides structured Git repository analysis (project status, recent activity, ",
+      "skill_b": "iplocate/mcp-server-iplocate",
+      "skill_b_desc": "Look up IP address geolocation, network information, detect proxies and VPNs, and find abuse contact",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "hlydecker/ucsc-genome-mcp",
+      "skill_a_desc": "MCP server to interact with the UCSC Genome Browser API, letting you find genomes, chromosomes, and ",
+      "skill_b": "scrapeless-ai/scrapeless-mcp-server",
+      "skill_b_desc": "The Scrapeless Model Context Protocol service acts as an MCP server connector to the Google SERP API",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "topazlabs/topaz-mcp",
+      "skill_a_desc": "AI image enhancement (upscaling, denoising, sharpening) via Topaz Labs API. Supports 8 models includ",
+      "skill_b": "giuseppe-coco/google-workspace-mcp-server",
+      "skill_b_desc": "MCP server that seamlessly interacts with your Google Calendar, Gmail, Drive and so on.",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jiayao/mcp-chess",
+      "skill_a_desc": "A MCP server playing chess against LLMs.",
+      "skill_b": "kukapay/opcua-mcp",
+      "skill_b_desc": "An MCP server that connects to OPC UA-enabled industrial systems.",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "caol64/wenyan-mcp",
+      "skill_a_desc": "Wenyan MCP Server, which lets AI automatically format Markdown articles and publish them to WeChat G",
+      "skill_b": "j0hanz/filesystem-context-mcp-server",
+      "skill_b_desc": "Read-only MCP server for secure filesystem exploration, searching, and analysis with symlink protect",
+      "label": 1,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "joeybrar/agentseal-mcp",
+      "skill_a_desc": "Action logs for AI agents. Records every agent action in a SHA-256 hash chain, making an audit trail",
+      "skill_b": "gregario/lego-oracle",
+      "skill_b_desc": "LEGO sets, parts, minifigs, colours, and inventories from Rebrickable. 10 tools for searching sets, ",
+      "label": 1,
+      "compat_score": 0.46,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pghdma/callrail-mcp",
+      "skill_a_desc": "CallRail REST API v3 integration with 49 tools for call tracking, form submissions, transcripts, ful",
+      "skill_b": "strato-space/media-gen-mcp",
+      "skill_b_desc": "TypeScript MCP server for OpenAI Images/Videos and Google GenAI (Veo) media generation, editing, and",
+      "label": 1,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "virtualsms-io/mcp-server",
+      "skill_a_desc": "Receive SMS verification codes with AI agents. Get virtual phone numbers for WhatsApp, Telegram, Goo",
+      "skill_b": "kukapay/crypto-sentiment-mcp",
+      "skill_b_desc": "An MCP server that delivers cryptocurrency sentiment analysis to AI agents.",
+      "label": 1,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kukapay/pancakeswap-poolspy-mcp",
+      "skill_a_desc": "An MCP server that tracks newly created pools on Pancake Swap.",
+      "skill_b": "xixianliang/harmonyos-mcp-server",
+      "skill_b_desc": "Control HarmonyOS-next devices with AI through MCP. Support device control and UI automation.",
+      "label": 1,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "rubenayla/partle-mcp",
+      "skill_a_desc": "Search products and stores in nearby physical stores. Find what you need locally instead of waiting ",
+      "skill_b": "meal-inc/bonnard-cli",
+      "skill_b_desc": "Ultra-fast to deploy agentic-first MCP-ready semantic layer. Let your data be like water.",
+      "label": 1,
+      "compat_score": 0.3533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "iplocate/mcp-server-iplocate",
+      "skill_a_desc": "Look up IP address geolocation, network information, detect proxies and VPNs, and find abuse contact",
+      "skill_b": "fosdickio/binary_ninja_mcp",
+      "skill_b_desc": "A Binary Ninja plugin, MCP server, and bridge that seamlessly integrates [Binary Ninja](https://bina",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "rohitg00/kubectl-mcp-server",
+      "skill_a_desc": "/🏠 - A Model Context Protocol (MCP) server for Kubernetes that enables AI assistants like Claude, Cu",
+      "skill_b": "bogdan01m/zapcap-mcp-server",
+      "skill_b_desc": "MCP server for ZapCap API providing video caption and B-roll generation via natural language",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "dynatrace-oss/dynatrace-mcp",
+      "skill_a_desc": "Leverage AI-driven observability, security, and automation to analyze anomalies, logs, traces, event",
+      "skill_b": "pantheon-security/chrome-mcp-secure",
+      "skill_b_desc": "Security-hardened Chrome automation with post-quantum encryption (ML-KEM-768 + ChaCha20-Poly1305), s",
+      "label": 1,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kuvopllc/purroxy2",
+      "skill_a_desc": "Record what you do on any website and securely automate it forever. Replays browser actions in headl",
+      "skill_b": "tomholford/mcp-tic-tac-toe",
+      "skill_b_desc": "Play Tic Tac Toe against an AI opponent using this MCP server.",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jeannier/homebrew-mcp",
+      "skill_a_desc": "Control your macOS Homebrew setup using natural language via this MCP server. Simply manage your pac",
+      "skill_b": "phisanti/mcpr",
+      "skill_b_desc": "Model Context Protocol for R: enables AI agents to participate in interactive live R sessions.",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "corebasehq/coremcp",
+      "skill_a_desc": "A secure, tunnel-native database bridge for AI agents. Connects localhost & on-premise databases (MS",
+      "skill_b": "tponscr-debug/oracle-h-mcp",
+      "skill_b_desc": "Mandatory human approval gate for autonomous AI agents. Intercepts critical, irreversible, or financ",
+      "label": 1,
+      "compat_score": 0.3457,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "zcaceres/markdownify-mcp",
+      "skill_a_desc": "An MCP server to convert almost any file or web content into Markdown",
+      "skill_b": "fulcradynamics/fulcra-context-mcp",
+      "skill_b_desc": "MCP server for accessing personal health and biometric data including sleep stages, heart rate, HRV,",
+      "label": 1,
+      "compat_score": 0.345,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tuannvm/mcp-trino",
+      "skill_a_desc": "A Go implementation of a Model Context Protocol (MCP) server for Trino",
+      "skill_b": "mickaelkerjean/filestash",
+      "skill_b_desc": "Remote Storage Access: SFTP, S3, FTP, SMB, NFS, WebDAV, GIT, FTPS, gcloud, azure blob, sharepoint, e",
+      "label": 1,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "open-agreements/open-agreements",
+      "skill_a_desc": "Fill standard legal agreement templates (NDAs, SAFEs, NVCA docs, employment, cloud terms) and produc",
+      "skill_b": "hope1026/weppy-roblox-mcp",
+      "skill_b_desc": "MCP server and plugin that lets AI agents (Claude Code, Cursor, Codex, Gemini) directly control a li",
+      "label": 1,
+      "compat_score": 0.4533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jwaxman19/qlik-mcp",
+      "skill_a_desc": "MCP Server for Qlik Cloud API that enables querying applications, sheets, and extracting data from v",
+      "skill_b": "nexusfeed/nexusfeed-mcp",
+      "skill_b_desc": "US state ABC liquor license compliance lookup (CA, TX, NY, FL) — search by trade name, owner, or lic",
+      "label": 1,
+      "compat_score": 0.3533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "bintocher/mcp-superset",
+      "skill_a_desc": "Full-featured Apache Superset MCP server with 135+ tools for dashboards, charts, datasets, SQL Lab, ",
+      "skill_b": "alimo7amed93/webhook-tester-mcp",
+      "skill_b_desc": "– A FastMCP-based server for interacting with webhook-test.com. Enables users to create, retrieve, a",
+      "label": 1,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jinzcdev/leetcode-mcp-server",
+      "skill_a_desc": "MCP server enabling automated access to **LeetCode**'s programming problems, solutions, submissions ",
+      "skill_b": "bch1212/agentfetch-mcp",
+      "skill_b_desc": "Token-budgeted web fetch for AI agents. Auto-routes between Trafilatura, Jina Reader, FireCrawl, and",
+      "label": 1,
+      "compat_score": 0.345,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pulumi/mcp-server",
+      "skill_a_desc": "MCP server for interacting with Pulumi using the Pulumi Automation API and Pulumi Cloud API. Enables",
+      "skill_b": "topazlabs/topaz-mcp",
+      "skill_b_desc": "AI image enhancement (upscaling, denoising, sharpening) via Topaz Labs API. Supports 8 models includ",
+      "label": 1,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "joshuarileydev/simulator-mcp-server",
+      "skill_a_desc": "An MCP server to control iOS Simulators",
+      "skill_b": "samuelgursky/davinci-resolve-mcp",
+      "skill_b_desc": "MCP server integration for DaVinci Resolve providing powerful tools for video editing, color grading",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "cablate/mcp-google-map",
+      "skill_a_desc": "Google Maps MCP server with 8 tools (geocode, search, directions, elevation), stdio + StreamableHTTP",
+      "skill_b": "poll-the-people/customgpt-mcp",
+      "skill_b_desc": "An MCP server for accessing all of CustomGPT.ai's anti-hallucination RAG-as-a-service API endpoints.",
+      "label": 1,
+      "compat_score": 0.3457,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ks-gen-ai/confluence-mcp-server",
+      "skill_a_desc": "Get Confluence data via CQL and read pages.",
+      "skill_b": "jordandalton/doordash-mcp-server",
+      "skill_b_desc": "– DoorDash Delivery (Unofficial)",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ooples/mcp-console-automation",
+      "skill_a_desc": "Production-ready MCP server for AI-driven console automation and monitoring. 40 tools for session ma",
+      "skill_b": "kiliczsh/mcp-mongo-server",
+      "skill_b_desc": "A Model Context Protocol Server for MongoDB",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tantiope/datadog-mcp-server",
+      "skill_a_desc": "MCP server providing comprehensive Datadog observability access for AI assistants. Features grep-lik",
+      "skill_b": "eat-pray-ai/yutu",
+      "skill_b_desc": "A fully functional MCP server and CLI for YouTube to automate YouTube operation",
+      "label": 1,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "dbt-labs/dbt-mcp",
+      "skill_a_desc": "Official MCP server for [dbt (data build tool)](https://www.getdbt.com/product/what-is-dbt) providin",
+      "skill_b": "takashiishida/arxiv-latex-mcp",
+      "skill_b_desc": "Get the LaTeX source of arXiv papers to handle mathematical content and equations",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ammawla/encode-toolkit",
+      "skill_a_desc": "MCP server and Claude Plugin for a full ENCODE Project genomic data and analysis toolkit — search, d",
+      "skill_b": "mattijsdp/dbt-docs-mcp",
+      "skill_b_desc": "MCP server for dbt-core (OSS) users as the official dbt MCP only supports dbt Cloud. Supports projec",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "twelvetake-studios/reaper-mcp",
+      "skill_a_desc": "MCP server enabling AI assistants to control REAPER DAW for mixing, mastering, MIDI composition, and",
+      "skill_b": "corebasehq/coremcp",
+      "skill_b_desc": "A secure, tunnel-native database bridge for AI agents. Connects localhost & on-premise databases (MS",
+      "label": 1,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "neptun2000/heor-agent-mcp",
+      "skill_a_desc": "HEOR (Health Economics and Outcomes Research) MCP server with 7 tools for literature search across 4",
+      "skill_b": "softvoyagers/pageshot-api",
+      "skill_b_desc": "Free webpage screenshot capture API with format, viewport, and dark mode options. No API key require",
+      "label": 1,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "seym0n/tiktok-mcp",
+      "skill_a_desc": "Interact with TikTok videos",
+      "skill_b": "leonardoca1/aesthetics-wiki-mcp",
+      "skill_b_desc": "Search, read, and discover thousands of visual aesthetics (cottagecore, dark academia, y2k, goblinco",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "abhiphile/fermat-mcp",
+      "skill_a_desc": "The ultimate math engine unifying SymPy, NumPy & Matplotlib in one powerful server. Perfect for deve",
+      "skill_b": "scrapeless-ai/scrapeless-mcp-server",
+      "skill_b_desc": "The Scrapeless Model Context Protocol service acts as an MCP server connector to the Google SERP API",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "andrealufino/aapl-ads-mcp",
+      "skill_a_desc": "MCP server for andrealufino/aapl-ads-mcp",
+      "skill_b": "sudhan30/freshprobe",
+      "skill_b_desc": "Data freshness verification for AI agents. Probes endpoints for HTTP cache staleness, latency percen",
+      "label": 1,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "spranab/saga-mcp",
+      "skill_a_desc": "A Jira-like project tracker for AI agents with full hierarchy (Projects > Epics > Tasks > Subtasks),",
+      "skill_b": "blackwell-systems/agent-lsp",
+      "skill_b_desc": "Stateful MCP server over real language servers. 50 tools, 30 CI-verified languages, 20 agent workflo",
+      "label": 1,
+      "compat_score": 0.4057,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "bug-breeder/quip-mcp",
+      "skill_a_desc": "A Model Context Protocol (MCP) server providing AI assistants with comprehensive Quip document acces",
+      "skill_b": "hive-intel/hive-crypto-mcp",
+      "skill_b_desc": "Hive Intelligence: Ultimate cryptocurrency MCP for AI assistants with unified access to crypto, DeFi",
+      "label": 1,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "webaesbyamin/agent-receipts",
+      "skill_a_desc": "Cryptographic accountability for AI agents. Ed25519-signed receipts for every MCP tool call — constr",
+      "skill_b": "mpeirone/zabbix-mcp-server",
+      "skill_b_desc": "Zabbix integration for hosts, items, triggers, templates, problems, data and more.",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nexusfeed/nexusfeed-mcp",
+      "skill_a_desc": "US state ABC liquor license compliance lookup (CA, TX, NY, FL) — search by trade name, owner, or lic",
+      "skill_b": "yoelbassin/gnuradiomcp",
+      "skill_b_desc": "An MCP server for GNU Radio that enables LLMs to autonomously create and modify RF `.grc` flowcharts",
+      "label": 1,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "dan1d/mercadolibre-mcp",
+      "skill_a_desc": "MercadoLibre marketplace integration for AI agents. Search products, get item details, browse catego",
+      "skill_b": "coding-solo/godot-mcp",
+      "skill_b_desc": "A MCP server for interacting with the Godot game engine, providing tools for editing, running, debug",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mrslbt/rakuten-mcp",
+      "skill_a_desc": "Rakuten API integration for product search, hotel and travel booking, and recipe lookup across Japan",
+      "skill_b": "hikmahtech/drwhome",
+      "skill_b_desc": "– Remote MCP server at `https://drwho.me/mcp/mcp` with 10 developer utilities: base64 encode/decode,",
+      "label": 1,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kc23go/anybrowse",
+      "skill_a_desc": "Convert any URL to LLM-ready Markdown via real Chrome browsers. 3 tools: scrape, crawl, search. Free",
+      "skill_b": "contextpulse/contextpulse",
+      "skill_b_desc": "Local-first desktop context server for AI agents. Captures screen (OCR), voice (Whisper), keyboard/m",
+      "label": 1,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "the-momentum/apple-health-mcp-server",
+      "skill_a_desc": "An MCP server that provides access to exported data from Apple Health. Data analytics included.",
+      "skill_b": "slouchd/cyberchef-api-mcp-server",
+      "skill_b_desc": "MCP server for interacting with the CyberChef server API which will allow an MCP client to utilise t",
+      "label": 1,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gupta-kush/spotify-mcp",
+      "skill_a_desc": "93-tool Spotify server with smart shuffle, natural language song search, vibe analysis, artist netwo",
+      "skill_b": "mickaelkerjean/filestash",
+      "skill_b_desc": "Remote Storage Access: SFTP, S3, FTP, SMB, NFS, WebDAV, GIT, FTPS, gcloud, azure blob, sharepoint, e",
+      "label": 1,
+      "compat_score": 0.2822,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "henilcalagiya/google-sheets-mcp",
+      "skill_a_desc": "Your AI Assistant's Gateway to Google Sheets! 25 powerful tools for seamless Google Sheets automatio",
+      "skill_b": "jamesanz/us-legal-mcp",
+      "skill_b_desc": "An MCP server that provides comprehensive US legislation.",
+      "label": 1,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "andybrandt/mcp-simple-timeserver",
+      "skill_a_desc": "An MCP server that allows checking local time on the client machine or current UTC time from an NTP ",
+      "skill_b": "pghdma/callrail-mcp",
+      "skill_b_desc": "CallRail REST API v3 integration with 49 tools for call tracking, form submissions, transcripts, ful",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "dearlordylord/huly-mcp",
+      "skill_a_desc": "MCP server for Huly project management. Query issues, create and update tasks, manage labels and pri",
+      "skill_b": "haiku-trading/haiku-mcp-server",
+      "skill_b_desc": "DeFi execution MCP server — swap, provide liquidity, lend, bridge, and run yield strategies across 2",
+      "label": 1,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "buildsyncinc/gibs-mcp",
+      "skill_a_desc": "Regulatory compliance (AI Act, GDPR, DORA) with article-level citations",
+      "skill_b": "6figr-com/jobgpt-mcp-server",
+      "skill_b_desc": "MCP server for [JobGPT](https://6figr.com/jobgpt) — search jobs, auto-apply, generate tailored resum",
+      "label": 1,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tatsuju/opdstar-nhi-mcp",
+      "skill_a_desc": "Taiwan's first public MCP server for National Health Insurance (NHI) data — 234 rejection codes, 1,4",
+      "skill_b": "wenb1n-dev/smartdb_mcp",
+      "skill_b_desc": "A universal database MCP server supporting simultaneous connections to multiple databases. It provid",
+      "label": 1,
+      "compat_score": 0.3171,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "jeannier/homebrew-mcp",
+      "skill_a_desc": "Control your macOS Homebrew setup using natural language via this MCP server. Simply manage your pac",
+      "skill_b": "grafana/mcp-grafana",
+      "skill_b_desc": "Search dashboards, investigate incidents and query datasources in your Grafana instance",
+      "label": 1,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pipeboard-co/meta-ads-mcp",
+      "skill_a_desc": "Meta Ads automation that just works. Trusted by 10,000+ businesses to analyze performance, test crea",
+      "skill_b": "sanyambassi/thales-cdsp-crdp-mcp-server",
+      "skill_b_desc": "MCP server for Thales CipherTrust Manager RestFul Data Protection service.",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "msaad00/agent-bom",
+      "skill_a_desc": "AI supply chain security scanner with 18 MCP tools. Auto-discovers 20 MCP clients, scans dependencie",
+      "skill_b": "twelvetake-studios/reaper-mcp",
+      "skill_b_desc": "MCP server enabling AI assistants to control REAPER DAW for mixing, mastering, MIDI composition, and",
+      "label": 1,
+      "compat_score": 0.44,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "opgginc/opgg-mcp",
+      "skill_a_desc": "Access real-time gaming data across popular titles like League of Legends, TFT, and Valorant, offeri",
+      "skill_b": "one8943/ai-furniture-hub",
+      "skill_b_desc": "Japan-focused furniture & home product hub for AI agents. 15 tools for mm-precision search across 30",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tomohiro-owada/devrag",
+      "skill_a_desc": "Lightweight local RAG MCP server for semantic vector search over markdown documents. Reduces token c",
+      "skill_b": "tasopen/mcp-alphabanana",
+      "skill_b_desc": "Local MCP server for generating image assets with Google Gemini (Nano Banana 2 / Pro). Supports tran",
+      "label": 1,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "inspektor-gadget/ig-mcp-server",
+      "skill_a_desc": "Debug your Container and Kubernetes workloads with an AI interface powered by eBPF.",
+      "skill_b": "transcribe-app/mcp-transcribe",
+      "skill_b_desc": "This service provides fast and reliable transcriptions for audio/video files and voice memos. It all",
+      "label": 1,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "qainsights/locust-mcp-server",
+      "skill_a_desc": "Locust MCP Server for performance testing",
+      "skill_b": "facundolucci/plsreadme",
+      "skill_b_desc": "Share markdown files and text as clean, readable web links via `plsreadme_share_file` and `plsreadme",
+      "label": 1,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "yang1bai/claw-tsaver",
+      "skill_a_desc": "__ 🐍 🏠 🍎 🪟 🐧 - Token-saving MCP proxy that intercepts oversized tool returns and replaces them with ",
+      "skill_b": "nakaokarei/swift-mcp-gui",
+      "skill_b_desc": "MCP server that can execute commands such as keyboard input and mouse movement",
+      "label": 1,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jagan-shanmugam/open-streetmap-mcp",
+      "skill_a_desc": "An OpenStreetMap MCP server with location-based services and geospatial data.",
+      "skill_b": "marceausolutions/md-to-pdf-mcp",
+      "skill_b_desc": "Convert Markdown files to professional PDFs with customizable themes, headers, footers, and styling",
+      "label": 1,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "unmarkdown/mcp-server",
+      "skill_a_desc": "The document publishing layer for AI tools. Convert markdown to formatted documents for Google Docs,",
+      "skill_b": "jeannier/homebrew-mcp",
+      "skill_b_desc": "Control your macOS Homebrew setup using natural language via this MCP server. Simply manage your pac",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kyrietangsheng/mcp-server-nationalparks",
+      "skill_a_desc": "National Park Service API integration providing latest information of park details, alerts, visitor ",
+      "skill_b": "operantlabs/operant-mcp",
+      "skill_b_desc": "Security testing MCP server with 51 tools for penetration testing, network forensics, memory analysi",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "marykovziridze/screaming-frog-mcp",
+      "skill_a_desc": "Screaming Frog SEO Spider headless crawls, data export, and technical SEO audit skill for Claude. 8 ",
+      "skill_b": "ohnlp/omop_mcp",
+      "skill_b_desc": "Map clinical terminology to OMOP concepts using LLMs for healthcare data standardization and interop",
+      "label": 1,
+      "compat_score": 0.44,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "the-momentum/fhir-mcp-server",
+      "skill_a_desc": "MCP Server that connects AI agents to FHIR servers. One example use case is querying patient history",
+      "skill_b": "googleapis/genai-toolbox",
+      "skill_b_desc": "Open source MCP server specializing in easy, fast, and secure tools for Databases.",
+      "label": 1,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ndthanhdev/mcp-browser-kit",
+      "skill_a_desc": "An MCP Server that enables AI assistants to interact with your local browsers.",
+      "skill_b": "xquik-dev/x-twitter-scraper",
+      "skill_b_desc": "Remote X (Twitter) MCP server with 121 endpoints via 2 tools. Post tweets, reply, like, retweet, fol",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pghdma/callrail-mcp",
+      "skill_a_desc": "CallRail REST API v3 integration with 49 tools for call tracking, form submissions, transcripts, ful",
+      "skill_b": "teamsafeai/life",
+      "skill_b_desc": "Persistent identity architecture for AI agents. 16 MCP servers covering drives, emotional relationsh",
+      "label": 1,
+      "compat_score": 0.44,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "incu6us/loki-mcp-server",
+      "skill_a_desc": "An MCP server for querying Grafana Loki directly with a discovery-first workflow — labels, values, s",
+      "skill_b": "the-momentum/apple-health-mcp-server",
+      "skill_b_desc": "An MCP server that provides access to exported data from Apple Health. Data analytics included.",
+      "label": 1,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "codefuturist/email-mcp",
+      "skill_a_desc": "IMAP/SMTP email MCP server with 42 tools for reading, searching, sending, scheduling, and managing e",
+      "skill_b": "pv-bhat/vibe-check-mcp-server",
+      "skill_b_desc": "An MCP server that prevents cascading errors and scope creep by calling a \"Vibe-check\" agent to ensu",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "stackloklabs/osv-mcp",
+      "skill_a_desc": "Access the OSV (Open Source Vulnerabilities) database for vulnerability information. Query vulnerabi",
+      "skill_b": "kadykov/mcp-openapi-schema-explorer",
+      "skill_b_desc": "Token-efficient access to OpenAPI/Swagger specs via MCP Resources.",
+      "label": 1,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "markmircea/selenix-mcp-server",
+      "skill_a_desc": "MCP server bridging Claude Desktop with Selenix for browser automation and testing. Create, run, deb",
+      "skill_b": "acedatacloud/mcpseedream",
+      "skill_b_desc": "ByteDance Seedream image generation and editing via Ace Data Cloud API.",
+      "label": 1,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tumf/mcp-shell-server",
+      "skill_a_desc": "A secure shell command execution server implementing the Model Context Protocol (MCP)",
+      "skill_b": "thunderboltsid/mcp-nutanix",
+      "skill_b_desc": "/☁️ - Go-based MCP Server for interfacing with Nutanix Prism Central resources.",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "lucashild/mcp-server-bigquery",
+      "skill_a_desc": "BigQuery database integration with schema inspection and query capabilities",
+      "skill_b": "jamesanz/us-legal-mcp",
+      "skill_b_desc": "An MCP server that provides comprehensive US legislation.",
+      "label": 1,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "hug0x0/mcp-reunion",
+      "skill_a_desc": "96 tools across 21 modules for La Réunion (French overseas region) open data: economy, demographics,",
+      "skill_b": "yang1bai/claw-tsaver",
+      "skill_b_desc": "__ 🐍 🏠 🍎 🪟 🐧 - Token-saving MCP proxy that intercepts oversized tool returns and replaces them with ",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "googleapis/genai-toolbox",
+      "skill_a_desc": "Open source MCP server specializing in easy, fast, and secure tools for Databases.",
+      "skill_b": "3akhp/prts-mcp",
+      "skill_b_desc": "MCP Server for [Arknights](https://www.arknights.global/), querying the [PRTS Wiki](https://prts.wik",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "josuem1109/personal-finance-mcp",
+      "skill_a_desc": "Self-hosted, read-only MCP server that connects banks, credit cards, loans, and brokerage accounts v",
+      "skill_b": "takashiishida/arxiv-latex-mcp",
+      "skill_b_desc": "Get the LaTeX source of arXiv papers to handle mathematical content and equations",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "one8943/ai-furniture-hub",
+      "skill_a_desc": "Japan-focused furniture & home product hub for AI agents. 15 tools for mm-precision search across 30",
+      "skill_b": "benborla29/mcp-server-mysql",
+      "skill_b_desc": "MySQL database integration in NodeJS with configurable access controls and schema inspection",
+      "label": 1,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "custodia-admin/pagebolt-mcp",
+      "skill_a_desc": "MCP server for screenshots, PDFs, OG images, and narrated video recording from Claude Desktop, Curso",
+      "skill_b": "timowhite88/farnsworth-syntek",
+      "skill_b_desc": "7-layer recursive agent memory with context branching, holographic recall, dream consolidation, and ",
+      "label": 1,
+      "compat_score": 0.41,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "marceausolutions/md-to-pdf-mcp",
+      "skill_a_desc": "Convert Markdown files to professional PDFs with customizable themes, headers, footers, and styling",
+      "skill_b": "twelvetake-studios/reaper-mcp",
+      "skill_b_desc": "MCP server enabling AI assistants to control REAPER DAW for mixing, mastering, MIDI composition, and",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "k-dense-ai/claude-skills-mcp",
+      "skill_a_desc": "Intelligent search capabilities to let every model and client use [Claude Agent Skills](https://www.",
+      "skill_b": "brndmk/brandomica-mcp-server",
+      "skill_b_desc": "Brand name verification across domains (with pricing), social handles, trademarks (USPTO), web prese",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "samuelgursky/davinci-resolve-mcp",
+      "skill_a_desc": "MCP server integration for DaVinci Resolve providing powerful tools for video editing, color grading",
+      "skill_b": "arrismo/kaggle-mcp",
+      "skill_b_desc": "Connects to Kaggle, ability to download and analyze datasets.",
+      "label": 1,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "universalamateur/reclaim-mcp-server",
+      "skill_a_desc": "Reclaim.ai calendar integration with 40 tools for tasks, habits, focus time, scheduling links, and p",
+      "skill_b": "tatsuju/opdstar-nhi-mcp",
+      "skill_b_desc": "Taiwan's first public MCP server for National Health Insurance (NHI) data — 234 rejection codes, 1,4",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "acedatacloud/mcpsuno",
+      "skill_a_desc": "Suno AI music generation, lyrics, covers, and vocal extraction via Ace Data Cloud API.",
+      "skill_b": "mailboxvalidator/mcp-mailboxvalidator",
+      "skill_b_desc": "Validates email addresses to reduce email bounces during marketing campaigns.",
+      "label": 1,
+      "compat_score": 0.4857,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "acacian/aegis",
+      "skill_a_desc": "Policy-based governance for AI agent tool calls. YAML policies, approval gates, risk assessment, and",
+      "skill_b": "atomno-labs/mcp-fns-check",
+      "skill_b_desc": "Russian counterparty due diligence — INN/OGRN lookup against EGRUL/EGRIP, bankruptcy registry (EFRSB",
+      "label": 1,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "leonardoca1/aesthetics-wiki-mcp",
+      "skill_a_desc": "Search, read, and discover thousands of visual aesthetics (cottagecore, dark academia, y2k, goblinco",
+      "skill_b": "wyattjoh/jmap-mcp",
+      "skill_b_desc": "A Model Context Protocol (MCP) server that provides tools for interacting with JMAP (JSON Meta Appli",
+      "label": 1,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "carsol/monarch-mcp-server",
+      "skill_a_desc": "MCP server providing read-only access to Monarch Money financial data, enabling AI assistants to ana",
+      "skill_b": "guimatheus92/mcp-video-analyzer",
+      "skill_b_desc": "MCP server for video analysis — extracts transcripts, key frames, OCR text, and annotated timelines ",
+      "label": 1,
+      "compat_score": 0.3486,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pullkitsan/mobsf-mcp-server",
+      "skill_a_desc": "A MCP server for MobSF which can be used for static and dynamic analysis of Android and iOS applicat",
+      "skill_b": "pab1it0/prometheus-mcp-server",
+      "skill_b_desc": "Query and analyze Prometheus, open-source monitoring system.",
+      "label": 1,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "metatool-ai/metatool-app",
+      "skill_a_desc": "MetaMCP is the one unified middleware MCP server that manages your MCP connections with GUI.",
+      "skill_b": "lightpanda-io/gomcp",
+      "skill_b_desc": "/☁️ 🐧/🍎 - An MCP server in Go for Lightpanda, the ultra fast headless browser designed for web autom",
+      "label": 1,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "longevity-genie/biothings-mcp",
+      "skill_a_desc": "MCP server to interact with the BioThings API, including genes, genetic variants, drugs, and taxonom",
+      "skill_b": "redis/mcp-redis-cloud",
+      "skill_b_desc": "Manage your Redis Cloud resources effortlessly using natural language. Create databases, monitor sub",
+      "label": 1,
+      "compat_score": 0.3533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "box/mcp-server-box-remote",
+      "skill_a_desc": "The Box MCP server allows third party AI agents to securely and seamlessly access Box content and us",
+      "skill_b": "ryan0204/github-repo-mcp",
+      "skill_b_desc": "GitHub Repo MCP allow your AI assistants browse GitHub repositories, explore directories, and view f",
+      "label": 1,
+      "compat_score": 0.44,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "albertnahas/icogenie-mcp",
+      "skill_a_desc": "AI-powered SVG icon generation MCP server. Generate production-ready SVG icons from text description",
+      "skill_b": "chronulusai/chronulus-mcp",
+      "skill_b_desc": "Predict anything with Chronulus AI forecasting and prediction agents.",
+      "label": 1,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "yashshingvi/databricks-genie-mcp",
+      "skill_a_desc": "A server that connects to the Databricks Genie API, allowing LLMs to ask natural language questions,",
+      "skill_b": "hypersequent/qasphere-mcp",
+      "skill_b_desc": "Integration with [QA Sphere](https://qasphere.com/) test management system, enabling LLMs to discove",
+      "label": 1,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "eat-pray-ai/yutu",
+      "skill_a_desc": "A fully functional MCP server and CLI for YouTube to automate YouTube operation",
+      "skill_b": "ark-forge/mcp-eu-ai-act",
+      "skill_b_desc": "EU AI Act compliance scanner that detects regulatory violations in AI codebases with risk classifica",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jorgenclaw/nostr-mcp-server",
+      "skill_a_desc": "Lightning-paid Nostr signing MCP server. AI agents pay sats per call to sign and publish Nostr event",
+      "skill_b": "tuannvm/mcp-trino",
+      "skill_b_desc": "A Go implementation of a Model Context Protocol (MCP) server for Trino",
+      "label": 1,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "open-agreements/open-agreements",
+      "skill_a_desc": "Fill standard legal agreement templates (NDAs, SAFEs, NVCA docs, employment, cloud terms) and produc",
+      "skill_b": "cfpramod/open-museum-mcp",
+      "skill_b_desc": "Federated, license-verified search across The Met, Cleveland, AIC, Wikimedia Commons, and Europeana.",
+      "label": 1,
+      "compat_score": 0.4533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "metadrama/obscura-mcp",
+      "skill_a_desc": "MCP server adapter for the lightweight Rust headless browser Obscura — high-performance web scraping",
+      "skill_b": "sinanefeozler/reddit-summarizer-mcp",
+      "skill_b_desc": "MCP server for summarizing users's Reddit homepage or any subreddit based on posts and comments.",
+      "label": 1,
+      "compat_score": 0.345,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mikechao/metmuseum-mcp",
+      "skill_a_desc": "Metropolitan Museum of Art Collection API integration to search and display artworks in the collecti",
+      "skill_b": "prompeteer/prompeteer-mcp",
+      "skill_b_desc": "Generate A+ prompts for ChatGPT, Claude, Midjourney, and 130+ AI platforms. Score quality across 16 ",
+      "label": 1,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "doggychip/agentforge",
+      "skill_a_desc": "Unified API gateway and marketplace for 300+ AI agents. One API key, REST + streaming, 90% creator r",
+      "skill_b": "klavis-ai/youtube",
+      "skill_b_desc": "Extract and convert YouTube video information.",
+      "label": 0,
+      "compat_score": 0.5267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "zeparhyfar/mcp-datetime",
+      "skill_a_desc": "MCP server providing date and time functions in various formats",
+      "skill_b": "ryan0204/github-repo-mcp",
+      "skill_b_desc": "GitHub Repo MCP allow your AI assistants browse GitHub repositories, explore directories, and view f",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "adsmcp/tiktok-ads-mcp-server",
+      "skill_a_desc": "A Model Context Protocol server for TikTok Ads API integration, enabling AI assistants to manage cam",
+      "skill_b": "yamanoku/baseline-mcp-server",
+      "skill_b_desc": "MCP server that searches Baseline status using Web Platform API",
+      "label": 0,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "agent-blueprint/mcp-server",
+      "skill_a_desc": "8 MCP tools for exploring and downloading AI agent blueprints. List blueprints, get summaries, downl",
+      "skill_b": "gregario/lego-oracle",
+      "skill_b_desc": "LEGO sets, parts, minifigs, colours, and inventories from Rebrickable. 10 tools for searching sets, ",
+      "label": 0,
+      "compat_score": 0.44,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jhomen368/steam-reviews-mcp",
+      "skill_a_desc": "Search Steam games, fetch user reviews, and analyze sentiment with topic drill-down to make informed",
+      "skill_b": "qdrant/mcp-server-qdrant",
+      "skill_b_desc": "A Qdrant MCP server",
+      "label": 0,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "venture-ai-labs/cryptodataapi-mcp",
+      "skill_a_desc": "Real-time crypto market data for AI agents — market health scores, derivatives, funding rates, ETF f",
+      "skill_b": "boldsign/boldsign-mcp",
+      "skill_b_desc": "Search, request, and manage e-signature contracts effortlessly with [BoldSign](https://boldsign.com/",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "hkaanengin/opendota-mcp-server",
+      "skill_a_desc": "MCP server providing AI assistants with access to Dota 2 statistics via OpenDota API. 20+ tools for ",
+      "skill_b": "echojobsio/jdl-mcp-server",
+      "skill_b_desc": "Search 1M+ enriched job listings from 20,000+ companies. Filter by skills, salary, location, seniori",
+      "label": 0,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "doobidoo/mcp-memory-service",
+      "skill_a_desc": "Universal memory service providing semantic search, persistent storage, and autonomous memory consol",
+      "skill_b": "blazickjp/arxiv-mcp-server",
+      "skill_b_desc": "Search ArXiv research papers",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "shareseer/shareseer-mcp-server",
+      "skill_a_desc": "MCP to Access SEC filings, financials & insider trading data in real time using [ShareSeer](https://",
+      "skill_b": "snowflake-labs/mcp",
+      "skill_b_desc": "Open-source MCP server for Snowflake from official Snowflake-Labs supports prompting Cortex Agents, ",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pratyay/mac-monitor-mcp",
+      "skill_a_desc": "Identifies resource-intensive processes on macOS and provides performance improvement suggestions.",
+      "skill_b": "opendatalab/mineru-ecosystem",
+      "skill_b_desc": "Official MinerU document parsing MCP ([mineru-open-mcp](https://pypi.org/project/mineru-open-mcp/) o",
+      "label": 0,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mikusnuz/umami-mcp",
+      "skill_a_desc": "Full-coverage MCP server for Umami Analytics API v2 — 66 tools for websites, stats, sessions, events",
+      "skill_b": "jpisnice/shadcn-ui-mcp-server",
+      "skill_b_desc": "MCP server that gives AI assistants seamless access to shadcn/ui v4 components, blocks, demos, and m",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "szhygulin/vaultpilot-mcp",
+      "skill_a_desc": "Safety first. Hardware-verified DeFi for AI agents — designed for when the AI can be compromised. Th",
+      "skill_b": "dorukardahan/domain-search-mcp",
+      "skill_b_desc": "Fast domain availability aggregator with pricing. Checks Porkbun, Namecheap, GoDaddy, RDAP & WHOIS. ",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "8randonpickart5/alderpost-mcp",
+      "skill_a_desc": "8 bundled intelligence endpoints (security, company, threat, compliance, sales, sports, property, he",
+      "skill_b": "zolo-ryan/marketauxmcpserver",
+      "skill_b_desc": "MCP server for comprehensive market and financial news search with advanced filtering by symbols, in",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nikicat/mcp-wallet-signer",
+      "skill_a_desc": "Non-custodial EVM wallet MCP — routes transactions to browser wallets (MetaMask, etc.) for signing. ",
+      "skill_b": "vrtxomega/omega-brain-mcp",
+      "skill_b_desc": "Omega Brain MCP Server. Hardened AI execution pipeline prioritizing NAEF logic constraints over narr",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "urlbox/urlbox-mcp-server",
+      "skill_a_desc": "A reliable MCP server for generating and managing screenshots, PDFs, and videos, performing AI-power",
+      "skill_b": "cg3-llc/prior_mcp",
+      "skill_b_desc": "Shared knowledge base where AI agents exchange proven solutions — including failed approaches, so yo",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "karanb192/reddit-mcp-buddy",
+      "skill_a_desc": "Browse Reddit posts, search content, and analyze user activity without API keys. Works out-of-the-bo",
+      "skill_b": "forest6511/secretctl",
+      "skill_b_desc": "AI-safe secrets manager with MCP integration. Run commands with credentials injected as environment ",
+      "label": 0,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "fr0gger/mcp_security",
+      "skill_a_desc": "MCP server for querying the ORKL API. This server provides tools for fetching threat reports, analyz",
+      "skill_b": "yikakia/godoc-mcp-server",
+      "skill_b_desc": "Query Go package information on pkg.go.dev",
+      "label": 0,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "esignaturescom/mcp-server-esignatures",
+      "skill_a_desc": "Contract and template management for drafting, reviewing, and sending binding contracts via the eSig",
+      "skill_b": "berckan/bugherd-mcp",
+      "skill_b_desc": "MCP server for BugHerd bug tracking. List projects, view tasks with filtering by status/priority/tag",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "blackwell-systems/agent-lsp",
+      "skill_a_desc": "Stateful MCP server over real language servers. 50 tools, 30 CI-verified languages, 20 agent workflo",
+      "skill_b": "adhikasp/mcp-twikit",
+      "skill_b_desc": "Interact with Twitter search and timeline",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mbrassey/solentic",
+      "skill_a_desc": "Native Solana staking infrastructure for AI agents — 18 MCP tools for stake, unstake, withdraw, simu",
+      "skill_b": "inkbytefo/screenmonitormcp",
+      "skill_b_desc": "Real-time screen analysis, context-aware recording, and UI monitoring MCP server. Supports AI vision",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "leesgit/claude-session-continuity-mcp",
+      "skill_a_desc": "Zero-config session continuity for Claude Code. Auto-captures context via Claude Hooks, provides 25 ",
+      "skill_b": "joinly-ai/joinly",
+      "skill_b_desc": "MCP server to interact with browser-based meeting platforms (Zoom, Teams, Google Meet). Enables AI a",
+      "label": 0,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ellmos-ai/ellmos-filecommander-mcp",
+      "skill_a_desc": "Comprehensive local filesystem MCP server with file management, process control, interactive session",
+      "skill_b": "kitao/pyxel-mcp",
+      "skill_b_desc": "MCP server for [Pyxel](https://github.com/kitao/pyxel) retro game engine, enabling AI to run, captur",
+      "label": 0,
+      "compat_score": 0.4057,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pramod/kaggle",
+      "skill_a_desc": "This Kaggle MCP Server makes Kaggle more accessible by letting you browse competitions, leaderboards",
+      "skill_b": "shellsage-ai/mcp-server-boilerplate",
+      "skill_b_desc": "Production-ready MCP server starter templates in TypeScript and Python. Includes tool, resource, and",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "aktsmm/skill-ninja-mcp-server",
+      "skill_a_desc": "Agent Skill Ninja for MCP: Search, install, and manage AI agent skills (SKILL.md files) from GitHub ",
+      "skill_b": "mikan-atomoki/text-to-model",
+      "skill_b_desc": "Turn natural language into 3D models in Fusion 360. 64 CAD tools including sketches, extrudes, fille",
+      "label": 0,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "recursechat/mcp-server-apple-shortcuts",
+      "skill_a_desc": "An MCP Server Integration with Apple Shortcuts",
+      "skill_b": "atomno-labs/mcp-fns-check",
+      "skill_b_desc": "Russian counterparty due diligence — INN/OGRN lookup against EGRUL/EGRIP, bankruptcy registry (EFRSB",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "shuji-bonji/xcomet-mcp-server",
+      "skill_a_desc": "Translation quality evaluation using xCOMET models. Provides quality scoring (0-1), error detection ",
+      "skill_b": "eirikb/any-cli-mcp-server",
+      "skill_b_desc": "Universal MCP server that transforms any CLI tool into an MCP server. Works with any CLI that has `-",
+      "label": 0,
+      "compat_score": 0.46,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gucci-atlasv/skillssafe-mcp",
+      "skill_a_desc": "Free AI agent skill security scanner. Scan SKILL.md, MCP configs, and system prompts for credential ",
+      "skill_b": "just-every/mcp-screenshot-website-fast",
+      "skill_b_desc": "Fast screenshot capture tool optimized for Claude Vision API. Automatically tiles full pages into 10",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "qainsights/k6-mcp-server",
+      "skill_a_desc": "Grafana k6 MCP Server for performance testing",
+      "skill_b": "utapyngo/sentry-mcp-rs",
+      "skill_b_desc": "Fast and minimal Sentry MCP server written in Rust",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "khaoss85/mcp-orchestro",
+      "skill_a_desc": "Trello for Claude Code: AI-powered task management with 60 MCP tools, visual Kanban board, and intel",
+      "skill_b": "aimlpm/markcrawl",
+      "skill_b_desc": "Crawl websites into clean Markdown, search pages, and extract structured data with LLMs. Built-in MC",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "armorwallet/armor-crypto-mcp",
+      "skill_a_desc": "MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, L",
+      "skill_b": "alimo7amed93/webhook-tester-mcp",
+      "skill_b_desc": "– A FastMCP-based server for interacting with webhook-test.com. Enables users to create, retrieve, a",
+      "label": 0,
+      "compat_score": 0.41,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gzoonet/cortex",
+      "skill_a_desc": "Local-first knowledge graph for developers. Watches project files, extracts entities and relationshi",
+      "skill_b": "lionkiii/google-searchconsole-mcp",
+      "skill_b_desc": "Google Search Console MCP server with 13 SEO tools — search analytics, URL inspection, sitemap manag",
+      "label": 0,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "scrapercity/scrapercity-cli",
+      "skill_a_desc": "B2B lead generation with 20+ tools including Apollo, Google Maps, email finder, email validator, mob",
+      "skill_b": "catrinmdonnelly/royalmail-mcp",
+      "skill_b_desc": "Book, label, track and cancel Royal Mail and Parcelforce shipments. 33 UK and international services",
+      "label": 0,
+      "compat_score": 0.52,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kryptosai/mcp-observatory",
+      "skill_a_desc": "Regression testing for MCP servers. Auto-discovers servers from Claude configs, checks capabilities,",
+      "skill_b": "justinstimatze/gemot",
+      "skill_b_desc": "Structured deliberation server for multi-agent coordination. Agents submit positions, vote on a 5-po",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jj-cheng25/weixin-articles-mcp",
+      "skill_a_desc": "Read WeChat (微信) Official Account articles with native multimodal output — body, images, and video k",
+      "skill_b": "antonio-mello-ai/mcp-proxmox",
+      "skill_b_desc": "Manage Proxmox VE clusters through AI assistants — VMs, containers, snapshots, templates, cloud-init",
+      "label": 0,
+      "compat_score": 0.395,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "cahthuranag/mcp-server",
+      "skill_a_desc": "AllRatesToday currency exchange rates: real-time mid-market rates for 160+ currencies (Reuters/Refin",
+      "skill_b": "neo4j-contrib/mcp-neo4j",
+      "skill_b_desc": "Model Context Protocol with Neo4j (Run queries, Knowledge Graph Memory, Manaage Neo4j Aura Instances",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "snyk/studio-mcp",
+      "skill_a_desc": "Embeds Snyk's security engines into agentic workflows. Secures AI-generated code in real-time and ac",
+      "skill_b": "aywengo/kafka-schema-reg-mcp",
+      "skill_b_desc": "Comprehensive Kafka Schema Registry MCP server with 48 tools for multi-registry management, schema m",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jorgenclaw/nostr-mcp-server",
+      "skill_a_desc": "Lightning-paid Nostr signing MCP server. AI agents pay sats per call to sign and publish Nostr event",
+      "skill_b": "secretiveshell/mcp-wolfram-alpha",
+      "skill_b_desc": "An MCP server for querying wolfram alpha API.",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "thezenmonster/agentmem",
+      "skill_a_desc": "Governed memory for coding agents with trust lifecycle (hypothesis → active → validated → deprecated",
+      "skill_b": "gaffx/volatility-mcp",
+      "skill_b_desc": "MCP server for Volatility 3.x, allowing you to perform memory forensics analysis with AI assistant. ",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "apify/actors-mcp-server",
+      "skill_a_desc": "Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites, e-commerce, social",
+      "skill_b": "shopsavvy/shopsavvy-mcp-server",
+      "skill_b_desc": "Complete product and pricing data solution for AI assistants. Search for products by barcode/ASIN/UR",
+      "label": 0,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "i4ctime/quantum_ring",
+      "skill_a_desc": "Quantum-inspired keyring for AI coding agents. Secure secrets with superposition, entanglement, tunn",
+      "skill_b": "docker/hub-mcp",
+      "skill_b_desc": "Official MCP server to interact with Docker Hub, providing access to repositories, hub search and Do",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tom28881/mcp-jira-server",
+      "skill_a_desc": "Comprehensive TypeScript MCP server for Jira with 20+ tools covering complete project management wor",
+      "skill_b": "mrexodia/ida-pro-mcp",
+      "skill_b_desc": "MCP server for IDA Pro, allowing you to perform binary analysis with AI assistants. This plugin impl",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "getalby/nwc-mcp-server",
+      "skill_a_desc": "Bitcoin Lightning wallet integration powered by Nostr Wallet Connect",
+      "skill_b": "clicks-protocol/mcp-server",
+      "skill_b_desc": "Autonomous USDC yield for AI agents on Base. 9 tools: register agents, split payments 80/20 (liquid/",
+      "label": 0,
+      "compat_score": 0.5,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kukapay/sui-trader-mcp",
+      "skill_a_desc": "An MCP server designed for AI agents to perform optimal token swaps on the Sui blockchain.",
+      "skill_b": "magarcia/mcp-server-giphy",
+      "skill_b_desc": "Search and retrieve GIFs from Giphy's vast library through the Giphy API.",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "javimaligno/mcp-server-bitbucket",
+      "skill_a_desc": "Bitbucket MCP server with 58 tools for repository management, PRs, pipelines, branches, commits, dep",
+      "skill_b": "xuanwo/mcp-server-opendal",
+      "skill_b_desc": "Access any storage with Apache OpenDAL™",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kukapay/freqtrade-mcp",
+      "skill_a_desc": "An MCP server that integrates with the Freqtrade cryptocurrency trading bot.",
+      "skill_b": "co-browser/attestable-mcp-server",
+      "skill_b_desc": "An MCP server running inside a trusted execution environment (TEE) via Gramine, showcasing remote at",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nihalxkumar/arch-mcp",
+      "skill_a_desc": "Arch Linux MCP Server to the Arch Linux ecosystem of the Arch Wiki, AUR, and official repositories f",
+      "skill_b": "muvon/mcp-binance-futures",
+      "skill_b_desc": "MCP server for Binance USDT-M Futures trading — exposes tools for market data, account state, order ",
+      "label": 0,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ebbfijsf/agent-reader",
+      "skill_a_desc": "Document beautifier for AI agents. Converts Markdown to styled webpages (with sidebar TOC), Word, PD",
+      "skill_b": "kukapay/crypto-stocks-mcp",
+      "skill_b_desc": "An MCP server that tracks real-time data for major crypto-related stocks.",
+      "label": 0,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "louis030195/easy-obsidian-mcp",
+      "skill_a_desc": "Interact with Obsidian vaults for knowledge management. Create, read, update, and search notes. Work",
+      "skill_b": "apecloud/aperag",
+      "skill_b_desc": "Production-ready RAG platform combining Graph RAG, vector search, and full-text search. Best choice ",
+      "label": 0,
+      "compat_score": 0.64,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "sunflowerslwtech/mcp_creator_growth",
+      "skill_a_desc": "Intelligent learning sidecar for AI coding assistants. Helps developers learn from AI-generated code",
+      "skill_b": "yashshingvi/databricks-genie-mcp",
+      "skill_b_desc": "A server that connects to the Databricks Genie API, allowing LLMs to ask natural language questions,",
+      "label": 0,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "back1ply/agent-skill-loader",
+      "skill_a_desc": "Dynamically load Claude Code skills into AI agents without copying files. Discover, read, and instal",
+      "skill_b": "ofodevelopment/cerebrochain-mcp-server",
+      "skill_b_desc": "Supply chain & logistics intelligence — rate shopping across 85+ carriers, inventory management, ord",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "speedofme-dev/speedofme-mcp",
+      "skill_a_desc": "Official SpeedOf.Me server for accurate internet speed tests via 129 global Fastly edge servers with",
+      "skill_b": "cerebrixos-org/tuning-engines-cli",
+      "skill_b_desc": "Domain-specific fine-tuning of open-source LLMs and SLMs with zero infrastructure. Specialized tunin",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "yiwenlu66/piloty",
+      "skill_a_desc": "AI pilot for PTY operations enabling agents to control interactive terminals with stateful sessions,",
+      "skill_b": "trilogy-group/aws-pricing-mcp",
+      "skill_b_desc": "/🏠 - Get up-to-date EC2 pricing information with one call. Fast. Powered by a pre-parsed AWS pricing",
+      "label": 0,
+      "compat_score": 0.3533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kc23go/anybrowse",
+      "skill_a_desc": "Convert any URL to LLM-ready Markdown via real Chrome browsers. 3 tools: scrape, crawl, search. Free",
+      "skill_b": "emicklei/melrose-mcp",
+      "skill_b_desc": "Plays [Melrōse](https://melrōse.org) music expressions as MIDI",
+      "label": 0,
+      "compat_score": 0.5486,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "hannesrudolph/mcp-ragdocs",
+      "skill_a_desc": "An MCP server implementation that provides tools for retrieving and processing documentation through",
+      "skill_b": "marceausolutions/fitness-influencer-mcp",
+      "skill_b_desc": "Fitness content creator workflow automation - video editing with jump cuts, revenue analytics, and b",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "leehanchung/bing-search-mcp",
+      "skill_a_desc": "Web search capabilities using Microsoft Bing Search API",
+      "skill_b": "trackerfitness729-jpg/sitelauncher-mcp-server",
+      "skill_b_desc": "Deploy live HTTPS websites in seconds. Instant subdomains ($1 USDC) or custom .xyz domains ($10 USDC",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ukkit/memcord",
+      "skill_a_desc": "A MCP server that keeps your chat history organized and searchable—with AI-powered summaries, secure",
+      "skill_b": "olostep/olostep-mcp-server",
+      "skill_b_desc": "API to search, extract and structure web data. Web scraping, AI-powered answers with citations, batc",
+      "label": 0,
+      "compat_score": 0.345,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "stass/exif-mcp",
+      "skill_a_desc": "A MCP server that allows one to examine image metadata like EXIF, XMP, JFIF and GPS.  This provides ",
+      "skill_b": "aliafsahnoudeh/shahnameh-mcp-server",
+      "skill_b_desc": "MCP server for accessing the Shahnameh (Book of Kings) Persian epic poem by Ferdowsi, including sect",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mpeirone/zabbix-mcp-server",
+      "skill_a_desc": "Zabbix integration for hosts, items, triggers, templates, problems, data and more.",
+      "skill_b": "ybouhjira/claude-code-tts",
+      "skill_b_desc": "MCP server plugin for Claude Code that converts text to speech using OpenAI's TTS API. Features 6 vo",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "hashgraph-online/hashnet-mcp-js",
+      "skill_a_desc": "MCP server for the Registry Broker. Discover, register, and chat with AI agents on the Hashgraph net",
+      "skill_b": "varun29ankus/shodh-memory",
+      "skill_b_desc": "Cognitive memory for AI agents with Hebbian learning, 3-tier architecture, and knowledge graphs. Sin",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tooyipjee/yahoofinance-mcp",
+      "skill_a_desc": "TS version of yahoo finance mcp.",
+      "skill_b": "sunriseapps/imagesorcery-mcp",
+      "skill_b_desc": "ComputerVision-based 🪄 sorcery of image recognition and editing tools for AI assistants.",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nickclyde/duckduckgo-mcp-server",
+      "skill_a_desc": "Web search using DuckDuckGo",
+      "skill_b": "yuna0x0/hackmd-mcp",
+      "skill_b_desc": "Allows AI models to interact with [HackMD](https://hackmd.io)",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "bright-l01/networkx-mcp-server",
+      "skill_a_desc": "The first NetworkX integration for Model Context Protocol, enabling graph analysis and visualization",
+      "skill_b": "backloghq/backlog",
+      "skill_b_desc": "Persistent, cross-session task management for Claude Code. 24 MCP tools, 7 skills, and agent coordin",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "abhiphile/fermat-mcp",
+      "skill_a_desc": "The ultimate math engine unifying SymPy, NumPy & Matplotlib in one powerful server. Perfect for deve",
+      "skill_b": "kukapay/dao-proposals-mcp",
+      "skill_b_desc": "An MCP server that aggregates live governance proposals from major DAOs.",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "airblackbox/air-blackbox-mcp",
+      "skill_a_desc": "EU AI Act compliance scanner for Python AI agents. Scans, analyzes, and remediates LangChain/CrewAI/",
+      "skill_b": "mshegolev/gitlab-ci-mcp",
+      "skill_b_desc": "GitLab CI/CD — pipelines, jobs, schedules, MRs, files. Works with any GitLab (SaaS or self-hosted); ",
+      "label": 0,
+      "compat_score": 0.5143,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "erajasekar/ai-diagram-maker-mcp",
+      "skill_a_desc": "MCP server for AI Diagram Maker — generate flowcharts, sequence diagrams, ERDs, system/network archi",
+      "skill_b": "guimatheus92/mcp-video-analyzer",
+      "skill_b_desc": "MCP server for video analysis — extracts transcripts, key frames, OCR text, and annotated timelines ",
+      "label": 0,
+      "compat_score": 0.5143,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "luizedupp/rememb",
+      "skill_a_desc": "Persistent memory for AI agents with sectioned entries (project/user/context/etc), semantic search, ",
+      "skill_b": "conechoai/openai-websearch-mcp",
+      "skill_b_desc": "This is a Python-based MCP server that provides OpenAI `web_search` built-in tool.",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "hidai25/eval-view",
+      "skill_a_desc": "Regression testing framework for AI agents. Save golden baselines, detect behavioral drift, and bloc",
+      "skill_b": "sinanefeozler/reddit-summarizer-mcp",
+      "skill_b_desc": "MCP server for summarizing users's Reddit homepage or any subreddit based on posts and comments.",
+      "label": 0,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "subnetmarco/pgmcp",
+      "skill_a_desc": "Natural language PostgreSQL queries with automatic streaming, read-only safety, and universal databa",
+      "skill_b": "thingsboard/thingsboard-mcp",
+      "skill_b_desc": "The ThingsBoard MCP Server provides a natural language interface for LLMs and AI agents to interact ",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "samuelgursky/davinci-resolve-mcp",
+      "skill_a_desc": "MCP server integration for DaVinci Resolve providing powerful tools for video editing, color grading",
+      "skill_b": "browseai-hq/browserai-dev",
+      "skill_b_desc": "Evidence-backed web research for AI agents. Real-time search with cited claims, confidence scores, a",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "shunshi-ai/bazi-reader-mcp",
+      "skill_a_desc": "Bazi (Four Pillars / 四柱推命 / 사주팔자) charting MCP server with true solar time correction and multilingu",
+      "skill_b": "ferodrigop/forge",
+      "skill_b_desc": "Terminal MCP server for AI coding agents with persistent PTY sessions, ring-buffer incremental reads",
+      "label": 0,
+      "compat_score": 0.6,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "marcindudekdev/the-data-collector",
+      "skill_a_desc": "MCP server for scraping Hacker News, Bluesky, and Substack with x402 micropayment support. Tools: hn",
+      "skill_b": "jwaxman19/qlik-mcp",
+      "skill_b_desc": "MCP Server for Qlik Cloud API that enables querying applications, sheets, and extracting data from v",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "shyshlakov/pci-dss-mcp",
+      "skill_a_desc": "PCI DSS v4.0.1 static-analysis MCP server for Go payment codebases. 12 scanners detect PAN/CVV expos",
+      "skill_b": "mihaelamj/cupertino",
+      "skill_b_desc": "Apple Documentation MCP Server. Search Apple developer docs, Swift Evolution proposals, and 600+ sam",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "antonio-mello-ai/mcp-proxmox",
+      "skill_a_desc": "Manage Proxmox VE clusters through AI assistants — VMs, containers, snapshots, templates, cloud-init",
+      "skill_b": "cryptobriefing/gloria-mcp",
+      "skill_b_desc": "AI-curated crypto news intelligence for agents. Real-time headlines with sentiment analysis, AI-gene",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mikusnuz/umami-mcp",
+      "skill_a_desc": "Full-coverage MCP server for Umami Analytics API v2 — 66 tools for websites, stats, sessions, events",
+      "skill_b": "cartisien/engram-mcp",
+      "skill_b_desc": "Persistent semantic memory for AI agents. SQLite-backed, local-first, zero config. Semantic search v",
+      "label": 0,
+      "compat_score": 0.3457,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "wolfe-jam/faf-mcp",
+      "skill_a_desc": "Universal persistent project context for Cursor, Windsurf, Cline, VS Code, and all MCP-compatible pl",
+      "skill_b": "tomjwxf/scopeblind-gateway",
+      "skill_b_desc": "— Security gateway that wraps any MCP server with per-tool policies, approval gates, and optional Ed",
+      "label": 0,
+      "compat_score": 0.41,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "edobusy/agenthold",
+      "skill_a_desc": "Shared versioned state store with optimistic concurrency control for coordinating concurrent AI agen",
+      "skill_b": "memstate-ai/memstate-mcp",
+      "skill_b_desc": "Versioned, structured memory for AI agents. Stores facts as keypaths with full version history, auto",
+      "label": 0,
+      "compat_score": 0.51,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mikusnuz/umami-mcp",
+      "skill_a_desc": "Full-coverage MCP server for Umami Analytics API v2 — 66 tools for websites, stats, sessions, events",
+      "skill_b": "kukapay/twitter-username-changes-mcp",
+      "skill_b_desc": "An MCP server that tracks the historical changes of Twitter usernames.",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "parallel-web/task-mcp",
+      "skill_a_desc": "Highest Accuracy Deep Research and Batch Tasks MCP",
+      "skill_b": "dan1d/cobroya",
+      "skill_b_desc": "Mercado Pago payments for AI agents — create payment links, search payments, and issue refunds. Buil",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "vertexstudio/developer",
+      "skill_a_desc": "Comprehensive developer tools for file editing, shell command execution, and screen capture capabili",
+      "skill_b": "jordanlyall/wc26-mcp",
+      "skill_b_desc": "FIFA World Cup 2026 data — 18 tools covering matches, teams, venues, city guides, fan zones, visa re",
+      "label": 0,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "albertnahas/icogenie-mcp",
+      "skill_a_desc": "AI-powered SVG icon generation MCP server. Generate production-ready SVG icons from text description",
+      "skill_b": "davidlandais/ovh-api-mcp",
+      "skill_b_desc": "Code Mode MCP server for the entire OVH API. Two tools (search + execute) give LLMs access to all OV",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "timowhite88/farnsworth-syntek",
+      "skill_a_desc": "7-layer recursive agent memory with context branching, holographic recall, dream consolidation, and ",
+      "skill_b": "phisanti/mcpr",
+      "skill_b_desc": "Model Context Protocol for R: enables AI agents to participate in interactive live R sessions.",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pydantic/pydantic-ai/mcp-run-python",
+      "skill_a_desc": "Run Python code in a secure sandbox via MCP tool calls",
+      "skill_b": "freema/firefox-devtools-mcp",
+      "skill_b_desc": "Firefox browser automation via WebDriver BiDi for testing, scraping, and browser control. Supports s",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "genomoncology/biomcp",
+      "skill_a_desc": "Biomedical research MCP server providing access to PubMed, ClinicalTrials.gov, and MyVariant.info.",
+      "skill_b": "clicks-protocol/mcp-server",
+      "skill_b_desc": "Autonomous USDC yield for AI agents on Base. 9 tools: register agents, split payments 80/20 (liquid/",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "segfaultsorcerer/heap-seance",
+      "skill_a_desc": "Java memory leak diagnostics via jcmd, jmap, jstat, JFR, Eclipse MAT, and async-profiler with struct",
+      "skill_b": "attalla1/photopea-mcp-server",
+      "skill_b_desc": "AI-powered image editing through Photopea with 34 tools for documents, layers, text, shapes, filters",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "buildkite/buildkite-mcp-server",
+      "skill_a_desc": "Official MCP server for Buildkite. Create new pipelines, diagnose and fix failures, trigger builds, ",
+      "skill_b": "usejunior/safe-docx",
+      "skill_b_desc": "Surgical editing of existing Word .docx files with formatting preservation, tracked changes, comment",
+      "label": 0,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "schemacrawler/schemacrawler-mcp-server-usage",
+      "skill_a_desc": "– Connect to any relational database, and be able to get valid SQL, and ask questions like what does",
+      "skill_b": "effytech/freshdesk-mcp",
+      "skill_b_desc": "MCP server that integrates with Freshdesk, enabling AI models to interact with Freshdesk modules and",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "freema/mcp-gsheets",
+      "skill_a_desc": "MCP server for Google Sheets API integration with comprehensive reading, writing, formatting, and sh",
+      "skill_b": "tooluse-labs/perfetto-mcp-rs",
+      "skill_b_desc": "MCP server for [Perfetto](https://perfetto.dev) trace analysis. Runs PerfettoSQL queries on `.perfet",
+      "label": 0,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "karanb192/reddit-mcp-buddy",
+      "skill_a_desc": "Browse Reddit posts, search content, and analyze user activity without API keys. Works out-of-the-bo",
+      "skill_b": "hifriendbot/agentwallet-mcp",
+      "skill_b_desc": "Permissionless wallet infrastructure for AI agents. 29 tools for wallet creation, transaction signin",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "marketplaceadpros/amazon-ads-mcp-server",
+      "skill_a_desc": "Enables tools to interact with Amazon Advertising, analyzing campaign metrics and configurations.",
+      "skill_b": "imatza-rh/mcp-zuul",
+      "skill_b_desc": "Zuul CI integration with 14 tools for build failure analysis, log search, pipeline status, and job c",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "freepeak/db-mcp-server",
+      "skill_a_desc": "– A high-performance multi-database MCP server built with Golang, supporting MySQL & PostgreSQL (NoS",
+      "skill_b": "ajitpratap0/gosqlx",
+      "skill_b_desc": "7 SQL tools (validate, format, parse, lint, security scan, metadata extraction, full analysis) over ",
+      "label": 0,
+      "compat_score": 0.5,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "zefarie/pterodactyl-mcp",
+      "skill_a_desc": "Manage Pterodactyl and Pelican game server panels through AI. 73 tools for server management, power ",
+      "skill_b": "andywang1688/sql-query-mcp",
+      "skill_b_desc": "A general-purpose MCP server that lets AI work with multiple databases within clear boundaries. Supp",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "peek-travel/mcp-intro",
+      "skill_a_desc": "Remote MCP Server for discovering and planning experiences, at home and on vacation",
+      "skill_b": "pab1ito/chess-mcp",
+      "skill_b_desc": "Access Chess.com player data, game records, and other public information through standardized MCP in",
+      "label": 0,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "getsentry/sentry-mcp",
+      "skill_a_desc": "Sentry.io integration for error tracking and performance monitoring",
+      "skill_b": "thinkchainai/agentinterviews_mcp",
+      "skill_b_desc": "Conduct AI-powered qualitative research interviews and surveys at scale with [Agent Interviews](http",
+      "label": 0,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "sbroenne/mcp-server-excel",
+      "skill_a_desc": "Full-featured Excel MCP server. 173 operations: Power Query, DAX, VBA, PivotTables, Tables, Charts, ",
+      "skill_b": "louis030195/terminator-mcp-agent",
+      "skill_b_desc": "Desktop GUI automation using accessibility APIs. Control Windows, macOS, and Linux applications with",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "anjor/coinmarket-mcp-server",
+      "skill_a_desc": "Coinmarket API integration to fetch cryptocurrency listings and quotes",
+      "skill_b": "wyattjoh/jmap-mcp",
+      "skill_b_desc": "A Model Context Protocol (MCP) server that provides tools for interacting with JMAP (JSON Meta Appli",
+      "label": 0,
+      "compat_score": 0.3533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "w3ship/w3ledger-mcp-server",
+      "skill_a_desc": "Self-verifying ledger MCP server with dual-signed transactions, gift cards, sponsor cards, and W3SH ",
+      "skill_b": "modelcontextprotocol/server-sqlite",
+      "skill_b_desc": "SQLite database operations with built-in analysis features",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "leonting1010/tap",
+      "skill_a_desc": "MCP server that compiles AI browser automation into deterministic `.tap.json` plans (25-op closed un",
+      "skill_b": "sgx-labs/statelessagent",
+      "skill_b_desc": "Memory with provenance tracking — records where agent knowledge originated and detects when sources ",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tacticlaunch/mcp-linear",
+      "skill_a_desc": "Integrates with Linear project management system",
+      "skill_b": "the0807/geeknews-mcp-server",
+      "skill_b_desc": "An MCP Server that retrieves and processes news data from the GeekNews site.",
+      "label": 0,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pickelfintech/sentisift-sdks",
+      "skill_a_desc": "Comment moderation and intelligence for any article: bot/spam detection, multilingual sentiment anal",
+      "skill_b": "r33drichards/mcp-js",
+      "skill_b_desc": "A Javascript code execution sandbox that uses v8 to isolate code to run AI generated javascript loca",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "azure/azure-mcp",
+      "skill_a_desc": "Official Microsoft MCP server for Azure services including Storage, Cosmos DB, and Azure Monitor.",
+      "skill_b": "olgasafonova/mediawiki-mcp-server",
+      "skill_b_desc": "Connect to any MediaWiki wiki (Wikipedia, Fandom, corporate wikis). 33+ tools for search, read, edit",
+      "label": 0,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "supertrained/rhumb",
+      "skill_a_desc": "Agent-native tool intelligence across 1,000+ scored services. 21 MCP tools: discover services, check",
+      "skill_b": "olostep/olostep-mcp-server",
+      "skill_b_desc": "API to search, extract and structure web data. Web scraping, AI-powered answers with citations, batc",
+      "label": 0,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "contextpulse/contextpulse",
+      "skill_a_desc": "Local-first desktop context server for AI agents. Captures screen (OCR), voice (Whisper), keyboard/m",
+      "skill_b": "opendatamcp/opendatamcp",
+      "skill_b_desc": "Connect any Open Data to any LLM with Model Context Protocol.",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "marucie/authbox",
+      "skill_a_desc": "Zero-knowledge password manager with MCP credential gateway. BIP-39 seed phrase recovery, determinis",
+      "skill_b": "secretiveshell/mcp-timeserver",
+      "skill_b_desc": "Access the time in any timezone and get the current local time",
+      "label": 0,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "arthurpanhku/docsentinel",
+      "skill_a_desc": "MCP server for AI agent for cybersecurity: automate assessment of documents, questionnaires & report",
+      "skill_b": "chunkydotdev/bldbl-mcp",
+      "skill_b_desc": "Official MCP server for Buildable AI-powered development platform [bldbl.dev](https://bldbl.dev). En",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "vinaybhosle/agentstamp",
+      "skill_a_desc": "Trust intelligence for AI agents — identity stamps, reputation scoring (0-100), registry, forensic a",
+      "skill_b": "ladislavsopko/mcp-ai-server-visual-studio",
+      "skill_b_desc": "MCP AI Server for Visual Studio. 20 Roslyn-powered tools giving AI assistants semantic code navigati",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mariusaure/needhuman-mcp",
+      "skill_a_desc": "Human-as-a-Service for AI agents — submit tasks (accept ToS, create accounts, verify identity) to a ",
+      "skill_b": "kukapay/crypto-orderbook-mcp",
+      "skill_b_desc": "Analyzing order book depth and imbalance across major crypto exchanges.",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "yuna0x0/hackmd-mcp",
+      "skill_a_desc": "Allows AI models to interact with [HackMD](https://hackmd.io)",
+      "skill_b": "gitea/gitea-mcp",
+      "skill_b_desc": "Interactive with Gitea instances with MCP.",
+      "label": 0,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "karanb192/reddit-mcp-buddy",
+      "skill_a_desc": "Browse Reddit posts, search content, and analyze user activity without API keys. Works out-of-the-bo",
+      "skill_b": "jimmyracheta/ai-runtime-guard",
+      "skill_b_desc": "Runtime policy enforcement for AI agents - prevents accidental damage to your systems, unauthorized ",
+      "label": 0,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kukapay/chainlist-mcp",
+      "skill_a_desc": "An MCP server that gives AI agents fast access to verified EVM chain information, including RPC URLs",
+      "skill_b": "canopyhq/phloem",
+      "skill_b_desc": "Local-first AI memory with causal graphs and citation verification. Semantic search, confidence deca",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "vdalhambra/axiom-calculator-mcp",
+      "skill_a_desc": "Personal finance calculators — mortgage payments, compound interest, FIRE retirement number, loan co",
+      "skill_b": "carterlasalle/mac_messages_mcp",
+      "skill_b_desc": "An MCP server that securely interfaces with your iMessage database via the Model Context Protocol (M",
+      "label": 0,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kukapay/uniswap-trader-mcp",
+      "skill_a_desc": "An MCP server that delivers real-time token prices from Uniswap V3 across multiple chains.",
+      "skill_b": "operantlabs/operant-mcp",
+      "skill_b_desc": "Security testing MCP server with 51 tools for penetration testing, network forensics, memory analysi",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "aranjan/kite-mcp",
+      "skill_a_desc": "Trade Indian stocks on Zerodha Kite via natural conversation. 14 tools for holdings, orders, quotes,",
+      "skill_b": "jorgenclaw/nostr-mcp-server",
+      "skill_b_desc": "Lightning-paid Nostr signing MCP server. AI agents pay sats per call to sign and publish Nostr event",
+      "label": 0,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mikusnuz/umami-mcp",
+      "skill_a_desc": "Full-coverage MCP server for Umami Analytics API v2 — 66 tools for websites, stats, sessions, events",
+      "skill_b": "lyonzin/knowledge-rag",
+      "skill_b_desc": "Local RAG system for Claude Code with hybrid search (BM25 + semantic), cross-encoder reranking, mark",
+      "label": 0,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "bv-venky/excalidraw-architect-mcp",
+      "skill_a_desc": "Generate beautiful Excalidraw architecture diagrams with auto-layout, architecture-aware component s",
+      "skill_b": "khaoss85/mcp-orchestro",
+      "skill_b_desc": "Trello for Claude Code: AI-powered task management with 60 MCP tools, visual Kanban board, and intel",
+      "label": 0,
+      "compat_score": 0.345,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "decisionnode/decisionnode",
+      "skill_a_desc": "Record development decisions as structured JSON, embed as vectors via Gemini, and search semanticall",
+      "skill_b": "mihaelamj/cupertino",
+      "skill_b_desc": "Apple Documentation MCP Server. Search Apple developer docs, Swift Evolution proposals, and 600+ sam",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "agentled/mcp-server",
+      "skill_a_desc": "AI-native workflow orchestration with long-term memory, 100+ integrations, and unified credits. 32 M",
+      "skill_b": "wyattjoh/jsr-mcp",
+      "skill_b_desc": "Model Context Protocol server for the JSR (JavaScript Registry)",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gavelin-ai/mcp",
+      "skill_a_desc": "State legislative intelligence for AI agents. Speaker-attributed hearing transcripts, bills, votes, ",
+      "skill_b": "fernikolic/clawdentials",
+      "skill_b_desc": "Trust layer for AI agent commerce — escrow-protected payments, verifiable reputation scores, and Nos",
+      "label": 0,
+      "compat_score": 0.47,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nicholasglazer/gnosis-mcp",
+      "skill_a_desc": "Zero-config MCP server for searchable documentation. Loads markdown into SQLite (default) or Postgre",
+      "skill_b": "kukapay/whale-tracker-mcp",
+      "skill_b_desc": "A mcp server for tracking cryptocurrency whale transactions.",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kukapay/pumpswap-mcp",
+      "skill_a_desc": "Enabling AI agents to interact with PumpSwap for real-time token swaps and automated on-chain tradin",
+      "skill_b": "mindsdb/mindsdb",
+      "skill_b_desc": "Connect and unify data across various platforms and databases with [MindsDB as a single MCP server](",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "j3k0/speech-sh",
+      "skill_a_desc": "Let the agent speak things out loud, notify you when he's done working with a quick summary",
+      "skill_b": "pmptwiki/pmpt-cli",
+      "skill_b_desc": "Record and share your AI-driven development journey. Auto-saves project milestones with summaries, g",
+      "label": 0,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "beltran12138/wecom-docs-mcp-server",
+      "skill_a_desc": "WeCom (Enterprise WeChat) document operations via MCP: create, read, and edit Docs and Smartsheets (",
+      "skill_b": "aaronjmars/web3-research-mcp",
+      "skill_b_desc": "Deep Research for crypto - free & fully local",
+      "label": 0,
+      "compat_score": 0.3486,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mikusnuz/gsc-mcp",
+      "skill_a_desc": "MCP server for Google Search Console & Indexing API — 13 tools for search analytics, sitemaps, URL i",
+      "skill_b": "benmonopoli/open-greenhouse-mcp",
+      "skill_b_desc": "Production-ready MCP server for [Greenhouse](https://www.greenhouse.com) ATS with 175 tools for recr",
+      "label": 0,
+      "compat_score": 0.4057,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "czagents/cnb",
+      "skill_a_desc": "Czech National Bank (ČNB) daily FX rates: fetch official CZK exchange rates, convert between currenc",
+      "skill_b": "mbailey/voice-mcp",
+      "skill_b_desc": "Complete voice interaction server supporting speech-to-text, text-to-speech, and real-time voice con",
+      "label": 0,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "dearlordylord/huly-mcp",
+      "skill_a_desc": "MCP server for Huly project management. Query issues, create and update tasks, manage labels and pri",
+      "skill_b": "jtang613/ghidrassistmcp",
+      "skill_b_desc": "A native Model Context Protocol server for Ghidra. Includes GUI configuration and logging, 31 powerf",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gregario/astronomy-oracle",
+      "skill_a_desc": "Accurate astronomical catalog data and observing session planner. 13,000+ deep-sky objects from Open",
+      "skill_b": "jaspertvdm/mcp-server-rabel",
+      "skill_b_desc": "AI-to-AI messaging via I-Poll protocol and AInternet. Enables agents to communicate using .aint doma",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "rascal-3/chainanalyzer-mcp",
+      "skill_a_desc": "Multi-chain AML risk scoring and sanctions screening for AI agents. 76+ detection rules, ML anomaly ",
+      "skill_b": "dataeval/dingo",
+      "skill_b_desc": "MCP server for the Dingo: a comprehensive data quality evaluation tool. Server Enables interaction w",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "conechoai/openai-websearch-mcp",
+      "skill_a_desc": "This is a Python-based MCP server that provides OpenAI `web_search` built-in tool.",
+      "skill_b": "arcadia-finance/mcp-server",
+      "skill_b_desc": "Manage Uniswap and Aerodrome liquidity positions with leverage, automated rebalancing, and yield opt",
+      "label": 0,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "coding-solo/godot-mcp",
+      "skill_a_desc": "A MCP server for interacting with the Godot game engine, providing tools for editing, running, debug",
+      "skill_b": "nolas-shadow/agent1st-ads-mcp",
+      "skill_b_desc": "Meta (Facebook/Instagram) and TikTok ad campaign management for AI agents. One tool call creates a c",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "berckan/bugherd-mcp",
+      "skill_a_desc": "MCP server for BugHerd bug tracking. List projects, view tasks with filtering by status/priority/tag",
+      "skill_b": "rusiaaman/wcgw",
+      "skill_b_desc": "Autonomous shell execution, computer control and coding agent. (Mac)",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pinecone-io/assistant-mcp",
+      "skill_a_desc": "Connects to your Pinecone Assistant and gives the agent context from its knowledge engine.",
+      "skill_b": "searchcraft-inc/searchcraft-mcp-server",
+      "skill_b_desc": "Official MCP server for managing Searchcraft clusters, creating a search index, generating an index ",
+      "label": 0,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "gregario/3dprint-oracle",
+      "skill_a_desc": "3D printing filament and materials knowledge base. 6,957 filaments from SpoolmanDB with material pro",
+      "skill_b": "vectorize-io/hindsight",
+      "skill_b_desc": "Hindsight: Agent Memory That Works Like Human Memory - Built for AI Agents to manage Long Term Memor",
+      "label": 0,
+      "compat_score": 0.5267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "sanyambassi/thales-cdsp-cakm-mcp-server",
+      "skill_a_desc": "MCP server for Thales CDSP CAKM integration, enabling secure key management, cryptographic operation",
+      "skill_b": "kukapay/crypto-projects-mcp",
+      "skill_b_desc": "Providing cryptocurrency project data from Mobula.io to AI agents.",
+      "label": 0,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ddsky/gamebrain-api-clients",
+      "skill_a_desc": "Search and discover hundreds of thousands of video games on any platform through the [GameBrain API]",
+      "skill_b": "cct15/war-dashboard-data",
+      "skill_b_desc": "Geopolitical conflict risk probabilities for AI agents. Covers 6 regions (Russia-Ukraine, Iran-Israe",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mrslbt/rakuten-mcp",
+      "skill_a_desc": "Rakuten API integration for product search, hotel and travel booking, and recipe lookup across Japan",
+      "skill_b": "modelcontextprotocol/server-postgres",
+      "skill_b_desc": "PostgreSQL database integration with schema inspection and query capabilities",
+      "label": 0,
+      "compat_score": 0.2886,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "pskill9/website-downloader",
+      "skill_a_desc": "This MCP server provides a tool to download entire websites using wget. It preserves the website str",
+      "skill_b": "aidesignblueprint/integrations",
+      "skill_b_desc": "Read-only doctrine access for the Agentic AI Blueprint — the industry standard reference for safe, o",
+      "label": 0,
+      "compat_score": 0.45,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kiliczsh/mcp-mongo-server",
+      "skill_a_desc": "A Model Context Protocol Server for MongoDB",
+      "skill_b": "tumf/web3-mcp",
+      "skill_b_desc": "An MCP server implementation wrapping Ankr Advanced API. Access to NFT, token, and blockchain data a",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "neilberkman/editorconfig_mcp",
+      "skill_a_desc": "Formats files using `.editorconfig` rules, acting as a proactive formatting gatekeeper to ensure AI-",
+      "skill_b": "pylonapi/pylon-mcp",
+      "skill_b_desc": "X402-native API gateway with 20+ capabilities (web-extract, web-search, translate, image-generate, s",
+      "label": 0,
+      "compat_score": 0.5486,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "zenml-io/mcp-zenml",
+      "skill_a_desc": "An MCP server to connect with your [ZenML](https://www.zenml.io) MLOps and LLMOps pipelines",
+      "skill_b": "jmrplens/gitlab-mcp-server",
+      "skill_b_desc": "Complete GitLab REST API v4 coverage with 1006 MCP tools across 162 domains, 42 meta-tools, 24 resou",
+      "label": 0,
+      "compat_score": 0.62,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kukapay/raydium-launchlab-mcp",
+      "skill_a_desc": "An MCP server that enables AI agents to launch, buy, and sell tokens on the Raydium Launchpad(aka La",
+      "skill_b": "nakaokarei/swift-mcp-gui",
+      "skill_b_desc": "MCP server that can execute commands such as keyboard input and mouse movement",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "marcindudekdev/crypto-signals-mcp",
+      "skill_a_desc": "Real-time crypto volume anomaly detection across 50+ tokens. Detects unusual trading activity, whale",
+      "skill_b": "spix-hq/spix-mcp",
+      "skill_b_desc": "Give AI agents a real phone number and voice. Make outbound calls, handle inbound calls, send email,",
+      "label": 0,
+      "compat_score": 0.4533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "qainsights/jmeter-mcp-server",
+      "skill_a_desc": "JMeter MCP Server for performance testing",
+      "skill_b": "lmwharton/sieve-mcp",
+      "skill_b_desc": "AI-powered startup due diligence. Screen any startup across 7 IMPACT-X dimensions, get a Sieve Score",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "0x1abin/matter-controller-mcp",
+      "skill_a_desc": "An MCP server for Matter Controller, enabling AI agents to control and interact with Matter devices.",
+      "skill_b": "cablate/mcp-google-map",
+      "skill_b_desc": "Google Maps MCP server with 8 tools (geocode, search, directions, elevation), stdio + StreamableHTTP",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "madhan-g-p/devdocs-mcp",
+      "skill_a_desc": "DevDocs-MCP is a MCP server that provides version-pinned, deterministic documentation sourced from [",
+      "skill_b": "xeroapi/xero-mcp-server",
+      "skill_b_desc": "– An MCP server that integrates with Xero's API, allowing for standardized access to Xero's accounti",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "thelunarcompany/lunar-mcpx",
+      "skill_a_desc": "MCPX is a production-ready, open-source gateway to manage MCP servers at scale—centralize tool disco",
+      "skill_b": "thingsboard/thingsboard-mcp",
+      "skill_b_desc": "The ThingsBoard MCP Server provides a natural language interface for LLMs and AI agents to interact ",
+      "label": 0,
+      "compat_score": 0.56,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "sidneybissoli/ibge-br-mcp",
+      "skill_a_desc": "Brazilian Census Bureau (IBGE) data server with 23 tools for demographics, geography, economics, and",
+      "skill_b": "kukapay/ethereum-validator-queue-mcp",
+      "skill_b_desc": "An MCP server that tracks Ethereum’s validator activation and exit queues in real time.",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pskill9/web-search",
+      "skill_a_desc": "An MCP server that enables free web searching using Google search results, with no API keys required",
+      "skill_b": "jasonwilbur/cloud-cost-mcp",
+      "skill_b_desc": "Multi-cloud pricing comparison across AWS, Azure, GCP, and OCI with 2,700+ instance types. Real-time",
+      "label": 0,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pythia-the-oracle/pythia-oracle-mcp",
+      "skill_a_desc": "On-chain calculated crypto indicators (EMA, RSI, Bollinger Bands, Volatility) for 22 tokens via Chai",
+      "skill_b": "schemacrawler/schemacrawler-mcp-server-usage",
+      "skill_b_desc": "– Connect to any relational database, and be able to get valid SQL, and ask questions like what does",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "dearlordylord/huly-mcp",
+      "skill_a_desc": "MCP server for Huly project management. Query issues, create and update tasks, manage labels and pri",
+      "skill_b": "ycloud-developers/ycloud-whatsapp-mcp-server",
+      "skill_b_desc": "MCP server for WhatsApp Business Platform by YCloud.",
+      "label": 0,
+      "compat_score": 0.4,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "rupinder2/mcp-orchestrator",
+      "skill_a_desc": "🪩 🐧 - Central hub that aggregates tools from multiple MCP servers with unified BM25/regex search and",
+      "skill_b": "meshledger/meshledger",
+      "skill_b_desc": "AI-to-AI marketplace with on-chain escrow",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "csjoblom/musclesworked-mcp",
+      "skill_a_desc": "Exercise-to-muscle mapping MCP server. Look up muscles worked by 856 exercises across 65 muscles and",
+      "skill_b": "johnanleitner1-coder/lastminutedeals-api",
+      "skill_b_desc": "Real-time last-minute tour and activity booking. 8,000+ live slots from 29 suppliers across 16 count",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "cyntrisec/cyntrisec-cli",
+      "skill_a_desc": "Local-first AWS security analyzer that discovers attack paths and generates remediations using graph",
+      "skill_b": "nonatofabio/local-faiss-mcp",
+      "skill_b_desc": "Local FAISS vector database for RAG with document ingestion (PDF/TXT/MD/DOCX), semantic search, re-r",
+      "label": 0,
+      "compat_score": 0.4667,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "n8daniels/rulesetmcp",
+      "skill_a_desc": "Weight-On-Wheels for AI - keeps agents grounded in your project's rules. Query coding standards, val",
+      "skill_b": "awslabs/mcp",
+      "skill_b_desc": "AWS MCP servers for seamless integration with AWS services and resources.",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "debridge-finance/debridge-mcp",
+      "skill_a_desc": "Cross-chain swaps and bridging across EVM and Solana blockchains via the deBridge protocol. Enables ",
+      "skill_b": "cobanov/teslamate-mcp",
+      "skill_b_desc": "A Model Context Protocol (MCP) server that provides access to your TeslaMate database, allowing AI a",
+      "label": 0,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "michael2150/flamerobin-mcp-server",
+      "skill_a_desc": "Firebird database MCP server that reads connection details from [FlameRobin's](http://www.flamerobin",
+      "skill_b": "weibaohui/kom",
+      "skill_b_desc": "/🏠 - Provides MCP multi-cluster Kubernetes management and operations. It can be integrated as an SDK",
+      "label": 0,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "andybrandt/mcp-simple-pubmed",
+      "skill_a_desc": "MCP to search and read medical / life sciences papers from PubMed.",
+      "skill_b": "ellmos-ai/n8n-manager-mcp",
+      "skill_b_desc": "MCP server for managing n8n workflows through AI assistants, including workflow CRUD, synchronizatio",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "tt-wang/forge",
+      "skill_a_desc": "Structured planning, parallel execution in git worktrees, and deep validation for Claude Code. Turns",
+      "skill_b": "flux159/mcp-server-kubernetes",
+      "skill_b_desc": "/🏠 - Typescript implementation of Kubernetes cluster operations for pods, deployments, services.",
+      "label": 0,
+      "compat_score": 0.3771,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "bgauryy/octocode-mcp",
+      "skill_a_desc": "AI-powered developer assistant that enables advanced research, analysis and discovery across GitHub ",
+      "skill_b": "arvindand/maven-tools-mcp",
+      "skill_b_desc": "Universal Maven Central dependency intelligence for JVM build tools (Maven, Gradle, SBT, Mill). Feat",
+      "label": 0,
+      "compat_score": 0.5,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "zolo-ryan/marketauxmcpserver",
+      "skill_a_desc": "MCP server for comprehensive market and financial news search with advanced filtering by symbols, in",
+      "skill_b": "agentmail-toolkit/mcp",
+      "skill_b_desc": "An MCP server to create inboxes on the fly to send, receive, and take actions on email. We aren't AI",
+      "label": 0,
+      "compat_score": 0.32,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "cyberweasel777/botindex-mcp-server",
+      "skill_a_desc": "BotIndex + Agorion MCP server — AI signal intelligence API + agent service discovery network. x402 p",
+      "skill_b": "joshuarileydev/supabase-mcp-server",
+      "skill_b_desc": "Supabase MCP Server for managing and creating projects and organisations in Supabase",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "leadbrain/korean-data-mcp",
+      "skill_a_desc": "Real-time Korean web data — Naver place reviews, Melon music chart, Daangn/Bunjang marketplace listi",
+      "skill_b": "98lukehall/renoun-mcp",
+      "skill_b_desc": "Structural observability for AI conversations. Detects loops, stuck states, breakthroughs, and conve",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "metorial/metorial",
+      "skill_a_desc": "Connect AI agents to 600+ integrations with a single interface - OAuth, scaling, and monitoring incl",
+      "skill_b": "mpeirone/zabbix-mcp-server",
+      "skill_b_desc": "Zabbix integration for hosts, items, triggers, templates, problems, data and more.",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nickpending/mcp-recon",
+      "skill_a_desc": "Conversational recon interface and MCP server powered by httpx and asnmap. Supports various reconnai",
+      "skill_b": "gbrigandi/mcp-server-cortex",
+      "skill_b_desc": "A Rust-based MCP server to integrate Cortex, enabling observable analysis and automated security res",
+      "label": 0,
+      "compat_score": 0.54,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "spfunctions/simplefunctions-cli",
+      "skill_a_desc": "Calibrated world model for AI agents from 9,700+ prediction markets. 16 MCP tools covering real-time",
+      "skill_b": "theagenttimes/tat-mcp-server",
+      "skill_b_desc": "Query articles, verified statistics, wire feed, and social tools from [The Agent Times](https://thea",
+      "label": 0,
+      "compat_score": 0.3933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "3akhp/prts-mcp",
+      "skill_a_desc": "MCP Server for [Arknights](https://www.arknights.global/), querying the [PRTS Wiki](https://prts.wik",
+      "skill_b": "pythonanywhere/pythonanywhere-mcp-server",
+      "skill_b_desc": "MCP server implementation for PythonAnywhere cloud platform.",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "qq418716640/botbell-mcp",
+      "skill_a_desc": "Send push notifications to iPhone, iPad, and Mac from AI assistants. Two-way messaging — users reply",
+      "skill_b": "var-gg/mcp",
+      "skill_b_desc": "Enforces team naming consistency for AI-generated code via Cursor MCP integration. [Guide ↗](https:/",
+      "label": 0,
+      "compat_score": 0.46,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "wn01011/llm-token-tracker",
+      "skill_a_desc": "Token usage tracker for OpenAI and Claude APIs with MCP support, real-time session tracking, and acc",
+      "skill_b": "jamesanz/bitcoin-mcp",
+      "skill_b_desc": "An MCP server that enables AI models to query the Bitcoin blockchain.",
+      "label": 0,
+      "compat_score": 0.41,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "tufantunc/ssh-mcp",
+      "skill_a_desc": "MCP server exposing SSH control for Linux and Windows servers via Model Context Protocol. Securely e",
+      "skill_b": "daghis/teamcity-mcp",
+      "skill_b_desc": "MCP server for JetBrains TeamCity with 87 tools for builds, tests, agents, and CI/CD pipeline manage",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "arbitova/mcp-server",
+      "skill_a_desc": "Non-custodial on-chain escrow + AI dispute arbitration for agent-to-agent USDC payments on Base. Sev",
+      "skill_b": "joshuarileydev/simulator-mcp-server",
+      "skill_b_desc": "An MCP server to control iOS Simulators",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "irskep/persistproc",
+      "skill_a_desc": "MCP server + command line tool that allows agents to see & control long-running processes like web s",
+      "skill_b": "currents-dev/currents-mcp",
+      "skill_b_desc": "Enable AI Agents to fix Playwright test failures reported to [Currents](https://currents.dev).",
+      "label": 0,
+      "compat_score": 0.2886,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "rhein1/agoragentic-integrations",
+      "skill_a_desc": "Agent-to-agent marketplace where AI agents discover, invoke, and pay for services from other agents ",
+      "skill_b": "exa-labs/exa-mcp-server",
+      "skill_b_desc": "– A Model Context Protocol (MCP) server lets AI assistants like Claude use the Exa AI Search API for",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nickpending/mcp-recon",
+      "skill_a_desc": "Conversational recon interface and MCP server powered by httpx and asnmap. Supports various reconnai",
+      "skill_b": "guillochon/mlb-api-mcp",
+      "skill_b_desc": "MCP server that acts as a proxy to the freely available MLB API, which provides player info, stats, ",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "polygon-io/mcp_polygon",
+      "skill_a_desc": ") 🐍 ☁️ -  An MCP server that provides access to [Polygon.io](https://polygon.io/) financial market d",
+      "skill_b": "longevity-genie/biothings-mcp",
+      "skill_b_desc": "MCP server to interact with the BioThings API, including genes, genetic variants, drugs, and taxonom",
+      "label": 0,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "one8943/ai-furniture-hub",
+      "skill_a_desc": "Japan-focused furniture & home product hub for AI agents. 15 tools for mm-precision search across 30",
+      "skill_b": "oerc-s/primordia",
+      "skill_b_desc": "AI agent economic settlement. Verify receipts, emit meters (FREE). Net settlements, credit lines, au",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "longportapp/openapi",
+      "skill_a_desc": "LongPort OpenAPI provides real-time stock market data, provides AI access analysis and trading capab",
+      "skill_b": "sanyambassi/thales-cdsp-crdp-mcp-server",
+      "skill_b_desc": "MCP server for Thales CipherTrust Manager RestFul Data Protection service.",
+      "label": 0,
+      "compat_score": 0.3267,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "avansaber/tailtest-cline",
+      "skill_a_desc": "Adversarial test generation for AI coding sessions. Detects language and framework; writes tests; ru",
+      "skill_b": "8b-is/smart-tree",
+      "skill_b_desc": "AI-native directory visualization with semantic analysis, ultra-compressed formats for AI consumptio",
+      "label": 0,
+      "compat_score": 0.3867,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jamesanz/bitcoin-mcp",
+      "skill_a_desc": "An MCP server that enables AI models to query the Bitcoin blockchain.",
+      "skill_b": "saurav61091/mcp-openapi",
+      "skill_b_desc": "Turn any OpenAPI spec into callable MCP tools for Claude. Point at any OpenAPI 3.x spec and Claude c",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "scrapercity/scrapercity-cli",
+      "skill_a_desc": "B2B lead generation with 20+ tools including Apollo, Google Maps, email finder, email validator, mob",
+      "skill_b": "furey/mongodb-lens",
+      "skill_b_desc": "MongoDB Lens: Full Featured MCP Server for MongoDB Databases",
+      "label": 0,
+      "compat_score": 0.3486,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "pramod/kaggle",
+      "skill_a_desc": "This Kaggle MCP Server makes Kaggle more accessible by letting you browse competitions, leaderboards",
+      "skill_b": "artmann/package-registry-mcp",
+      "skill_b_desc": "MCP server for searching and getting up-to-date information about NPM, Cargo, PyPi, and NuGet packag",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jjlabsio/korea-stock-mcp",
+      "skill_a_desc": "An MCP Server for Korean stock analysis using OPEN DART API and KRX API",
+      "skill_b": "agimaulana/huaweiappgallerymcp",
+      "skill_b_desc": "Huawei AppGallery Connect publishing: upload APK/AAB, update metadata and localizations, submit for ",
+      "label": 0,
+      "compat_score": 0.3533,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "aybelatchane/mcp-server-terminal",
+      "skill_a_desc": "Playwright for terminals - interact with TUI/CLI applications through structured Terminal State Tree",
+      "skill_b": "s-b-e-n-s-o-n/portkey-admin-mcp",
+      "skill_b_desc": "MCP server for the Portkey AI Gateway Admin API — 150 tools for prompts, configs, analytics, keys, g",
+      "label": 0,
+      "compat_score": 0.26,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "muhammed-abdelghany/rest_api_mcp",
+      "skill_a_desc": "MCP server for authenticated REST API calls — auto-login, token caching, 2FA/OTP support, Swagger sp",
+      "skill_b": "gregario/hearthstone-oracle",
+      "skill_b_desc": "Hearthstone card search, deck analysis, and strategy coaching. 9 tools covering card lookup, deck de",
+      "label": 0,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "omni-fun-mcp-server",
+      "skill_a_desc": "Multichain memecoin launchpad across 8 chains (Base, Arb, OP, Polygon, BSC, ETH, Avax, Solana). Toke",
+      "skill_b": "chrbailey/promptspeak-mcp-server",
+      "skill_b_desc": "Pre-execution governance for AI agents. Intercepts and validates every agent tool call through an 8-",
+      "label": 0,
+      "compat_score": 0.44,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "prisma/mcp",
+      "skill_a_desc": "Gives LLMs the ability to manage Prisma Postgres databases (e.g. spin up new databases and run migra",
+      "skill_b": "backspace-me/sportscore-mcp",
+      "skill_b_desc": "Live scores, standings, top scorers, player stats, and knockout brackets for football, basketball, c",
+      "label": 0,
+      "compat_score": 0.3457,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "thoughtproof/thoughtproof-mcp",
+      "skill_a_desc": "Adversarial multi-model reasoning verification for AI agents before trades execute. Claude, Grok, an",
+      "skill_b": "blazickjp/arxiv-mcp-server",
+      "skill_b_desc": "Search ArXiv research papers",
+      "label": 0,
+      "compat_score": 0.2933,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "kukapay/cryptopanic-mcp-server",
+      "skill_a_desc": "Providing latest cryptocurrency news to AI agents, powered by CryptoPanic.",
+      "skill_b": "yuvalsuede/claudia",
+      "skill_b_desc": "AI-native task management system for Claude agents. Hierarchical tasks, dependencies, sprints, accep",
+      "label": 0,
+      "compat_score": 0.3,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "nicolascroce/keepsake-mcp",
+      "skill_a_desc": "Personal CRM — manage contacts, interactions, tasks, notes, daily journal, and tags through 42 MCP t",
+      "skill_b": "behrensd/mcp-firewall",
+      "skill_b_desc": "Deterministic security proxy (iptables for MCP) that intercepts tool calls, enforces YAML policies, ",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "stippi/code-assistant",
+      "skill_a_desc": "Coding agent with basic list, read, replace_in_file, write, execute_command and web search tools. Su",
+      "skill_b": "fradser/mcp-server-apple-reminders",
+      "skill_b_desc": "An MCP server for interacting with Apple Reminders on macOS",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "zlatkoc/youtube-summarize",
+      "skill_a_desc": "MCP server that fetches YouTube video transcripts and optionally summarizes them. Supports multiple ",
+      "skill_b": "canopyhq/phloem",
+      "skill_b_desc": "Local-first AI memory with causal graphs and citation verification. Semantic search, confidence deca",
+      "label": 0,
+      "compat_score": 0.32,
+      "llm_label": 1
+    },
+    {
+      "skill_a": "chrisbusbin-pixel/propfirmdealfinder-mcp-server",
+      "skill_a_desc": "Aggregates proprietary trading firm discounts, reviews, and affiliate deals across 20+ prop firms. Q",
+      "skill_b": "peek-travel/mcp-intro",
+      "skill_b_desc": "Remote MCP Server for discovering and planning experiences, at home and on vacation",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "inditextech/mcp-teams-server",
+      "skill_a_desc": "MCP server that integrates Microsoft Teams messaging (read, post, mention, list members and threads)",
+      "skill_b": "octoco-ltd/sheetsdata-mcp",
+      "skill_b_desc": "Instant access to electronic component datasheets for AI agents — specs, pinouts, package info, abso",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "burningion/video-editing-mcp",
+      "skill_a_desc": "Add, Analyze, Search, and Generate Video Edits from your Video Jungle Collection",
+      "skill_b": "kukapay/crypto-indicators-mcp",
+      "skill_b_desc": "An MCP server providing a range of cryptocurrency technical analysis indicators and strategie.",
+      "label": 0,
+      "compat_score": 0.42,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "freema/firefox-devtools-mcp",
+      "skill_a_desc": "Firefox browser automation via WebDriver BiDi for testing, scraping, and browser control. Supports s",
+      "skill_b": "kevinswint/xcode-studio-mcp",
+      "skill_b_desc": "Unified MCP server for iOS development — build, run, screenshot, and interact with iOS Simulator.",
+      "label": 0,
+      "compat_score": 0.38,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "khaoss85/arvo-mcp",
+      "skill_a_desc": "AI workout coach MCP server for Arvo. Access training data, workout history, personal records, body ",
+      "skill_b": "kiarash-portfolio-mcp",
+      "skill_b_desc": "WebMCP-enabled portfolio with Ed25519 signed discovery. AI agents can query projects, skills, and ex",
+      "label": 0,
+      "compat_score": 0.31,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "fr0gger/mcp_security",
+      "skill_a_desc": "MCP server for querying the ORKL API. This server provides tools for fetching threat reports, analyz",
+      "skill_b": "kukapay/twitter-username-changes-mcp",
+      "skill_b_desc": "An MCP server that tracks the historical changes of Twitter usernames.",
+      "label": 0,
+      "compat_score": 0.37,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "mhmzdev/figma-flutter-mcp",
+      "skill_a_desc": "Provide coding agents direct access to Figma data to help them write Flutter code for building apps ",
+      "skill_b": "airblackbox/air-blackbox-mcp",
+      "skill_b_desc": "EU AI Act compliance scanner for Python AI agents. Scans, analyzes, and remediates LangChain/CrewAI/",
+      "label": 0,
+      "compat_score": 0.48,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "ellmos-ai/n8n-manager-mcp",
+      "skill_a_desc": "MCP server for managing n8n workflows through AI assistants, including workflow CRUD, synchronizatio",
+      "skill_b": "imdinu/apple-mail-mcp",
+      "skill_b_desc": "Fast MCP server for Apple Mail — 87x faster email fetching via batch JXA and FTS5 search index for ~",
+      "label": 0,
+      "compat_score": 0.4057,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "jamsusmaximus/trainingpeaks-mcp",
+      "skill_a_desc": "Query TrainingPeaks workouts, analyze CTL/ATL/TSB fitness metrics, and compare power/pace PRs throug",
+      "skill_b": "rps321321/obsidian-mcp-pro",
+      "skill_b_desc": "Feature-complete Obsidian vault MCP server with 23 tools and 3 resources. Full-text search, note CRU",
+      "label": 0,
+      "compat_score": 0.3171,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "echojobsio/jdl-mcp-server",
+      "skill_a_desc": "Search 1M+ enriched job listings from 20,000+ companies. Filter by skills, salary, location, seniori",
+      "skill_b": "jcdickinson/simplemem",
+      "skill_b_desc": "A simple memory tool for coding agents using DuckDB and VoyageAI.",
+      "label": 0,
+      "compat_score": 0.34,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "bluzername/lennys-quotes",
+      "skill_a_desc": "Query 269 episodes of Lenny's Podcast for product management wisdom. Search 51,000+ transcript segme",
+      "skill_b": "hustcc/mcp-echarts",
+      "skill_b_desc": "Generate visual charts using [Apache ECharts](https://echarts.apache.org) with AI MCP dynamically.",
+      "label": 0,
+      "compat_score": 0.36,
+      "llm_label": 0
+    },
+    {
+      "skill_a": "eyaltoledano/claude-task-master",
+      "skill_a_desc": "AI-powered task management system for AI-driven development. Features PRD parsing, task expansion, m",
+      "skill_b": "getcacheoverflow/cacheoverflow",
+      "skill_b_desc": "AI agent knowledge marketplace where agents share solutions and earn tokens. Search, publish, and un",
+      "label": 0,
+      "compat_score": 0.47,
+      "llm_label": 0
+    }
+  ]
+}
