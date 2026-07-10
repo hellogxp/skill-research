@@ -1,0 +1,2006 @@
+{
+  "vanilla": [
+    {
+      "query_id": "human_000",
+      "query": "Pull the latest sales figures from our Postgres database and email a summary to ",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5867,
+      "greedy_compat": 0.5617,
+      "random_compat": 0.4874,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_001",
+      "query": "Can you check if our website has any security vulnerabilities and then create a ",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 8,
+      "gt_num": 2,
+      "catr1": 1.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4,
+      "greedy_compat": 0.4,
+      "random_compat": 0.4131,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_002",
+      "query": "I need to scrape competitor pricing from their website and load it into a spread",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 8,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4629,
+      "greedy_compat": 0.4629,
+      "random_compat": 0.3954,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_003",
+      "query": "Translate this user manual to Spanish and then upload it to our knowledge base",
+      "mode": "vanilla",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.36,
+      "greedy_compat": 0.36,
+      "random_compat": 0.4116,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_004",
+      "query": "Grab today's stock prices for my portfolio and generate a performance chart",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 11,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4336,
+      "greedy_compat": 0.4336,
+      "random_compat": 0.4147,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_005",
+      "query": "Run the test suite and post the results to our Slack channel",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4756,
+      "greedy_compat": 0.36,
+      "random_compat": 0.4295,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_006",
+      "query": "Take a screenshot of our landing page and compress it for the pitch deck",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 7,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.51,
+      "greedy_compat": 0.4156,
+      "random_compat": 0.4183,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_007",
+      "query": "Search arxiv for papers on tool use in LLMs and save them to my Notion workspace",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 6,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.508,
+      "greedy_compat": 0.494,
+      "random_compat": 0.4087,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_008",
+      "query": "Monitor our API latency for the past hour and send an alert if it exceeds the th",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.6495,
+      "greedy_compat": 0.6495,
+      "random_compat": 0.4121,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_009",
+      "query": "Convert all the HEIC photos in my folder to JPEG and upload them to S3",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.56,
+      "greedy_compat": 0.3883,
+      "random_compat": 0.4233,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_010",
+      "query": "Look up nearby restaurants for our team lunch and add the top 3 to a shared cale",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 7,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4933,
+      "greedy_compat": 0.3493,
+      "random_compat": 0.3979,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_011",
+      "query": "Pull the error logs from CloudWatch and summarize the most common failures using",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4874,
+      "greedy_compat": 0.4785,
+      "random_compat": 0.3892,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_012",
+      "query": "Check our SSL certificates and renew any that expire within 30 days",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4933,
+      "greedy_compat": 0.4933,
+      "random_compat": 0.3945,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_013",
+      "query": "Fetch the game stats from last night's match and post highlights to Discord",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 7,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4567,
+      "greedy_compat": 0.4567,
+      "random_compat": 0.3886,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_014",
+      "query": "Calculate shipping costs for our pending orders and update the database",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 3,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.54,
+      "greedy_compat": 0.43,
+      "random_compat": 0.3865,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_015",
+      "query": "Lint the frontend code and auto-fix any formatting issues",
+      "mode": "vanilla",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.36,
+      "greedy_compat": 0.36,
+      "random_compat": 0.3893,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_016",
+      "query": "Geocode all customer addresses in our CRM and plot them on a map",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5764,
+      "greedy_compat": 0.5038,
+      "random_compat": 0.4187,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_017",
+      "query": "Sync our GitHub issues with the Linear project board",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 9,
+      "gt_num": 2,
+      "catr1": 1.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5988,
+      "greedy_compat": 0.4136,
+      "random_compat": 0.4142,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_018",
+      "query": "Download the podcast episode and extract a text transcript",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.6629,
+      "greedy_compat": 0.4419,
+      "random_compat": 0.4103,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_019",
+      "query": "Check compliance status of our data retention policies and generate a report",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4893,
+      "greedy_compat": 0.409,
+      "random_compat": 0.4111,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_020",
+      "query": "Scrape product reviews from Amazon, run sentiment analysis on them, and visualiz",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5971,
+      "greedy_compat": 0.5971,
+      "random_compat": 0.4682,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_021",
+      "query": "Query our analytics database for user churn data, segment users by behavior, and",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4128,
+      "greedy_compat": 0.4128,
+      "random_compat": 0.415,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_022",
+      "query": "Scan our codebase for dependency vulnerabilities, create GitHub issues for criti",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5167,
+      "greedy_compat": 0.5167,
+      "random_compat": 0.4442,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_023",
+      "query": "Fetch weather forecasts for all our warehouse locations, identify ones expecting",
+      "mode": "vanilla",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5,
+      "greedy_compat": 0.5,
+      "random_compat": 0.4255,
+      "edge": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_024",
+      "query": "Build the Docker image, deploy it to our Kubernetes cluster, and verify the heal",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.58,
+      "greedy_compat": 0.4473,
+      "random_compat": 0.3824,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_025",
+      "query": "Search PubMed for recent papers on CRISPR, summarize the key findings, and add t",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 7,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5467,
+      "greedy_compat": 0.4783,
+      "random_compat": 0.4506,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_026",
+      "query": "Process this month's invoices from the finance system, calculate totals by depar",
+      "mode": "vanilla",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.68,
+      "greedy_compat": 0.68,
+      "random_compat": 0.37,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_027",
+      "query": "Automate the browser to fill out the insurance form, take a screenshot of the co",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5746,
+      "greedy_compat": 0.5721,
+      "random_compat": 0.4377,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_028",
+      "query": "Track our social media mentions from the past week, analyze engagement trends, a",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4932,
+      "greedy_compat": 0.4932,
+      "random_compat": 0.3397,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_029",
+      "query": "Export all customer records from Salesforce, clean up duplicate entries, and imp",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.475,
+      "greedy_compat": 0.3648,
+      "random_compat": 0.3835,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_030",
+      "query": "Crawl our documentation site for broken links, generate a fix-list, and create p",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.53,
+      "greedy_compat": 0.469,
+      "random_compat": 0.4385,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_031",
+      "query": "Pull server metrics from Grafana, detect anomalies in CPU usage, and scale up in",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.6675,
+      "greedy_compat": 0.5775,
+      "random_compat": 0.4729,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_032",
+      "query": "Fetch competitor ad spend data, compare with our campaigns, and generate a compe",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 9,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4531,
+      "greedy_compat": 0.4531,
+      "random_compat": 0.4207,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_033",
+      "query": "Back up the production database, run the migration script, and verify data integ",
+      "mode": "vanilla",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4786,
+      "greedy_compat": 0.36,
+      "random_compat": 0.3679,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_034",
+      "query": "Resize all product images to standard dimensions, add watermarks, and upload to ",
+      "mode": "vanilla",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.7286,
+      "greedy_compat": 0.3933,
+      "random_compat": 0.4466,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_035",
+      "query": "Collect player stats from the gaming API, rank them by performance, and post the",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5202,
+      "greedy_compat": 0.445,
+      "random_compat": 0.4168,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_036",
+      "query": "Audit IAM permissions across all AWS accounts, flag overprivileged roles, and ge",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 8,
+      "gt_num": 3,
+      "catr1": 0.6667,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4796,
+      "greedy_compat": 0.4796,
+      "random_compat": 0.4542,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_037",
+      "query": "Extract text from scanned contract PDFs, identify key clauses using NLP, and sto",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 6,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.54,
+      "greedy_compat": 0.44,
+      "random_compat": 0.3989,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_038",
+      "query": "Set up a webhook for new Stripe payments, transform the payload, and push events",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 6,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.696,
+      "greedy_compat": 0.504,
+      "random_compat": 0.4015,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_039",
+      "query": "Search for available domain names matching our brand, check trademark conflicts,",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.66,
+      "greedy_compat": 0.66,
+      "random_compat": 0.4196,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_040",
+      "query": "Crawl our competitors' pricing pages daily, store the data in a database, run pr",
+      "mode": "vanilla",
+      "da": 1,
+      "n_pred": 5,
+      "gt_num": 5,
+      "catr1": 0.4,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.3714,
+      "greedy_compat": 0.3714,
+      "random_compat": 0.409,
+      "edge": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_041",
+      "query": "Pull code coverage reports from CI, identify untested modules, generate test stu",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 4,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.6225,
+      "greedy_compat": 0.49,
+      "random_compat": 0.4683,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_042",
+      "query": "Collect IoT sensor data from our warehouses, detect temperature anomalies, trigg",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 4,
+      "catr1": 0.25,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4008,
+      "greedy_compat": 0.4008,
+      "random_compat": 0.3813,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_043",
+      "query": "Scan the entire infrastructure for exposed secrets, rotate compromised credentia",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 4,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4471,
+      "greedy_compat": 0.4471,
+      "random_compat": 0.4147,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_044",
+      "query": "Extract financial data from quarterly PDFs, reconcile against our ledger, comput",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 9,
+      "gt_num": 5,
+      "catr1": 0.2,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4371,
+      "greedy_compat": 0.4121,
+      "random_compat": 0.4387,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_045",
+      "query": "Monitor social media for brand mentions, classify sentiment, respond to negative",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 7,
+      "gt_num": 5,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5592,
+      "greedy_compat": 0.4537,
+      "random_compat": 0.4112,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_046",
+      "query": "Run A/B tests on our landing page variants, collect user interaction data, perfo",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 7,
+      "gt_num": 4,
+      "catr1": 0.25,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.465,
+      "greedy_compat": 0.4253,
+      "random_compat": 0.3896,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_047",
+      "query": "Fetch real-time market data for crypto assets, execute rebalancing trades, updat",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 8,
+      "gt_num": 5,
+      "catr1": 0.2,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5398,
+      "greedy_compat": 0.5398,
+      "random_compat": 0.4877,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_048",
+      "query": "Index all internal documentation, build a semantic search engine, deploy it as a",
+      "mode": "vanilla",
+      "da": 0,
+      "n_pred": 7,
+      "gt_num": 4,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4783,
+      "greedy_compat": 0.4222,
+      "random_compat": 0.4048,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_049",
+      "query": "Analyze customer support tickets with NLP, identify trending issues, create bug ",
+      "mode": "vanilla",
+      "da": 1,
+      "n_pred": 5,
+      "gt_num": 5,
+      "catr1": 0.2,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4958,
+      "greedy_compat": 0.4108,
+      "random_compat": 0.451,
+      "edge": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "exact_match": 0
+      }
+    }
+  ],
+  "sad": [
+    {
+      "query_id": "human_000",
+      "query": "Pull the latest sales figures from our Postgres database and email a summary to ",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4467,
+      "greedy_compat": 0.4556,
+      "random_compat": 0.4039,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_001",
+      "query": "Can you check if our website has any security vulnerabilities and then create a ",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5025,
+      "greedy_compat": 0.4192,
+      "random_compat": 0.4547,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_002",
+      "query": "I need to scrape competitor pricing from their website and load it into a spread",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.52,
+      "greedy_compat": 0.52,
+      "random_compat": 0.4534,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_003",
+      "query": "Translate this user manual to Spanish and then upload it to our knowledge base",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.34,
+      "greedy_compat": 0.34,
+      "random_compat": 0.4253,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_004",
+      "query": "Grab today's stock prices for my portfolio and generate a performance chart",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 3,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.415,
+      "greedy_compat": 0.415,
+      "random_compat": 0.4588,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_005",
+      "query": "Run the test suite and post the results to our Slack channel",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.44,
+      "greedy_compat": 0.44,
+      "random_compat": 0.3707,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_006",
+      "query": "Take a screenshot of our landing page and compress it for the pitch deck",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.37,
+      "greedy_compat": 0.37,
+      "random_compat": 0.4365,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_007",
+      "query": "Search arxiv for papers on tool use in LLMs and save them to my Notion workspace",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 6,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.538,
+      "greedy_compat": 0.508,
+      "random_compat": 0.3793,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_008",
+      "query": "Monitor our API latency for the past hour and send an alert if it exceeds the th",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.469,
+      "greedy_compat": 0.4202,
+      "random_compat": 0.375,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_009",
+      "query": "Convert all the HEIC photos in my folder to JPEG and upload them to S3",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.425,
+      "greedy_compat": 0.425,
+      "random_compat": 0.5169,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_010",
+      "query": "Look up nearby restaurants for our team lunch and add the top 3 to a shared cale",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.46,
+      "greedy_compat": 0.46,
+      "random_compat": 0.3651,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_011",
+      "query": "Pull the error logs from CloudWatch and summarize the most common failures using",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 3,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.6422,
+      "greedy_compat": 0.4011,
+      "random_compat": 0.4409,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_012",
+      "query": "Check our SSL certificates and renew any that expire within 30 days",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 3,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.66,
+      "greedy_compat": 0.66,
+      "random_compat": 0.3993,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_013",
+      "query": "Fetch the game stats from last night's match and post highlights to Discord",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.51,
+      "greedy_compat": 0.51,
+      "random_compat": 0.4755,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_014",
+      "query": "Calculate shipping costs for our pending orders and update the database",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.66,
+      "greedy_compat": 0.66,
+      "random_compat": 0.3923,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_015",
+      "query": "Lint the frontend code and auto-fix any formatting issues",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.42,
+      "greedy_compat": 0.42,
+      "random_compat": 0.4487,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_016",
+      "query": "Geocode all customer addresses in our CRM and plot them on a map",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 3,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5033,
+      "greedy_compat": 0.365,
+      "random_compat": 0.3929,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_017",
+      "query": "Sync our GitHub issues with the Linear project board",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 1.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.66,
+      "greedy_compat": 0.26,
+      "random_compat": 0.507,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_018",
+      "query": "Download the podcast episode and extract a text transcript",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 2,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4,
+      "greedy_compat": 0.4,
+      "random_compat": 0.4875,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_019",
+      "query": "Check compliance status of our data retention policies and generate a report",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 3,
+      "gt_num": 2,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5229,
+      "greedy_compat": 0.5229,
+      "random_compat": 0.4053,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_020",
+      "query": "Scrape product reviews from Amazon, run sentiment analysis on them, and visualiz",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4486,
+      "greedy_compat": 0.4486,
+      "random_compat": 0.4563,
+      "edge": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_021",
+      "query": "Query our analytics database for user churn data, segment users by behavior, and",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.6667,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5452,
+      "greedy_compat": 0.5452,
+      "random_compat": 0.4061,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_022",
+      "query": "Scan our codebase for dependency vulnerabilities, create GitHub issues for criti",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4467,
+      "greedy_compat": 0.4467,
+      "random_compat": 0.3681,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_023",
+      "query": "Fetch weather forecasts for all our warehouse locations, identify ones expecting",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.57,
+      "greedy_compat": 0.57,
+      "random_compat": 0.4114,
+      "edge": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_024",
+      "query": "Build the Docker image, deploy it to our Kubernetes cluster, and verify the heal",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4838,
+      "greedy_compat": 0.4838,
+      "random_compat": 0.4235,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_025",
+      "query": "Search PubMed for recent papers on CRISPR, summarize the key findings, and add t",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5133,
+      "greedy_compat": 0.5206,
+      "random_compat": 0.4252,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_026",
+      "query": "Process this month's invoices from the finance system, calculate totals by depar",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.68,
+      "greedy_compat": 0.44,
+      "random_compat": 0.4069,
+      "edge": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_027",
+      "query": "Automate the browser to fill out the insurance form, take a screenshot of the co",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.505,
+      "greedy_compat": 0.505,
+      "random_compat": 0.4316,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_028",
+      "query": "Track our social media mentions from the past week, analyze engagement trends, a",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4129,
+      "greedy_compat": 0.4129,
+      "random_compat": 0.3795,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_029",
+      "query": "Export all customer records from Salesforce, clean up duplicate entries, and imp",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4733,
+      "greedy_compat": 0.4733,
+      "random_compat": 0.3824,
+      "edge": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_030",
+      "query": "Crawl our documentation site for broken links, generate a fix-list, and create p",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 12,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4937,
+      "greedy_compat": 0.4937,
+      "random_compat": 0.4341,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_031",
+      "query": "Pull server metrics from Grafana, detect anomalies in CPU usage, and scale up in",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.65,
+      "greedy_compat": 0.41,
+      "random_compat": 0.4329,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_032",
+      "query": "Fetch competitor ad spend data, compare with our campaigns, and generate a compe",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5067,
+      "greedy_compat": 0.4086,
+      "random_compat": 0.4388,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_033",
+      "query": "Back up the production database, run the migration script, and verify data integ",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4886,
+      "greedy_compat": 0.29,
+      "random_compat": 0.3713,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_034",
+      "query": "Resize all product images to standard dimensions, add watermarks, and upload to ",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5367,
+      "greedy_compat": 0.3767,
+      "random_compat": 0.4402,
+      "edge": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_035",
+      "query": "Collect player stats from the gaming API, rank them by performance, and post the",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4833,
+      "greedy_compat": 0.3752,
+      "random_compat": 0.4362,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_036",
+      "query": "Audit IAM permissions across all AWS accounts, flag overprivileged roles, and ge",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5486,
+      "greedy_compat": 0.4286,
+      "random_compat": 0.3773,
+      "edge": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_037",
+      "query": "Extract text from scanned contract PDFs, identify key clauses using NLP, and sto",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.3333,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.48,
+      "greedy_compat": 0.48,
+      "random_compat": 0.409,
+      "edge": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_038",
+      "query": "Set up a webhook for new Stripe payments, transform the payload, and push events",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 4,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4711,
+      "greedy_compat": 0.4711,
+      "random_compat": 0.3665,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_039",
+      "query": "Search for available domain names matching our brand, check trademark conflicts,",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 3,
+      "gt_num": 3,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.57,
+      "greedy_compat": 0.4129,
+      "random_compat": 0.4578,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_040",
+      "query": "Crawl our competitors' pricing pages daily, store the data in a database, run pr",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 6,
+      "gt_num": 5,
+      "catr1": 0.2,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.448,
+      "greedy_compat": 0.448,
+      "random_compat": 0.3769,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_041",
+      "query": "Pull code coverage reports from CI, identify untested modules, generate test stu",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 4,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4417,
+      "greedy_compat": 0.4417,
+      "random_compat": 0.4087,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_042",
+      "query": "Collect IoT sensor data from our warehouses, detect temperature anomalies, trigg",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 6,
+      "gt_num": 4,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4513,
+      "greedy_compat": 0.4073,
+      "random_compat": 0.3483,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_043",
+      "query": "Scan the entire infrastructure for exposed secrets, rotate compromised credentia",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 4,
+      "catr1": 0.5,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4845,
+      "greedy_compat": 0.4595,
+      "random_compat": 0.4234,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_044",
+      "query": "Extract financial data from quarterly PDFs, reconcile against our ledger, comput",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 5,
+      "gt_num": 5,
+      "catr1": 0.4,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.5283,
+      "greedy_compat": 0.445,
+      "random_compat": 0.443,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    },
+    {
+      "query_id": "human_045",
+      "query": "Monitor social media for brand mentions, classify sentiment, respond to negative",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 5,
+      "gt_num": 5,
+      "catr1": 0.2,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4567,
+      "greedy_compat": 0.4567,
+      "random_compat": 0.3896,
+      "edge": {
+        "precision": 0.25,
+        "recall": 0.25,
+        "f1": 0.25,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_046",
+      "query": "Run A/B tests on our landing page variants, collect user interaction data, perfo",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 6,
+      "gt_num": 4,
+      "catr1": 0.0,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4213,
+      "greedy_compat": 0.4013,
+      "random_compat": 0.3751,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_047",
+      "query": "Fetch real-time market data for crypto assets, execute rebalancing trades, updat",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 8,
+      "gt_num": 5,
+      "catr1": 0.2,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.4799,
+      "greedy_compat": 0.4799,
+      "random_compat": 0.5118,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_048",
+      "query": "Index all internal documentation, build a semantic search engine, deploy it as a",
+      "mode": "sad",
+      "da": 0,
+      "n_pred": 5,
+      "gt_num": 4,
+      "catr1": 0.75,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.3967,
+      "greedy_compat": 0.3967,
+      "random_compat": 0.4136,
+      "edge": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "exact_match": 0
+      }
+    },
+    {
+      "query_id": "human_049",
+      "query": "Analyze customer support tickets with NLP, identify trending issues, create bug ",
+      "mode": "sad",
+      "da": 1,
+      "n_pred": 5,
+      "gt_num": 5,
+      "catr1": 0.2,
+      "dag_valid": 1,
+      "greedy_valid": 1,
+      "dag_compat": 0.3583,
+      "greedy_compat": 0.3583,
+      "random_compat": 0.3835,
+      "edge": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1
+      }
+    }
+  ]
+}
