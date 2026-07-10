@@ -1,0 +1,55 @@
+2026-07-10 10:28:18,188 [INFO] Loaded 2209 skills, 300 queries
+2026-07-10 10:28:18,189 [INFO] ==================================================
+2026-07-10 10:28:18,189 [INFO] Running TF-IDF baseline...
+2026-07-10 10:28:18,190 [INFO] ==================================================
+2026-07-10 10:28:19,337 [INFO] Building TF-IDF index...
+2026-07-10 10:28:19,509 [INFO] TF-IDF matrix: (2209, 10000)
+2026-07-10 10:28:20,163 [INFO]   TF-IDF: CatR@1=0.296, CatR@5=0.518, CatR@10=0.620
+2026-07-10 10:28:20,163 [INFO] ==================================================
+2026-07-10 10:28:20,163 [INFO] Running MiniLM baseline...
+2026-07-10 10:28:20,163 [INFO] ==================================================
+2026-07-10 10:28:20,163 [INFO] Building MiniLM index...
+2026-07-10 10:28:25,172 [INFO] Cannot reach huggingface.co, switching to mirror: https://hf-mirror.com
+2026-07-10 10:28:32,994 [INFO] Loading encoder: sentence-transformers/all-MiniLM-L6-v2
+2026-07-10 10:28:32,996 [INFO] No device provided, using cuda:0
+2026-07-10 10:28:33,032 [INFO] Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8841.86it/s]
+2026-07-10 10:28:33,280 [INFO] Encoding 2209 skills (use_body=False)...
+Batches:   0%|          | 0/35 [00:00<?, ?it/s]Batches:   3%|▎         | 1/35 [00:00<00:08,  4.24it/s]Batches:  14%|█▍        | 5/35 [00:00<00:01, 16.67it/s]Batches:  29%|██▊       | 10/35 [00:00<00:00, 26.11it/s]Batches:  46%|████▌     | 16/35 [00:00<00:00, 34.63it/s]Batches:  63%|██████▎   | 22/35 [00:00<00:00, 40.97it/s]Batches:  83%|████████▎ | 29/35 [00:00<00:00, 48.24it/s]Batches: 100%|██████████| 35/35 [00:00<00:00, 39.79it/s]
+2026-07-10 10:28:34,173 [INFO] Index built: 2209 skills, dim=384
+2026-07-10 10:28:37,126 [INFO]   MiniLM: CatR@1=0.374, CatR@5=0.637, CatR@10=0.711
+2026-07-10 10:28:37,126 [INFO] ==================================================
+2026-07-10 10:28:37,126 [INFO] Running Qwen-7B embedding baseline...
+2026-07-10 10:28:37,126 [INFO] ==================================================
+2026-07-10 10:28:37,126 [INFO] Building Qwen2.5-7B embedding index...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<01:51,  3.01it/s]Loading weights:  12%|█▏        | 39/338 [00:00<00:02, 103.87it/s]Loading weights:  17%|█▋        | 56/338 [00:00<00:02, 118.56it/s]Loading weights:  21%|██▏       | 72/338 [00:00<00:02, 127.67it/s]Loading weights:  26%|██▌       | 88/338 [00:00<00:01, 126.13it/s]Loading weights:  33%|███▎      | 111/338 [00:00<00:01, 133.68it/s]Loading weights:  37%|███▋      | 126/338 [00:01<00:01, 134.30it/s]Loading weights:  43%|████▎     | 147/338 [00:01<00:01, 139.71it/s]Loading weights:  48%|████▊     | 162/338 [00:01<00:01, 134.27it/s]Loading weights:  54%|█████▍    | 183/338 [00:01<00:01, 139.61it/s]Loading weights:  59%|█████▊    | 198/338 [00:01<00:01, 137.96it/s]Loading weights:  65%|██████▍   | 219/338 [00:01<00:00, 147.33it/s]Loading weights:  69%|██████▉   | 234/338 [00:01<00:00, 143.48it/s]Loading weights:  75%|███████▌  | 255/338 [00:01<00:00, 146.34it/s]Loading weights:  80%|███████▉  | 270/338 [00:02<00:00, 143.25it/s]Loading weights:  86%|████████▌ | 291/338 [00:02<00:00, 147.19it/s]Loading weights:  91%|█████████ | 306/338 [00:02<00:00, 138.38it/s]Loading weights:  97%|█████████▋| 327/338 [00:02<00:00, 153.48it/s]Loading weights: 100%|██████████| 338/338 [00:02<00:00, 136.73it/s]
+[transformers] [1mQwen2Model LOAD REPORT[0m from: /mnt/workspace/models/Qwen/Qwen2.5-7B-Instruct
+Key            | Status     |  | 
+---------------+------------+--+-
+lm_head.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-07-10 10:28:40,431 [INFO] Encoding 2209 skills with Qwen-7B...
+2026-07-10 10:28:46,836 [INFO]   Encoded 800/2209
+2026-07-10 10:28:53,468 [INFO]   Encoded 1600/2209
+2026-07-10 10:28:58,391 [INFO] Skill embeddings: (2209, 3584)
+2026-07-10 10:29:00,220 [INFO]   Progress: 50/300
+2026-07-10 10:29:02,017 [INFO]   Progress: 100/300
+2026-07-10 10:29:03,809 [INFO]   Progress: 150/300
+2026-07-10 10:29:05,587 [INFO]   Progress: 200/300
+2026-07-10 10:29:07,427 [INFO]   Progress: 250/300
+2026-07-10 10:29:09,238 [INFO]   Progress: 300/300
+2026-07-10 10:29:09,314 [INFO]   Qwen-7B: CatR@1=0.181, CatR@5=0.391, CatR@10=0.493
+2026-07-10 10:29:09,326 [INFO] Results saved to /mnt/workspace/skill-research/results_v4/encoder_baselines.json
+
+======================================================================
+ENCODER BASELINE COMPARISON
+======================================================================
+Strategy                                        CatR@1   CatR@5  CatR@10
+----------------------------------------------------------------------
+  TF-IDF (sparse)                                0.296    0.518    0.620
+  MiniLM-L6-v2 (dense, 384-dim)                  0.374    0.637    0.711
+  Qwen2.5-7B-Instruct (dense, 3584-dim)          0.181    0.391    0.493
+======================================================================
