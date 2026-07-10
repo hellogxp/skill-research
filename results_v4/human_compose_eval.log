@@ -1,0 +1,51 @@
+2026-07-10 10:54:55,894 [INFO] Loaded 2209 skills, 50 human queries
+2026-07-10 10:54:55,894 [INFO] Running compose eval on 50 human-style queries
+2026-07-10 10:55:00,928 [INFO] Cannot reach huggingface.co, switching to mirror: https://hf-mirror.com
+2026-07-10 10:55:10,024 [INFO] Loading encoder: sentence-transformers/all-MiniLM-L6-v2
+2026-07-10 10:55:10,026 [INFO] No device provided, using cuda:0
+2026-07-10 10:55:10,062 [INFO] Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10138.30it/s]
+2026-07-10 10:55:10,308 [INFO] Encoding 2209 skills (use_body=False)...
+Batches:   0%|          | 0/35 [00:00<?, ?it/s]Batches:   3%|▎         | 1/35 [00:00<00:07,  4.28it/s]Batches:  14%|█▍        | 5/35 [00:00<00:01, 16.76it/s]Batches:  29%|██▊       | 10/35 [00:00<00:00, 26.88it/s]Batches:  46%|████▌     | 16/35 [00:00<00:00, 35.28it/s]Batches:  63%|██████▎   | 22/35 [00:00<00:00, 41.39it/s]Batches:  83%|████████▎ | 29/35 [00:00<00:00, 48.43it/s]Batches: 100%|██████████| 35/35 [00:00<00:00, 40.15it/s]
+2026-07-10 10:55:11,193 [INFO] Index built: 2209 skills, dim=384
+2026-07-10 10:55:11,194 [INFO] Loading local model: /mnt/workspace/models/Qwen/Qwen2.5-7B-Instruct
+2026-07-10 10:55:11,602 [INFO] Model ~10.8GB, 1 GPUs = 79.3GB total
+2026-07-10 10:55:11,602 [INFO] Strategy: single-GPU direct placement (cuda:0)
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<02:09,  2.61it/s]Loading weights:   1%|          | 2/339 [00:00<01:15,  4.47it/s]Loading weights:  12%|█▏        | 40/339 [00:00<00:03, 91.31it/s]Loading weights:  19%|█▉        | 64/339 [00:00<00:02, 113.47it/s]Loading weights:  23%|██▎       | 77/339 [00:00<00:02, 114.25it/s]Loading weights:  29%|██▉       | 100/339 [00:01<00:01, 130.94it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:01, 128.52it/s]Loading weights:  40%|████      | 136/339 [00:01<00:01, 138.58it/s]Loading weights:  45%|████▍     | 151/339 [00:01<00:01, 137.49it/s]Loading weights:  51%|█████     | 172/339 [00:01<00:01, 136.14it/s]Loading weights:  58%|█████▊    | 196/339 [00:01<00:01, 139.00it/s]Loading weights:  62%|██████▏   | 210/339 [00:01<00:00, 136.57it/s]Loading weights:  68%|██████▊   | 232/339 [00:01<00:00, 146.90it/s]Loading weights:  73%|███████▎  | 247/339 [00:02<00:00, 139.10it/s]Loading weights:  79%|███████▉  | 268/339 [00:02<00:00, 142.03it/s]Loading weights:  83%|████████▎ | 283/339 [00:02<00:00, 137.79it/s]Loading weights:  90%|████████▉ | 304/339 [00:02<00:00, 147.70it/s]Loading weights:  94%|█████████▍| 319/339 [00:02<00:00, 144.77it/s]Loading weights: 100%|██████████| 339/339 [00:02<00:00, 126.38it/s]
+2026-07-10 10:55:14,710 [INFO] Model loaded on GPU (direct placement)
+2026-07-10 10:55:42,295 [INFO]   Progress: 10/50 (31s)
+2026-07-10 10:56:03,943 [INFO]   Progress: 20/50 (53s)
+2026-07-10 10:56:32,159 [INFO]   Progress: 30/50 (81s)
+2026-07-10 10:57:01,601 [INFO]   Progress: 40/50 (110s)
+2026-07-10 10:57:39,733 [INFO]   Progress: 50/50 (149s)
+2026-07-10 10:57:39,733 [INFO] Experiment complete in 149s
+
+============================================================
+HUMAN-STYLE QUERY COMPOSE EVAL (n=50)
+============================================================
+
+  [VANILLA] n=50
+  DA:                0.160
+  CatR@1:            0.227
+  Plan validity:     1.000
+  Chain compat (DAG):    0.521
+  Chain compat (greedy): 0.462
+  Chain compat (random): 0.417
+  Edge F1:           0.129
+  Edge exact match:  0.100
+
+  [SAD] n=50
+  DA:                0.480
+  CatR@1:            0.279
+  Plan validity:     1.000
+  Chain compat (DAG):    0.494
+  Chain compat (greedy): 0.445
+  Chain compat (random): 0.418
+  Edge F1:           0.388
+  Edge exact match:  0.320
+
+  Comparison with 300-query benchmark (SAD):
+    300-query: DA=0.687 CatR@1=0.374
+    50-human:  DA=0.480 CatR@1=0.279
+============================================================
