@@ -1,0 +1,4867 @@
+[
+  {
+    "query_id": "easy_118",
+    "step": 0,
+    "subtask_text": "Use open-strategy-partners/osp_marketing_tools to generate marketing reports"
+  },
+  {
+    "query_id": "easy_118",
+    "step": 1,
+    "subtask_text": "Use embeddedylayers/mcp-analytics to analyze the generated marketing reports"
+  },
+  {
+    "query_id": "easy_118",
+    "step": 2,
+    "subtask_text": "Use inhiblabcore/mcp-image-compression to compress images from the analysis"
+  },
+  {
+    "query_id": "easy_118",
+    "step": 3,
+    "subtask_text": "Use shipitandpray/mcp-compress to compress other media files based on the compressed images"
+  },
+  {
+    "query_id": "hard_025",
+    "step": 0,
+    "subtask_text": "provision new servers using lamemind/mcp-server-multiverse"
+  },
+  {
+    "query_id": "hard_025",
+    "step": 1,
+    "subtask_text": "check compliance requirements using scopeblind/verify-mcp"
+  },
+  {
+    "query_id": "hard_025",
+    "step": 2,
+    "subtask_text": "create a task list in parallel using parallel-web/task-mcp"
+  },
+  {
+    "query_id": "hard_025",
+    "step": 3,
+    "subtask_text": "generate thumbnails using keiver/image-tiler-mcp-server"
+  },
+  {
+    "query_id": "easy_036",
+    "step": 0,
+    "subtask_text": "notify the team using cactusinhand/mcp_server_notify"
+  },
+  {
+    "query_id": "easy_036",
+    "step": 1,
+    "subtask_text": "fetch game stats using labeveryday/nba_mcp_server"
+  },
+  {
+    "query_id": "easy_085",
+    "step": 0,
+    "subtask_text": "encrypt the data using a suitable encryption algorithm"
+  },
+  {
+    "query_id": "easy_085",
+    "step": 1,
+    "subtask_text": "update the documentation with the new encrypted data"
+  },
+  {
+    "query_id": "med_038",
+    "step": 0,
+    "subtask_text": "use pskill9/website-downloader to scrape the website"
+  },
+  {
+    "query_id": "med_038",
+    "step": 1,
+    "subtask_text": "use kimdonghwi94/web-analyzer-mcp to process the scraped website"
+  },
+  {
+    "query_id": "med_038",
+    "step": 2,
+    "subtask_text": "generate a report using the processed results"
+  },
+  {
+    "query_id": "med_002",
+    "step": 0,
+    "subtask_text": "use pskill9/website-downloader to download the website"
+  },
+  {
+    "query_id": "med_002",
+    "step": 1,
+    "subtask_text": "use trackmage/trackmage-mcp-server to track the shipment"
+  },
+  {
+    "query_id": "med_002",
+    "step": 2,
+    "subtask_text": "use a calculator tool to calculate tax based on the provided data"
+  },
+  {
+    "query_id": "med_089",
+    "step": 0,
+    "subtask_text": "use olostep/olostep-mcp-server to automate the workflow"
+  },
+  {
+    "query_id": "med_089",
+    "step": 1,
+    "subtask_text": "use vivekvells/mcp-pandoc to convert document format"
+  },
+  {
+    "query_id": "med_089",
+    "step": 2,
+    "subtask_text": "use andybrandt/mcp-simple-pubmed to search PubMed"
+  },
+  {
+    "query_id": "easy_054",
+    "step": 0,
+    "subtask_text": "summarize the document using 0xshellming/mcp-summarizer"
+  },
+  {
+    "query_id": "easy_054",
+    "step": 1,
+    "subtask_text": "take the summarized data and use cactusinhand/mcp_server_notify to notify the team"
+  },
+  {
+    "query_id": "med_024",
+    "step": 0,
+    "subtask_text": "Use debridge-finance/debridge-mcp to bridge the two systems"
+  },
+  {
+    "query_id": "med_024",
+    "step": 1,
+    "subtask_text": "Use mindsdb/mindsdb to analyze the output from debridge-finance/debridge-mcp and track error rates"
+  },
+  {
+    "query_id": "med_024",
+    "step": 2,
+    "subtask_text": "Use dataeval/dingo to find relevant articles"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 0,
+    "subtask_text": "fetch stock prices using hoqqun/stooq-mcp"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 1,
+    "subtask_text": "fetch stock prices using berlinbra/alpha-vantage-mcp"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 2,
+    "subtask_text": "fetch stock prices using jjlabsio/korea-stock-mcp"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 3,
+    "subtask_text": "fetch stock prices using huggingagi/mcp-baostock-server"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 4,
+    "subtask_text": "fetch stock prices using pwh-pwh/coin-mcp-server"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 5,
+    "subtask_text": "fetch stock prices using zolo-ryan/marketauxmcpserver"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 6,
+    "subtask_text": "fetch stock prices using esignaturescom/mcp-server-esignatures"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 7,
+    "subtask_text": "review contract using toan203/osv-ui"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 8,
+    "subtask_text": "review contract using janaraj/tnl"
+  },
+  {
+    "query_id": "easy_031",
+    "step": 9,
+    "subtask_text": "review contract using fantasieleven-code/callout"
+  },
+  {
+    "query_id": "med_026",
+    "step": 0,
+    "subtask_text": "schedule a meeting"
+  },
+  {
+    "query_id": "med_026",
+    "step": 1,
+    "subtask_text": "visualize molecular structures using aywengo/kafka-schema-reg-mcp or fabio-rovai/open-ontologies"
+  },
+  {
+    "query_id": "med_026",
+    "step": 2,
+    "subtask_text": "migrate the schema using schemacrawler/schemacrawler-mcp-server-usage or wenerme/wener-mssql-mcp"
+  },
+  {
+    "query_id": "hard_000",
+    "step": 0,
+    "subtask_text": "classify content using kastelldev/kastell"
+  },
+  {
+    "query_id": "hard_000",
+    "step": 1,
+    "subtask_text": "check security headers using echology-io/decompose"
+  },
+  {
+    "query_id": "hard_000",
+    "step": 2,
+    "subtask_text": "process payment using planetscale/mcp"
+  },
+  {
+    "query_id": "hard_000",
+    "step": 3,
+    "subtask_text": "query scientific databases using vitorpavinato/ncbi-mcp-server and schemacrawler/schemacrawler-mcp-server-usage"
+  },
+  {
+    "query_id": "easy_032",
+    "step": 0,
+    "subtask_text": "validate data quality using dataeval/dingo"
+  },
+  {
+    "query_id": "easy_032",
+    "step": 1,
+    "subtask_text": "automate the workflow with the results using gotoolkits/difyworkflow"
+  },
+  {
+    "query_id": "hard_001",
+    "step": 0,
+    "subtask_text": "use sh-patterson/fec-mcp-server to analyze campaign metrics"
+  },
+  {
+    "query_id": "hard_001",
+    "step": 1,
+    "subtask_text": "use isaacwasserman/mcp-vegalite-server to visualize molecular structures"
+  },
+  {
+    "query_id": "hard_001",
+    "step": 2,
+    "subtask_text": "use wende/cicada to schedule a meeting"
+  },
+  {
+    "query_id": "hard_001",
+    "step": 3,
+    "subtask_text": "use sharozdawa/ai-visibility to evaluate the code snippet"
+  },
+  {
+    "query_id": "med_009",
+    "step": 0,
+    "subtask_text": "Monitor website uptime using a tool or service"
+  },
+  {
+    "query_id": "med_009",
+    "step": 1,
+    "subtask_text": "Use crawleo/crawleo-mcp or hanselhansel/aeo-cli to start crawling the documentation"
+  },
+  {
+    "query_id": "med_009",
+    "step": 2,
+    "subtask_text": "Utilize pragmar/mcp-server-webcrawl, olostep/olostep-mcp-server, aimlpm/markcrawl, ofershap/mcp-server-scraper, softvoyagers/linkmeta-api, 0xmassi/webclaw, bartonguestier1725-collab/scout-mcp, dumpling-ai/mcp-server-dumplingai, kkjdaniel/bgg-mcp, alex-gon/thegamecrafter-mcp-server, ianaleck/harvest-mcp-server, lodordev/mcp-tautulli, or hamflx/imagen3-mcp to extract information from the crawled documentation"
+  },
+  {
+    "query_id": "med_009",
+    "step": 3,
+    "subtask_text": "Process extracted data to generate game content"
+  },
+  {
+    "query_id": "easy_077",
+    "step": 0,
+    "subtask_text": "use fr0gger/mcp_security to check security headers"
+  },
+  {
+    "query_id": "easy_077",
+    "step": 1,
+    "subtask_text": "use vdalhambra/siteaudit-mcp to send the output"
+  },
+  {
+    "query_id": "hard_002",
+    "step": 0,
+    "subtask_text": "Use dataeval/dingo to validate data quality"
+  },
+  {
+    "query_id": "hard_002",
+    "step": 1,
+    "subtask_text": "Use deploy-mcp/deploy-mcp to automatically deploy to the cloud"
+  },
+  {
+    "query_id": "hard_002",
+    "step": 2,
+    "subtask_text": "Use awslabs/mcp to analyze match data"
+  },
+  {
+    "query_id": "hard_002",
+    "step": 3,
+    "subtask_text": "Use liquidmetal-ai/raindrop-mcp to encrypt the data"
+  },
+  {
+    "query_id": "hard_002",
+    "step": 4,
+    "subtask_text": "Use trackmage/trackmage-mcp-server to track delivery status"
+  },
+  {
+    "query_id": "easy_071",
+    "step": 0,
+    "subtask_text": "aggregate metrics using techdocsstudio/biel-mcp"
+  },
+  {
+    "query_id": "easy_071",
+    "step": 1,
+    "subtask_text": "automate workflow using automation-ai-labs/mcp-link"
+  },
+  {
+    "query_id": "easy_025",
+    "step": 0,
+    "subtask_text": "Extract audio from video using mrslbt/rippr"
+  },
+  {
+    "query_id": "easy_025",
+    "step": 1,
+    "subtask_text": "Transcribe audio using transcribe-app/mcp-transcribe"
+  },
+  {
+    "query_id": "easy_025",
+    "step": 2,
+    "subtask_text": "Benchmark transcription using daisys-ai/daisys-mcp"
+  },
+  {
+    "query_id": "easy_142",
+    "step": 0,
+    "subtask_text": "summarize the document using 0xshellming/mcp-summarizer"
+  },
+  {
+    "query_id": "easy_142",
+    "step": 1,
+    "subtask_text": "analyze experimental results using kimdonghwi94/web-analyzer-mcp"
+  },
+  {
+    "query_id": "easy_112",
+    "step": 0,
+    "subtask_text": "Use zelentsov-dev/asc-mcp to set up integration with the platform"
+  },
+  {
+    "query_id": "easy_112",
+    "step": 1,
+    "subtask_text": "Utilize sifter-ai/sifter for extracting the zip file"
+  },
+  {
+    "query_id": "med_028",
+    "step": 0,
+    "subtask_text": "validate regulatory status using optimaquantum/claude-critical-rules-mcp"
+  },
+  {
+    "query_id": "med_028",
+    "step": 1,
+    "subtask_text": "feed validation results into adsmcp/tiktok-ads-mcp-server for optimization"
+  },
+  {
+    "query_id": "med_028",
+    "step": 2,
+    "subtask_text": "deploy optimized ad spend to cloud using redis/mcp-redis-cloud"
+  },
+  {
+    "query_id": "med_027",
+    "step": 0,
+    "subtask_text": "migrate the schema using modelcontextprotocol/server-postgres"
+  },
+  {
+    "query_id": "med_027",
+    "step": 1,
+    "subtask_text": "filter outliers using schemacrawler/schemacrawler-mcp-server-usage"
+  },
+  {
+    "query_id": "med_027",
+    "step": 2,
+    "subtask_text": "compress the archive using shipitandpray/mcp-compress"
+  },
+  {
+    "query_id": "med_072",
+    "step": 0,
+    "subtask_text": "Use trackmage/trackmage-mcp-server to track delivery status"
+  },
+  {
+    "query_id": "med_072",
+    "step": 1,
+    "subtask_text": "Use getsentry/sentry-mcp to set up replication"
+  },
+  {
+    "query_id": "med_072",
+    "step": 2,
+    "subtask_text": "Use translated/lara-mcp to translate the text"
+  },
+  {
+    "query_id": "easy_016",
+    "step": 0,
+    "subtask_text": "Evaluate the code snippet using a tool/skill"
+  },
+  {
+    "query_id": "easy_016",
+    "step": 1,
+    "subtask_text": "Create a task list using a tool/skill"
+  },
+  {
+    "query_id": "med_000",
+    "step": 0,
+    "subtask_text": "use kshern/mcp-tavily to aggregate the metrics"
+  },
+  {
+    "query_id": "med_000",
+    "step": 1,
+    "subtask_text": "use kukapay/bridge-metrics-mcp to extract the zip file"
+  },
+  {
+    "query_id": "med_000",
+    "step": 2,
+    "subtask_text": "use delimit-ai/delimit to rotate the API keys"
+  },
+  {
+    "query_id": "easy_033",
+    "step": 0,
+    "subtask_text": "use metatool-ai/metatool-app to bridge the two systems"
+  },
+  {
+    "query_id": "easy_033",
+    "step": 1,
+    "subtask_text": "use lfnovo/content-core to classify the content"
+  },
+  {
+    "query_id": "easy_131",
+    "step": 0,
+    "subtask_text": "use andybrandt/mcp-simple-pubmed to access pubmed"
+  },
+  {
+    "query_id": "easy_131",
+    "step": 1,
+    "subtask_text": "configure the load balancer to route requests"
+  },
+  {
+    "query_id": "easy_131",
+    "step": 2,
+    "subtask_text": "send the configured load balancer output to andybrandt/mcp-simple-pubmed"
+  },
+  {
+    "query_id": "easy_013",
+    "step": 0,
+    "subtask_text": "Extract data from notification"
+  },
+  {
+    "query_id": "easy_013",
+    "step": 1,
+    "subtask_text": "Determine server requirements based on extracted data"
+  },
+  {
+    "query_id": "easy_013",
+    "step": 2,
+    "subtask_text": "Select appropriate mcp server software from available options"
+  },
+  {
+    "query_id": "easy_013",
+    "step": 3,
+    "subtask_text": "Configure selected mcp server with required settings"
+  },
+  {
+    "query_id": "easy_013",
+    "step": 4,
+    "subtask_text": "Provision new servers using configured mcp server"
+  },
+  {
+    "query_id": "med_099",
+    "step": 0,
+    "subtask_text": "filter outliers"
+  },
+  {
+    "query_id": "med_099",
+    "step": 1,
+    "subtask_text": "update the spreadsheet"
+  },
+  {
+    "query_id": "med_099",
+    "step": 2,
+    "subtask_text": "provision new servers"
+  },
+  {
+    "query_id": "easy_098",
+    "step": 0,
+    "subtask_text": "Use khamel83/argus to bridge the two systems"
+  },
+  {
+    "query_id": "easy_098",
+    "step": 1,
+    "subtask_text": "Use vitorpavinato/ncbi-mcp-server to index research papers with the results"
+  },
+  {
+    "query_id": "med_012",
+    "step": 0,
+    "subtask_text": "use markmircea/selenix-mcp-server to manage game inventory"
+  },
+  {
+    "query_id": "med_012",
+    "step": 1,
+    "subtask_text": "use andybrandt/mcp-simple-pubmed to search pubmed"
+  },
+  {
+    "query_id": "med_012",
+    "step": 2,
+    "subtask_text": "use brutalzinn/simple-mcp-selenium or imprvhub/mcp-browser-agent or agent-infra/mcp-server-browser or automatalabs/mcp-server-playwright or browserbase/mcp-server-browserbase to automate browser testing"
+  },
+  {
+    "query_id": "easy_063",
+    "step": 0,
+    "subtask_text": "compress the archive using wopee-io/wopee-mcp"
+  },
+  {
+    "query_id": "easy_063",
+    "step": 1,
+    "subtask_text": "start browser testing automation using automatalabs/mcp-server-playwright"
+  },
+  {
+    "query_id": "med_098",
+    "step": 0,
+    "subtask_text": "Use trackmage/trackmage-mcp-server to track delivery status"
+  },
+  {
+    "query_id": "med_098",
+    "step": 1,
+    "subtask_text": "Use echology-io/decompose to classify the content"
+  },
+  {
+    "query_id": "med_098",
+    "step": 2,
+    "subtask_text": "Use cseguinlz/doubletick-cli to send an email report"
+  },
+  {
+    "query_id": "easy_079",
+    "step": 0,
+    "subtask_text": "export data to CSV using jordandalton/restcsv-mcp-server"
+  },
+  {
+    "query_id": "easy_079",
+    "step": 1,
+    "subtask_text": "send the CSV file using subhatta123/twilize"
+  },
+  {
+    "query_id": "easy_028",
+    "step": 0,
+    "subtask_text": "use jkiley129/steam-mcp to manage game inventory"
+  },
+  {
+    "query_id": "easy_028",
+    "step": 1,
+    "subtask_text": "use quentincody/shopify-storefront-mcp-server to manage game inventory"
+  },
+  {
+    "query_id": "easy_028",
+    "step": 2,
+    "subtask_text": "use kkjdaniel/bgg-mcp to manage game inventory"
+  },
+  {
+    "query_id": "easy_028",
+    "step": 3,
+    "subtask_text": "use labeveryday/nba_mcp_server to manage game inventory"
+  },
+  {
+    "query_id": "easy_028",
+    "step": 4,
+    "subtask_text": "use marceausolutions/amazon-seller-mcp to manage game inventory"
+  },
+  {
+    "query_id": "easy_028",
+    "step": 5,
+    "subtask_text": "use ofodevelopment/cerebrochain-mcp-server to manage game inventory"
+  },
+  {
+    "query_id": "easy_028",
+    "step": 6,
+    "subtask_text": "use getrupt/ashra-mcp to manage game inventory"
+  },
+  {
+    "query_id": "easy_028",
+    "step": 7,
+    "subtask_text": "send managed game inventory data to classify the content"
+  },
+  {
+    "query_id": "med_068",
+    "step": 0,
+    "subtask_text": "post message to slack using jtalk22/slack-mcp-server"
+  },
+  {
+    "query_id": "med_068",
+    "step": 1,
+    "subtask_text": "run static analysis on the website using kimdonghwi94/web-analyzer-mcp"
+  },
+  {
+    "query_id": "med_068",
+    "step": 2,
+    "subtask_text": "extract page content using just-every/mcp-read-website-fast"
+  },
+  {
+    "query_id": "easy_000",
+    "step": 0,
+    "subtask_text": "Update the spreadsheet using xing5/mcp-google-sheets"
+  },
+  {
+    "query_id": "easy_000",
+    "step": 1,
+    "subtask_text": "Generate API documentation with the results using yoryocoruxo-ai/rendoc-mcp-server"
+  },
+  {
+    "query_id": "med_093",
+    "step": 0,
+    "subtask_text": "mrslbt/rippr: Extract audio from video"
+  },
+  {
+    "query_id": "med_093",
+    "step": 1,
+    "subtask_text": "transcribe-app/mcp-transcribe: Process extracted audio to transcribe content"
+  },
+  {
+    "query_id": "med_093",
+    "step": 2,
+    "subtask_text": "open-agreements/open-agreements: Analyze transcribed content as legal documents"
+  },
+  {
+    "query_id": "med_093",
+    "step": 3,
+    "subtask_text": "admica/filescopemcp: Organize the files resulting from the analysis"
+  },
+  {
+    "query_id": "easy_078",
+    "step": 0,
+    "subtask_text": "Use crawleo/crawleo-mcp to crawl the documentation"
+  },
+  {
+    "query_id": "easy_078",
+    "step": 1,
+    "subtask_text": "Use olostep/olostep-mcp-server or pragmar/mcp-server-webcrawl or hanselhansel/aeo-cli to process the crawled data"
+  },
+  {
+    "query_id": "easy_078",
+    "step": 2,
+    "subtask_text": "Use softvoyagers/linkmeta-api to extract metadata from the documentation"
+  },
+  {
+    "query_id": "easy_078",
+    "step": 3,
+    "subtask_text": "Use aimlpm/markcrawl or liquidmetal-ai/raindrop-mcp or devflowinc/trieve or zoharbabin/google-researcher-mcp or aas-ee/open-websearch or dumpling-ai/mcp-server-dumplingai to analyze the documentation"
+  },
+  {
+    "query_id": "easy_078",
+    "step": 4,
+    "subtask_text": "Use kapeli/dash-mcp-server or ofershap/mcp-server-scraper or bartonguestier1725-collab/scout-mcp to generate documentation pages"
+  },
+  {
+    "query_id": "easy_078",
+    "step": 5,
+    "subtask_text": "Deploy the generated documentation pages to the cloud using a tool like devflowinc/trieve or zoharbabin/google-researcher-mcp"
+  },
+  {
+    "query_id": "hard_043",
+    "step": 0,
+    "subtask_text": "Use louis030195/toggl-mcp to track time spent"
+  },
+  {
+    "query_id": "hard_043",
+    "step": 1,
+    "subtask_text": "Use nonatofabio/local-faiss-mcp or filesystem-quarkiverse/quarkus-mcp-servers to organize the files the output"
+  },
+  {
+    "query_id": "hard_043",
+    "step": 2,
+    "subtask_text": "Use efforthye/fast-filesystem-mcp to calculate shipping costs the analysis"
+  },
+  {
+    "query_id": "hard_043",
+    "step": 3,
+    "subtask_text": "Use usejunior/safe-docx or nicholasglazer/gnosis-mcp to update the documentation the results"
+  },
+  {
+    "query_id": "med_086",
+    "step": 0,
+    "subtask_text": "calculate tax"
+  },
+  {
+    "query_id": "med_086",
+    "step": 1,
+    "subtask_text": "migrate the schema"
+  },
+  {
+    "query_id": "med_086",
+    "step": 2,
+    "subtask_text": "retrieve relevant context"
+  },
+  {
+    "query_id": "easy_046",
+    "step": 0,
+    "subtask_text": "use andybrandt/mcp-simple-pubmed to extract data from pubmed"
+  },
+  {
+    "query_id": "easy_046",
+    "step": 1,
+    "subtask_text": "use jordinei/mcp-databricks-server to set up a data pipeline"
+  },
+  {
+    "query_id": "easy_046",
+    "step": 2,
+    "subtask_text": "run the data pipeline with the extracted pubmed data"
+  },
+  {
+    "query_id": "med_051",
+    "step": 0,
+    "subtask_text": "aggregate the metrics using theonedev/tod"
+  },
+  {
+    "query_id": "med_051",
+    "step": 1,
+    "subtask_text": "find relevant articles using mzxrai/mcp-webresearch"
+  },
+  {
+    "query_id": "med_051",
+    "step": 2,
+    "subtask_text": "set up CI/CD pipeline using mshegolev/gitlab-ci-mcp"
+  },
+  {
+    "query_id": "easy_099",
+    "step": 0,
+    "subtask_text": "Generate an invoice using softvoyagers/fakturka-api"
+  },
+  {
+    "query_id": "easy_099",
+    "step": 1,
+    "subtask_text": "Navigate to the checkout page"
+  },
+  {
+    "query_id": "easy_099",
+    "step": 2,
+    "subtask_text": "Click on the next button in the checkout flow"
+  },
+  {
+    "query_id": "easy_099",
+    "step": 3,
+    "subtask_text": "Enter payment details using quentincody/braintree-mcp-server"
+  },
+  {
+    "query_id": "easy_099",
+    "step": 4,
+    "subtask_text": "Confirm the order using postcardbot/mcp-server"
+  },
+  {
+    "query_id": "easy_053",
+    "step": 0,
+    "subtask_text": "Use sentisift-sdks to detect sentiment"
+  },
+  {
+    "query_id": "easy_053",
+    "step": 1,
+    "subtask_text": "Use tripgo-mcp-server to calculate the route"
+  },
+  {
+    "query_id": "med_079",
+    "step": 0,
+    "subtask_text": "encrypt the data using a suitable encryption tool"
+  },
+  {
+    "query_id": "med_079",
+    "step": 1,
+    "subtask_text": "summarize the document using bitatlas-group/bitatlas"
+  },
+  {
+    "query_id": "med_079",
+    "step": 2,
+    "subtask_text": "analyze query performance using j4c0bs/mcp-server-sql-analyzer"
+  },
+  {
+    "query_id": "easy_074",
+    "step": 0,
+    "subtask_text": "andybrandt/mcp-simple-pubmed"
+  },
+  {
+    "query_id": "easy_074",
+    "step": 1,
+    "subtask_text": "crawleo/crawleo-mcp"
+  },
+  {
+    "query_id": "med_022",
+    "step": 0,
+    "subtask_text": "Audit access permissions using gebalamariusz/cloud-audit"
+  },
+  {
+    "query_id": "med_022",
+    "step": 1,
+    "subtask_text": "Segment the audience using vdalhambra/siteaudit-mcp"
+  },
+  {
+    "query_id": "med_022",
+    "step": 2,
+    "subtask_text": "Fetch stock prices using huggingagi/mcp-baostock-server"
+  },
+  {
+    "query_id": "easy_147",
+    "step": 0,
+    "subtask_text": "use seekrays/mcp-monitor to monitor uptime"
+  },
+  {
+    "query_id": "easy_147",
+    "step": 1,
+    "subtask_text": "use imprvhub/mcp-status-observer to observe status"
+  },
+  {
+    "query_id": "easy_147",
+    "step": 2,
+    "subtask_text": "use embeddedlayers/mcp-analytics to analyze experimental results"
+  },
+  {
+    "query_id": "easy_147",
+    "step": 3,
+    "subtask_text": "send output from seekrays/mcp-monitor to embeddedlayers/mcp-analytics"
+  },
+  {
+    "query_id": "easy_146",
+    "step": 0,
+    "subtask_text": "Use sentisift-sdks to detect sentiment"
+  },
+  {
+    "query_id": "easy_146",
+    "step": 1,
+    "subtask_text": "Use cactusinhand/mcp_server_notify to send a notification"
+  },
+  {
+    "query_id": "med_069",
+    "step": 0,
+    "subtask_text": "Use alog/alog-mcp to set up monitoring alerts"
+  },
+  {
+    "query_id": "med_069",
+    "step": 1,
+    "subtask_text": "Use replenishradar/mcp or clamp-sh/mcp to update the spreadsheet"
+  },
+  {
+    "query_id": "med_069",
+    "step": 2,
+    "subtask_text": "Use seekrays/mcp-monitor to manage game inventory"
+  },
+  {
+    "query_id": "med_029",
+    "step": 0,
+    "subtask_text": "extract entities using wecombot"
+  },
+  {
+    "query_id": "med_029",
+    "step": 1,
+    "subtask_text": "navigate the website using kc23go/anybrowse"
+  },
+  {
+    "query_id": "med_029",
+    "step": 2,
+    "subtask_text": "create a group chat using chigwell/telegram-mcp"
+  },
+  {
+    "query_id": "easy_051",
+    "step": 0,
+    "subtask_text": "use shibley/apistatuscheck-mcp-server to check api status"
+  },
+  {
+    "query_id": "easy_051",
+    "step": 1,
+    "subtask_text": "use costajohnt/oss-autopilot to optimize ad spend"
+  },
+  {
+    "query_id": "easy_051",
+    "step": 2,
+    "subtask_text": "use henilcalagiya/mcp-apple-notes or ailenshen/apple-notes-mcp to organize notes"
+  },
+  {
+    "query_id": "easy_051",
+    "step": 3,
+    "subtask_text": "use seekrays/mcp-monitor or grafana/mcp-grafana to monitor optimization process"
+  },
+  {
+    "query_id": "hard_049",
+    "step": 0,
+    "subtask_text": "Use open-streetmap-mcp to map the locations"
+  },
+  {
+    "query_id": "hard_049",
+    "step": 1,
+    "subtask_text": "Use stadiamaps-stadiamaps-mcp-server-ts or google-map related tool from cablate/mcp-google-map to analyze match data"
+  },
+  {
+    "query_id": "hard_049",
+    "step": 2,
+    "subtask_text": "Use ipfred/aiwen-mcp-server-geoip or similar tool to broadcast an announcement based on the analysis"
+  },
+  {
+    "query_id": "hard_049",
+    "step": 3,
+    "subtask_text": "Use sql-query-mcp from andywang1688 to run a complex SQL query on the analyzed data"
+  },
+  {
+    "query_id": "med_082",
+    "step": 0,
+    "subtask_text": "use open-agreements/open-agreements to analyze legal documents"
+  },
+  {
+    "query_id": "med_082",
+    "step": 1,
+    "subtask_text": "use trackmage/trackmage-mcp-server to track the shipment"
+  },
+  {
+    "query_id": "med_082",
+    "step": 2,
+    "subtask_text": "use vitorpavinato/ncbi-mcp-server or connerlambden/bgpt-mcp or talonicdev/talonic-mcp or nonatofabio/local-faiss-mcp or quentincody/catalysishub-mcp-server or redis/mcp-redis or kashiwabyte/vikingdb-mcp-server or alexanderzuev/supabase-mcp-server or peterbeck111/knowledgelib-io or aarsiv-groups/shipi-mcp-server to query scientific databases"
+  },
+  {
+    "query_id": "easy_083",
+    "step": 0,
+    "subtask_text": "use cactusinhand/mcp_server_notify to send a notification"
+  },
+  {
+    "query_id": "easy_083",
+    "step": 1,
+    "subtask_text": "execute the test suite using a testing framework or tool"
+  },
+  {
+    "query_id": "easy_126",
+    "step": 0,
+    "subtask_text": "Use shensi8312/blogburst-mcp-server to monitor social mentions"
+  },
+  {
+    "query_id": "easy_126",
+    "step": 1,
+    "subtask_text": "Set up alerting rules using fastalertnow/mcp-server"
+  },
+  {
+    "query_id": "hard_026",
+    "step": 0,
+    "subtask_text": "Encrypt the data using a suitable encryption tool or library"
+  },
+  {
+    "query_id": "hard_026",
+    "step": 1,
+    "subtask_text": "Choose and set up a sandbox environment from one of the available MCP tools (e.g., alfonsograziano/node-code-sandbox-mcp, r33drichards/mcp-js, etc.)"
+  },
+  {
+    "query_id": "hard_026",
+    "step": 2,
+    "subtask_text": "Implement a script to rename files in bulk"
+  },
+  {
+    "query_id": "hard_026",
+    "step": 3,
+    "subtask_text": "Use a legal document analysis tool or service to analyze the documents"
+  },
+  {
+    "query_id": "easy_102",
+    "step": 0,
+    "subtask_text": "Use dan8oren/mcp-apple-notes or henilcalagiya/mcp-apple-notes or sirmews/apple-notes-mcp or bart6114/my-bear-mcp-server or ailenshen/apple-notes-mcp or feuerdev/keep-mcp or hmk/attio-mcp-server or disco-trooper/apple-notes-mcp to organize notes"
+  },
+  {
+    "query_id": "easy_102",
+    "step": 1,
+    "subtask_text": "Use a tool or service to segment the audience based on the organized notes"
+  },
+  {
+    "query_id": "med_091",
+    "step": 0,
+    "subtask_text": "navigate the website using a web browser"
+  },
+  {
+    "query_id": "med_091",
+    "step": 1,
+    "subtask_text": "use theagenttimes/tat-mcp-server to feed the results from the website"
+  },
+  {
+    "query_id": "med_091",
+    "step": 2,
+    "subtask_text": "use ammawla/encode-toolkit to analyze protein sequences"
+  },
+  {
+    "query_id": "med_091",
+    "step": 3,
+    "subtask_text": "use a performance monitoring tool to analyze query performance"
+  },
+  {
+    "query_id": "med_076",
+    "step": 0,
+    "subtask_text": "Use trackmage/trackmage-mcp-server to track delivery status"
+  },
+  {
+    "query_id": "med_076",
+    "step": 1,
+    "subtask_text": "Analyze the delivery status output using kdqed/zaturn"
+  },
+  {
+    "query_id": "med_076",
+    "step": 2,
+    "subtask_text": "Export the analyzed data to CSV using cseguinlz/doubletick-cli"
+  },
+  {
+    "query_id": "med_096",
+    "step": 0,
+    "subtask_text": "Create a dashboard using kyurish/mcp-dashboards"
+  },
+  {
+    "query_id": "med_096",
+    "step": 1,
+    "subtask_text": "Use subhatta123/twilize to rename files in bulk"
+  },
+  {
+    "query_id": "med_096",
+    "step": 2,
+    "subtask_text": "Deploy everything to the cloud using alexei-led/aws-mcp-server"
+  },
+  {
+    "query_id": "med_058",
+    "step": 0,
+    "subtask_text": "use hbg/mcp-paperswithcode to process research data"
+  },
+  {
+    "query_id": "med_058",
+    "step": 1,
+    "subtask_text": "use crawleo/crawleo-mcp to feed the processed results into crawling documentation"
+  },
+  {
+    "query_id": "med_058",
+    "step": 2,
+    "subtask_text": "use olostep/olostep-mcp-server to translate the crawled text"
+  },
+  {
+    "query_id": "easy_048",
+    "step": 0,
+    "subtask_text": "translated/lara-mcp"
+  },
+  {
+    "query_id": "easy_048",
+    "step": 1,
+    "subtask_text": "kimdonghwi94/web-analyzer-mcp"
+  },
+  {
+    "query_id": "med_094",
+    "step": 0,
+    "subtask_text": "Organize the files using admica/filescopemcp"
+  },
+  {
+    "query_id": "med_094",
+    "step": 1,
+    "subtask_text": "Track time spent using louis030195/toggl-mcp"
+  },
+  {
+    "query_id": "med_094",
+    "step": 2,
+    "subtask_text": "Convert the video format using video-creator/ffmpeg-mcp"
+  },
+  {
+    "query_id": "hard_010",
+    "step": 0,
+    "subtask_text": "process payment using a payment gateway API"
+  },
+  {
+    "query_id": "hard_010",
+    "step": 1,
+    "subtask_text": "use geolabel/geolabel-mcp to map the locations"
+  },
+  {
+    "query_id": "hard_010",
+    "step": 2,
+    "subtask_text": "navigate the website using a web scraping tool"
+  },
+  {
+    "query_id": "hard_010",
+    "step": 3,
+    "subtask_text": "generate thumbnails using a image processing tool"
+  },
+  {
+    "query_id": "med_023",
+    "step": 0,
+    "subtask_text": "Use dan8oren/mcp-apple-notes or henilcalagiya/mcp-apple-notes to organize notes"
+  },
+  {
+    "query_id": "med_023",
+    "step": 1,
+    "subtask_text": "Use fastalertnow/mcp-server or ailenshen/apple-notes-mcp or feuerdev/keep-mcp to set up alerting rules"
+  },
+  {
+    "query_id": "med_023",
+    "step": 2,
+    "subtask_text": "Use marceausolutions/amazon-seller-mcp or jaipandya/producthunt-mcp-server or cactusinhand/mcp_server_notify or hmk/attio-mcp-server to manage product listings"
+  },
+  {
+    "query_id": "med_073",
+    "step": 0,
+    "subtask_text": "track the shipment using trackmage/trackmage-mcp-server"
+  },
+  {
+    "query_id": "med_073",
+    "step": 1,
+    "subtask_text": "feed the tracking results into ammawla/encode-toolkit"
+  },
+  {
+    "query_id": "med_073",
+    "step": 2,
+    "subtask_text": "use tianqitang1/enrichr-mcp-server to analyze protein sequences based on the fed results"
+  },
+  {
+    "query_id": "med_073",
+    "step": 3,
+    "subtask_text": "conclude by using clamp-sh/mcp to calculate tax"
+  },
+  {
+    "query_id": "easy_120",
+    "step": 0,
+    "subtask_text": "use scopeblind/verify-mcp to validate ssl certificates"
+  },
+  {
+    "query_id": "easy_120",
+    "step": 1,
+    "subtask_text": "use kimdonghwi94/web-analyzer-mcp to analyze match data"
+  },
+  {
+    "query_id": "med_016",
+    "step": 0,
+    "subtask_text": "create group chat using joinly-ai/joinly"
+  },
+  {
+    "query_id": "med_016",
+    "step": 1,
+    "subtask_text": "process group chat with extract entities using chatmcp/mcp-server-chatsum"
+  },
+  {
+    "query_id": "med_016",
+    "step": 2,
+    "subtask_text": "extract the zip file containing the results using pyroprompts/any-chat-completions-mcp"
+  },
+  {
+    "query_id": "easy_041",
+    "step": 0,
+    "subtask_text": "use nearby-search-mcp to find locations"
+  },
+  {
+    "query_id": "easy_041",
+    "step": 1,
+    "subtask_text": "use modelcontextprotocol/server-google-maps to map the locations"
+  },
+  {
+    "query_id": "easy_041",
+    "step": 2,
+    "subtask_text": "use rushikeshmore/codecortex to lint the codebase"
+  },
+  {
+    "query_id": "easy_093",
+    "step": 0,
+    "subtask_text": "get the data"
+  },
+  {
+    "query_id": "easy_093",
+    "step": 1,
+    "subtask_text": "encrypt the data"
+  },
+  {
+    "query_id": "easy_093",
+    "step": 2,
+    "subtask_text": "compile the project"
+  },
+  {
+    "query_id": "med_032",
+    "step": 0,
+    "subtask_text": "Use stadiamaps/stadiamaps-mcp-server-ts to map the locations"
+  },
+  {
+    "query_id": "med_032",
+    "step": 1,
+    "subtask_text": "Use mindsdb/mindsdb to analyze the output"
+  },
+  {
+    "query_id": "med_032",
+    "step": 2,
+    "subtask_text": "Use exoticknight/mcp-file-merger to merge multiple datasets"
+  },
+  {
+    "query_id": "med_032",
+    "step": 3,
+    "subtask_text": "Use anaisbetts/mcp-youtube or kimtaeyoon83/mcp-server-youtube-transcript to add subtitles"
+  },
+  {
+    "query_id": "easy_092",
+    "step": 0,
+    "subtask_text": "use lfnovo/content-core to classify the content"
+  },
+  {
+    "query_id": "easy_092",
+    "step": 1,
+    "subtask_text": "use just-every/mcp-read-website-fast to extract page content"
+  },
+  {
+    "query_id": "easy_092",
+    "step": 2,
+    "subtask_text": "use echology-io/decompose to process the extracted content"
+  },
+  {
+    "query_id": "easy_115",
+    "step": 0,
+    "subtask_text": "Analyze campaign metrics using mbrummerstedt/powerbi-analyst-mcp"
+  },
+  {
+    "query_id": "easy_115",
+    "step": 1,
+    "subtask_text": "Run a data pipeline using embeddedlayers/mcp-analytics"
+  },
+  {
+    "query_id": "med_052",
+    "step": 0,
+    "subtask_text": "setup replication using jasonjmcghee/claude-debugs-for-you"
+  },
+  {
+    "query_id": "med_052",
+    "step": 1,
+    "subtask_text": "process replication with update inventory using avivsinai/langfuse-mcp"
+  },
+  {
+    "query_id": "med_052",
+    "step": 2,
+    "subtask_text": "debug the application results using kryptosai/mcp-observatory"
+  },
+  {
+    "query_id": "easy_119",
+    "step": 0,
+    "subtask_text": "translate the text using transcribe-app/mcp-transcribe"
+  },
+  {
+    "query_id": "easy_119",
+    "step": 1,
+    "subtask_text": "create a group chat using joinly-ai/joinly"
+  },
+  {
+    "query_id": "easy_006",
+    "step": 0,
+    "subtask_text": "Use jordinei/mcp-databricks-server to run a data pipeline"
+  },
+  {
+    "query_id": "easy_006",
+    "step": 1,
+    "subtask_text": "Use ericbrown/project-context-mcp to create a new project scaffold"
+  },
+  {
+    "query_id": "easy_044",
+    "step": 0,
+    "subtask_text": "run sql query using andywang1688/sql-query-mcp"
+  },
+  {
+    "query_id": "easy_044",
+    "step": 1,
+    "subtask_text": "analyze query performance using j4c0bs/mcp-server-sql-analyzer"
+  },
+  {
+    "query_id": "easy_044",
+    "step": 2,
+    "subtask_text": "generate file permission management commands using usejunior/safe-docx"
+  },
+  {
+    "query_id": "easy_044",
+    "step": 3,
+    "subtask_text": "execute file permission management commands using pfillion42/memviz"
+  },
+  {
+    "query_id": "med_087",
+    "step": 0,
+    "subtask_text": "use open-strategy-partners/osp_marketing_tools to generate marketing reports"
+  },
+  {
+    "query_id": "med_087",
+    "step": 1,
+    "subtask_text": "use vitorpavinato/ncbi-mcp-server to search pubmed"
+  },
+  {
+    "query_id": "med_087",
+    "step": 2,
+    "subtask_text": "use teamwork/mcp to manage the project board"
+  },
+  {
+    "query_id": "easy_010",
+    "step": 0,
+    "subtask_text": "Use jordandalton/restcsv-mcp-server to export data to CSV"
+  },
+  {
+    "query_id": "easy_010",
+    "step": 1,
+    "subtask_text": "Use translated/lara-mcp to translate the text"
+  },
+  {
+    "query_id": "med_059",
+    "step": 0,
+    "subtask_text": "generate marketing reports using open-strategy-partners/osp_marketing_tools"
+  },
+  {
+    "query_id": "med_059",
+    "step": 1,
+    "subtask_text": "run the script using samrothschild23/intelligence-api"
+  },
+  {
+    "query_id": "med_059",
+    "step": 2,
+    "subtask_text": "validate regulatory status using optimaquantum/claude-critical-rules-mcp"
+  },
+  {
+    "query_id": "med_070",
+    "step": 0,
+    "subtask_text": "track time spent using louis030195/toggl-mcp"
+  },
+  {
+    "query_id": "med_070",
+    "step": 1,
+    "subtask_text": "analyze tracked data using appropriate analytics tool"
+  },
+  {
+    "query_id": "med_070",
+    "step": 2,
+    "subtask_text": "take a screenshot of the page using softvoyagers/pageshot-api"
+  },
+  {
+    "query_id": "hard_017",
+    "step": 0,
+    "subtask_text": "use cactusinhand/mcp_server_notify to send a notification"
+  },
+  {
+    "query_id": "hard_017",
+    "step": 1,
+    "subtask_text": "use softvoyagers/fakturka-api to generate an invoice"
+  },
+  {
+    "query_id": "hard_017",
+    "step": 2,
+    "subtask_text": "use arvindand/maven-tools-mcp to manage dependencies"
+  },
+  {
+    "query_id": "hard_017",
+    "step": 3,
+    "subtask_text": "use elie222/inbox-zero to analyze the results"
+  },
+  {
+    "query_id": "hard_017",
+    "step": 4,
+    "subtask_text": "use nikolai-vysotskyi/trace-mcp to track conversion rates"
+  },
+  {
+    "query_id": "hard_019",
+    "step": 0,
+    "subtask_text": "Use labeveryday/nba_mcp_server to fetch game stats"
+  },
+  {
+    "query_id": "hard_019",
+    "step": 1,
+    "subtask_text": "Use psu3d0/spreadsheet-mcp or sparksheets/sparksheets-mcp to update the spreadsheet"
+  },
+  {
+    "query_id": "hard_019",
+    "step": 2,
+    "subtask_text": "Use haris-musa/excel-mcp-server or sbroenne/mcp-server-excel to resize the images"
+  },
+  {
+    "query_id": "hard_019",
+    "step": 3,
+    "subtask_text": "Use kdqed/zaturn to set up automatic replication"
+  },
+  {
+    "query_id": "med_001",
+    "step": 0,
+    "subtask_text": "use payclaw/mcp-server to process the payment"
+  },
+  {
+    "query_id": "med_001",
+    "step": 1,
+    "subtask_text": "use translated/lara-mcp to translate the text"
+  },
+  {
+    "query_id": "med_001",
+    "step": 2,
+    "subtask_text": "use getalby/mcp to filter outliers"
+  },
+  {
+    "query_id": "easy_089",
+    "step": 0,
+    "subtask_text": "Use softvoyagers/fakturka-api to generate an invoice"
+  },
+  {
+    "query_id": "easy_089",
+    "step": 1,
+    "subtask_text": "Scale the infrastructure using one of the available MCP servers such as jasonwilbur/oci-pricing-mcp, yoryocoruxo-ai/rendoc-mcp-server, openstack-kr/python-openstackmcp-server, kukapay/modbus-mcp, mrostamii/rancher-mcp-server, mctlhq/mctl-mcp, antonio-mello-ai/mcp-proxmox, spre-sre/lumino-mcp-server"
+  },
+  {
+    "query_id": "easy_030",
+    "step": 0,
+    "subtask_text": "Use kukapay/nearby-search-mcp to find nearby locations"
+  },
+  {
+    "query_id": "easy_030",
+    "step": 1,
+    "subtask_text": "Use openbnb-org/mcp-server-airbnb or campertunity/mcp-server or skedgo/tripgo-mcp-server to map the found locations"
+  },
+  {
+    "query_id": "easy_030",
+    "step": 2,
+    "subtask_text": "Use iplocate/mcp-server-iplocate to get the IP location details"
+  },
+  {
+    "query_id": "easy_030",
+    "step": 3,
+    "subtask_text": "Use bitatlas-group/bitatlas or matbel91765/gis-mcp-server or sanyambassi/ciphertrust-manager-mcp-server to geocode the mapped locations"
+  },
+  {
+    "query_id": "easy_030",
+    "step": 4,
+    "subtask_text": "Use geolabel/geolabel-mcp to label the geocoded locations"
+  },
+  {
+    "query_id": "easy_030",
+    "step": 5,
+    "subtask_text": "Use ipfred/aiwen-mcp-server-geoip to perform geo IP encryption on the labeled data"
+  },
+  {
+    "query_id": "med_049",
+    "step": 0,
+    "subtask_text": "compress the archive using shipitandpray/mcp-compress"
+  },
+  {
+    "query_id": "med_049",
+    "step": 1,
+    "subtask_text": "merge multiple datasets using exoticknight/mcp-file-merger"
+  },
+  {
+    "query_id": "med_049",
+    "step": 2,
+    "subtask_text": "scrape the website using ofershap/mcp-server-scraper"
+  },
+  {
+    "query_id": "med_050",
+    "step": 0,
+    "subtask_text": "classify content using ivo-toby/contentful-mcp"
+  },
+  {
+    "query_id": "med_050",
+    "step": 1,
+    "subtask_text": "organize files using tactual-dev/tactual"
+  },
+  {
+    "query_id": "med_050",
+    "step": 2,
+    "subtask_text": "profile performance using seekrays/mcp-monitor"
+  },
+  {
+    "query_id": "med_003",
+    "step": 0,
+    "subtask_text": "manage the project board using leap-laboratories/discovery-engine"
+  },
+  {
+    "query_id": "med_003",
+    "step": 1,
+    "subtask_text": "feed the results into process the payment using payclaw/mcp-server"
+  },
+  {
+    "query_id": "med_003",
+    "step": 2,
+    "subtask_text": "conclude by analyze experimental results using refined-element/lightning-enable-mcp"
+  },
+  {
+    "query_id": "easy_107",
+    "step": 0,
+    "subtask_text": "Use fr0gger/mcp_security to check security headers"
+  },
+  {
+    "query_id": "easy_107",
+    "step": 1,
+    "subtask_text": "Extract data from the security header check result"
+  },
+  {
+    "query_id": "easy_107",
+    "step": 2,
+    "subtask_text": "Format the extracted data using dumpling-ai/mcp-server-dumplingai"
+  },
+  {
+    "query_id": "med_081",
+    "step": 0,
+    "subtask_text": "Run the test suite using testdino-hq/testdino-mcp"
+  },
+  {
+    "query_id": "med_081",
+    "step": 1,
+    "subtask_text": "Clean the dataset using alex-gon/thegamecrafter-mcp-server"
+  },
+  {
+    "query_id": "med_081",
+    "step": 2,
+    "subtask_text": "Generate game content using codergamester/mcp-unity"
+  },
+  {
+    "query_id": "easy_091",
+    "step": 0,
+    "subtask_text": "Use cloud-audit to collect audit access permissions data"
+  },
+  {
+    "query_id": "easy_091",
+    "step": 1,
+    "subtask_text": "Use duplicacy-mcp or another backup tool to back up the collected data"
+  },
+  {
+    "query_id": "easy_018",
+    "step": 0,
+    "subtask_text": "extract data from the archive"
+  },
+  {
+    "query_id": "easy_018",
+    "step": 1,
+    "subtask_text": "compress the archive"
+  },
+  {
+    "query_id": "easy_018",
+    "step": 2,
+    "subtask_text": "analyze the logs"
+  },
+  {
+    "query_id": "med_083",
+    "step": 0,
+    "subtask_text": "click through the checkout flow"
+  },
+  {
+    "query_id": "med_083",
+    "step": 1,
+    "subtask_text": "feed the collected data into provision new servers"
+  },
+  {
+    "query_id": "med_083",
+    "step": 2,
+    "subtask_text": "scan the newly provisioned servers for vulnerabilities"
+  },
+  {
+    "query_id": "hard_036",
+    "step": 0,
+    "subtask_text": "Use pipedream to set up a data pipeline"
+  },
+  {
+    "query_id": "hard_036",
+    "step": 1,
+    "subtask_text": "Use pipepie to send an email report"
+  },
+  {
+    "query_id": "hard_036",
+    "step": 2,
+    "subtask_text": "Use alimo7amed93/webhook-tester-mcp to configure the webhook"
+  },
+  {
+    "query_id": "hard_036",
+    "step": 3,
+    "subtask_text": "Use r-huijts/opentk-mcp to optimize ad spend"
+  },
+  {
+    "query_id": "hard_036",
+    "step": 4,
+    "subtask_text": "Use peterbeck111/knowledgelib-io to search the knowledge base"
+  },
+  {
+    "query_id": "hard_045",
+    "step": 0,
+    "subtask_text": "lint the codebase"
+  },
+  {
+    "query_id": "hard_045",
+    "step": 1,
+    "subtask_text": "analyze protein sequences"
+  },
+  {
+    "query_id": "hard_045",
+    "step": 2,
+    "subtask_text": "scrape the website"
+  },
+  {
+    "query_id": "hard_045",
+    "step": 3,
+    "subtask_text": "organize the files"
+  },
+  {
+    "query_id": "hard_042",
+    "step": 0,
+    "subtask_text": "use alimo7amed93/webhook-tester-mcp to configure the webhook"
+  },
+  {
+    "query_id": "hard_042",
+    "step": 1,
+    "subtask_text": "use seekrays/mcp-monitor to benchmark the function"
+  },
+  {
+    "query_id": "hard_042",
+    "step": 2,
+    "subtask_text": "use gwbischof/outsource-mcp or religa/multi-mcp to check system metrics in parallel"
+  },
+  {
+    "query_id": "hard_042",
+    "step": 3,
+    "subtask_text": "use incentivai/quickchat-ai-mcp or sim-xia/blind-auditor to generate text with AI"
+  },
+  {
+    "query_id": "easy_022",
+    "step": 0,
+    "subtask_text": "mzxrai/mcp-webresearch: Search for relevant articles"
+  },
+  {
+    "query_id": "easy_022",
+    "step": 1,
+    "subtask_text": "kukapay/nearby-search-mcp: Find nearby places"
+  },
+  {
+    "query_id": "med_010",
+    "step": 0,
+    "subtask_text": "calculate the route"
+  },
+  {
+    "query_id": "med_010",
+    "step": 1,
+    "subtask_text": "feed the route results into the documentation"
+  },
+  {
+    "query_id": "med_010",
+    "step": 2,
+    "subtask_text": "update the documentation with the new route information"
+  },
+  {
+    "query_id": "med_010",
+    "step": 3,
+    "subtask_text": "analyze financial data"
+  },
+  {
+    "query_id": "hard_041",
+    "step": 0,
+    "subtask_text": "Calculate tax using a suitable tool or API"
+  },
+  {
+    "query_id": "hard_041",
+    "step": 1,
+    "subtask_text": "Initiate the checkout process simulation"
+  },
+  {
+    "query_id": "hard_041",
+    "step": 2,
+    "subtask_text": "Use a tool to automate clicking through the checkout flow"
+  },
+  {
+    "query_id": "hard_041",
+    "step": 3,
+    "subtask_text": "Utilize a legal document analysis tool to review and extract information"
+  },
+  {
+    "query_id": "hard_041",
+    "step": 4,
+    "subtask_text": "Organize files using a file management tool or script"
+  },
+  {
+    "query_id": "easy_113",
+    "step": 0,
+    "subtask_text": "Use louis030195/toggl-mcp to track time spent"
+  },
+  {
+    "query_id": "easy_113",
+    "step": 1,
+    "subtask_text": "Use jasonwilbur/cloud-cost-mcp to calculate expenses based on time tracked"
+  },
+  {
+    "query_id": "easy_069",
+    "step": 0,
+    "subtask_text": "Use alimo7amed93/webhook-tester-mcp to test the webhook"
+  },
+  {
+    "query_id": "easy_069",
+    "step": 1,
+    "subtask_text": "Use jtalk22/slack-mcp-server or korotovsky/slack-mcp-server to post to Slack"
+  },
+  {
+    "query_id": "easy_069",
+    "step": 2,
+    "subtask_text": "Configure the webhook using the chosen Slack MCP server"
+  },
+  {
+    "query_id": "med_040",
+    "step": 0,
+    "subtask_text": "Use kimdonghwi94/web-analyzer-mcp to automate the workflow"
+  },
+  {
+    "query_id": "med_040",
+    "step": 1,
+    "subtask_text": "Use scraperapi/scraperapi-mcp or ooples/mcp-console-automation to track conversion rates"
+  },
+  {
+    "query_id": "med_040",
+    "step": 2,
+    "subtask_text": "Use ofershap/mcp-server-scraper or imprvhub/mcp-browser-agent to extract page content"
+  },
+  {
+    "query_id": "easy_087",
+    "step": 0,
+    "subtask_text": "andybrandt/mcp-simple-pubmed search PubMed"
+  },
+  {
+    "query_id": "easy_087",
+    "step": 1,
+    "subtask_text": "leehanchung/bing-search-mcp send output to calculate route"
+  },
+  {
+    "query_id": "easy_009",
+    "step": 0,
+    "subtask_text": "Check system metrics using sonirico/mcp-shell"
+  },
+  {
+    "query_id": "easy_009",
+    "step": 1,
+    "subtask_text": "Sandbox the execution with the results using alfonsograziano/node-code-sandbox-mcp"
+  },
+  {
+    "query_id": "med_036",
+    "step": 0,
+    "subtask_text": "Use dataeval/dingo to process research data"
+  },
+  {
+    "query_id": "med_036",
+    "step": 1,
+    "subtask_text": "Use leap-laboratories/discovery-engine to analyze the output"
+  },
+  {
+    "query_id": "med_036",
+    "step": 2,
+    "subtask_text": "Use girste/mcp-cybersec-watchdog to check security headers"
+  },
+  {
+    "query_id": "med_036",
+    "step": 3,
+    "subtask_text": "Use paracetamol951/caisse-enregistreuse-mcp to process the order"
+  },
+  {
+    "query_id": "easy_034",
+    "step": 0,
+    "subtask_text": "use leehanchung/bing-search-mcp to query scientific databases"
+  },
+  {
+    "query_id": "easy_034",
+    "step": 1,
+    "subtask_text": "use olostep/olostep-mcp-server to aggregate the metrics"
+  },
+  {
+    "query_id": "hard_022",
+    "step": 0,
+    "subtask_text": "process research data using flowcore/mcp-flowcore-platform"
+  },
+  {
+    "query_id": "hard_022",
+    "step": 1,
+    "subtask_text": "navigate the website using pskill9/website-downloader"
+  },
+  {
+    "query_id": "hard_022",
+    "step": 2,
+    "subtask_text": "rotate api keys using kdqed/zaturn"
+  },
+  {
+    "query_id": "hard_022",
+    "step": 3,
+    "subtask_text": "clean the dataset using dataeval/dingo"
+  },
+  {
+    "query_id": "easy_132",
+    "step": 0,
+    "subtask_text": "Invoke arcadedata/arcadedb to query game databases"
+  },
+  {
+    "query_id": "easy_132",
+    "step": 1,
+    "subtask_text": "Use idapixl/idapixl-web-research-mcp to generate text with the results"
+  },
+  {
+    "query_id": "easy_088",
+    "step": 0,
+    "subtask_text": "mzxrai/mcp-webresearch: Find relevant articles"
+  },
+  {
+    "query_id": "easy_088",
+    "step": 1,
+    "subtask_text": "optimaquantum/claude-critical-rules-mcp: Validate regulatory status"
+  },
+  {
+    "query_id": "hard_030",
+    "step": 0,
+    "subtask_text": "use jagan-shanmugam/open-streetmap-mcp to map the locations"
+  },
+  {
+    "query_id": "hard_030",
+    "step": 1,
+    "subtask_text": "use kastelldev/kastell to check security headers"
+  },
+  {
+    "query_id": "hard_030",
+    "step": 2,
+    "subtask_text": "use open-strategy-partners/osp_marketing_tools to analyze campaign metrics"
+  },
+  {
+    "query_id": "hard_030",
+    "step": 3,
+    "subtask_text": "use cablate/mcp-google-map to click through the checkout flow"
+  },
+  {
+    "query_id": "med_006",
+    "step": 0,
+    "subtask_text": "Audit access permissions using a relevant tool"
+  },
+  {
+    "query_id": "med_006",
+    "step": 1,
+    "subtask_text": "Export the audit results to CSV using restcsv-mcp-server"
+  },
+  {
+    "query_id": "med_006",
+    "step": 2,
+    "subtask_text": "Validate regulatory status of the exported data using a relevant tool"
+  },
+  {
+    "query_id": "easy_029",
+    "step": 0,
+    "subtask_text": "track the shipment using aarsiv-groups/shipi-mcp-server"
+  },
+  {
+    "query_id": "easy_029",
+    "step": 1,
+    "subtask_text": "configure the load balancer with the tracking results using vessel-api/vesselapi-mcp"
+  },
+  {
+    "query_id": "easy_005",
+    "step": 0,
+    "subtask_text": "manage containers using docker"
+  },
+  {
+    "query_id": "easy_005",
+    "step": 1,
+    "subtask_text": "use fr0gger/mcp_security to check security headers"
+  },
+  {
+    "query_id": "easy_005",
+    "step": 2,
+    "subtask_text": "analyze results"
+  },
+  {
+    "query_id": "easy_067",
+    "step": 0,
+    "subtask_text": "use embeddedlayers/mcp-analytics to analyze campaign metrics"
+  },
+  {
+    "query_id": "easy_067",
+    "step": 1,
+    "subtask_text": "use betterdb-inc/monitor to track and store analysis results"
+  },
+  {
+    "query_id": "easy_067",
+    "step": 2,
+    "subtask_text": "use hashicorp/terraform-mcp-server to configure cloud infrastructure"
+  },
+  {
+    "query_id": "easy_067",
+    "step": 3,
+    "subtask_text": "use open-strategy-partners/osp_marketing_tools to format analysis output"
+  },
+  {
+    "query_id": "easy_067",
+    "step": 4,
+    "subtask_text": "use aparajithn/agent-deploy-dashboard-mcp to deploy formatted analysis output to cloud"
+  },
+  {
+    "query_id": "easy_114",
+    "step": 0,
+    "subtask_text": "Use louis030195/toggl-mcp to extract track time spent data"
+  },
+  {
+    "query_id": "easy_114",
+    "step": 1,
+    "subtask_text": "Use grahammccain/chart-library-mcp to analyze the extracted time spent data"
+  },
+  {
+    "query_id": "easy_114",
+    "step": 2,
+    "subtask_text": "Use mckinsey/vizro-mcp to visualize the analyzed data"
+  },
+  {
+    "query_id": "easy_114",
+    "step": 3,
+    "subtask_text": "Use olostep/olostep-mcp-server to set up optimization algorithms"
+  },
+  {
+    "query_id": "easy_114",
+    "step": 4,
+    "subtask_text": "Use the results from visualization to adjust ad spend via olostep/olostep-mcp-server"
+  },
+  {
+    "query_id": "hard_034",
+    "step": 0,
+    "subtask_text": "Use markmircea/selenix-mcp-server to set up a browser testing automation system"
+  },
+  {
+    "query_id": "hard_034",
+    "step": 1,
+    "subtask_text": "Use operative_sh/web-eval-agent to automatically review the contract"
+  },
+  {
+    "query_id": "hard_034",
+    "step": 2,
+    "subtask_text": "Use minhyeoky/mcp-server-ledger to track expenses"
+  },
+  {
+    "query_id": "hard_034",
+    "step": 3,
+    "subtask_text": "Use pipeboard-co/meta-ads-mcp to optimize ad spend"
+  },
+  {
+    "query_id": "hard_034",
+    "step": 4,
+    "subtask_text": "Use any of the available MCP servers (markmircea/selenix-mcp-server, browsermcp/mcp, agent-infra/mcp-server-browser, brutalzinn/simple-mcp-selenium, webdriverio/mcp, achiya-automation/safari-mcp, serkan-ozal/browser-devtools-mcp, esignaturescom/mcp-server-esignatures) to run the script"
+  },
+  {
+    "query_id": "easy_109",
+    "step": 0,
+    "subtask_text": "Use seekrays/mcp-monitor to check system metrics"
+  },
+  {
+    "query_id": "easy_109",
+    "step": 1,
+    "subtask_text": "Use pydantic/logfire-mcp to extract entities"
+  },
+  {
+    "query_id": "easy_072",
+    "step": 0,
+    "subtask_text": "use zoharbabin/google-researcher-mcp to process research data"
+  },
+  {
+    "query_id": "easy_072",
+    "step": 1,
+    "subtask_text": "use mckinsey/vizro-mcp to analyze processed data"
+  },
+  {
+    "query_id": "easy_072",
+    "step": 2,
+    "subtask_text": "use spranab/saga-mcp to format analysis output"
+  },
+  {
+    "query_id": "easy_072",
+    "step": 3,
+    "subtask_text": "use connerlambden/bgpt-mcp to generate project scaffold"
+  },
+  {
+    "query_id": "easy_072",
+    "step": 4,
+    "subtask_text": "use olostep/olostep-mcp-server to host project scaffold"
+  },
+  {
+    "query_id": "easy_042",
+    "step": 0,
+    "subtask_text": "notify the team using cactusinhand/mcp_server_notify"
+  },
+  {
+    "query_id": "easy_042",
+    "step": 1,
+    "subtask_text": "send the output to scale the infrastructure using inditextech/mcp-teams-server"
+  },
+  {
+    "query_id": "easy_100",
+    "step": 0,
+    "subtask_text": "use echology-io/decompose to classify the content"
+  },
+  {
+    "query_id": "easy_100",
+    "step": 1,
+    "subtask_text": "use ivo-toby/contentful-mcp to create a task list"
+  },
+  {
+    "query_id": "easy_082",
+    "step": 0,
+    "subtask_text": "Use kimdonghwi94/web-analyzer-mcp to filter outliers"
+  },
+  {
+    "query_id": "easy_082",
+    "step": 1,
+    "subtask_text": "Use dumpling-ai/mcp-server-dumplingai to extract entities"
+  },
+  {
+    "query_id": "hard_012",
+    "step": 0,
+    "subtask_text": "Run static code analysis using phpcodearcheology/phpcodearcheology"
+  },
+  {
+    "query_id": "hard_012",
+    "step": 1,
+    "subtask_text": "Review smart contract using segfaultsorcerer/heap-seance"
+  },
+  {
+    "query_id": "hard_012",
+    "step": 2,
+    "subtask_text": "Automate web UI interaction to click through the checkout flow using jordandalton/restcsv-mcp-server"
+  },
+  {
+    "query_id": "hard_012",
+    "step": 3,
+    "subtask_text": "Export data to CSV using haris-musa/excel-mcp-server"
+  },
+  {
+    "query_id": "hard_038",
+    "step": 0,
+    "subtask_text": "edobusy/agenthold"
+  },
+  {
+    "query_id": "hard_038",
+    "step": 1,
+    "subtask_text": "pskill9/website-downloader"
+  },
+  {
+    "query_id": "hard_038",
+    "step": 2,
+    "subtask_text": "mikkoparkkola/nab"
+  },
+  {
+    "query_id": "hard_038",
+    "step": 3,
+    "subtask_text": "declan142/calcnook-mcp-server"
+  },
+  {
+    "query_id": "med_074",
+    "step": 0,
+    "subtask_text": "check compliance requirements"
+  },
+  {
+    "query_id": "med_074",
+    "step": 1,
+    "subtask_text": "take a screenshot of the page"
+  },
+  {
+    "query_id": "med_074",
+    "step": 2,
+    "subtask_text": "search PubMed"
+  },
+  {
+    "query_id": "easy_021",
+    "step": 0,
+    "subtask_text": "use arcadia-finance/mcp-server to check compliance requirements"
+  },
+  {
+    "query_id": "easy_021",
+    "step": 1,
+    "subtask_text": "use tactual-dev/tactual to optimize ad spend"
+  },
+  {
+    "query_id": "med_056",
+    "step": 0,
+    "subtask_text": "Use kimdonghwi94/web-analyzer-mcp to extract page content"
+  },
+  {
+    "query_id": "med_056",
+    "step": 1,
+    "subtask_text": "Use vdalhambra/siteaudit-mcp to analyze the extracted content"
+  },
+  {
+    "query_id": "med_056",
+    "step": 2,
+    "subtask_text": "Use reading-plus-ai/mcp-server-data-exploration to track time spent on content"
+  },
+  {
+    "query_id": "med_056",
+    "step": 3,
+    "subtask_text": "Use lfnovo/content-core to integrate the analyzed data with the platform"
+  },
+  {
+    "query_id": "med_054",
+    "step": 0,
+    "subtask_text": "compress media files using inhiblabcore/mcp-image-compression"
+  },
+  {
+    "query_id": "med_054",
+    "step": 1,
+    "subtask_text": "analyze compressed files using kimdonghwi94/web-analyzer-mcp"
+  },
+  {
+    "query_id": "med_054",
+    "step": 2,
+    "subtask_text": "scrape website using webscraping-ai/webscraping-ai-mcp-server"
+  },
+  {
+    "query_id": "med_054",
+    "step": 3,
+    "subtask_text": "manage project board using teamwork/mcp"
+  },
+  {
+    "query_id": "easy_014",
+    "step": 0,
+    "subtask_text": "Create a group chat using gotoolkits/wecombot"
+  },
+  {
+    "query_id": "easy_014",
+    "step": 1,
+    "subtask_text": "Use pragmar/mcp-server-webcrawl to extract structured data"
+  },
+  {
+    "query_id": "easy_121",
+    "step": 0,
+    "subtask_text": "Translate the text using transcribe-app/mcp-transcribe"
+  },
+  {
+    "query_id": "easy_121",
+    "step": 1,
+    "subtask_text": "Migrate the schema using schemacrawler/schemacrawler-mcp-server-usage"
+  },
+  {
+    "query_id": "hard_031",
+    "step": 0,
+    "subtask_text": "Use modelcontextprotocol/server-filesystem to manage file permissions"
+  },
+  {
+    "query_id": "hard_031",
+    "step": 1,
+    "subtask_text": "Utilize ellmos-ai/ellmos-filecommander-mcp for cleaning the dataset"
+  },
+  {
+    "query_id": "hard_031",
+    "step": 2,
+    "subtask_text": "Invoke kadykov/mcp-openapi-schema-explorer to rotate the API keys"
+  },
+  {
+    "query_id": "hard_031",
+    "step": 3,
+    "subtask_text": "Apply efforthye/fast-filesystem-mcp for analyzing match data"
+  },
+  {
+    "query_id": "med_078",
+    "step": 0,
+    "subtask_text": "summarize the document using 0xshellming/mcp-summarizer"
+  },
+  {
+    "query_id": "med_078",
+    "step": 1,
+    "subtask_text": "create a dashboard using kyurish/mcp-dashboards"
+  },
+  {
+    "query_id": "med_078",
+    "step": 2,
+    "subtask_text": "extract structured data from the document using sifter-ai/sifter"
+  },
+  {
+    "query_id": "easy_143",
+    "step": 0,
+    "subtask_text": "use andywang1688/sql-query-mcp to run a complex SQL query"
+  },
+  {
+    "query_id": "easy_143",
+    "step": 1,
+    "subtask_text": "extract the output data from the result of the sql query"
+  },
+  {
+    "query_id": "easy_143",
+    "step": 2,
+    "subtask_text": "format the extracted data into a suitable structure for expense tracking"
+  },
+  {
+    "query_id": "easy_143",
+    "step": 3,
+    "subtask_text": "use sbroenne/mcp-server-excel or shopsavvy/shopsavvy-mcp-server or mckinsey/vizro-mcp to send the formatted data to track expenses"
+  },
+  {
+    "query_id": "easy_023",
+    "step": 0,
+    "subtask_text": "Use andywang1688/sql-query-mcp to run a complex SQL query"
+  },
+  {
+    "query_id": "easy_023",
+    "step": 1,
+    "subtask_text": "Use lincolnburrows2017/filesystem-mcp to manage file permissions"
+  },
+  {
+    "query_id": "med_046",
+    "step": 0,
+    "subtask_text": "Use seekrays/mcp-monitor to monitor social mentions"
+  },
+  {
+    "query_id": "med_046",
+    "step": 1,
+    "subtask_text": "Use hamflx/imagen3-mcp to generate thumbnails"
+  },
+  {
+    "query_id": "med_046",
+    "step": 2,
+    "subtask_text": "Use louis030195/toggl-mcp to track time spent"
+  },
+  {
+    "query_id": "med_077",
+    "step": 0,
+    "subtask_text": "use phpcodearcheology/phpcodearcheology to extract entities from codebase"
+  },
+  {
+    "query_id": "med_077",
+    "step": 1,
+    "subtask_text": "use log-logn/langfuse-mcp-java to analyze extracted entities by aggregate metrics"
+  },
+  {
+    "query_id": "med_077",
+    "step": 2,
+    "subtask_text": "use simplyliz/codemcp or religa/multi-mcp or talonicdev/talonic-mcp or olostep/olostep-mcp-server or getrupt/ashra-mcp or sifter-ai/sifter to run static analysis"
+  },
+  {
+    "query_id": "easy_076",
+    "step": 0,
+    "subtask_text": "execute sql-query-mcp to analyze query performance"
+  },
+  {
+    "query_id": "easy_076",
+    "step": 1,
+    "subtask_text": "generate report using anyquery"
+  },
+  {
+    "query_id": "easy_076",
+    "step": 2,
+    "subtask_text": "send report to open-agreements using searchatlas"
+  },
+  {
+    "query_id": "easy_057",
+    "step": 0,
+    "subtask_text": "Use kukapay/nearby-search-mcp to find nearby places"
+  },
+  {
+    "query_id": "easy_057",
+    "step": 1,
+    "subtask_text": "Use webcoderz/mcp-geo to get geographical information"
+  },
+  {
+    "query_id": "easy_057",
+    "step": 2,
+    "subtask_text": "Use pskill9/web-search to search for web forms"
+  },
+  {
+    "query_id": "easy_057",
+    "step": 3,
+    "subtask_text": "Use browserbase/mcp-server-browserbase to simulate web form filling"
+  },
+  {
+    "query_id": "med_075",
+    "step": 0,
+    "subtask_text": "Update the spreadsheet using haris-musa/excel-mcp-server"
+  },
+  {
+    "query_id": "med_075",
+    "step": 1,
+    "subtask_text": "Configure the load balancer using kashiwabyte/vikingdb-mcp-server"
+  },
+  {
+    "query_id": "med_075",
+    "step": 2,
+    "subtask_text": "Query scientific databases using vitorpavinato/ncbi-mcp-server"
+  },
+  {
+    "query_id": "med_061",
+    "step": 0,
+    "subtask_text": "compile the project"
+  },
+  {
+    "query_id": "med_061",
+    "step": 1,
+    "subtask_text": "feed the compiled project results into automate browser testing using wopee-io/wopee-mcp"
+  },
+  {
+    "query_id": "med_061",
+    "step": 2,
+    "subtask_text": "conclude by optimizing ad spend using pipeboard-co/meta-ads-mcp"
+  },
+  {
+    "query_id": "easy_103",
+    "step": 0,
+    "subtask_text": "use avisangle/calculator-server to calculate the route"
+  },
+  {
+    "query_id": "easy_103",
+    "step": 1,
+    "subtask_text": "use andybrandt/mcp-simple-pubmed to search pubmed"
+  },
+  {
+    "query_id": "med_030",
+    "step": 0,
+    "subtask_text": "Use freightutils-mcp to calculate shipping costs"
+  },
+  {
+    "query_id": "med_030",
+    "step": 1,
+    "subtask_text": "Use agent-toolbox to analyze the shipping cost output"
+  },
+  {
+    "query_id": "med_030",
+    "step": 2,
+    "subtask_text": "Use blackmount-nlp-mcp to generate text based on the analysis"
+  },
+  {
+    "query_id": "med_030",
+    "step": 3,
+    "subtask_text": "Use apple-notes-mcp or my-bear-mcp-server to organize notes"
+  },
+  {
+    "query_id": "hard_033",
+    "step": 0,
+    "subtask_text": "use peterbeck111/knowledgelib-io to search the knowledge base"
+  },
+  {
+    "query_id": "hard_033",
+    "step": 1,
+    "subtask_text": "use andreas-roennestad/openhive-mcp or cameronrye/openzim-mcp or liquidmetal-ai/raindrop-mcp to manage game inventory"
+  },
+  {
+    "query_id": "hard_033",
+    "step": 2,
+    "subtask_text": "use hashicorp/terraform-mcp-server or awslabs/mcp or redis/mcp-redis-cloud to deploy to the cloud"
+  },
+  {
+    "query_id": "hard_033",
+    "step": 3,
+    "subtask_text": "use smriti-aa/smriti or hyunjae-labs/lore or prior_mcp to back up the data"
+  },
+  {
+    "query_id": "easy_101",
+    "step": 0,
+    "subtask_text": "Use embeddedlayers/mcp-analytics to track conversion rates"
+  },
+  {
+    "query_id": "easy_101",
+    "step": 1,
+    "subtask_text": "Use henilcaliya/mcp-apple-notes or dan8oren/mcp-apple-notes or bart6114/my-bear-mcp-server or sirmews/apple-notes-mcp or ailenshen/apple-notes-mcp or ianaleck/harvest-mcp-server or clamp-sh/mcp or disco-trooper/apple-notes-mcp or hmk/attio-mcp-server or zleventer/salesforce-marketing-mcp or atomno-labs/mcp-cbr-rates or cahthuranag/mcp-server or louis030195/toggl-mcp or grovs-io/mcp to organize notes"
+  },
+  {
+    "query_id": "hard_048",
+    "step": 0,
+    "subtask_text": "Get weather data using isdaniel/mcp_weather_server"
+  },
+  {
+    "query_id": "hard_048",
+    "step": 1,
+    "subtask_text": "Manage game inventory using rossshannon/weekly-weather-mcp"
+  },
+  {
+    "query_id": "hard_048",
+    "step": 2,
+    "subtask_text": "Analyze experimental results using quentincody/shopify-storefront-mcp-server"
+  },
+  {
+    "query_id": "hard_048",
+    "step": 3,
+    "subtask_text": "Manage product listings using marceausolutions/amazon-seller-mcp"
+  },
+  {
+    "query_id": "med_057",
+    "step": 0,
+    "subtask_text": "Use alog/alog-mcp to set up monitoring alerts"
+  },
+  {
+    "query_id": "med_057",
+    "step": 1,
+    "subtask_text": "Use clamp-sh/mcp to process the order"
+  },
+  {
+    "query_id": "med_057",
+    "step": 2,
+    "subtask_text": "Use schemacrawler/schemacrawler-mcp-server-usage to migrate the schema"
+  },
+  {
+    "query_id": "easy_064",
+    "step": 0,
+    "subtask_text": "Extract data from sandbox"
+  },
+  {
+    "query_id": "easy_064",
+    "step": 1,
+    "subtask_text": "Use extracted data to perform a web search"
+  },
+  {
+    "query_id": "med_004",
+    "step": 0,
+    "subtask_text": "Use yoryocoruxo-ai/rendoc-mcp-server to generate API documentation"
+  },
+  {
+    "query_id": "med_004",
+    "step": 1,
+    "subtask_text": "Use fireproof-storage/mcp-database-server to sync data between services"
+  },
+  {
+    "query_id": "med_004",
+    "step": 2,
+    "subtask_text": "Use mindsdb/mindsdb to generate a report"
+  },
+  {
+    "query_id": "easy_049",
+    "step": 0,
+    "subtask_text": "Use getsentry/sentry-mcp to extract error rate data"
+  },
+  {
+    "query_id": "easy_049",
+    "step": 1,
+    "subtask_text": "Use devflowinc/trieve to process and format the extracted data"
+  },
+  {
+    "query_id": "easy_049",
+    "step": 2,
+    "subtask_text": "Use dumpling-ai/mcp-server-dumplingai to generate thumbnails based on the processed data"
+  },
+  {
+    "query_id": "easy_061",
+    "step": 0,
+    "subtask_text": "geocode the address using one of the available geocoding services"
+  },
+  {
+    "query_id": "easy_061",
+    "step": 1,
+    "subtask_text": "use the geolabel/geolabel-mcp or postaldatapi/postaldatapi-mcp service to geocode the address"
+  },
+  {
+    "query_id": "easy_061",
+    "step": 2,
+    "subtask_text": "bridge the two systems using the results obtained from the geocoding step with the help of kukapay/bridge-rates-mcp or kukapay/nearby-search-mcp service"
+  },
+  {
+    "query_id": "med_065",
+    "step": 0,
+    "subtask_text": "deploy application to cloud using aparajithn/agent-deploy-dashboard-mcp"
+  },
+  {
+    "query_id": "med_065",
+    "step": 1,
+    "subtask_text": "use video-edit-mcp to convert video format"
+  },
+  {
+    "query_id": "med_065",
+    "step": 2,
+    "subtask_text": "generate invoice using softvoyagers/fakturka-api"
+  },
+  {
+    "query_id": "med_047",
+    "step": 0,
+    "subtask_text": "transcribe-app/mcp-transcribe"
+  },
+  {
+    "query_id": "med_047",
+    "step": 1,
+    "subtask_text": "kimtaeyoon83/mcp-server-youtube-transcript"
+  },
+  {
+    "query_id": "med_047",
+    "step": 2,
+    "subtask_text": "video-creator/ffmpeg-mcp"
+  },
+  {
+    "query_id": "med_047",
+    "step": 3,
+    "subtask_text": "parallel-web/task-mcp"
+  },
+  {
+    "query_id": "med_047",
+    "step": 4,
+    "subtask_text": "mrslbt/rippr"
+  },
+  {
+    "query_id": "easy_024",
+    "step": 0,
+    "subtask_text": "Use ckreiling/mcp-server-docker or ofershap/mcp-server-docker or erikhoward/adls-mcp-server or metoro-io/metoro-mcp-server or inspektor-gadget/ig-mcp-server or stackloklabs/ocireg-mcp or docker/hub-mcp or arkalda/hejdar-mcp to fetch compliance requirements data"
+  },
+  {
+    "query_id": "easy_024",
+    "step": 1,
+    "subtask_text": "Use netdata/netdata-netdata to monitor container health and performance"
+  },
+  {
+    "query_id": "easy_024",
+    "step": 2,
+    "subtask_text": "Use portainer/portainer-mcp to manage containers based on fetched compliance requirements"
+  },
+  {
+    "query_id": "easy_027",
+    "step": 0,
+    "subtask_text": "migrate the schema using schemacrawler/schemacrawler-mcp-server-usage"
+  },
+  {
+    "query_id": "easy_027",
+    "step": 1,
+    "subtask_text": "send a notification using cactusinhand/mcp_server_notify"
+  },
+  {
+    "query_id": "easy_045",
+    "step": 0,
+    "subtask_text": "get data from web form"
+  },
+  {
+    "query_id": "easy_045",
+    "step": 1,
+    "subtask_text": "use data to benchmark function"
+  },
+  {
+    "query_id": "easy_110",
+    "step": 0,
+    "subtask_text": "Use mzxrai/mcp-webresearch to find relevant articles"
+  },
+  {
+    "query_id": "easy_110",
+    "step": 1,
+    "subtask_text": "Use embassy-of-the-free-mind/sourcelibrary-v2 to store the found articles"
+  },
+  {
+    "query_id": "easy_110",
+    "step": 2,
+    "subtask_text": "Use anaisbetts/mcp-youtube to get the video URL"
+  },
+  {
+    "query_id": "easy_110",
+    "step": 3,
+    "subtask_text": "Use klavis-ai/youtube to download the video"
+  },
+  {
+    "query_id": "easy_110",
+    "step": 4,
+    "subtask_text": "Use burningion/video-editing-mcp to extract audio from the video"
+  },
+  {
+    "query_id": "easy_128",
+    "step": 0,
+    "subtask_text": "Extract audit access permissions data"
+  },
+  {
+    "query_id": "easy_128",
+    "step": 1,
+    "subtask_text": "Identify addresses within the extracted data"
+  },
+  {
+    "query_id": "easy_128",
+    "step": 2,
+    "subtask_text": "Use ip2location/mcp-ip2location-io to geocode the addresses"
+  },
+  {
+    "query_id": "med_015",
+    "step": 0,
+    "subtask_text": "Use kastelldev/kastell to generate a report"
+  },
+  {
+    "query_id": "med_015",
+    "step": 1,
+    "subtask_text": "Use fr0gger/mcp_security to analyze the generated report for security headers"
+  },
+  {
+    "query_id": "med_015",
+    "step": 2,
+    "subtask_text": "Use ddsky/gamebrain-api-clients to query game databases"
+  },
+  {
+    "query_id": "easy_073",
+    "step": 0,
+    "subtask_text": "Use slideshot to generate thumbnails"
+  },
+  {
+    "query_id": "easy_073",
+    "step": 1,
+    "subtask_text": "Use esignaturescom/mcp-server-esignatures to review the contract"
+  },
+  {
+    "query_id": "hard_035",
+    "step": 0,
+    "subtask_text": "monitor website uptime using a tool"
+  },
+  {
+    "query_id": "hard_035",
+    "step": 1,
+    "subtask_text": "use scraperapi/scraperapi-mcp to fetch and parse HTML content"
+  },
+  {
+    "query_id": "hard_035",
+    "step": 2,
+    "subtask_text": "run script in parallel using a parallel processing tool"
+  },
+  {
+    "query_id": "hard_035",
+    "step": 3,
+    "subtask_text": "use pskill9/hn-server or lamemind/mcp-server-multiverse to provision new servers"
+  },
+  {
+    "query_id": "easy_070",
+    "step": 0,
+    "subtask_text": "getrupt/ashra-mcp: Extract entities from the data"
+  },
+  {
+    "query_id": "easy_070",
+    "step": 1,
+    "subtask_text": "echology-io/decompose: Segment the audience based on extracted entities"
+  },
+  {
+    "query_id": "easy_135",
+    "step": 0,
+    "subtask_text": "Use payclaw/mcp-server to process the payment"
+  },
+  {
+    "query_id": "easy_135",
+    "step": 1,
+    "subtask_text": "Use awkoy/replicate-flux-mcp to set up replication"
+  },
+  {
+    "query_id": "hard_008",
+    "step": 0,
+    "subtask_text": "audit access permissions"
+  },
+  {
+    "query_id": "hard_008",
+    "step": 1,
+    "subtask_text": "track expenses"
+  },
+  {
+    "query_id": "hard_008",
+    "step": 2,
+    "subtask_text": "detect sentiment using kukapay/crypto-sentiment-mcp"
+  },
+  {
+    "query_id": "hard_008",
+    "step": 3,
+    "subtask_text": "search the web using conechoai/openai-websearch-mcp"
+  },
+  {
+    "query_id": "easy_003",
+    "step": 0,
+    "subtask_text": "Use klavis-ai/youtube to add subtitles to videos"
+  },
+  {
+    "query_id": "easy_003",
+    "step": 1,
+    "subtask_text": "Use anaisbetts/mcp-youtube to sync subtitles with the MCP system"
+  },
+  {
+    "query_id": "easy_003",
+    "step": 2,
+    "subtask_text": "Use kimtaeyoon83/mcp-server-youtube-transcript to extract transcript data from the synced subtitles"
+  },
+  {
+    "query_id": "easy_003",
+    "step": 3,
+    "subtask_text": "Use zlatkoc/youtube-summarize to generate a summary of the transcript data"
+  },
+  {
+    "query_id": "easy_003",
+    "step": 4,
+    "subtask_text": "Use grafana/mcp-grafana to visualize the summarized data in a dashboard"
+  },
+  {
+    "query_id": "med_041",
+    "step": 0,
+    "subtask_text": "scrape-badger/scrapebadger-mcp - Fill out the web form"
+  },
+  {
+    "query_id": "med_041",
+    "step": 1,
+    "subtask_text": "kimdonghwi94/web-analyzer-mcp - Analyze the output"
+  },
+  {
+    "query_id": "med_041",
+    "step": 2,
+    "subtask_text": "alimo7amed93/webhook-tester-mcp - Configure webhook"
+  },
+  {
+    "query_id": "med_041",
+    "step": 3,
+    "subtask_text": "replenishradar/mcp - Update inventory"
+  },
+  {
+    "query_id": "hard_007",
+    "step": 0,
+    "subtask_text": "Generate marketing reports using open-strategy-partners/osp_marketing_tools"
+  },
+  {
+    "query_id": "hard_007",
+    "step": 1,
+    "subtask_text": "Encrypt the generated marketing reports using ferdousbhai/investor-agent"
+  },
+  {
+    "query_id": "hard_007",
+    "step": 2,
+    "subtask_text": "Fetch stock prices using jjlabsio/korea-stock-mcp"
+  },
+  {
+    "query_id": "hard_007",
+    "step": 3,
+    "subtask_text": "Run the script using pipeboard-co/meta-ads-mcp"
+  },
+  {
+    "query_id": "easy_136",
+    "step": 0,
+    "subtask_text": "Use anaisbetts/mcp-youtube to add subtitles to the video"
+  },
+  {
+    "query_id": "easy_136",
+    "step": 1,
+    "subtask_text": "Use modelcontextprotocol/server-gitlab to set up a GitLab CI/CD pipeline"
+  },
+  {
+    "query_id": "med_042",
+    "step": 0,
+    "subtask_text": "use andybrandt/mcp-simple-pubmed to search PubMed"
+  },
+  {
+    "query_id": "med_042",
+    "step": 1,
+    "subtask_text": "use pragmaticp/mcp-server-webcrawl to automate web crawling of search results"
+  },
+  {
+    "query_id": "med_042",
+    "step": 2,
+    "subtask_text": "use operative_sh/web-eval-agent to automate browser testing on crawled pages"
+  },
+  {
+    "query_id": "med_042",
+    "step": 3,
+    "subtask_text": "use vitorpavinato/ncbi-mcp-server to process and analyze the test results"
+  },
+  {
+    "query_id": "med_042",
+    "step": 4,
+    "subtask_text": "use zoharbabin/google-researcher-mcp to generate insights from the analysis"
+  },
+  {
+    "query_id": "med_042",
+    "step": 5,
+    "subtask_text": "use brutalzinn/simple-mcp-selenium or operative_sh/web-eval-agent to navigate to the download page"
+  },
+  {
+    "query_id": "med_042",
+    "step": 6,
+    "subtask_text": "use pragmar/mcp-server-webcrawl to download the zip file"
+  },
+  {
+    "query_id": "hard_005",
+    "step": 0,
+    "subtask_text": "Use jaspertvdm/mcp-server-rabel to set up a visualization system for molecular structures"
+  },
+  {
+    "query_id": "hard_005",
+    "step": 1,
+    "subtask_text": "Use chigwell/telegram-mcp to automate clicking through the checkout flow"
+  },
+  {
+    "query_id": "hard_005",
+    "step": 2,
+    "subtask_text": "Use py2755/aiogram-mcp to detect sentiment in text"
+  },
+  {
+    "query_id": "hard_005",
+    "step": 3,
+    "subtask_text": "Use gotoolkits/wecombot to send a message to the channel"
+  },
+  {
+    "query_id": "hard_005",
+    "step": 4,
+    "subtask_text": "Use tamarengel/jira-github-mcp to manage the project board"
+  },
+  {
+    "query_id": "hard_020",
+    "step": 0,
+    "subtask_text": "Use aarsiv-groups/shipi-mcp-server to set up shipping cost calculation"
+  },
+  {
+    "query_id": "hard_020",
+    "step": 1,
+    "subtask_text": "Use nonatofabio/local-faiss-mcp to index research papers"
+  },
+  {
+    "query_id": "hard_020",
+    "step": 2,
+    "subtask_text": "Use seekrays/mcp-monitor to monitor system uptime"
+  },
+  {
+    "query_id": "hard_020",
+    "step": 3,
+    "subtask_text": "Use trackmage/trackmage-mcp-server to track shipments"
+  },
+  {
+    "query_id": "hard_020",
+    "step": 4,
+    "subtask_text": "Use soapyred/freightutils-mcp to automatically visualize molecular structures"
+  },
+  {
+    "query_id": "med_018",
+    "step": 0,
+    "subtask_text": "extract zip file"
+  },
+  {
+    "query_id": "med_018",
+    "step": 1,
+    "subtask_text": "process extracted zip file to extract page content"
+  },
+  {
+    "query_id": "med_018",
+    "step": 2,
+    "subtask_text": "post extracted page content to Slack"
+  },
+  {
+    "query_id": "easy_123",
+    "step": 0,
+    "subtask_text": "compress the archive using inhiblabcore/mcp-image-compression"
+  },
+  {
+    "query_id": "easy_123",
+    "step": 1,
+    "subtask_text": "get weather data using isdaniel/mcp_weather_server"
+  },
+  {
+    "query_id": "hard_011",
+    "step": 0,
+    "subtask_text": "merge multiple datasets using glaksmono/finbud-data-mcp"
+  },
+  {
+    "query_id": "hard_011",
+    "step": 1,
+    "subtask_text": "create a task list using awwaiid/mcp-server-taskwarrior"
+  },
+  {
+    "query_id": "hard_011",
+    "step": 2,
+    "subtask_text": "extract entities from the merged dataset using hug0x0/mcp-reunion"
+  },
+  {
+    "query_id": "hard_011",
+    "step": 3,
+    "subtask_text": "analyze financial data using sidneybissoli/bcb-br-mcp"
+  },
+  {
+    "query_id": "hard_027",
+    "step": 0,
+    "subtask_text": "Use replenishradar/mcp to provision new servers"
+  },
+  {
+    "query_id": "hard_027",
+    "step": 1,
+    "subtask_text": "Use paracetamol951/caisse-enregistreuse-mcp-server to automatically calculate tax"
+  },
+  {
+    "query_id": "hard_027",
+    "step": 2,
+    "subtask_text": "Use declan142/calcnook-mcp-server to calculate the route"
+  },
+  {
+    "query_id": "hard_027",
+    "step": 3,
+    "subtask_text": "Use zelentsov-dev/asc-mcp to aggregate the metrics"
+  },
+  {
+    "query_id": "hard_027",
+    "step": 4,
+    "subtask_text": "Use configcat/mcp-server or shopsavvy/shopsavvy-mcp-server to update inventory"
+  },
+  {
+    "query_id": "med_013",
+    "step": 0,
+    "subtask_text": "Use nicholasbester/clickup-cli to create a new task for tracking expenses"
+  },
+  {
+    "query_id": "med_013",
+    "step": 1,
+    "subtask_text": "Use ignaciohermosillacornejo/copilot-money-mcp to categorize and record the expenses"
+  },
+  {
+    "query_id": "med_013",
+    "step": 2,
+    "subtask_text": "Use ianaleck/harvest-mcp-server to analyze the recorded expenses"
+  },
+  {
+    "query_id": "med_013",
+    "step": 3,
+    "subtask_text": "Use whiteknightonhorse/apibase to connect the expense analysis to an API"
+  },
+  {
+    "query_id": "med_013",
+    "step": 4,
+    "subtask_text": "Use softvoyagers/pageshot-api to take a screenshot of the expense analysis page"
+  },
+  {
+    "query_id": "med_008",
+    "step": 0,
+    "subtask_text": "generate marketing reports using zleventer/salesforce-marketing-mcp"
+  },
+  {
+    "query_id": "med_008",
+    "step": 1,
+    "subtask_text": "compress the archive using shipitandpray/mcp-compress"
+  },
+  {
+    "query_id": "med_008",
+    "step": 2,
+    "subtask_text": "aggregate the metrics using seekrays/mcp-monitor"
+  },
+  {
+    "query_id": "hard_047",
+    "step": 0,
+    "subtask_text": "analyze the logs using mcp"
+  },
+  {
+    "query_id": "hard_047",
+    "step": 1,
+    "subtask_text": "resize the images"
+  },
+  {
+    "query_id": "hard_047",
+    "step": 2,
+    "subtask_text": "use parallel-web/search-mcp to search the web in parallel"
+  },
+  {
+    "query_id": "hard_047",
+    "step": 3,
+    "subtask_text": "transform the data"
+  },
+  {
+    "query_id": "easy_095",
+    "step": 0,
+    "subtask_text": "Use kadykov/mcp-openapi-schema-explorer to explore the API schema"
+  },
+  {
+    "query_id": "easy_095",
+    "step": 1,
+    "subtask_text": "Use nk3750/jitapi to generate new API keys"
+  },
+  {
+    "query_id": "easy_095",
+    "step": 2,
+    "subtask_text": "Use delimit-ai/delimit to identify integration points in the platform"
+  },
+  {
+    "query_id": "easy_095",
+    "step": 3,
+    "subtask_text": "Use waystation-ai/mcp or zueai/mcp-manager or picahq/mcp or insforge/insforge-mcp or rhein1/agoragentic-integrations or metorial/metorial or imprvhub/mcp-browser-agent or thinkchainai/mcpbundles to initiate integration with the platform"
+  },
+  {
+    "query_id": "easy_116",
+    "step": 0,
+    "subtask_text": "Use payclaw/mcp-server to process the payment"
+  },
+  {
+    "query_id": "easy_116",
+    "step": 1,
+    "subtask_text": "Use higangssh/homebutler to monitor uptime"
+  },
+  {
+    "query_id": "easy_129",
+    "step": 0,
+    "subtask_text": "Use bitatlas-group/bitatlas to analyze query performance"
+  },
+  {
+    "query_id": "easy_129",
+    "step": 1,
+    "subtask_text": "Use iamredmh/volta-mcp-server to encrypt the data"
+  },
+  {
+    "query_id": "easy_055",
+    "step": 0,
+    "subtask_text": "Validate SSL certificates"
+  },
+  {
+    "query_id": "easy_055",
+    "step": 1,
+    "subtask_text": "Use validated SSL certificates to connect to the database"
+  },
+  {
+    "query_id": "easy_055",
+    "step": 2,
+    "subtask_text": "Execute SQL query using connected database"
+  },
+  {
+    "query_id": "easy_002",
+    "step": 0,
+    "subtask_text": "Organize the files"
+  },
+  {
+    "query_id": "easy_002",
+    "step": 1,
+    "subtask_text": "Use the organized files to extract protein sequences"
+  },
+  {
+    "query_id": "easy_002",
+    "step": 2,
+    "subtask_text": "Analyze the extracted protein sequences"
+  },
+  {
+    "query_id": "easy_038",
+    "step": 0,
+    "subtask_text": "use olostep/olostep-mcp-server to scrape the website"
+  },
+  {
+    "query_id": "easy_038",
+    "step": 1,
+    "subtask_text": "use getrupt/ashra-mcp to update the spreadsheet"
+  },
+  {
+    "query_id": "med_031",
+    "step": 0,
+    "subtask_text": "seekrays/mcp-monitor - Check system metrics"
+  },
+  {
+    "query_id": "med_031",
+    "step": 1,
+    "subtask_text": "meanands/npm-package-docs-mcp - Update the documentation"
+  },
+  {
+    "query_id": "med_031",
+    "step": 2,
+    "subtask_text": "endiagram/mcp - Schedule a meeting"
+  },
+  {
+    "query_id": "easy_017",
+    "step": 0,
+    "subtask_text": "Extract click data from checkout flow"
+  },
+  {
+    "query_id": "easy_017",
+    "step": 1,
+    "subtask_text": "Process extracted click data"
+  },
+  {
+    "query_id": "easy_017",
+    "step": 2,
+    "subtask_text": "Generate email report based on processed data"
+  },
+  {
+    "query_id": "easy_017",
+    "step": 3,
+    "subtask_text": "Use mcp-clickhouse to send email report"
+  },
+  {
+    "query_id": "easy_059",
+    "step": 0,
+    "subtask_text": "summarize the document using 0xshellming/mcp-summarizer"
+  },
+  {
+    "query_id": "easy_059",
+    "step": 1,
+    "subtask_text": "schedule a meeting using joinly-ai/joinly"
+  },
+  {
+    "query_id": "med_011",
+    "step": 0,
+    "subtask_text": "Process research data"
+  },
+  {
+    "query_id": "med_011",
+    "step": 1,
+    "subtask_text": "Merge multiple datasets"
+  },
+  {
+    "query_id": "med_011",
+    "step": 2,
+    "subtask_text": "Query game databases"
+  },
+  {
+    "query_id": "med_055",
+    "step": 0,
+    "subtask_text": "Filter outliers using statistical methods"
+  },
+  {
+    "query_id": "med_055",
+    "step": 1,
+    "subtask_text": "Track delivery status using trackmage/trackmage-mcp"
+  },
+  {
+    "query_id": "med_055",
+    "step": 2,
+    "subtask_text": "Integrate tracking data with mindsdb/mindsdb"
+  },
+  {
+    "query_id": "med_097",
+    "step": 0,
+    "subtask_text": "Get weather data using isdaniel/mcp_weather_server"
+  },
+  {
+    "query_id": "med_097",
+    "step": 1,
+    "subtask_text": "Validate regulatory status using optimaquantum/claude-critical-rules-mcp"
+  },
+  {
+    "query_id": "med_097",
+    "step": 2,
+    "subtask_text": "Configure webhook using pipepie"
+  },
+  {
+    "query_id": "easy_001",
+    "step": 0,
+    "subtask_text": "use kimdonghwi94/web-analyzer-mcp to extract page content"
+  },
+  {
+    "query_id": "easy_001",
+    "step": 1,
+    "subtask_text": "format extracted content using a suitable code formatting tool"
+  },
+  {
+    "query_id": "easy_012",
+    "step": 0,
+    "subtask_text": "Use kimdonghwi94/web-analyzer-mcp to parse HTML content"
+  },
+  {
+    "query_id": "easy_012",
+    "step": 1,
+    "subtask_text": "Extract relevant conversion rate data using the parsed HTML"
+  },
+  {
+    "query_id": "easy_012",
+    "step": 2,
+    "subtask_text": "Track the extracted conversion rates over time"
+  },
+  {
+    "query_id": "med_021",
+    "step": 0,
+    "subtask_text": "crawleo/crawleo-mcp - crawl the documentation"
+  },
+  {
+    "query_id": "med_021",
+    "step": 1,
+    "subtask_text": "trackmage/trackmage-mcp-server - feed the results into track the shipment"
+  },
+  {
+    "query_id": "med_021",
+    "step": 2,
+    "subtask_text": "softvoyagers/linkmeta-api - provision new servers"
+  },
+  {
+    "query_id": "easy_019",
+    "step": 0,
+    "subtask_text": "fetch game stats using modelcontextprotocol/server-fetch"
+  },
+  {
+    "query_id": "easy_019",
+    "step": 1,
+    "subtask_text": "classify content using cloudbet/sports-mcp-server"
+  },
+  {
+    "query_id": "easy_008",
+    "step": 0,
+    "subtask_text": "Use dan8oren/mcp-apple-notes or henilcalagiya/mcp-apple-notes or sirmews/apple-notes-mcp or ailenshen/apple-notes-mcp to extract and organize notes from Apple Notes"
+  },
+  {
+    "query_id": "easy_008",
+    "step": 1,
+    "subtask_text": "Use blackmount-ai/blackmount-nlp-mcp or jhomen368/steam-reviews-mcp or feuerdev/keep-mcp to process the extracted notes and detect sentiment"
+  },
+  {
+    "query_id": "easy_134",
+    "step": 0,
+    "subtask_text": "rename files in bulk using lincolnburrows2017/filesystem-mcp"
+  },
+  {
+    "query_id": "easy_134",
+    "step": 1,
+    "subtask_text": "compress media files using shipitandpray/mcp-compress"
+  },
+  {
+    "query_id": "easy_015",
+    "step": 0,
+    "subtask_text": "transform data using appropriate tool"
+  },
+  {
+    "query_id": "easy_015",
+    "step": 1,
+    "subtask_text": "retrieve relevant context using appropriate tool"
+  },
+  {
+    "query_id": "hard_003",
+    "step": 0,
+    "subtask_text": "jasonjmcghee/claude-debugs-for-you: Debug the application"
+  },
+  {
+    "query_id": "hard_003",
+    "step": 1,
+    "subtask_text": "kimdonghwi94/web-analyzer-mcp: Extract entities from the application"
+  },
+  {
+    "query_id": "hard_003",
+    "step": 2,
+    "subtask_text": "0xmassi/webclaw: Clean the dataset"
+  },
+  {
+    "query_id": "hard_003",
+    "step": 3,
+    "subtask_text": "free-web-search-ultimate: Search the web"
+  },
+  {
+    "query_id": "hard_003",
+    "step": 4,
+    "subtask_text": "schemacrawler/schemacrawler-mcp-server-usage: Query the database"
+  },
+  {
+    "query_id": "easy_138",
+    "step": 0,
+    "subtask_text": "Use a file renaming tool to rename files in bulk"
+  },
+  {
+    "query_id": "easy_138",
+    "step": 1,
+    "subtask_text": "Use a payment processing API from one of the available mcp-server tools to handle payments"
+  },
+  {
+    "query_id": "hard_039",
+    "step": 0,
+    "subtask_text": "Use just-every/mcp-read-website-fast to parse the HTML content"
+  },
+  {
+    "query_id": "hard_039",
+    "step": 1,
+    "subtask_text": "Use blockrunai/x-grow to convert the video format"
+  },
+  {
+    "query_id": "hard_039",
+    "step": 2,
+    "subtask_text": "Use genwavellc/svgmaker-mcp to generate text with AI the analysis"
+  },
+  {
+    "query_id": "hard_039",
+    "step": 3,
+    "subtask_text": "Use kimdonghwi94/web-analyzer-mcp to review the contract results"
+  },
+  {
+    "query_id": "med_062",
+    "step": 0,
+    "subtask_text": "use anaisbetts/mcp-installer to provision new servers"
+  },
+  {
+    "query_id": "med_062",
+    "step": 1,
+    "subtask_text": "use clicks-protocol/mcp-server to analyze the output by click through checkout flow"
+  },
+  {
+    "query_id": "med_062",
+    "step": 2,
+    "subtask_text": "use embeddedlayers/mcp-analytics to manage bookmarks"
+  },
+  {
+    "query_id": "easy_139",
+    "step": 0,
+    "subtask_text": "send an email report using clawaimail/mcp"
+  },
+  {
+    "query_id": "easy_139",
+    "step": 1,
+    "subtask_text": "export data to CSV using restcsv-mcp-server"
+  },
+  {
+    "query_id": "med_085",
+    "step": 0,
+    "subtask_text": "create a group chat using wecombot"
+  },
+  {
+    "query_id": "med_085",
+    "step": 1,
+    "subtask_text": "calculate the route using joinly-ai/joinly"
+  },
+  {
+    "query_id": "med_085",
+    "step": 2,
+    "subtask_text": "analyze query performance using andywang1688/sql-query-mcp"
+  },
+  {
+    "query_id": "easy_035",
+    "step": 0,
+    "subtask_text": "dagger/container-use"
+  },
+  {
+    "query_id": "easy_035",
+    "step": 1,
+    "subtask_text": "trackmage/trackmage-mcp-server"
+  },
+  {
+    "query_id": "med_067",
+    "step": 0,
+    "subtask_text": "Use pickelfintech/sentisift-sdks to detect sentiment"
+  },
+  {
+    "query_id": "med_067",
+    "step": 1,
+    "subtask_text": "Use blackmount-ai/blackmount-nlp-mcp to process the sentiment"
+  },
+  {
+    "query_id": "med_067",
+    "step": 2,
+    "subtask_text": "Use jhomen368/steam-reviews-mcp to review the contract"
+  },
+  {
+    "query_id": "med_067",
+    "step": 3,
+    "subtask_text": "Use leekangbum/networklytics-mcp to manage the project board"
+  },
+  {
+    "query_id": "easy_090",
+    "step": 0,
+    "subtask_text": "Use esignaturescom/mcp-server-esignatures to review the contract"
+  },
+  {
+    "query_id": "easy_090",
+    "step": 1,
+    "subtask_text": "Use gregario/tft-oracle to analyze match data"
+  },
+  {
+    "query_id": "hard_018",
+    "step": 0,
+    "subtask_text": "Compile the project using a suitable build tool"
+  },
+  {
+    "query_id": "hard_018",
+    "step": 1,
+    "subtask_text": "Deploy the compiled project to the cloud using openstack-kr/python-openstackmcp-server or awslabs/mcp"
+  },
+  {
+    "query_id": "hard_018",
+    "step": 2,
+    "subtask_text": "Analyze match data using liquidmetal-ai/raindrop-mcp or sdglbl/mcp-claude-code"
+  },
+  {
+    "query_id": "hard_018",
+    "step": 3,
+    "subtask_text": "Validate regulatory status of the results using a compliance checking tool or service"
+  },
+  {
+    "query_id": "med_037",
+    "step": 0,
+    "subtask_text": "Get weather data using isdaniel/mcp_weather_server"
+  },
+  {
+    "query_id": "med_037",
+    "step": 1,
+    "subtask_text": "Create a task list using awwaiid/mcp-server-taskwarrior"
+  },
+  {
+    "query_id": "med_037",
+    "step": 2,
+    "subtask_text": "Manage product listings using marceausolutions/amazon-seller-mcp"
+  },
+  {
+    "query_id": "easy_043",
+    "step": 0,
+    "subtask_text": "use andybrandt/mcp-simple-pubmed to search PubMed"
+  },
+  {
+    "query_id": "easy_043",
+    "step": 1,
+    "subtask_text": "use txn2/kubefwd to forward the search results to a container"
+  },
+  {
+    "query_id": "easy_043",
+    "step": 2,
+    "subtask_text": "use elevy99927/devops-mcp-webui to manage the containers"
+  },
+  {
+    "query_id": "easy_117",
+    "step": 0,
+    "subtask_text": "Use ofershap/mcp-server-docker to manage containers"
+  },
+  {
+    "query_id": "easy_117",
+    "step": 1,
+    "subtask_text": "Use gregario/godot-forge to generate game content"
+  },
+  {
+    "query_id": "med_066",
+    "step": 0,
+    "subtask_text": "Use henilcalagiya/mcp or sirmews/apple-notes-mcp to organize notes"
+  },
+  {
+    "query_id": "med_066",
+    "step": 1,
+    "subtask_text": "Use securityronin/docx-mcp or papersflow-ai/papersflow-mcp to process the organized notes with analyze legal documents"
+  },
+  {
+    "query_id": "med_066",
+    "step": 2,
+    "subtask_text": "Use 0xshellming/mcp-summarizer to summarize the processed document"
+  },
+  {
+    "query_id": "med_092",
+    "step": 0,
+    "subtask_text": "fetch stock prices using huggingagi/mcp-baostock-server"
+  },
+  {
+    "query_id": "med_092",
+    "step": 1,
+    "subtask_text": "resize images using whyy9527/ariadne"
+  },
+  {
+    "query_id": "med_092",
+    "step": 2,
+    "subtask_text": "sync data between services using mindsdb/mindsdb"
+  },
+  {
+    "query_id": "hard_016",
+    "step": 0,
+    "subtask_text": "merge multiple datasets"
+  },
+  {
+    "query_id": "hard_016",
+    "step": 1,
+    "subtask_text": "generate thumbnails"
+  },
+  {
+    "query_id": "hard_016",
+    "step": 2,
+    "subtask_text": "take a screenshot of the page"
+  },
+  {
+    "query_id": "hard_016",
+    "step": 3,
+    "subtask_text": "rotate the API keys"
+  },
+  {
+    "query_id": "med_035",
+    "step": 0,
+    "subtask_text": "use seekrays/mcp-monitor to monitor uptime"
+  },
+  {
+    "query_id": "med_035",
+    "step": 1,
+    "subtask_text": "analyze the output from seekrays/mcp-monitor"
+  },
+  {
+    "query_id": "med_035",
+    "step": 2,
+    "subtask_text": "use eyalzh/browser-control-mcp to navigate the website"
+  },
+  {
+    "query_id": "easy_125",
+    "step": 0,
+    "subtask_text": "run static code analysis using phpcodearcheology/phpcodearcheology"
+  },
+  {
+    "query_id": "easy_125",
+    "step": 1,
+    "subtask_text": "send the analysis output to jasonjmcghee/claude-debugs-for-you"
+  },
+  {
+    "query_id": "med_060",
+    "step": 0,
+    "subtask_text": "Use crawleo/crawleo-mcp to crawl the documentation"
+  },
+  {
+    "query_id": "med_060",
+    "step": 1,
+    "subtask_text": "Use sql-query-mcp to analyze the output from the crawled documentation"
+  },
+  {
+    "query_id": "med_060",
+    "step": 2,
+    "subtask_text": "Use ofershap/mcp-server-scraper to scrape protein sequences"
+  },
+  {
+    "query_id": "med_060",
+    "step": 3,
+    "subtask_text": "Use kapeli/dash-mcp-server to analyze the protein sequences"
+  },
+  {
+    "query_id": "med_045",
+    "step": 0,
+    "subtask_text": "Start by scanning for vulnerabilities using semgrep/mcp"
+  },
+  {
+    "query_id": "med_045",
+    "step": 1,
+    "subtask_text": "Process the vulnerability scan results with calculate tax using agent-toolbox"
+  },
+  {
+    "query_id": "med_045",
+    "step": 2,
+    "subtask_text": "Generate text with AI the results using louis030195/gptzero-mcp"
+  },
+  {
+    "query_id": "easy_065",
+    "step": 0,
+    "subtask_text": "convert the document format using vivekvells/mcp-pandoc"
+  },
+  {
+    "query_id": "easy_065",
+    "step": 1,
+    "subtask_text": "resize the images using keiver/image-tiler-mcp-server"
+  },
+  {
+    "query_id": "easy_086",
+    "step": 0,
+    "subtask_text": "run static analysis using phpcodearcheology/phpcodearcheology"
+  },
+  {
+    "query_id": "easy_086",
+    "step": 1,
+    "subtask_text": "send analysis output to a file"
+  },
+  {
+    "query_id": "easy_086",
+    "step": 2,
+    "subtask_text": "use exoticknight/mcp-file-merger to process the file with renaming instructions"
+  },
+  {
+    "query_id": "easy_086",
+    "step": 3,
+    "subtask_text": "execute rename operation on files based on processed output"
+  },
+  {
+    "query_id": "med_025",
+    "step": 0,
+    "subtask_text": "Send a message to the channel using chigwell/telegram-mcp"
+  },
+  {
+    "query_id": "med_025",
+    "step": 1,
+    "subtask_text": "Use inhiblabcore/mcp-image-compression to compress media files"
+  },
+  {
+    "query_id": "med_025",
+    "step": 2,
+    "subtask_text": "Update inventory using replenishradar/mcp"
+  },
+  {
+    "query_id": "med_017",
+    "step": 0,
+    "subtask_text": "Use alimo7amed93/webhook-tester-mcp to configure the webhook"
+  },
+  {
+    "query_id": "med_017",
+    "step": 1,
+    "subtask_text": "Utilize girste/mcp-cybersec-watchdog to audit access permissions"
+  },
+  {
+    "query_id": "med_017",
+    "step": 2,
+    "subtask_text": "Employ grafana/mcp-grafana to analyze the output by querying the database"
+  },
+  {
+    "query_id": "easy_140",
+    "step": 0,
+    "subtask_text": "summarize the document using 0xshellming/mcp-summarizer"
+  },
+  {
+    "query_id": "easy_140",
+    "step": 1,
+    "subtask_text": "crawl the documentation using crawleo/crawleo-mcp"
+  },
+  {
+    "query_id": "easy_127",
+    "step": 0,
+    "subtask_text": "use ericbrown/project-context-mcp to compile the project"
+  },
+  {
+    "query_id": "easy_127",
+    "step": 1,
+    "subtask_text": "use vdmeu/registrum-mcp to back up the data"
+  },
+  {
+    "query_id": "easy_062",
+    "step": 0,
+    "subtask_text": "kukapay/nearby-search-mcp: Find nearby places"
+  },
+  {
+    "query_id": "easy_062",
+    "step": 1,
+    "subtask_text": "vitorpavinato/ncbi-mcp-server: Query scientific databases with the results"
+  },
+  {
+    "query_id": "med_063",
+    "step": 0,
+    "subtask_text": "generate text with AI using louis030195/gptzero-mcp"
+  },
+  {
+    "query_id": "med_063",
+    "step": 1,
+    "subtask_text": "feed generated text into search knowledge base using peterbeck111/knowledgelib-io"
+  },
+  {
+    "query_id": "med_063",
+    "step": 2,
+    "subtask_text": "query scientific databases using vitorpavinato/ncbi-mcp-server"
+  },
+  {
+    "query_id": "easy_145",
+    "step": 0,
+    "subtask_text": "Use isaacwasserman/mcp-vegalite-server to visualize molecular structures"
+  },
+  {
+    "query_id": "easy_145",
+    "step": 1,
+    "subtask_text": "Use inhiblabcore/mcp-image-compression to compress the archive"
+  },
+  {
+    "query_id": "hard_023",
+    "step": 0,
+    "subtask_text": "use seekrays/mcp-monitor to set up monitoring alerts"
+  },
+  {
+    "query_id": "hard_023",
+    "step": 1,
+    "subtask_text": "use anaisbetts/mcp-youtube to automatically retrieve relevant context from YouTube"
+  },
+  {
+    "query_id": "hard_023",
+    "step": 2,
+    "subtask_text": "use kimtaeyoon83/mcp-server-youtube-transcript to add subtitles to the retrieved content"
+  },
+  {
+    "query_id": "hard_023",
+    "step": 3,
+    "subtask_text": "use selvage-lab/selvage to back up the data"
+  },
+  {
+    "query_id": "hard_023",
+    "step": 4,
+    "subtask_text": "use mpeirone/zabbix-mcp-server or victoriametrics-community/mcp-victoriametrics to check system metrics"
+  },
+  {
+    "query_id": "easy_058",
+    "step": 0,
+    "subtask_text": "benchmark the function"
+  },
+  {
+    "query_id": "easy_058",
+    "step": 1,
+    "subtask_text": "search the web"
+  },
+  {
+    "query_id": "easy_084",
+    "step": 0,
+    "subtask_text": "generate thumbnails using hamflx/imagen3-mcp"
+  },
+  {
+    "query_id": "easy_084",
+    "step": 1,
+    "subtask_text": "analyze thumbnails for sentiment using osseni94/keyneg-mcp"
+  },
+  {
+    "query_id": "hard_006",
+    "step": 0,
+    "subtask_text": "summarize the document using 0xshellming/mcp-summarizer"
+  },
+  {
+    "query_id": "hard_006",
+    "step": 1,
+    "subtask_text": "set up alerting rules using gwbischof/free-will-mcp"
+  },
+  {
+    "query_id": "hard_006",
+    "step": 2,
+    "subtask_text": "automate browser testing using brutalzinn/simple-mcp-selenium or browsermcp/mcp or operative_sh/web-eval-agent or automatalabs/mcp-server-playwright or cactusinhand/mcp_server_notify"
+  },
+  {
+    "query_id": "hard_006",
+    "step": 3,
+    "subtask_text": "review the contract after automation setup"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 0,
+    "subtask_text": "generate API documentation using peter-j-thompson/semanticapi-mcp"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 1,
+    "subtask_text": "generate API documentation using kadykov/mcp-openapi-schema-explorer"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 2,
+    "subtask_text": "generate API documentation using api7/apisix-mcp"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 3,
+    "subtask_text": "generate API documentation using mrjoshuak/godoc-mcp"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 4,
+    "subtask_text": "generate API documentation using flowzap-xyz/flowzap-mcp"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 5,
+    "subtask_text": "generate API documentation using softvoyagers/linkmeta-api"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 6,
+    "subtask_text": "generate API documentation using nk3750/jitapi"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 7,
+    "subtask_text": "generate API documentation using bbonnin/openapi-to-mcp"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 8,
+    "subtask_text": "generate API documentation using yoryocoruxo-ai/rendoc-mcp-server"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 9,
+    "subtask_text": "generate API documentation using kapeli/dash-mcp-server"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 10,
+    "subtask_text": "notify team using inditextech/mcp-teams-server"
+  },
+  {
+    "query_id": "easy_039",
+    "step": 11,
+    "subtask_text": "notify team using cloudbet/sports-mcp-server"
+  },
+  {
+    "query_id": "easy_075",
+    "step": 0,
+    "subtask_text": "Calculate shipping costs using a relevant tool or API"
+  },
+  {
+    "query_id": "easy_075",
+    "step": 1,
+    "subtask_text": "Compress the archive using a suitable compression tool"
+  },
+  {
+    "query_id": "hard_028",
+    "step": 0,
+    "subtask_text": "Set up a system to validate SSL certificates"
+  },
+  {
+    "query_id": "hard_028",
+    "step": 1,
+    "subtask_text": "Automatically compile the project"
+  },
+  {
+    "query_id": "hard_028",
+    "step": 2,
+    "subtask_text": "Manage game inventory using a relevant tool such as replenishradar/mcp or ark-forge/arkforge-mcp"
+  },
+  {
+    "query_id": "hard_028",
+    "step": 3,
+    "subtask_text": "Validate data quality using a relevant tool such as dataeval/dingo or imatza-rh/mcp-zuul"
+  },
+  {
+    "query_id": "hard_028",
+    "step": 4,
+    "subtask_text": "Manage product listings using a relevant tool such as shopsavvy/shopsavvy-mcp-server or olgasafonova/productplan-mcp-server"
+  },
+  {
+    "query_id": "hard_009",
+    "step": 0,
+    "subtask_text": "use fr0gger/mcp_security to check security headers"
+  },
+  {
+    "query_id": "hard_009",
+    "step": 1,
+    "subtask_text": "use awwaiid/mcp-server-taskwarrior to create a task list"
+  },
+  {
+    "query_id": "hard_009",
+    "step": 2,
+    "subtask_text": "use upinar/contrastapi to scale the infrastructure"
+  },
+  {
+    "query_id": "hard_009",
+    "step": 3,
+    "subtask_text": "use jnmetacode/shellward to process the order"
+  },
+  {
+    "query_id": "easy_148",
+    "step": 0,
+    "subtask_text": "segment the audience using j3k0/speech-sh"
+  },
+  {
+    "query_id": "easy_148",
+    "step": 1,
+    "subtask_text": "configure the load balancer using higress-group/higress-ops-mcp-server"
+  },
+  {
+    "query_id": "easy_149",
+    "step": 0,
+    "subtask_text": "generate game content using kkjdaniel/bgg-mcp"
+  },
+  {
+    "query_id": "easy_149",
+    "step": 1,
+    "subtask_text": "process order using kukapay/crypto-orderbook-mcp"
+  },
+  {
+    "query_id": "easy_141",
+    "step": 0,
+    "subtask_text": "calculate the route"
+  },
+  {
+    "query_id": "easy_141",
+    "step": 1,
+    "subtask_text": "create a group chat with the results"
+  },
+  {
+    "query_id": "easy_066",
+    "step": 0,
+    "subtask_text": "use zueai/mcp-manager to manage file permissions"
+  },
+  {
+    "query_id": "easy_066",
+    "step": 1,
+    "subtask_text": "use rhein1/agoragentic-integrations to integrate with the platform with the results"
+  },
+  {
+    "query_id": "easy_004",
+    "step": 0,
+    "subtask_text": "use exoticknight/mcp-file-merger to rename files in bulk"
+  },
+  {
+    "query_id": "easy_004",
+    "step": 1,
+    "subtask_text": "use chigwell/telegram-mcp to create a group chat"
+  },
+  {
+    "query_id": "hard_032",
+    "step": 0,
+    "subtask_text": "update the spreadsheet using xing5/mcp-google-sheets"
+  },
+  {
+    "query_id": "hard_032",
+    "step": 1,
+    "subtask_text": "benchmark the function using parallel-web/search-mcp"
+  },
+  {
+    "query_id": "hard_032",
+    "step": 2,
+    "subtask_text": "analyze query performance in parallel using betterdb-inc/monitor"
+  },
+  {
+    "query_id": "hard_032",
+    "step": 3,
+    "subtask_text": "transform the data using psu3d0/spreadsheet-mcp"
+  },
+  {
+    "query_id": "hard_040",
+    "step": 0,
+    "subtask_text": "provision new servers using 1mcp/agent"
+  },
+  {
+    "query_id": "hard_040",
+    "step": 1,
+    "subtask_text": "merge multiple datasets using buildsyncinc/gibs-mcp"
+  },
+  {
+    "query_id": "hard_040",
+    "step": 2,
+    "subtask_text": "validate regulatory status using kryptosai/mcp-observatory"
+  },
+  {
+    "query_id": "hard_040",
+    "step": 3,
+    "subtask_text": "calculate tax using declan142/calcnook-mcp-server"
+  },
+  {
+    "query_id": "easy_056",
+    "step": 0,
+    "subtask_text": "migrate the schema using schemacrawler/schemacrawler-mcp-server-usage"
+  },
+  {
+    "query_id": "easy_056",
+    "step": 1,
+    "subtask_text": "scrape the website using ofershap/mcp-server-scraper"
+  },
+  {
+    "query_id": "med_071",
+    "step": 0,
+    "subtask_text": "use mckinsey/vizro-mcp to check system metrics"
+  },
+  {
+    "query_id": "med_071",
+    "step": 1,
+    "subtask_text": "use dataeval/dingo to process research data"
+  },
+  {
+    "query_id": "med_071",
+    "step": 2,
+    "subtask_text": "use archai-labs/fastmcp-sonarqube-metrics to process the order"
+  },
+  {
+    "query_id": "hard_015",
+    "step": 0,
+    "subtask_text": "Manage the project board using khaoss85/mcp-orchestro"
+  },
+  {
+    "query_id": "hard_015",
+    "step": 1,
+    "subtask_text": "Query the database using andywang1688/sql-query-mcp"
+  },
+  {
+    "query_id": "hard_015",
+    "step": 2,
+    "subtask_text": "Fetch game stats using ddsky/gamebrain-api-clients"
+  },
+  {
+    "query_id": "hard_015",
+    "step": 3,
+    "subtask_text": "Notify the team using teamwork/mcp"
+  },
+  {
+    "query_id": "easy_011",
+    "step": 0,
+    "subtask_text": "use glaksmono/finbud-data-mcp to analyze financial data"
+  },
+  {
+    "query_id": "easy_011",
+    "step": 1,
+    "subtask_text": "use backloghq/backlog to manage the project board"
+  },
+  {
+    "query_id": "easy_011",
+    "step": 2,
+    "subtask_text": "import analyzed financial data from glaksmono/finbud-data-mcp to backloghq/backlog"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 0,
+    "subtask_text": "use browsermcp/mcp to start mcp server"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 1,
+    "subtask_text": "use operantlabs/operant-mcp to configure mcp for browser automation"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 2,
+    "subtask_text": "use browserbase/mcp-server-browser or browsermcp/mcp to launch browser instance"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 3,
+    "subtask_text": "use serkan-ozal/browser-devtools-mcp to enable browser developer tools within mcp"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 4,
+    "subtask_text": "use kuvopllc/purroxy2 to set up proxy for browser testing"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 5,
+    "subtask_text": "use alimo7amed93/webhook-tester-mcp to configure webhook for sending test results"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 6,
+    "subtask_text": "use co-browser/browser-use-mcp-server or operative_sh/web-eval-agent to control browser actions"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 7,
+    "subtask_text": "use markmircea/selenix-mcp-server to run automated tests"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 8,
+    "subtask_text": "use ofershap/real-browser-mcp to ensure tests run in real browsers"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 9,
+    "subtask_text": "use ronantakizawa/a11ymcp to include accessibility checks in tests"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 10,
+    "subtask_text": "use brutalzinn/simple-mcp-selenium to integrate with selenium for more complex tests"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 11,
+    "subtask_text": "use wopee-io/wopee-mcp to generate reports from test results"
+  },
+  {
+    "query_id": "easy_105",
+    "step": 12,
+    "subtask_text": "use lightpanda-io/gomcp to aggregate reports and track player progress"
+  },
+  {
+    "query_id": "easy_080",
+    "step": 0,
+    "subtask_text": "calculate tax using vdalhambra/axiom-calculator-mcp"
+  },
+  {
+    "query_id": "easy_080",
+    "step": 1,
+    "subtask_text": "find relevant articles with the results using aas-ee/open-websearch"
+  },
+  {
+    "query_id": "easy_094",
+    "step": 0,
+    "subtask_text": "Use glaksmono/finbud-data-mcp to analyze financial data"
+  },
+  {
+    "query_id": "easy_094",
+    "step": 1,
+    "subtask_text": "Use shipitandpray/mcp-compress to extract the zip file"
+  },
+  {
+    "query_id": "easy_052",
+    "step": 0,
+    "subtask_text": "run data pipeline using jordinei/mcp"
+  },
+  {
+    "query_id": "easy_052",
+    "step": 1,
+    "subtask_text": "detect sentiment using blackmount-ai/blackmount-nlp-mcp"
+  },
+  {
+    "query_id": "med_084",
+    "step": 0,
+    "subtask_text": "use trackmage/trackmage-mcp-server to track delivery status"
+  },
+  {
+    "query_id": "med_084",
+    "step": 1,
+    "subtask_text": "use leehanchung/bing-search-mcp to search for relevant articles based on the tracking results"
+  },
+  {
+    "query_id": "med_084",
+    "step": 2,
+    "subtask_text": "use theagenttimes/tat-mcp-server to create a group chat"
+  },
+  {
+    "query_id": "easy_081",
+    "step": 0,
+    "subtask_text": "use jae-jae/fetcher-mcp to fetch the HTML content"
+  },
+  {
+    "query_id": "easy_081",
+    "step": 1,
+    "subtask_text": "use echology-io/decompose to parse the HTML content"
+  },
+  {
+    "query_id": "easy_081",
+    "step": 2,
+    "subtask_text": "use lfnovo/content-core to extract entities from the parsed HTML"
+  },
+  {
+    "query_id": "med_064",
+    "step": 0,
+    "subtask_text": "Use olostep/olostep-mcp-server to monitor uptime"
+  },
+  {
+    "query_id": "med_064",
+    "step": 1,
+    "subtask_text": "Use aas-ee/open-websearch to search knowledge base"
+  },
+  {
+    "query_id": "med_064",
+    "step": 2,
+    "subtask_text": "Use mzxrai/mcp-webresearch to scan for vulnerabilities"
+  },
+  {
+    "query_id": "hard_014",
+    "step": 0,
+    "subtask_text": "Use endiagram/mcp to set up alerting rules"
+  },
+  {
+    "query_id": "hard_014",
+    "step": 1,
+    "subtask_text": "Use tianqitang1/enrichr-mcp-server to analyze protein sequences"
+  },
+  {
+    "query_id": "hard_014",
+    "step": 2,
+    "subtask_text": "Use helixgenomics/genomic-agent-discovery to automate the workflow for the analysis"
+  },
+  {
+    "query_id": "hard_014",
+    "step": 3,
+    "subtask_text": "Use pickelfintech/sentisift-sdks to detect sentiment on the results"
+  },
+  {
+    "query_id": "med_090",
+    "step": 0,
+    "subtask_text": "create group chat using joinly-ai/joinly"
+  },
+  {
+    "query_id": "med_090",
+    "step": 1,
+    "subtask_text": "use chigwell/telegram-mcp to bridge the two systems"
+  },
+  {
+    "query_id": "med_090",
+    "step": 2,
+    "subtask_text": "apply filtering outliers using billster45/mcp-chatgpt-responses"
+  },
+  {
+    "query_id": "easy_050",
+    "step": 0,
+    "subtask_text": "Use fastalertnow/mcp-server to set up alerting rules"
+  },
+  {
+    "query_id": "easy_050",
+    "step": 1,
+    "subtask_text": "Use olgasafonova/gleif-mcp-server or multimail-dev/mcp-server to analyze legal documents with the results"
+  },
+  {
+    "query_id": "hard_013",
+    "step": 0,
+    "subtask_text": "Use inventer-dev/mcp-internet-speed-test to benchmark the function"
+  },
+  {
+    "query_id": "hard_013",
+    "step": 1,
+    "subtask_text": "Use speedofme-dev/speedofme-mcp to generate a report of the output"
+  },
+  {
+    "query_id": "hard_013",
+    "step": 2,
+    "subtask_text": "Use qainsights/k6-mcp-server to calculate the route of the analysis"
+  },
+  {
+    "query_id": "hard_013",
+    "step": 3,
+    "subtask_text": "Use megberts/mcp-websitepublisher-ai to monitor social mentions of the results"
+  },
+  {
+    "query_id": "hard_004",
+    "step": 0,
+    "subtask_text": "use searchatlas to gather audience data"
+  },
+  {
+    "query_id": "hard_004",
+    "step": 1,
+    "subtask_text": "use kdqed/zaturn to segment the audience"
+  },
+  {
+    "query_id": "hard_004",
+    "step": 2,
+    "subtask_text": "use echology-io/decompose to generate a report on the segmented audience"
+  },
+  {
+    "query_id": "hard_004",
+    "step": 3,
+    "subtask_text": "use leap-laboratories/discovery-engine to analyze experimental results"
+  },
+  {
+    "query_id": "hard_004",
+    "step": 4,
+    "subtask_text": "use oerc-s/primordia to classify the content of the results"
+  },
+  {
+    "query_id": "med_034",
+    "step": 0,
+    "subtask_text": "notify team"
+  },
+  {
+    "query_id": "med_034",
+    "step": 1,
+    "subtask_text": "map locations using jagan-shanmugam/open-streetmap-mcp"
+  },
+  {
+    "query_id": "med_034",
+    "step": 2,
+    "subtask_text": "extract page content using kimdonghwi94/web-analyzer-mcp"
+  },
+  {
+    "query_id": "easy_133",
+    "step": 0,
+    "subtask_text": "use operative_sh/web-eval-agent to automate browser testing"
+  },
+  {
+    "query_id": "easy_133",
+    "step": 1,
+    "subtask_text": "gather test results from the automated browser testing"
+  },
+  {
+    "query_id": "easy_133",
+    "step": 2,
+    "subtask_text": "use modelcontextprotocol/server-puppeteer to extract data from the test results"
+  },
+  {
+    "query_id": "easy_133",
+    "step": 3,
+    "subtask_text": "use wopee-io/wopee-mcp to monitor system metrics"
+  },
+  {
+    "query_id": "easy_133",
+    "step": 4,
+    "subtask_text": "compare the extracted data with the system metrics using victoriametrics-community/mcp-victoriametrics"
+  },
+  {
+    "query_id": "med_007",
+    "step": 0,
+    "subtask_text": "Use glaksmono/finbud-data-mcp to analyze financial data"
+  },
+  {
+    "query_id": "med_007",
+    "step": 1,
+    "subtask_text": "Use vdalhambra/financekit-mcp to track the shipment"
+  },
+  {
+    "query_id": "med_007",
+    "step": 2,
+    "subtask_text": "Use aarsiv-groups/shipi-mcp-server or vessel-api/vesselapi-mcp to fill out the web form"
+  },
+  {
+    "query_id": "med_033",
+    "step": 0,
+    "subtask_text": "schedule a meeting using timergy-app/timergy"
+  },
+  {
+    "query_id": "med_033",
+    "step": 1,
+    "subtask_text": "compress the archive using shipitandpray/mcp-compress"
+  },
+  {
+    "query_id": "med_033",
+    "step": 2,
+    "subtask_text": "format the code using goldmembrane/cleaner-code"
+  },
+  {
+    "query_id": "med_088",
+    "step": 0,
+    "subtask_text": "Use mattjegan/swarmia-mcp to scale the infrastructure"
+  },
+  {
+    "query_id": "med_088",
+    "step": 1,
+    "subtask_text": "Use embeddedlayers/mcp-analytics to analyze campaign metrics"
+  },
+  {
+    "query_id": "med_088",
+    "step": 2,
+    "subtask_text": "Use open-strategy-partners/osp_marketing_tools to generate an invoice"
+  },
+  {
+    "query_id": "med_044",
+    "step": 0,
+    "subtask_text": "generate an invoice using fakturka-api"
+  },
+  {
+    "query_id": "med_044",
+    "step": 1,
+    "subtask_text": "track time spent using toggl-mcp"
+  },
+  {
+    "query_id": "med_044",
+    "step": 2,
+    "subtask_text": "connect generated invoice and tracked time data to API using apifold"
+  },
+  {
+    "query_id": "easy_144",
+    "step": 0,
+    "subtask_text": "Segment the audience"
+  },
+  {
+    "query_id": "easy_144",
+    "step": 1,
+    "subtask_text": "Extract data from segmented audience"
+  },
+  {
+    "query_id": "easy_144",
+    "step": 2,
+    "subtask_text": "Identify relevant compliance requirements"
+  },
+  {
+    "query_id": "easy_144",
+    "step": 3,
+    "subtask_text": "Use optimaquantum/claude-critical-rules-mcp to check compliance against identified requirements"
+  },
+  {
+    "query_id": "easy_144",
+    "step": 4,
+    "subtask_text": "Generate report on compliance status"
+  },
+  {
+    "query_id": "med_014",
+    "step": 0,
+    "subtask_text": "Use connerlambden/bgpt-mcp to extract audio from video"
+  },
+  {
+    "query_id": "med_014",
+    "step": 1,
+    "subtask_text": "Use zlatkoc/youtube-summarize to analyze the extracted audio"
+  },
+  {
+    "query_id": "med_014",
+    "step": 2,
+    "subtask_text": "Use mikusnuz/gsc-mcp to validate SSL certificates"
+  },
+  {
+    "query_id": "med_014",
+    "step": 3,
+    "subtask_text": "Use papersflow-ai/papersflow-mcp to index research papers"
+  },
+  {
+    "query_id": "easy_122",
+    "step": 0,
+    "subtask_text": "Use crawleo/crawleo-mcp to crawl the documentation"
+  },
+  {
+    "query_id": "easy_122",
+    "step": 1,
+    "subtask_text": "Use hanselhansel/aeo-cli to track error rates"
+  },
+  {
+    "query_id": "med_053",
+    "step": 0,
+    "subtask_text": "format the code"
+  },
+  {
+    "query_id": "med_053",
+    "step": 1,
+    "subtask_text": "track delivery status using trackmage/trackmage-mcp-server"
+  },
+  {
+    "query_id": "med_053",
+    "step": 2,
+    "subtask_text": "get weather data using isdaniel/mcp_weather_server"
+  },
+  {
+    "query_id": "hard_044",
+    "step": 0,
+    "subtask_text": "Use brutalzinn/simple-mcp-selenium to automate website navigation"
+  },
+  {
+    "query_id": "hard_044",
+    "step": 1,
+    "subtask_text": "Use phungxuananh/selenium-mcp-server or markmircea/selenix-mcp-server to run the selenium script"
+  },
+  {
+    "query_id": "hard_044",
+    "step": 2,
+    "subtask_text": "Use wopee-io/wopee-mcp for schema migration"
+  },
+  {
+    "query_id": "hard_044",
+    "step": 3,
+    "subtask_text": "Use chatmcp/mcp-server-chatsum or jtalk22/slack-mcp-server or korotovsky/slack-mcp-server to post to Slack"
+  },
+  {
+    "query_id": "hard_044",
+    "step": 4,
+    "subtask_text": "Use lightpanda-io/gomcp or chaindead/telegram-mcp or chigwell/telegram-mcp to send updates to Telegram or other platforms"
+  },
+  {
+    "query_id": "hard_046",
+    "step": 0,
+    "subtask_text": "Broadcast the announcement using a suitable tool"
+  },
+  {
+    "query_id": "hard_046",
+    "step": 1,
+    "subtask_text": "Use vitorpavinato/ncbi-mcp-server to search PubMed with the announcement output"
+  },
+  {
+    "query_id": "hard_046",
+    "step": 2,
+    "subtask_text": "Use ignaciohermosillacornejo/copilot-money-mcp or nexusforge-tools/mcp-eu-finance to retrieve relevant context from the PubMed search results"
+  },
+  {
+    "query_id": "hard_046",
+    "step": 3,
+    "subtask_text": "Analyze financial data using either twelvedata/mcp, zoharbabin/google-researcher-mcp, glaksmono/finbud-data-mcp, hbg/mcp-paperswithcode, ahmetsbilgin/finbrain-mcp, atomno-labs/mcp-cbr-rates, erithwik/mcp-hn, neptun2000/heor-agent-mcp, sidneybissoli/bcb-br-mcp, or tianqitang1/enrichr-mcp-server based on the retrieved context"
+  },
+  {
+    "query_id": "hard_029",
+    "step": 0,
+    "subtask_text": "Run a complex SQL query using andywang1688/sql-query-mcp"
+  },
+  {
+    "query_id": "hard_029",
+    "step": 1,
+    "subtask_text": "Visualize molecular structures of the query output using nteract/semiotic"
+  },
+  {
+    "query_id": "hard_029",
+    "step": 2,
+    "subtask_text": "Encrypt the data from the analysis using ratnaditya-j/csvglow"
+  },
+  {
+    "query_id": "hard_029",
+    "step": 3,
+    "subtask_text": "Classify the content of the results using quentincody/catalysishub-mcp-server"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 0,
+    "subtask_text": "navigate to the web form"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 1,
+    "subtask_text": "fill out the required fields in the web form"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 2,
+    "subtask_text": "submit the web form"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 3,
+    "subtask_text": "use eyalzh/browser-control-mcp to open email client"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 4,
+    "subtask_text": "compose a new email"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 5,
+    "subtask_text": "attach the generated report from the web form submission"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 6,
+    "subtask_text": "enter recipient's email address"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 7,
+    "subtask_text": "enter subject for the email"
+  },
+  {
+    "query_id": "easy_060",
+    "step": 8,
+    "subtask_text": "use eyalzh/browser-control-mcp to send the email"
+  },
+  {
+    "query_id": "hard_037",
+    "step": 0,
+    "subtask_text": "Use runekaagaard/mcp-alchemy to set up access permission auditing"
+  },
+  {
+    "query_id": "hard_037",
+    "step": 1,
+    "subtask_text": "Integrate andywang1688/sql-query-mcp to automatically notify the team"
+  },
+  {
+    "query_id": "hard_037",
+    "step": 2,
+    "subtask_text": "Utilize schemacrawler/schemacrawler-mcp-server-usage to query scientific databases"
+  },
+  {
+    "query_id": "hard_037",
+    "step": 3,
+    "subtask_text": "Apply nonatofabio/local-faiss-mcp to index the documents"
+  },
+  {
+    "query_id": "hard_037",
+    "step": 4,
+    "subtask_text": "Implement theonedev/tod to set up CI/CD pipeline"
+  },
+  {
+    "query_id": "easy_108",
+    "step": 0,
+    "subtask_text": "bridge two systems using kukapay/bridge-rates-mcp"
+  },
+  {
+    "query_id": "easy_108",
+    "step": 1,
+    "subtask_text": "run a complex sql query using andywang1688/sql-query-mcp"
+  },
+  {
+    "query_id": "easy_007",
+    "step": 0,
+    "subtask_text": "Use anaisbetts/mcp-youtube to add subtitles to a video"
+  },
+  {
+    "query_id": "easy_007",
+    "step": 1,
+    "subtask_text": "Use scrape-badger/scrapebadger-mcp to monitor social mentions"
+  },
+  {
+    "query_id": "med_005",
+    "step": 0,
+    "subtask_text": "use webcoderz/mcp-geo to geocode the address"
+  },
+  {
+    "query_id": "med_005",
+    "step": 1,
+    "subtask_text": "use admica/filescopemcp to organize the files based on geocoded results"
+  },
+  {
+    "query_id": "med_005",
+    "step": 2,
+    "subtask_text": "use lfnovo/content-core to classify content"
+  },
+  {
+    "query_id": "med_020",
+    "step": 0,
+    "subtask_text": "use cactusinhand/mcp_server_notify to notify the team"
+  },
+  {
+    "query_id": "med_020",
+    "step": 1,
+    "subtask_text": "use smigolsmigol/llmkit with wn01011/llm-token-tracker to analyze the output by track expenses"
+  },
+  {
+    "query_id": "med_020",
+    "step": 2,
+    "subtask_text": "use louis030195/toggl-mcp to track time spent"
+  },
+  {
+    "query_id": "easy_106",
+    "step": 0,
+    "subtask_text": "Use vdalhambra/siteaudit-mcp to audit access permissions and gather data"
+  },
+  {
+    "query_id": "easy_106",
+    "step": 1,
+    "subtask_text": "Analyze the gathered data using blackmount-ai/blackmount-nlp-mcp to extract relevant information"
+  },
+  {
+    "query_id": "easy_106",
+    "step": 2,
+    "subtask_text": "Utilize whenlabs-org/when to set up monitoring for social mentions"
+  },
+  {
+    "query_id": "easy_106",
+    "step": 3,
+    "subtask_text": "Integrate the monitoring tool with the analyzed data to track changes in social mentions"
+  },
+  {
+    "query_id": "med_095",
+    "step": 0,
+    "subtask_text": "set up alerting rules using rulesetmcp"
+  },
+  {
+    "query_id": "med_095",
+    "step": 1,
+    "subtask_text": "process alerting rules using mcp_server_notify"
+  },
+  {
+    "query_id": "med_095",
+    "step": 2,
+    "subtask_text": "send a notification using ntfy-mcp"
+  },
+  {
+    "query_id": "med_095",
+    "step": 3,
+    "subtask_text": "audit access permissions using imprvhub/mcp-status-observer"
+  },
+  {
+    "query_id": "easy_111",
+    "step": 0,
+    "subtask_text": "List all files in the directory using mamertofabian/mcp-everything-search"
+  },
+  {
+    "query_id": "easy_111",
+    "step": 1,
+    "subtask_text": "Categorize files into folders based on type and relevance"
+  },
+  {
+    "query_id": "easy_111",
+    "step": 2,
+    "subtask_text": "Use 8b-is/smart-tree to create a hierarchical structure of the files"
+  },
+  {
+    "query_id": "easy_111",
+    "step": 3,
+    "subtask_text": "Extract text content from documents using srclight/srclight"
+  },
+  {
+    "query_id": "easy_111",
+    "step": 4,
+    "subtask_text": "Index the extracted text content using mikerecognex/mcp-codebase-index"
+  },
+  {
+    "query_id": "easy_096",
+    "step": 0,
+    "subtask_text": "Extract product listing data from manage product listings using excel-mcp-server"
+  },
+  {
+    "query_id": "easy_096",
+    "step": 1,
+    "subtask_text": "Load extracted data into postgres_mcp using sbroenne/mcp-server-excel"
+  },
+  {
+    "query_id": "easy_096",
+    "step": 2,
+    "subtask_text": "Analyze query performance using pgtuner_mcp"
+  },
+  {
+    "query_id": "easy_037",
+    "step": 0,
+    "subtask_text": "Use crawleo/crawleo-mcp to crawl the documentation"
+  },
+  {
+    "query_id": "easy_037",
+    "step": 1,
+    "subtask_text": "Use softvoyagers/linkmeta-api to extract the zip file"
+  },
+  {
+    "query_id": "easy_020",
+    "step": 0,
+    "subtask_text": "use crawleo/crawleo-mcp to crawl the documentation"
+  },
+  {
+    "query_id": "easy_020",
+    "step": 1,
+    "subtask_text": "use softvoyagers/linkmeta-api to process crawled data"
+  },
+  {
+    "query_id": "easy_020",
+    "step": 2,
+    "subtask_text": "use yanmxa/scriptflow-mcp to generate file renaming commands"
+  },
+  {
+    "query_id": "easy_020",
+    "step": 3,
+    "subtask_text": "execute g0t4/mcp-server-commands to rename files in bulk"
+  },
+  {
+    "query_id": "med_043",
+    "step": 0,
+    "subtask_text": "use endiagram/mcp to review the contract"
+  },
+  {
+    "query_id": "med_043",
+    "step": 1,
+    "subtask_text": "use victoriametrics-community/mcp-victoriametrics to analyze the output"
+  },
+  {
+    "query_id": "med_043",
+    "step": 2,
+    "subtask_text": "use seekrays/mcp-monitor to check system metrics"
+  },
+  {
+    "query_id": "med_043",
+    "step": 3,
+    "subtask_text": "use archai-labs/fastmcp-sonarqube-metrics to profile performance"
+  },
+  {
+    "query_id": "easy_137",
+    "step": 0,
+    "subtask_text": "Set up monitoring alerts using a suitable tool"
+  },
+  {
+    "query_id": "easy_137",
+    "step": 1,
+    "subtask_text": "Integrate the monitoring tool with Slack using the appropriate API or bot"
+  },
+  {
+    "query_id": "easy_137",
+    "step": 2,
+    "subtask_text": "Configure the integration to post alerts to a specified Slack channel"
+  },
+  {
+    "query_id": "easy_026",
+    "step": 0,
+    "subtask_text": "Use picahq/mcp to integrate with the platform"
+  },
+  {
+    "query_id": "easy_026",
+    "step": 1,
+    "subtask_text": "Use guimatheus92/mcp-video-analyzer to convert the video format"
+  },
+  {
+    "query_id": "easy_097",
+    "step": 0,
+    "subtask_text": "resize the images using a suitable tool"
+  },
+  {
+    "query_id": "easy_097",
+    "step": 1,
+    "subtask_text": "send the resized images to notify the team"
+  },
+  {
+    "query_id": "hard_024",
+    "step": 0,
+    "subtask_text": "parse html content using kimdonghwi94/web-analyzer-mcp"
+  },
+  {
+    "query_id": "hard_024",
+    "step": 1,
+    "subtask_text": "set up ci/cd pipeline using mshegolev/gitlab-ci-mcp"
+  },
+  {
+    "query_id": "hard_024",
+    "step": 2,
+    "subtask_text": "rename files in bulk using olostep/olostep-mcp-server"
+  },
+  {
+    "query_id": "hard_024",
+    "step": 3,
+    "subtask_text": "analyze logs using log-logn/langfuse-mcp-java"
+  },
+  {
+    "query_id": "easy_047",
+    "step": 0,
+    "subtask_text": "Extract compliance requirements data"
+  },
+  {
+    "query_id": "easy_047",
+    "step": 1,
+    "subtask_text": "Analyze extracted data for cloud deployment"
+  },
+  {
+    "query_id": "easy_047",
+    "step": 2,
+    "subtask_text": "Choose appropriate cloud provider based on analysis"
+  },
+  {
+    "query_id": "easy_047",
+    "step": 3,
+    "subtask_text": "Configure cloud resources using chosen tool (e.g., jasonwilbur/cloud-cost-mcp, xmpuspus/cloudwright, etc.)"
+  },
+  {
+    "query_id": "easy_047",
+    "step": 4,
+    "subtask_text": "Deploy infrastructure as code using chosen tool"
+  },
+  {
+    "query_id": "easy_047",
+    "step": 5,
+    "subtask_text": "Verify deployment against compliance requirements"
+  },
+  {
+    "query_id": "med_039",
+    "step": 0,
+    "subtask_text": "classify the content using lfnovo/content-core"
+  },
+  {
+    "query_id": "med_039",
+    "step": 1,
+    "subtask_text": "calculate the route using echology-io/decompose"
+  },
+  {
+    "query_id": "med_039",
+    "step": 2,
+    "subtask_text": "execute the test suite using promptexecution/just-mcp"
+  },
+  {
+    "query_id": "med_080",
+    "step": 0,
+    "subtask_text": "detect sentiment using pickelfintech/sentisift-sdks"
+  },
+  {
+    "query_id": "med_080",
+    "step": 1,
+    "subtask_text": "process sentiment with joinly-ai/joinly"
+  },
+  {
+    "query_id": "med_080",
+    "step": 2,
+    "subtask_text": "schedule a meeting with joinly-ai/joinly"
+  },
+  {
+    "query_id": "med_080",
+    "step": 3,
+    "subtask_text": "search the web for results using mzxrai/mcp-webresearch"
+  },
+  {
+    "query_id": "easy_040",
+    "step": 0,
+    "subtask_text": "extract the zip file using a decompression tool"
+  },
+  {
+    "query_id": "easy_040",
+    "step": 1,
+    "subtask_text": "upload the extracted files to the cloud using an S3 upload tool"
+  },
+  {
+    "query_id": "med_019",
+    "step": 0,
+    "subtask_text": "Set up monitoring alerts using mpeirone/zabbix-mcp-server"
+  },
+  {
+    "query_id": "med_019",
+    "step": 1,
+    "subtask_text": "Process the content using echology-io/decompose"
+  },
+  {
+    "query_id": "med_019",
+    "step": 2,
+    "subtask_text": "Classify the content using humansignal/label-studio-mcp-server"
+  },
+  {
+    "query_id": "med_019",
+    "step": 3,
+    "subtask_text": "Compress media files using shipitandpray/mcp-compress"
+  },
+  {
+    "query_id": "easy_104",
+    "step": 0,
+    "subtask_text": "connect to the API using snaggle-ai/openapi-mcp-server"
+  },
+  {
+    "query_id": "easy_104",
+    "step": 1,
+    "subtask_text": "retrieve results from the API"
+  },
+  {
+    "query_id": "easy_104",
+    "step": 2,
+    "subtask_text": "post to Slack using korotovsky/slack-mcp-server"
+  },
+  {
+    "query_id": "easy_130",
+    "step": 0,
+    "subtask_text": "Use automation-ai-labs/mcp-link to integrate with the platform"
+  },
+  {
+    "query_id": "easy_130",
+    "step": 1,
+    "subtask_text": "Use seekrays/mcp-monitor to monitor uptime"
+  },
+  {
+    "query_id": "easy_124",
+    "step": 0,
+    "subtask_text": "Use andywang1688/sql-query-mcp to write a SQL query to retrieve data from the database"
+  },
+  {
+    "query_id": "easy_124",
+    "step": 1,
+    "subtask_text": "Use schemacrawler/schemacrawler-mcp-server-usage to analyze the schema of the database"
+  },
+  {
+    "query_id": "easy_124",
+    "step": 2,
+    "subtask_text": "Use javimaligno/postgres_mcp or hannesrudolph/sqlite-explorer-fastmcp-mcp-server or any other relevant tool to execute the SQL query on the database"
+  },
+  {
+    "query_id": "easy_124",
+    "step": 3,
+    "subtask_text": "Use a tool like google-analytics or mixpanel to track conversion rates based on the retrieved data"
+  },
+  {
+    "query_id": "med_048",
+    "step": 0,
+    "subtask_text": "use cactusinhand/mcp_server_notify to send notification to the team"
+  },
+  {
+    "query_id": "med_048",
+    "step": 1,
+    "subtask_text": "use kimdonghwi94/web-analyzer-mcp to analyze the output"
+  },
+  {
+    "query_id": "med_048",
+    "step": 2,
+    "subtask_text": "use inditextech/mcp-teams-server to extract zip file"
+  },
+  {
+    "query_id": "med_048",
+    "step": 3,
+    "subtask_text": "use devflowinc/trieve to transform the data"
+  },
+  {
+    "query_id": "easy_068",
+    "step": 0,
+    "subtask_text": "notify the team using mmorris35/devplan-mcp-server"
+  },
+  {
+    "query_id": "easy_068",
+    "step": 1,
+    "subtask_text": "compile the project using yuliiakovalova/dotnet-template-mcp"
+  },
+  {
+    "query_id": "hard_021",
+    "step": 0,
+    "subtask_text": "Take a screenshot of the page using just-every/mcp-screenshot-website-fast"
+  },
+  {
+    "query_id": "hard_021",
+    "step": 1,
+    "subtask_text": "Create a new project scaffold using meanands/npm-package-docs-mcp"
+  },
+  {
+    "query_id": "hard_021",
+    "step": 2,
+    "subtask_text": "Update the documentation using meanands/npm-package-docs-mcp"
+  },
+  {
+    "query_id": "hard_021",
+    "step": 3,
+    "subtask_text": "Track delivery status using upstash/context7"
+  }
+]
